@@ -1,0 +1,114 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns": [
+				".*",
+				"*sublime*",
+				"*.map"
+			],
+			"folder_exclude_patterns": [
+				".*",
+				"kirby",
+				"content",
+				"panel",
+				"site",
+				"thumbs",
+				"assets",
+				"node_modules"
+			],
+			"name": "/",
+			"path": "."
+		},
+		{
+			"folder_exclude_patterns": [
+				"templates",
+				"snippets",
+				"cache",
+				"plugins",
+				"tags",
+				"blueprints"
+			],
+			"name": "site",
+			"path": "site"
+		},
+		{
+			"folder_exclude_patterns": [
+				"assets/css",
+				"assets/scss",
+				"assets/js"
+			],
+			"name": "assets",
+			"path": "assets"
+		},
+		{
+			"name": "│ scss",
+			"path": "assets/scss"
+		},
+		{
+			"file_exclude_patterns": [
+				"**/build/pre/*",
+				"**/build/post/*"
+			],
+			"name": "└▸︎ build.css",
+			"path": "assets/css"
+		},
+		{
+			"file_exclude_patterns": [
+				"**/build/pre/*",
+				"**/build/post/*"
+			],
+			"name": "│ js",
+			"path": "assets/js"
+		},
+		{
+			"file_exclude_patterns": [
+				"**/build/pre/*",
+				"**/build/post/*"
+			],
+			"name": "└▸︎ build.js",
+			"path": "assets/js/build"
+		},
+		{
+			"name": "│ blueprints",
+			"path": "site/blueprints"
+		},
+		{
+			"name": "│ templates",
+			"path": "site/templates"
+		},
+		{
+			"name": "│ snippets",
+			"path": "site/snippets"
+		},
+		{
+			"name": "│ plugins",
+			"path": "site/plugins"
+		},
+		{
+			"name": "└ tags",
+			"path": "site/tags"
+		},
+		{
+			"name": "content",
+			"path": "content"
+		},
+		{
+			"file_exclude_patterns": [
+				"node_modules/*"
+			],
+			"folder_exclude_patterns": [
+				".*",
+				"node_modules/*/*"
+			],
+			"name": "nodes",
+			"path": "node_modules"
+		}
+	],
+	"settings":
+	{
+		"FuzzyFilePath":
+		{
+		}
+	}
+}

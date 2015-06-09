@@ -1,0 +1,1 @@
+{"version":3,"sources":["../scss/main.scss","main.css"],"names":[],"mappings":"AAAA;EACC,gBAAe;CCCf;ADAA;EACC,gBAAe;EACf,WAAU;CCEX;ADDC;EAAI,WAAU;CCIf","file":"main.css","sourcesContent":[null,"html {\n  font-size: 16px;\n}\nhtml body {\n  font-size: 100%;\n  padding: 0;\n}\nhtml body * {\n  color: red;\n}\n\n/*# sourceMappingURL=main.css.map */\n"]}

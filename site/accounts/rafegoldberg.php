@@ -7,7 +7,9 @@ password: >
 language: en
 role: admin
 history:
+  - about
+  - null
   - home
-token: 92542975ec3daf74d07a2773a714dfa9f757d268
+token: 35924723ae7d03271f04c238a71d6cdf017ca308
 firstname: Rafe
 lastname: Goldberg

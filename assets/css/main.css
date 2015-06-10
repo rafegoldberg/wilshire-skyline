@@ -1,12 +1,12 @@
 html {
-  font-size: 16px;
+  font: normal normal normal 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 html body {
-  font-size: 100%;
+  display: block;
+  max-width: 48em;
+  margin: 0 auto;
   padding: 0;
-}
-html body * {
-  color: red;
+  font-size: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

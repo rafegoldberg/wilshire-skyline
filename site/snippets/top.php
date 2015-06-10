@@ -4,15 +4,9 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	
 	<? snippet('meta') ?>	
-	<?= css('assets/css/main.css') ?>
 
-	<? if (isset($css)): ?>
-		<? foreach (explode(' ',$css) as $sheet) : ?>
-			<?= css("assets/css/$css.css") ?>
-		<? endforeach ?>
-	<? endif ?>
+	<?= css('assets/css/main.css') ?>
 
 </head>
 <body class='<?= isset($body)?$body:'' ?>'>

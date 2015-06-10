@@ -1,9 +1,9 @@
 <?
 /////////////////////////////////
-// DEBUG                       //
+// DEBUG FUNCTIONS             //
 /////////////////////////////////
 
-function jsl($arr=array('default'),$txt=false,$r=false){
+function jsl($arr=array('default'),$txt=false,$r=true){
 	$logtag = false;
 	if ($txt) {
 		$logtag = "<script class='php2js'>console.log('".$txt."',".json_encode($arr).")</script>";
@@ -14,7 +14,7 @@ function jsl($arr=array('default'),$txt=false,$r=false){
 }
 
 /////////////////////////////////
-// FIELD METHODS               //
+// HELPER FUNCTIONS            //
 /////////////////////////////////
 
 function get_user_timezone() {
@@ -23,22 +23,85 @@ function get_user_timezone() {
 }
 
 /////////////////////////////////
-// FIELD METHODS               //
+// POST-INCLUDES               //
 /////////////////////////////////
+/*
+ + Description:
+ | Simple, off-the-cuff includes for 
+ | modularly architected stylesheets
+ | and/or Javascript files.
+ |
+ + Example Usage:
+ [-] register_sheets('CSS1 CSS10');
+ [-] register_scripts('JS1 JS10 JS12 JS2 JS10');
+ [-] register_sheets('CSS12 CSS2 CSS10');
+ */
 
-
-// function prepend_states ($arr,$delim=' ',$tostr=false){
-// }
-
-function get_stately_classes ($arr,$delim=' ',$tostr=false){
-	$arr = gettype($arr)=='string'?explode($delim,$arr):$arr;
-	$classes = array_map(function($v, $k) {
-		if     ($k==0) { return "grid-$v"; }
-		elseif ($k==1) { return "grid-tablet-$v"; }
-		else           { return "grid-mobile-$v"; }
-	}, $arr, array_keys($arr));
-	return $tostr ? implode(' ',$classes) : $classes;
+function init_libs() {
+	init_sheets();
+	init_scripts();
 }
+
+function init_sheets() { $GLOBALS['css'] = array(); }
+function init_scripts() { $GLOBALS['js'] = array(); }
+
+function add_sheets($sheets) {
+
+	# USAGE:
+	#<|> register_sheets('add1 add10 add12 add2 add10');
+
+	foreach (explode(' ',$sheets) as $fname) {
+		array_push($GLOBALS['css'],$fname);
+	}
+	return $GLOBALS['css'];
+}
+function add_scripts($scripts) {
+
+	# USAGE:
+	#<|> register_scripts('add1 add10 add12 add2 add10');
+
+	foreach (explode(' ',$scripts) as $fname) {
+		array_push($GLOBALS['js'],$fname);
+	}
+	return $GLOBALS['js'];
+}
+
+function link_sheets($debug=false) {?>
+	<?
+	# USAGE:
+	#<|> link_sheets('add1 add10 add12 add2 add10');
+	#<|> //HREFS: "assets/css/[ add1, add2, add10, add12 ].css"
+	$sheets  = array_unique( $GLOBALS['css'] );
+	natsort($sheets);
+	?>
+	<? if ( !empty($sheets) ): ?>
+		<? foreach( $sheets as $sheet ): ?>
+			<? if (!$debug): ?>
+				<?= css("assets/css/$sheet.css") ?>
+			<? else: ?>	
+				<?= jsl("assets/css/$sheet.css") ?>
+			<? endif ?>
+		<? endforeach ?>
+	<? endif ?>
+<?}
+function link_scripts($debug=false) {?>
+	<?
+	# USAGE:
+	#<|> link_scripts('add1 add10 add12 add2 add10');
+	#<|> //HREFS: "assets/js/[ add1, add2, add10, add12 ].js"
+	$scripts  = array_unique( $GLOBALS['js'] );
+	natsort($scripts);
+	?>
+	<? if ( !empty($scripts) ): ?>
+		<? foreach( $scripts as $script ): ?>
+			<? if (!$debug): ?>
+				<?= js("assets/js/$script.css") ?>
+			<? else: ?>	
+				<?= jsl("assets/css/$script.css") ?>
+			<? endif ?>
+		<? endforeach ?>
+	<? endif ?>
+<?}
 
 /////////////////////////////////
 // FIELD METHODS               //

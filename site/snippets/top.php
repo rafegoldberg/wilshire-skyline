@@ -7,6 +7,7 @@
 	<? snippet('meta') ?>	
 
 	<?= css('assets/css/main.css') ?>
+	<? init_libs() ?>
 
 </head>
 <body class='<?= isset($body)?$body:'' ?>'>

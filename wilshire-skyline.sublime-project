@@ -54,9 +54,8 @@
 			"path": "assets/css"
 		},
 		{
-			"file_exclude_patterns": [
-				"**/build/pre/*",
-				"**/build/post/*"
+			"folder_exclude_patterns": [
+				"build"
 			],
 			"name": "│ js",
 			"path": "assets/js"

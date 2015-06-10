@@ -44,38 +44,9 @@ function get_stately_classes ($arr,$delim=' ',$tostr=false){
 // FIELD METHODS               //
 /////////////////////////////////
 
-field::$methods['list'] = function($field,$layout=false,$delim=" ") {
-	$layout = !$layout ? 'list' : implode($delim,array_map(function($n){
-		return "list_$n";
-	},split(' ',$layout)));
-	$items = implode('',array_map(function($n){
-		return "<li class='list--item'>$n</li>";
-	},split(',',$field->value)));
-	return "<ul class='$layout'>$items</ul>";
+field::$methods['json'] = function($field, $property = null) {
+  $data = (array)json_decode($field->value);
+  return ($property && isset($data[$property]) ? $data[$property] : $data);
 };
 
-// kirbytext::$tags['tooltip:'] = array(
-// 	'attr' => array(
-// 		'show'
-// 	),
-// 	'html' => function($tag) {
-// 		$text   = $tag->attr('tooltip');
-// 		$tiptxt = $tag->attr('show','Tooltip');
-// 		return "<a class='tooltip' title='$tiptxt'>$text</a>";
-// 	}
-// );
-kirbytext::$tags['tooltip'] = array(
-  'attr' => array(
-    'show',
-    'url'
-  ),
-  'html' => function($tag) {
-
-    $text   = $tag->attr('tooltip');
-    $tiptxt = $tag->attr('show', 'tooltip');
-    $url   = $tag->attr('url',false) ? 'href="'.$tag->attr('url','').'"' : '';
-    // $url   = "data-rafe";
-    return "<a $url class='tooltip' title='$tiptxt'>$text</a>";
-  }
-);
 ?>

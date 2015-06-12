@@ -17,3 +17,130 @@
     padding-right: 0.75em; }
   .field-place .field-content.field-lng {
     padding-left: 0.75em; }
+
+/*|
+|*|
+|*| RG CUSTOM STYLES
+|*|
+|*/
+
+/* HIDE LAT + LONG:
+ * labels are located at bottom of map */
+.field-place .field-content.field-lat,
+.field-place .field-content.field-lng {
+  display: none;
+}
+
+/* COLLAPSE FIELD UI
+ * add overlay border, inner-shadow to map; remove top margin */
+.field-place .field-google-map-ui {
+  /*box-sizing: border-box;*/
+  z-index: 0;
+  position: relative;
+  margin-top: 0;
+  pointer-events: none;
+}
+.field-place .field-google-map-ui:after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  border: solid rgba(210,210,210,.75);
+  box-shadow: inset 0 1px 8px 2px rgba(0,0,0,.2);
+  border-width: 2px;
+}
+
+/* OVERLAY SEARCH:
+ * button at top-right of address input */
+.field-place {
+  position: relative;
+}
+.field-place .input-address {
+  width: 82%;
+  padding-right: .5em;
+  border-right: none;
+  border-bottom: 0;
+}
+.field-place .input-address:focus {
+  /*adjust input focus style*/
+  border-color: #DDD;
+}
+.field-place .input-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 18%;
+}
+.field-place .input-search [type=button] {
+    border-radius: 0;
+    padding: .5em;  
+    font-size: 1em;
+    line-height: 1.5em;
+    background-color: #EDF6FE;
+    background-color: #F5F5F5;
+    border-color: #DDD;
+    /*border-left-width: 1px;*/
+    color: dodgerblue;
+    width: 100%;
+    box-shadow: -3px 0 1px -1px rgba(175,175,175,.085);
+}
+.field-place .input-search [type=button]:hover {
+    box-shadow: -3px 0 2px -1px rgba(175,175,175,.175);
+    background-color: #FFF;
+    color: #2380E5;
+    border-left-color: #D5D5D5;
+}
+.field-place .input-search [type=button]:active {
+    box-shadow: inset 2px 2px 6px -3px rgba(50,50,50,.125);
+    background-color: #F8F8F8;
+    color: #84A5CF;
+    color: #C3C3C3;
+    text-shadow: 0 1px 0 #F0F8FF;
+    text-shadow: 0 0 0 transparent;
+    border-color: #DADADA;
+    outline: none;
+}
+
+/* HELP TEXT
+ * position help text as near-bottom overlay */
+.field-place + .field-help.text {
+  position: absolute;
+  top: 0;
+  right: 18%;
+  display: inline-block;
+  transform: translateX(6px) translateY(0);
+  text-align: center;
+  margin: 4.625rem 0 0 1.5rem;
+  padding: .25em .55em .2em;
+  padding: 0 .55em .2em;
+  box-sizing: content-box;
+  background: #FFF;
+  border: 2px solid #DDD;
+  border-top: none;
+  color: #999
+  ;
+  font-size: .8em;
+  pointer-events: none;
+  -webkit-user-select: none;
+  opacity: 0;
+  box-shadow: 0 0 0 0 transparent;
+  transition: opacity .5s ease-in-out, box-shadow .85s ease-in-out;
+  transition-delay: 0;
+}
+.field-place:not(:hover) + .field-help.text {
+  transition-delay: 5s;
+}
+.field-place:hover + .field-help.text {
+  box-shadow: 1px 3px 5px -1px rgba(0,0,0,.25);
+  opacity: 1;
+}
+.field-place:active + .field-help.text {
+  opacity: 0;
+}
+.field-place:not(:active) + .field-help.text {
+  transition-delay: 0 !important;
+}

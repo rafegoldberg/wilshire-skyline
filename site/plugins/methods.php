@@ -95,9 +95,9 @@ function link_scripts($debug=false) {?>
 	<? if ( !empty($scripts) ): ?>
 		<? foreach( $scripts as $script ): ?>
 			<? if (!$debug): ?>
-				<?= js("assets/js/$script.css") ?>
+				<?= js("assets/js/build/$script.js") ?>
 			<? else: ?>	
-				<?= jsl("assets/css/$script.css") ?>
+				<?= jsl("assets/js/build/$script.js") ?>
 			<? endif ?>
 		<? endforeach ?>
 	<? endif ?>

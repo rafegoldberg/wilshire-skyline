@@ -1,0 +1,79 @@
+/////////////////////////////////////////////////////
+//                                                 //
+//               SITE-WIDE VARIABLES               //
+//                                                 //
+/////////////////////////////////////////////////////
+
+//———————————————————————————————————————————————————
+//                    LAYOUT VARS                    
+//———————————————————————————————————————————————————
+// Map variables that consist of settings for every
+// state keyword as defined in the $breaks var. The
+// keywords currently in use are as follows:
+// - [d] desktop
+// - [t] tablet
+// - [m] mobile
+
+$breaks: (
+	d: (
+		min-width: 75em,
+	),
+	t: (
+		max-width: 74.938em,
+		min-width: 36.063em,
+	),
+	m: (
+		max-width: 36em,
+	),
+); //@is[base options for grd_reg_state()]@px[1200,(1199,481),480]@type[opt]
+$gutter: (
+	d: 1.5rem,
+	t: 1rem,
+	m: 1rem,
+); //@is[gridle padding values]@px[24,16,16]@type[opt]
+
+//——————————————————————————————————————————————————
+//                  THEME & COLORS                  
+//——————————————————————————————————————————————————
+// 
+
+$greys: (
+	slate:   #292929,
+	grey:    #444444,
+	stroke:  #CCCCCC,
+	ivory:   #FCFCFC,
+);
+$greys: map-merge($greys,(
+	dark:   map-get($greys,slate),
+	gray:   map-get($greys,grey),
+	border: map-get($greys,stroke),
+	bdr:    map-get($greys,stroke),
+	light:  map-get($greys,ivory),
+)); //@is[add aliases to $greys]@type[alias]
+@function _grey($key){ @return map-get($greys,$key); } //@is[get any/all greyscale colors]@type[get]
+
+$theme: (
+	navy:    #0E3759,
+	evening: #1C5286,
+	brand:   #006FAE,
+	sky:     #E2E9F2,
+);
+$theme: map-merge($theme,(
+	navy: map-get($theme,dusk),
+	eve:  map-get($theme,evening),
+	blue: map-get($theme,brand),
+));  //@is[add aliases to $theme]@type[alias]
+@function _theme($key){ @return map-get($theme,$key); } //@is[get any/all preset theme colors]@type[get]
+
+$colors: map-merge($greys,$theme);
+@function _c($key){ @return map-get($colors,$key); } //@is[get any/all preset UI colors]@type[getmerged]
+
+//———————————————————————————————————————————————————
+//                    TYPOGRAPHY                    
+//———————————————————————————————————————————————————
+// 
+
+$font-family: (
+	sans: "Helvetica Neue", Helvetica, Arial, sans-serif,
+);
+@function _ff($fam){ @return #{map-get($font-family,$fam)}; } //@is[get preset typeface declarations]@type[get]

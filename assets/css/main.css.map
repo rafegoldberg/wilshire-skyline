@@ -1,1 +1,1 @@
-{"version":3,"sources":["../scss/main.scss","main.css"],"names":[],"mappings":"AAAA;EACC,iFAAgF;CCChF;ADAA;EACC,eAAc;EACd,gBAAe;EACf,eAAc;EACd,WAAU;EACV,gBAAe;CCEhB","file":"main.css","sourcesContent":[null,"html {\n  font: normal normal normal 16px/1 \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\nhtml body {\n  display: block;\n  max-width: 48em;\n  margin: 0 auto;\n  padding: 0;\n  font-size: 100%;\n}\n\n/*# sourceMappingURL=main.css.map */\n"]}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"main.css"}

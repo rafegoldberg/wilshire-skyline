@@ -1,15 +1,11 @@
-<? snippet('top') ?>
+<? snippet('meta/top') ?>
 
-	<? snippet('header') ?>
-	<? snippet('menu')   ?>
+	<? snippet('obj/menu')   ?>
  
 	<main class="main" role="main">
-		<div class="text">
-			<h3><?= $page->title()->html() ?></h3>
-			<?= $page->text()->kirbytext() ?>
-		</div>
+		<?= $page->text()->kirbytext() ?>
 	</main>
 
-	<? snippet('footer') ?>
+	<? snippet('foot') ?>
 
-<? snippet('bottom') ?>
+<? snippet('meta/bottom') ?>

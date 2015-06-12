@@ -1,0 +1,18 @@
+Title: Get Data Asynch
+
+----
+
+Text: 
+
+This page runs a small jQuery-based AJAX script...
+
+```javascript
+$.getJSON('/path/to/api/template', function(r) {
+  // loop through the result
+  $.each(r, function(i, article) {
+    console.log(article);
+  });
+});
+```
+
+...which ought to return some data from the `api.php` template.

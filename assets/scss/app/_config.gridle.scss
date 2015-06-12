@@ -1,0 +1,59 @@
+//////////////////////////////////////////////////////////////
+//                                                          //
+//                   GRIDLE CONFIGURATION                   //
+//                                                          //
+//////////////////////////////////////////////////////////////
+
+// Import
+//
+@import 'lib.gridle/gridle';
+
+// Setup
+//
+@include gridle_setup((
+	context : 12,
+	gutter-width : 1.5rem,
+	debug : true
+));
+
+/////////////////////////////////
+// CUSTOM CLASSES              //
+/////////////////////////////////
+
+//-> Special Columns
+//
+// @include gridle_register_column("1on5", 1, 5);
+
+//-> Clear Classes
+// 
+// @include gridle_register_clear_each(2, left);
+// @include gridle_register_clear_each(12, both);
+
+/////////////////////////////////
+// REGISTER STATES             //
+/////////////////////////////////
+
+//—> Gridle Defaults
+// 
+// @include gridle_register_default_states();
+// @include gridle_register_default_mobile_first_states();
+
+//—> Viewports
+//   @req[app.vars|for state,gutter,etc. options]
+@each $state,$opts in $breaks {
+	$opts: map-merge(( gutter-width:map-get($gutter,$state) ),$opts);
+	@include gridle_register_state($state,$opts);
+}
+
+//—> Orientations
+//
+@include gridle_register_state( portrait,(query:'(orientation: portrait)'));
+@include gridle_register_state(landscape,(query:'(orientation:landscape)'));
+
+/////////////////////////////////////////////////////////////
+//                                                         //
+//                 GENERATE GRIDLE CLASSES                 //
+//                                                         //
+/////////////////////////////////////////////////////////////
+
+@include gridle_generate_classes();

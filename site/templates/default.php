@@ -1,21 +1,11 @@
-<? snippet('top') ?>
+<? snippet('meta/top') ?>
 
-	<? snippet('header') ?>
-	<? snippet('menu')   ?>
+	<? snippet('obj/menu')   ?>
 
 	<main class="main" role="main">
-		<div class="text">
-			<h3><?= $page->title()->html() ?></h3>
-			<?= $page->text()->kirbytext() ?>
-		</div>
-		<details>
-			<summary role="button"><strong>Location</strong></summary>
-			<p>
-				<code><?= $page->location() ?></code>
-			</p>
-		</details>
+		<?= $page->text()->kirbytext() ?>
 	</main>
 	
-	<? snippet('footer') ?>
+	<? snippet('obj/foot') ?>
 
-<? snippet('bottom') ?>
+<? snippet('meta/bottom') ?>

@@ -7,9 +7,11 @@ password: >
 language: en
 role: admin
 history:
-  - about
-  - null
+  - api-test-call
+  - api
   - home
-token: 35924723ae7d03271f04c238a71d6cdf017ca308
-firstname: Rafe
-lastname: Goldberg
+  - properties
+  - properties/villa-rebecca
+firstname: Raphael
+lastname: J. Goldberg
+token: 2e1c610eb144de0bf71641872e91634b89422eb0

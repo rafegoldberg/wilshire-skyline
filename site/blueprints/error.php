@@ -5,9 +5,9 @@ pages: false
 files: false
 fields:
   title:
-    label: Title
+    label: Page Title
     type:  text
   text:
-    label: Text
+    label: <span style="color:#F90303;">Error Message</span>
     type:  textarea
     size:  large

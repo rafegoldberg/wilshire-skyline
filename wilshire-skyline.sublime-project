@@ -2,10 +2,89 @@
 	"folders":
 	[
 		{
+			"folder_exclude_patterns": [
+				"templates",
+				"snippets",
+				"cache",
+				"plugins",
+				"tags",
+				"blueprints"
+			],
+			"name": "Site",
+			"path": "site"
+		},
+		{
+			"name": "│ templates",
+			"path": "site/templates"
+		},
+		{
+			"name": "│ snippets",
+			"path": "site/snippets"
+		},
+		{
+			"name": "└ blueprints",
+			"path": "site/blueprints"
+		},
+		{
+			"name": "│ plugins",
+			"path": "site/plugins"
+		},
+		{
+			"name": "└ tags",
+			"path": "site/tags"
+		},
+		{
+			"folder_exclude_patterns": [
+				"assets/css",
+				"assets/scss",
+				"assets/js"
+			],
+			"name": "Assets",
+			"path": "assets"
+		},
+
+		{
+			"file_exclude_patterns": [
+				"app/lib.*/*"
+			],
+			"name": "│ scss",
+			"path": "assets/scss"
+		},
+		{
+			"file_exclude_patterns": [
+				"**/build/pre/*",
+				"**/build/post/*"
+			],
+			"name": "└★ css.build",
+			"path": "assets/css"
+		},
+
+		{
+			"folder_exclude_patterns": [
+				"build"
+			],
+			"name": "└ js",
+			"name": "│ js",
+			"path": "assets/js"
+		},
+		{
+			"file_exclude_patterns": [
+				"**/build/pre/*",
+				"**/build/post/*"
+			],
+			"name": "└★ js.build",
+			"path": "assets/js/build"
+		},
+
+		{
 			"file_exclude_patterns": [
 				".*",
 				"*sublime*",
-				"*.map"
+				"*.map",
+
+				"*.json", //@shoddy
+				"*.php", //@shoddy
+				"license*", //@shoddy
 			],
 			"folder_exclude_patterns": [
 				".*",
@@ -17,81 +96,15 @@
 				"assets",
 				"node_modules"
 			],
-			"name": "/",
+			"name": "• • •",
 			"path": "."
 		},
-		{
-			"folder_exclude_patterns": [
-				"templates",
-				"snippets",
-				"cache",
-				"plugins",
-				"tags",
-				"blueprints"
-			],
-			"name": "site",
-			"path": "site"
-		},
-		{
-			"folder_exclude_patterns": [
-				"assets/css",
-				"assets/scss",
-				"assets/js"
-			],
-			"name": "assets",
-			"path": "assets"
-		},
-		{
-			"name": "│ scss",
-			"path": "assets/scss"
-		},
-		{
-			"file_exclude_patterns": [
-				"**/build/pre/*",
-				"**/build/post/*"
-			],
-			"name": "└▸︎ build.css",
-			"path": "assets/css"
-		},
-		{
-			"folder_exclude_patterns": [
-				"build"
-			],
-			"name": "│ js",
-			"path": "assets/js"
-		},
-		{
-			"file_exclude_patterns": [
-				"**/build/pre/*",
-				"**/build/post/*"
-			],
-			"name": "└▸︎ build.js",
-			"path": "assets/js/build"
-		},
-		{
-			"name": "│ blueprints",
-			"path": "site/blueprints"
-		},
-		{
-			"name": "│ templates",
-			"path": "site/templates"
-		},
-		{
-			"name": "│ snippets",
-			"path": "site/snippets"
-		},
-		{
-			"name": "│ plugins",
-			"path": "site/plugins"
-		},
-		{
-			"name": "└ tags",
-			"path": "site/tags"
-		},
+				
 		{
 			"name": "content",
 			"path": "content"
 		},
+
 		{
 			"file_exclude_patterns": [
 				"node_modules/*"
@@ -100,7 +113,7 @@
 				".*",
 				"node_modules/*/*"
 			],
-			"name": "nodes",
+			"name": "Packages",
 			"path": "node_modules"
 		}
 	],

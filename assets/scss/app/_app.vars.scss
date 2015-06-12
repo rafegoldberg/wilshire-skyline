@@ -74,6 +74,6 @@ $colors: map-merge($greys,$theme);
 // 
 
 $font-family: (
-	sans: "Helvetica Neue", Helvetica, Arial, sans-serif,
+	sans: '"Helvetica Neue", Helvetica, Arial, sans-serif',
 );
 @function _ff($fam){ @return #{map-get($font-family,$fam)}; } //@is[get preset typeface declarations]@type[get]

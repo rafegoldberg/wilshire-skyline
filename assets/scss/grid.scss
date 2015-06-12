@@ -1,0 +1,17 @@
+/////////////////////////////////////////////////////////////
+//                                                         //
+//                                                         //
+//                 GENERATE GRIDLE CLASSES                 //
+//                                                         //
+//                                                         //
+/////////////////////////////////////////////////////////////
+//
+// @STEPS
+// ---
+// 1. Import gridle plugin + settings
+// 2. Generate and print grid classes
+// 
+
+@import "app/app.vars";        //@STEP[1]
+@import "app/config.gridle";        //@STEP[1]
+@include gridle_generate_classes(); //@STEP[2]

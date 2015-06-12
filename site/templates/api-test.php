@@ -11,7 +11,13 @@
 				<button class="js-ajax" data-url="api" data-get="props"><code>$.AJAX</code><br><strong>Props</strong></button><br><br><button class="js-ajax" data-url="api" data-get="posts"><code>$.AJAX</code><br><strong>Posts</strong></button>
 				<? add_scripts('api/testcall') ?>
 				<style>
-				[class*="js-"] {
+				.api_test main {
+					text-align:center;
+					font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					font-weight: 300;
+				}
+				 button[class*="js-"] ,
+				.button[class*="js-"] {
 					min-width: 6em;
 					padding:.625em .75em;
 					font:inherit;

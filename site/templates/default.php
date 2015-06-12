@@ -1,4 +1,4 @@
-<? snippet('meta/top') ?>
+<? snippet('meta/pre') ?>
 
 	<? snippet('obj/menu')   ?>
 
@@ -8,4 +8,4 @@
 	
 	<? snippet('obj/foot') ?>
 
-<? snippet('meta/bottom') ?>
+<? snippet('meta/post') ?>

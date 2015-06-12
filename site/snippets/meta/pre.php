@@ -4,8 +4,9 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<? snippet('meta/data') ?>	
+	<? snippet('meta/top.data') ?>
 
+	<?= css('assets/css/grid.css') ?>
 	<?= css('assets/css/main.css') ?>
 	<? init_libs() ?>
 

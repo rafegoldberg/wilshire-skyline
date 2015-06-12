@@ -1,6 +1,8 @@
-<? snippet('meta/top') ?> 
+<? snippet('meta/pre',array('body'=>'api_test')) ?> 
 
-	<main style="text-align:center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 300;">
+	<? snippet('obj/menu') ?> 
+
+	<main>
 		<header>
 			<h1>API Test Page</h1>
 		</header>
@@ -24,4 +26,4 @@
 
 	<? snippet('obj/foot') ?>
 
-<? snippet('meta/bottom') ?> 
+<? snippet('meta/post') ?> 

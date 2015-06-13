@@ -3,4 +3,4 @@
 	url = https://rafegoldberg@github.com/getkirby/panel.git
 [submodule "kirby"]
 	path = kirby
-	url = https://github.com/getkirby/kirby.git
+	url = https://rafegoldberg@github.com/getkirby/kirby.git

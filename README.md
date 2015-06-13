@@ -5,44 +5,37 @@ A simple framework structure that lays the foundation for building simple websit
 
 ## Site Structure & Usage
 
-#### Kirby
+### Kirby
 
-This framework is built around the [Kirby CMS](http://getkirby.com). Kirby is a simple yet full-featured content managment system and includes a templating system, simple custom fields and post-types right out of the box, [as well as a number of other useful features](http://getkirby.com/docs/cheatsheet). 
+This framework is built around the [Kirby CMS](http://getkirby.com). Kirby is a simple yet full-featured content managment system and includes a templating system, simple custom fields and post-types right out of the box, [as well as a number of other useful features](http://getkirby.com/docs/cheatsheet).
 
 ###### Server Setup
-
 Kirby is a PHP-based content managment system and uses directory and file structures to manage your site's content. (As opposed to a database like Wordpress.) Because of this, it's pretty simple to get it up and running. All of Kirby's required files are included in the repo. The only other step is to run a basic web server that supports PHP. Simple, GUI tools like [XAMMP](https://www.apachefriends.org/index.html) or [MAMMP](https://www.mamp.info/en/) will work just fine, though there are also various Grunt packages which can spool up a basic server if you prefer.
 
-###### Site Managment
+###### Site Management Panel
 
-Kirby provides an admin “Panel” where you can manage your site, whether that's tweaking metadata, adjusting your page structure, or editing your content and copy. You can access the Panel from `[localhost/project/root]/panel`.
+Kirby provides an admin “Panel” where you can manage your site, whether that's tweaking metadata, adjusting your page structure, or editing your content and copy. You can access the Panel from `localhost/path/to/project/panel`.
 
-#### Grunt
+### Grunt
 
 This framework assumes a simple frontend architecture and workflow built using [Grunt](http://gruntjs.com). The site uses a number of Grunt tools  (NPM packages, or sometimes ‘plugins’) to compile SCSS and to concatenate and uglify Javascript.
 
-##### Setup
+###### Configuration
 
-The architecture of the Grunt project is defined in the `Gruntfile.js`. This setup file, along with the project config and the NPM package directory, are located in the project root alongside Kirby.
- 
-###### Packages
- 
-The project assumes that the set of NPM packages listed in `package.json` are installed. (See next section for a quick install guide.) The required packages are as follows:
+The architecture of the Grunt project is defined in the `Gruntfile.js`. This setup file, along with the project config and the NPM package directory, are located in the project root alongside Kirby. The project assumes that the set of NPM packages listed in `package.json` are installed. (See next section for a quick install guide.) The required packages are as follows:
 
-1. [`grunt`](http://gruntjs.com/getting-started)
-2. [`autoprefixer`](https://github.com/nDmitry/grunt-autoprefixer)
-3. [`contrib-clean`](https://github.com/gruntjs/grunt-contrib-clean)
-4. [`contrib-jshint`](https://github.com/gruntjs/grunt-contrib-jshint)
-5. [`contrib-nodeunit`](https://github.com/gruntjs/grunt-contrib-nodeunit)
-6. [`contrib-sass`](https://github.com/gruntjs/grunt-contrib-sass)
-7. [`contrib-uglify`](https://github.com/gruntjs/grunt-contrib-uglify)
-8. [`contrib-watch`](https://github.com/gruntjs/grunt-contrib-watch)
+- [`grunt`](http://gruntjs.com/getting-started)
+- [`autoprefixer`](https://github.com/nDmitry/grunt-autoprefixer)
+- [`contrib-clean`](https://github.com/gruntjs/grunt-contrib-clean)
+- [`contrib-jshint`](https://github.com/gruntjs/grunt-contrib-jshint)
+- [`contrib-nodeunit`](https://github.com/gruntjs/grunt-contrib-nodeunit)
+- [`contrib-sass`](https://github.com/gruntjs/grunt-contrib-sass)
+- [`contrib-uglify`](https://github.com/gruntjs/grunt-contrib-uglify)
+- [`contrib-watch`](https://github.com/gruntjs/grunt-contrib-watch)
 
 ###### Installation
 
-While the above NPM packages are declared as requirements the actual innards of these plugins are ignored by the Git repo. This means you have to install them when you initially pull the repo to your local machine.
-
-Installation of these plugins in your local repo requires the tiniest bit of command line action. But don't let that get you down – it's actually relatively simple if you know how to copy and paste! (The following steps assume that you already have [Node.js](https://nodejs.org/) and the [NPM cli tools](http://gruntjs.com/getting-started#installing-the-cli) running on your machine.)
+While the above NPM packages are declared as requirements the actual innards of these plugins are ignored by the Git repo. This means you have to install them when you initially pull the repo to your local machine. To be completely honest, this process does require a tiny bit of command line action. But don't let that get you down! Assuming you know how to copy and paste it should be pretty easy:
 
 1. `cd` in to the project's root directory
 2. From the root, run `npm install`
@@ -51,4 +44,4 @@ Installation of these plugins in your local repo requires the tiniest bit of com
 
 3. **Voila!** That was easy, no?
 
-This 'lil one-liner should now set about installing all of the necessary dependencies listed above. Once it's finished up you should be set to rock. Now you can run `grunt` to compile SCSS, concatenate and uglify JS, etc. Or try some of the other predefined tasks from the `Gruntfile.js` to auto-watch for changes, or run concurrent process.
+(These steps assume that you *already* have [Node.js](https://nodejs.org/) and the [NPM cli tools](http://gruntjs.com/getting-started#installing-the-cli) running on your machine.) This 'lil one-liner should now set about installing all of the necessary dependencies listed above. Once it's finished up you should be set to rock. Now you can run `grunt` to compile SCSS, concatenate and uglify JS, etc. Or try some of the other predefined tasks from the `Gruntfile.js` to auto-watch for changes, or run concurrent process. or run concurrent process.

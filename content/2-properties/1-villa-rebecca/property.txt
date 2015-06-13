@@ -2,8 +2,8 @@ Title: Villa Rebecca
 
 ----
 
-Text: Lorem ipsum consectetur adipisicing elit. Quibusdam quod tempore, nisi sed ratione.
+Text: Converted to condos in 2009. Major renovations completed in 2010. On Golden Triangle.
 
 ----
 
-Location: {"address":"111 S. Norton Ave. LA CA 90004","lat":"34.072655","lng":"-118.317564"}
+Location: {"address":"310 N. Crescent Drive, Beverly Hills, CA 90210","lat":"34.070391","lng":"-118.398481"}

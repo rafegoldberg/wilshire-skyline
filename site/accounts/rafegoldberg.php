@@ -7,11 +7,11 @@ password: >
 language: en
 role: admin
 history:
-  - api-test-call
-  - api
-  - home
   - properties
+  - properties/malibu-cove
+  - properties/zvi-coast
   - properties/villa-rebecca
+  - properties/rita-regency
 firstname: Raphael
 lastname: J. Goldberg
-token: 2e1c610eb144de0bf71641872e91634b89422eb0
+token: 378209b0a0a1c57529fbd992f753efd9c1644894

@@ -1,0 +1,9 @@
+Title: Chateau Elizabeth
+
+----
+
+Text: Double lot, zoned for 14 condos by right. Text amendment being pursued for additional density. Prime North Beverly Hills location.
+
+----
+
+Location: {"address":"1737 N. Las Palmas Ave., Los Angeles, CA 90028","lat":"34.102756","lng":"-118.33654100000001"}

@@ -1,12 +1,12 @@
 <nav role="navigation">
-	<ul class="menu">
+	<ul class="nav">
 	<? foreach($pages->visible() as $p): ?>
-		<li>
-			<a <? e($p->isOpen(), ' class="active"') ?> href="<?= $p->url() ?>">
+		<li class="<?e($p->isOpen(),' current')?>">
+			<a href="<?= $p->url() ?>">
 				<?= $p->title()->html() ?>
 			</a>
 			<? if($p->hasVisibleChildren()): ?>
-				<ul class="submenu">
+				<ul class="subnav">
 					<? foreach($p->children()->visible() as $p): ?>
 						<li>
 							<a href="<?= $p->url() ?>"><?= $p->title()->html() ?></a>
@@ -15,17 +15,17 @@
 				</ul>
 			<? endif ?>
 			<style>
-			.menu li {
+			.nav li {
 				display: inline-block;
 				position: relative;
 			}
-			.menu li > .submenu {
+			.nav li > .subnav {
 				position: absolute;
 				top: 100%;
 				left: 0;
 				display: none;
 			}
-			.menu li:hover > .submenu {
+			.nav li:hover > .subnav {
 				display: block;
 			}
 			</style>

@@ -2,36 +2,16 @@
 	"folders":
 	[
 		{
-			"folder_exclude_patterns": [
-				"templates",
-				"snippets",
-				"cache",
-				"plugins",
-				"tags",
-				"blueprints"
-			],
-			"name": "Site",
-			"path": "site"
-		},
-		{
-			"name": "│ templates",
-			"path": "site/templates"
-		},
-		{
-			"name": "│ snippets",
-			"path": "site/snippets"
-		},
-		{
-			"name": "└ blueprints",
+			"name": "◼︎ BLUEPRINTS",
 			"path": "site/blueprints"
 		},
 		{
-			"name": "│ plugins",
-			"path": "site/plugins"
+			"name": "│  templates",
+			"path": "site/templates"
 		},
 		{
-			"name": "└ tags",
-			"path": "site/tags"
+			"name": "└  snippets",
+			"path": "site/snippets"
 		},
 		{
 			"folder_exclude_patterns": [
@@ -39,7 +19,7 @@
 				"assets/scss",
 				"assets/js"
 			],
-			"name": "Assets",
+			"name": "◼︎ ASSETS",
 			"path": "assets"
 		},
 
@@ -47,41 +27,56 @@
 			"file_exclude_patterns": [
 				"app/lib.*/*"
 			],
-			"name": "│ scss",
+			"name": "│  scss",
 			"path": "assets/scss"
 		},
-		{
-			"file_exclude_patterns": [
-				"**/build/pre/*",
-				"**/build/post/*"
-			],
-			"name": "└★ css.build",
-			"path": "assets/css"
-		},
+		// {
+		// 	"file_exclude_patterns": [
+		// 		"**/build/pre/*",
+		// 		"**/build/post/*"
+		// 	],
+		// 	"name": "└★ css.build",
+		// 	"path": "assets/css"
+		// },
 
 		{
 			"folder_exclude_patterns": [
 				"build"
 			],
-			"name": "└ js",
-			"name": "│ js",
+			"name": "└  js",
+			// "name": "│  js",
 			"path": "assets/js"
 		},
+		// {
+		// 	"file_exclude_patterns": [
+		// 		"**/build/pre/*",
+		// 		"**/build/post/*"
+		// 	],
+		// 	"name": "└★ js.build",
+		// 	"path": "assets/js/build"
+		// },
 		{
-			"file_exclude_patterns": [
-				"**/build/pre/*",
-				"**/build/post/*"
+			"folder_exclude_patterns": [
+				"templates",
+				"snippets",
+				"cache",
+				// "plugins",
+				// "tags",
+				"blueprints"
 			],
-			"name": "└★ js.build",
-			"path": "assets/js/build"
+			"name": "◼︎ SITE",
+			"path": "site"
 		},
-
+		{
+			"name": "│  content",
+			"path": "content"
+		},
 		{
 			"file_exclude_patterns": [
 				".*",
 				"*sublime*",
 				"*.map",
-
+				"Icon",
 				"*.json", //@shoddy
 				"*.php", //@shoddy
 				"license*", //@shoddy
@@ -96,25 +91,8 @@
 				"assets",
 				"node_modules"
 			],
-			"name": "• • •",
+			"name": "└<project files>",
 			"path": "."
-		},
-				
-		{
-			"name": "content",
-			"path": "content"
-		},
-
-		{
-			"file_exclude_patterns": [
-				"node_modules/*"
-			],
-			"folder_exclude_patterns": [
-				".*",
-				"node_modules/*/*"
-			],
-			"name": "Packages",
-			"path": "node_modules"
 		}
 	],
 	"settings":

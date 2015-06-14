@@ -7,11 +7,11 @@ password: >
 language: en
 role: admin
 history:
+  - contact
   - about
   - properties
   - home
   - footer
-  - contact
 firstname: Raphael
 lastname: J. Goldberg
 token: 378209b0a0a1c57529fbd992f753efd9c1644894

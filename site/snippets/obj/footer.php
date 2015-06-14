@@ -1,3 +1,4 @@
 <footer id="footer" role="contentinfo">
-	Thanks!
+	<hr>
+	© Wilshire Skyline Inc., 2015-<?= date('Y') ?>
 </footer>

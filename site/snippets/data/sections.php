@@ -1,5 +1,4 @@
 <!-- @[sections]:start -->
-	<hr>
 	<? foreach($pages->visible() as $p): ?>
 		<section>
 			<p style="text-align:right;">
@@ -8,5 +7,4 @@
 			<?= $p->text()->kirbytext() ?>
 		</section>
 	<? endforeach ?>
-	<hr>
 <!-- @[sections]:end   -->

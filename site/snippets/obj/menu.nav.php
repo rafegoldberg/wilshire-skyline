@@ -14,7 +14,21 @@
 					<? endforeach ?>
 				</ul>
 			<? endif ?>
-
+			<style>
+			.menu li {
+				display: inline-block;
+				position: relative;
+			}
+			.menu li > .submenu {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				display: none;
+			}
+			.menu li:hover > .submenu {
+				display: block;
+			}
+			</style>
 		</li>
 	<? endforeach ?>
 	</ul>

@@ -11,4 +11,4 @@
 	<? init_libs() ?>
 
 </head>
-<body class='<?= isset($body)?$body:'' ?>'>
+<body class='grid-9 grid-t-10 grid-m-12 centered<?= isset($body)?$body:'' ?>'>

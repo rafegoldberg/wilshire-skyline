@@ -101,9 +101,8 @@ module.exports = function(grunt) {
 	// TASK SETUP
 	// 
 	grunt.registerTask('default', ['clean','uglify','concat','sass:dev','autoprefixer']);
-	grunt.registerTask('dev', ['watch:dev']);
-	grunt.registerTask('cnc', ['concurrent']);
-
-	grunt.registerTask('push', ['ftpush']);
+	grunt.registerTask('dev', ['concurrent']);
+	// grunt.registerTask('cnc', ['']);
+	// grunt.registerTask('push', ['ftpush']);
 
 };

@@ -2,4 +2,4 @@ Title: Contact
 
 ----
 
-Text: 
+Text: ![](http://localhost/projects/wilshire-skyline/content/3-contact/form.png)

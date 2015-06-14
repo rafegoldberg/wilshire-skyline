@@ -2,8 +2,8 @@ Title: About
 
 ----
 
-Text: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Text: 
 
-----
+This is an opportunity to invest in a portfolio of luxury multi-family residential properties located in the best sub-markets in Los Angeles.
 
-Location: {"address":"111 S. Norton Ave. LA CA","lat":"34.072655","lng":"-118.317564"}
+The portfolio consists of 16 properties (452 units/366,056 sq.ft.) located in Malibu, Santa Monica, Beverly Hills, West Hollywood and Hollywood.

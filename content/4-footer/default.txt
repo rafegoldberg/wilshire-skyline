@@ -2,4 +2,4 @@ Title: Footer
 
 ----
 
-Text: 
+Text: © Wilshire Skyline Inc., 2015

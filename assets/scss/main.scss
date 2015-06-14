@@ -1,13 +1,26 @@
-// Scaffolding
-@import "app/*";
 
-// Utilities
-@import "util/*";
-
-// UI Components
-@import "tags/*";
-@import "mods/*";
-@import "objs/*";
-
-// Pages/Templates
-@import "page/*";
+// |-----------------------------------------|
+// |                         MAIN STYLESHEET |
+// |-----------------------------------------|
+// |
+// + Scaffolding
+// |
+	@import "app/*";
+// |
+// + Utilities
+// |
+	@import "util/*";
+// |
+// + UI Components
+// |
+	@import "tags/*";
+	@import "mods/*";
+	@import "objs/*";
+// |
+// + Page Templates
+// |
+	@import "page/*";
+// |
+// + Contexts
+// |
+	@import "ctx/*";

@@ -4,5 +4,8 @@ html {
 		margin: 0 auto;
 		padding: 0;
 		font-size: 100%;
+		background-color: _c(brand); //@todo[modularize]@group[theme,colors]
+		color: _c(ivory);            //
+		border-color: inherit;       //@end[^]
 	}
 }

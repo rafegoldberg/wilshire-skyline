@@ -59,7 +59,7 @@ $theme: (
 	sky:     #E2E9F2,
 );
 $theme: map-merge($theme,(
-	navy: map-get($theme,dusk),
+	dusk: map-get($theme,navy),
 	eve:  map-get($theme,evening),
 	blue: map-get($theme,brand),
 ));  //@is[add aliases to $theme]@type[alias]

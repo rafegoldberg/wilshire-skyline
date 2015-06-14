@@ -1,2 +1,19 @@
-**/.*cache
+# GRUNT
+assets/css/
 node_modules/
+
+# KIRBY
+
+#—> Account
+site/accounts/*.php
+assets/avatars/*
+!assets/avatars/.gitkeep
+
+#-> Thumbs
+thumbs/*
+!thumbs/index.html
+
+# CACHE
+
+**/.*cache
+!site/cache/index.html

@@ -159,6 +159,10 @@ hr {
   border-width: 1px 0 0;
 }
 
+th {
+  text-align: left;
+}
+
 .overflow {
   overflow: hidden;
   -webkit-overflow-scrolling: touch;

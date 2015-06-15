@@ -130,7 +130,7 @@ html body {
   font-size: 100%;
   background-color: #006FAE;
   color: #FCFCFC;
-  border-color: inherit;
+  border-color: #1C5286;
 }
 
 p img {
@@ -141,7 +141,7 @@ p img {
 key {
   display: inline;
   margin: 0 0.15em;
-  padding: 0 .3em;
+  padding: 1px .3em;
   white-space: pre-wrap;
   border: 1px solid;
   border-radius: 3px;
@@ -155,8 +155,8 @@ ul, ol {
 }
 
 hr {
+  border: solid #1C5286;
   border-width: 1px 0 0;
-  border-style: solid;
 }
 
 .overflow {

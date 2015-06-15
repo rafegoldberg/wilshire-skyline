@@ -43,13 +43,13 @@ $greys: (
 	stroke:  #CCCCCC,
 	ivory:   #FCFCFC,
 );
-$greys: map-merge($greys,(
+$greys: map-merge((
 	dark:   map-get($greys,slate),
 	gray:   map-get($greys,grey),
 	border: map-get($greys,stroke),
 	bdr:    map-get($greys,stroke),
 	light:  map-get($greys,ivory),
-)); //@is[add aliases to $greys]@type[alias]
+),$greys); //@is[add aliases to $greys]@type[alias]
 @function _grey($key){ @return map-get($greys,$key); } //@is[get any/all greyscale colors]@type[get]
 
 $theme: (
@@ -58,11 +58,11 @@ $theme: (
 	brand:   #006FAE,
 	sky:     #E2E9F2,
 );
-$theme: map-merge($theme,(
+$theme: map-merge((
 	dusk: map-get($theme,navy),
 	eve:  map-get($theme,evening),
 	blue: map-get($theme,brand),
-));  //@is[add aliases to $theme]@type[alias]
+),$theme); //@is[add aliases to $theme]@type[alias]
 @function _theme($key){ @return map-get($theme,$key); } //@is[get any/all preset theme colors]@type[get]
 
 $colors: map-merge($greys,$theme);

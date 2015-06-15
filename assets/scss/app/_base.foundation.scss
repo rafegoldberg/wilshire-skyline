@@ -6,6 +6,6 @@ html {
 		font-size: 100%;
 		background-color: _c(brand); //@todo[modularize]@group[theme,colors]
 		color: _c(ivory);            //
-		border-color: inherit;       //@end[^]
+		border-color: _c(eve)        //@end[^]
 	}
 }

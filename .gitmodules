@@ -4,3 +4,6 @@
 [submodule "kirby"]
 	path = kirby
 	url = https://rafegoldberg@github.com/getkirby/kirby.git
+[submodule "site/fields/markdown"]
+	path = site/fields/markdown
+	url = https://rafegoldberg@github.com/JonasDoebertin/kirby-visual-markdown.git

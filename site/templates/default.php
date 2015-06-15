@@ -6,6 +6,6 @@
 		<?= $page->text()->kirbytext() ?>
 	</main>
 	
-	<? snippet('obj/foot') ?>
+	<? snippet('obj/footer') ?>
 
 <? snippet('meta/post') ?>

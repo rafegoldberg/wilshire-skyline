@@ -1,10 +1,18 @@
 <!-- @[sections]:start -->
-	<? foreach($pages->visible() as $p): ?>
+	<? foreach($pages->visible() as $pg): ?>
 		<section>
 			<p style="text-align:right;">
-				<key>section:<strong style="text-transform:lowercase;"><?=$p->title()?></strong>: <code><?=$p->hash()?></code></key>
+				<key><strong style="text-transform:lowercase;"><?=$pg->title()?></strong> <code>#<?=$pg->hash()?></code></key>
+
+				<? if($pg->hasVisibleChildren()): ?>
+					<? foreach($pg->children()->visible() as $sub): ?>
+						<div>
+							<small><a href="<?= $sub->url() ?>"><?= $sub->title()->html() ?></a></small>
+						</div>
+					<? endforeach ?>
+				<? endif; ?>
+
 			</p>
-			<?= $p->text()->kirbytext() ?>
 		</section>
 	<? endforeach ?>
 <!-- @[sections]:end   -->

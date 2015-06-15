@@ -1,7 +1,7 @@
 <? snippet('meta/pre') ?>
 
 	<main class="main" role="main">
-		<?= $page->text()->kirbytext() ?>
+		<h1><?= $site->title()->html() ?></h1>
 		<? snippet('data/sections'); ?>
 	</main>
 

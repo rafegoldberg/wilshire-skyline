@@ -3,54 +3,33 @@
 title: Site
 pages: default
 fields:
+	_line-0: type: line
 	title:
-		label: Title
 		type:  text
-	subtitle:
-		label: Subtitle
-		type:  text
-	author:
-		label: Author
-		type:  text
-	description:
-		label: Description
-		type:  textarea
-	keywords:
-		label: Keywords
-		type:  tags
-	copyright:
-		label: Copyright
-		type:  textarea
-	_detail-line1:
-		type: line
-	_detail-info_sands:
+		placeholder: Site Title
+		icon: text-width
+	_line-1: type: line
+	_info-metadata:
 		type: info
-		label: Search + Social
+		label: Metadata
 		text: >
 
-			<p><small style="font-size:11pt;">Set your Twitter and Facebook usernames to link any shared content on these social networks to your profile as publisher. Add a default thumbnail to enrich search results and share previews of your content.</small></p>
+			<small style="font-size:11pt;">Add keywords, social networking profiles or pages, and a site thumbnail to enrich your content in search results and social feeds.</small>
 
-		width: 1/2
+		width: 2/4
+	keywords:
+		label: <small style="font-size:11pt;opacity:.5;">Keywords</small>
+		type:  tags
+		width: 2/4
 	soc_twitter:
-		label: &nbsp; <small style="font-size:11pt;opacity:.5;">Profiles</small>
+		label: <small style="font-size:11pt;opacity:.5;">Profiles</small>
 		icon: twitter
 		placeholder: Twitter @handle
 		type: text
-		width: 1/2
+		width: 2/4
 	soc_facebook:
+		label: &nbsp;
 		icon: facebook
 		placeholder: Facebook page Insights ID
 		type: text
-		width: 1/2
-	thumb:
-		label: &nbsp; <small style="font-size:11pt;opacity:.5;">Thumbnail</small>
-		type: select
-		width: 1/2
-		icon: picture-o
-		options:
-			img1: Image 1
-			img2: Image 2
-			img3: Image 3
-			img4: Image 4
-	_detail-line3:
-		type: line
+		width: 2/4

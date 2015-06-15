@@ -2,4 +2,32 @@ Title: Wilshire Skyline
 
 ----
 
-Text: 
+Author: 
+
+----
+
+Description: 
+
+----
+
+Keywords: Los Angeles,Real Estate
+
+----
+
+Copyright: © 2015
+
+----
+
+Subtitle: 
+
+----
+
+Soc-twitter: 
+
+----
+
+Soc-facebook: 
+
+----
+
+Thumb: 

@@ -2,6 +2,10 @@
 	"folders":
 	[
 		{
+			"file_exclude_patterns": [
+				"*.eot", "*.svg", "*.ttf", "*.woff",
+				"fonts/*.html"
+			],
 			"folder_exclude_patterns": [
 				"assets/css",
 				"assets/scss",

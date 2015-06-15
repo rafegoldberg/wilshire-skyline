@@ -49,11 +49,3 @@
 //
 @include gridle_register_state( portrait,(query:'(orientation: portrait)'));
 @include gridle_register_state(landscape,(query:'(orientation:landscape)'));
-
-/////////////////////////////////////////////////////////////
-//                                                         //
-//                 GENERATE GRIDLE CLASSES                 //
-//                                                         //
-/////////////////////////////////////////////////////////////
-
-// @include gridle_generate_classes();

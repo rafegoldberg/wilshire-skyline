@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url("../fonts/din-alt/import.css");
+@import url("../fonts/din-pro/import.css");
 /**
  * Str replace
  *
@@ -133,11 +135,6 @@ html body {
   border-color: #1C5286;
 }
 
-p img {
-  display: block;
-  max-width: 100%;
-}
-
 key {
   display: inline;
   margin: 0 0.15em;
@@ -150,17 +147,37 @@ key {
   color: #FCFCFC;
 }
 
-ul, ol {
-  padding: 0;
-}
-
 hr {
   border: solid #1C5286;
   border-width: 1px 0 0;
 }
 
-th {
+hgroup {
+  font-family: "DIN", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -.0075em;
+  text-rendering: geometricPrecision;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DIN", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -.0075em;
+  text-rendering: geometricPrecision;
+}
+
+p img {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  padding: 0;
+}
+
+table {
   text-align: left;
+}
+table th, table td {
+  padding: .25em .75em;
 }
 
 .overflow {

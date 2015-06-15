@@ -1,0 +1,3 @@
+@each $font in $font-imports {
+	@import url("../fonts/#{$font}/import.css");
+}

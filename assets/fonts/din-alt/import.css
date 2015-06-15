@@ -1,0 +1,150 @@
+@font-face {
+/*|
+|*| [FS:regular]
+|*| [FW:900]
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Black.eot');                                                /* IE9 Compat Modes */
+  src: url('DIN Alt-Black.eot?#iefix') format('embedded-opentype'),             /* IE6-IE8 */
+       url('DIN Alt-Black.woff') format('woff'),                                /* Modern Browsers */
+       url('DIN Alt-Black.ttf')  format('truetype'),                            /* Safari, Android, iOS */
+       url('DIN Alt-Black.svg#7c7640fda0546180e94c23f33b4be076') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  900; 
+}
+@font-face {
+/*|
+|*| [FS:italic]
+|*| [FW:900]
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Black Italic.eot');
+  src: url('DIN Alt-Black Italic.eot?#iefix') format('embedded-opentype'),
+       url('DIN Alt-Black Italic.woff') format('woff'),
+       url('DIN Alt-Black Italic.ttf')  format('truetype'),
+       url('DIN Alt-Black Italic.svg#1442132709d31567ea5cf032b4512e70') format('svg');
+       
+  font-style:   italic;
+  font-weight:  900; 
+}
+@font-face {
+/*|
+|*| [FS:regular]
+|*| [FW:700]
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Bold.eot');
+  src: url('DIN Alt-Bold.eot?#iefix') format('embedded-opentype'),
+       url('DIN Alt-Bold.woff') format('woff'),
+       url('DIN Alt-Bold.ttf')  format('truetype'),
+       url('DIN Alt-Bold.svg#11596ac102d0cf0c999454fe30285581') format('svg');
+       
+  font-style:   normal;
+  font-weight:  700; 
+}
+@font-face {
+/*|
+|*| [FS:italic]
+|*| [FW:700]
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Bold Italic.eot');
+  src: url('DIN Alt-Bold Italic.eot?#iefix') format('embedded-opentype'),
+       url('DIN Alt-Bold Italic.woff') format('woff'),
+       url('DIN Alt-Bold Italic.ttf')  format('truetype'),
+       url('DIN Alt-Bold Italic.svg#4138f0b9862d25c7724d8dba0b2da328') format('svg');
+       
+  font-style:   italic;
+  font-weight:  700; 
+}
+@font-face {
+/*|
+|*| [FS:regular]
+|*| [FW:600]
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Medium.eot');
+  src: url('DIN Alt-Medium.eot?#iefix') format('embedded-opentype'),
+       url('DIN Alt-Medium.woff') format('woff'),
+       url('DIN Alt-Medium.ttf')  format('truetype'),
+       url('DIN Alt-Medium.svg#a25db254e7b0964f41d92f86dc025a4e') format('svg');
+       
+  font-style:   normal;
+  font-weight:  600; 
+}
+@font-face {
+/*|
+|*| [FS:italic]
+|*| [FW:600]
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Medium Italic.eot');
+  src: url('DIN Alt-Medium Italic.eot?#iefix') format('embedded-opentype'),
+       url('DIN Alt-Medium Italic.woff') format('woff'),
+       url('DIN Alt-Medium Italic.ttf')  format('truetype'),
+       url('DIN Alt-Medium Italic.svg#15c9609e5818bab8d23996c1f6af1268') format('svg');
+       
+  font-style:   italic;
+  font-weight:  600; 
+}
+@font-face {
+/*|
+|*| [FS:regular]
+|*| [FW:400]
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Regular.eot');
+  src: url('DIN Alt-Regular.eot?#iefix') format('embedded-opentype'),
+       url('DIN Alt-Regular.woff') format('woff'),
+       url('DIN Alt-Regular.ttf')  format('truetype'),
+       url('DIN Alt-Regular.svg#fb303d2c96fd1183ecd819221a8e8062') format('svg');
+       
+  font-style:   normal;
+  font-weight:  400; 
+}
+@font-face {
+/*|
+|*| [FS:italic]
+|*| [FW:400]talic}
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Regular Italic.eot');
+  src: url('DIN Alt-Regular Italic.eot?#iefix') format('embedded-opentype'),
+       url('DIN Alt-Regular Italic.woff') format('woff'),
+       url('DIN Alt-Regular Italic.ttf')  format('truetype'),
+       url('DIN Alt-Regular Italic.svg#a80c58be68fd751dba75400dcde74710') format('svg');
+       
+  font-style:   italic;
+  font-weight:  400; 
+}
+@font-face {
+/*|
+|*| [FS:regular]
+|*| [FW:200]
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Light.eot');
+  src: url('DIN Alt-Light.eot?#iefix') format('embedded-opentype'),
+       url('DIN Alt-Light.woff') format('woff'),
+       url('DIN Alt-Light.ttf')  format('truetype'),
+       url('DIN Alt-Light.svg#5436ac54207c5189bdeadc2ad19bd6a9') format('svg');
+       
+  font-style:   normal;
+  font-weight:  200; 
+}
+@font-face {
+/*|
+|*| [FS:italic]
+|*| [FW:200]
+|*/
+  font-family: 'DIN';
+  src: url('DIN Alt-Light Italic.eot');
+  src: url('DIN Alt-Light Italic.eot?#iefix') format('embedded-opentype'),
+       url('DIN Alt-Light Italic.woff') format('woff'),
+       url('DIN Alt-Light Italic.ttf')  format('truetype'),
+       url('DIN Alt-Light Italic.svg#3128059dbd4958c3b1d250f495b3627e') format('svg');
+       
+  font-style:   italic;
+  font-weight:  200; 
+}

@@ -3,21 +3,18 @@
 // |                       DIRECTORY IMPORTS |
 // |-----------------------------------------|
 // |
-// | Media
-// |
-	@import "image";
-// |
-// | Preformatted
+// | Inline
 // |
 	@import "key";
 // |
 // | Content
 // |
-	@import "list";
 	@import "rule";
+	@import "heading.group";
+	@import "heading.levels";
 // |
-// | Tables
+// | Content
 // |
+	@import "image";
+	@import "list";
 	@import "table";
-	@import "table.th";
-	@import "table.td";

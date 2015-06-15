@@ -1,5 +1,5 @@
 <header id="header" role="banner">
 	<h1>
-		<a href="<?=url()?>"><?= $site->title()->html() ?></a>
+		<?= $site->title()->html() ?>
 	</h1>
 </header>

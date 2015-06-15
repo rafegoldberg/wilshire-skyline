@@ -1,4 +1,13 @@
+# ASSETS
+
+#-> Fonts
+**/fonts/**/*.eot
+**/fonts/**/*.svg
+**/fonts/**/*.ttf
+**/fonts/**/*.woff
+
 # GRUNT
+
 # assets/css/*
 node_modules/
 

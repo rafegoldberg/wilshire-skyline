@@ -8,7 +8,9 @@
 		</header>
 		<article>
 			<form>
-				<button class="js-ajax" data-url="api" data-get="props"><code>$.AJAX</code><br><strong>Props</strong></button><br><br><button class="js-ajax" data-url="api" data-get="posts"><code>$.AJAX</code><br><strong>Posts</strong></button>
+				<button class="js-ajax" data-url="api" data-get="props"><code>$.AJAX</code><br><strong>Props</strong></button>
+				<br><br>
+				<button class="js-ajax" data-url="api" data-get="pages"><code>$.AJAX</code><br><strong>Posts</strong></button>
 				<? add_scripts('api/testcall') ?>
 				<style>
 				.api_test main {

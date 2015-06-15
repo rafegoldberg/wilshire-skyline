@@ -8,11 +8,11 @@
 #STEP[3: get and store some data]
 	$data = false;
 	switch ($_GET['get']) {
-		case 'posts':
+		case 'pages':
 			$data = $pages->visible()->paginate(10);
 			break;
 		default:
-			$data = $pages->find('properties')->children()->visible()->paginate(10);
+			$data = $pages->children()->filterBy('template','property');
 			break;
 	}
 

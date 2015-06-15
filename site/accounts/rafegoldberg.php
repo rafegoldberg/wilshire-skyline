@@ -7,9 +7,7 @@ password: >
 language: en
 role: admin
 history:
-  - properties
-  - contact
-  - about
+  - props
   - home
 firstname: Raphael
 lastname: J. Goldberg

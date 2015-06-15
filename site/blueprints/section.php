@@ -1,7 +1,7 @@
 <?php if(!defined('KIRBY')) exit ?>
 
-title: Default Page
-pages: true
+title: Content Section
+pages: false
 files: true
 fields:
   title:
@@ -9,4 +9,4 @@ fields:
     type:  text
   text:
     label: Content
-    type:  textarea
+    type:  markdown

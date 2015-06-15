@@ -4,7 +4,7 @@
 			<tr>
 				<tr>
 					<th>Title:</th>
-					<td>“<?=$pg->title()?>”</td>
+					<td><em>“<?=$pg->title()?>”</em></td>
 				</tr>
 				<tr>
 					<th>Template:</th>

@@ -134,7 +134,7 @@ html body {
   border-color: #1C5286;
 }
 
-a:visited, a:active {
+a, a:link, a:visited {
   color: inherit;
 }
 
@@ -157,37 +157,37 @@ hr {
 }
 
 hgroup {
-  padding: 1.025em;
+  padding: 16px;
 }
 @media (min-width: 36.063em) {
   hgroup {
-    padding: 1.05em;
+    padding: 17px;
   }
 }
 @media (min-width: 75em) {
   hgroup {
-    padding: 1.075em;
+    padding: 17px;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "DIN", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: -.0075em;
+  letter-spacing: -.01em;
   text-rendering: geometricPrecision;
   margin: .375em auto;
   line-height: 1.125;
 }
 
 h1 {
-  font-weight: 900;
-}
-
-h2, h3 {
   font-weight: 700;
 }
 
-h4, h5, h6 {
+h2, h3 {
   font-weight: 600;
+}
+
+h4, h5, h6 {
+  font-weight: 400;
 }
 
 h5, h6 {
@@ -195,86 +195,86 @@ h5, h6 {
 }
 
 h1 {
-  font-size: 1.48451em;
+  font-size: 24px;
 }
 @media (min-width: 36.063em) {
   h1 {
-    font-size: 2.18287em;
+    font-size: 35px;
   }
 }
 @media (min-width: 75em) {
   h1 {
-    font-size: 3.18079em;
+    font-size: 51px;
   }
 }
 
 h2 {
-  font-size: 1.41297em;
+  font-size: 24px;
 }
 @media (min-width: 36.063em) {
   h2 {
-    font-size: 1.97993em;
+    font-size: 35px;
   }
 }
 @media (min-width: 75em) {
   h2 {
-    font-size: 2.75244em;
+    font-size: 51px;
   }
 }
 
 h3 {
-  font-size: 1.34489em;
+  font-size: 23px;
 }
 @media (min-width: 36.063em) {
   h3 {
-    font-size: 1.79586em;
+    font-size: 32px;
   }
 }
 @media (min-width: 75em) {
   h3 {
-    font-size: 2.38178em;
+    font-size: 44px;
   }
 }
 
 h4 {
-  font-size: 1.28008em;
+  font-size: 22px;
 }
 @media (min-width: 36.063em) {
   h4 {
-    font-size: 1.62889em;
+    font-size: 29px;
   }
 }
 @media (min-width: 75em) {
   h4 {
-    font-size: 2.06103em;
+    font-size: 38px;
   }
 }
 
 h5 {
-  font-size: 1.18869em;
+  font-size: 20px;
 }
 @media (min-width: 36.063em) {
   h5 {
-    font-size: 1.4071em;
+    font-size: 26px;
   }
 }
 @media (min-width: 75em) {
   h5 {
-    font-size: 1.65905em;
+    font-size: 33px;
   }
 }
 
 h6 {
-  font-size: 1.10381em;
+  font-size: 18px;
 }
 @media (min-width: 36.063em) {
   h6 {
-    font-size: 1.21551em;
+    font-size: 19px;
   }
 }
 @media (min-width: 75em) {
   h6 {
-    font-size: 1.33547em;
+    font-size: 21px;
   }
 }
 
@@ -483,6 +483,10 @@ html.t .overflowWrap-tablet_fade-out:before {
   .overflowWrap-tablet_fade-out:before {
     display: none !important;
   }
+}
+
+.test {
+  font-size: 0.88889em;
 }
 
 /*# sourceMappingURL=main.css.map */

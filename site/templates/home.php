@@ -2,8 +2,7 @@
 
 	<main class="main" role="main">
 		<? foreach($pages->visible() as $p): ?>
-			<?$snippet= 'sections/'.$p->intendedTemplate() ?>
-			<? snippet($snippet,array('p'=>$p)) ?>
+			<? snippet('obj/panel',array('p'=>$p)) ?>
 		<? endforeach ?>
 	</main>
 

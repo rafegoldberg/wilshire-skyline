@@ -1,8 +1,0 @@
-<?
-#|
-#|
-#|
-?>
-<section>
-	<?= $item->text() ?>
-</section>

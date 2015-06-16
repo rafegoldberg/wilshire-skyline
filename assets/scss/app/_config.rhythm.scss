@@ -1,7 +1,21 @@
+//////////////////////////////////////////////////////////////
+//                                                          //
+//                   VERTICAL RHYTHM CALC                   //
+//                                                          //
+//––––––––––––––––––––––––––––––––––––––––––––––––––––––––––//
+// Repository:    github.com/modularscale/modularscale-sass //
+// Author:        http://scottkellum.com/                   //
+// Documentation: http://www.modularscale.com/              //
+//////////////////////////////////////////////////////////////
+
+// Import Library
+//
 @import "lib.rhythm/modular-scale";
 // @import "modscale/modular-scale-tests";
 
-$ms-base: 1em;
+// Setup
+//
+$ms-base:  1em;
 $ms-ratio: $minor-second;
 $ms-range:
   1.025 _breaks(m,min-width),

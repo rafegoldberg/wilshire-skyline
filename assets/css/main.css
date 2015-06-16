@@ -149,6 +149,7 @@ key {
 hr {
   border: solid #1C5286;
   border-width: 1px 0 0;
+  margin: initial;
 }
 
 hgroup {
@@ -263,6 +264,7 @@ table {
 }
 table th, table td {
   padding: .25em .75em;
+  vertical-align: top;
 }
 
 .overflow {

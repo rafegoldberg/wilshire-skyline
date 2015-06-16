@@ -134,6 +134,10 @@ html body {
   border-color: #1C5286;
 }
 
+a:visited, a:active {
+  color: inherit;
+}
+
 key {
   display: inline;
   margin: 0 0.15em;
@@ -153,9 +157,17 @@ hr {
 }
 
 hgroup {
-  font-family: "DIN", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: -.0075em;
-  text-rendering: geometricPrecision;
+  padding: 1.025em;
+}
+@media (min-width: 36.063em) {
+  hgroup {
+    padding: 1.05em;
+  }
+}
+@media (min-width: 75em) {
+  hgroup {
+    padding: 1.075em;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -1,5 +1,3 @@
 hgroup {
-	font-family: _ff(sans);
-	letter-spacing: -.0075em;
-	text-rendering: geometricPrecision;
+	@include ms-respond(padding,1);
 }

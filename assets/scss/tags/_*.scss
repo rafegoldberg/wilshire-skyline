@@ -3,17 +3,18 @@
 // |                       DIRECTORY IMPORTS |
 // |-----------------------------------------|
 // |
-// | Inline
+// | Flow
 // |
+	@import "link";
 	@import "key";
 // |
-// | Content
+// | Sectioning
 // |
 	@import "rule";
 	@import "heading.group";
 	@import "heading.levels";
 // |
-// | Content
+// | Text
 // |
 	@import "image";
 	@import "list";

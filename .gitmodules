@@ -13,3 +13,9 @@
 [submodule "site/fields/wysiwyg"]
 	path = site/fields/wysiwyg
 	url = https://rafegoldberg@github.com/storypioneers/kirby-wysiwyg.git
+[submodule "site/plugins/kirbycms-extension-webhelper"]
+	path = site/plugins/kirbycms-extension-webhelper
+	url = https://rafegoldberg@github.com/fanningert/kirbycms-extension-webhelper.git
+[submodule "site/plugins/kirbycms-extension-gmaps"]
+	path = site/plugins/kirbycms-extension-gmaps
+	url = https://rafegoldberg@github.com/fanningert/kirbycms-extension-gmaps.git

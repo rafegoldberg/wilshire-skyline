@@ -4,108 +4,27 @@
 		{
 			"file_exclude_patterns":
 			[
+				"Icon",
+				"kirby/*",
+				"panel/*",
+				"*sublime*",
+				"*.md",
+				"license*",
+				"node_modules/*",
+				"scss/app/lib.*/**/*",
+				"*.map",
 				"*.eot",
 				"*.svg",
 				"*.ttf",
-				"*.woff",
-				"fonts/*.html"
+				"*.woff"
 			],
 			"folder_exclude_patterns":
 			[
-				"assets/css",
-				"assets/scss",
-				"assets/js"
+				"kirby/*",
+				"panel/*",
+				".*cache*",
+				"assets/js/build"
 			],
-			"name": "◼︎ ASSETS",
-			"path": "assets"
-		},
-		{
-			"file_exclude_patterns":
-			[
-				// "app/lib.*/*"
-			],
-			"name": "│  scss",
-			"path": "assets/scss"
-		},
-		{
-			"folder_exclude_patterns":
-			[
-				"build"
-			],
-			"name": "└  js",
-			"path": "assets/js"
-		},
-		{
-			"name": "◼︎ BLUEPRINTS",
-			"path": "site/blueprints"
-		},
-		{
-			"name": "│  templates",
-			"path": "site/templates"
-		},
-		{
-			"name": "└  snippets",
-			"path": "site/snippets"
-		},
-		{
-			"file_exclude_patterns":
-			[
-				"*.md",
-				"license*",
-				".*"
-			],
-			"folder_exclude_patterns":
-			[
-				"controllers",
-				"accounts",
-				"templates",
-				"tags",
-				"snippets",
-				"cache",
-				"plugins",
-				"blueprints"
-			],
-			"name": "◼︎ SITE",
-			"path": "site"
-		},
-		{
-			"name": "│  controllers",
-			"path": "site/controllers"
-		},
-		{
-			"name": "│  plugins",
-			"path": "site/plugins"
-		},
-		{
-			"name": "└  tags",
-			"path": "site/tags"
-		},
-		{
-			"name": "◼︎ CONTENT",
-			"path": "content"
-		},
-		{
-			"file_exclude_patterns":
-			[
-				"*sublime*",
-				"*.map",
-				"Icon",
-				"*.json",
-				"*.php",
-				"license*"
-			],
-			"folder_exclude_patterns":
-			[
-				".*",
-				"kirby",
-				"content",
-				"panel",
-				"site",
-				"thumbs",
-				"assets",
-				"node_modules"
-			],
-			"name": "└< project >",
 			"path": "."
 		}
 	],

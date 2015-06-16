@@ -12,9 +12,10 @@ h4, h5, h6 {font-weight: 600;  }
 
 h5, h6 { letter-spacing: .005em; }
 
-h1 { @include ms-respond(font-size,16); }
-h2 { @include ms-respond(font-size,14); }
-h3 { @include ms-respond(font-size,12); }
-h4 { @include ms-respond(font-size,10); }
-h5 { @include ms-respond(font-size,7) ; }
-h6 { @include ms-respond(font-size,4) ; }
+$headings: 16, 14, 12, 10, 7, 4;
+h1 { @include ms-respond(font-size,nth($headings,1)); }
+h2 { @include ms-respond(font-size,nth($headings,2)); }
+h3 { @include ms-respond(font-size,nth($headings,3)); }
+h4 { @include ms-respond(font-size,nth($headings,4)); }
+h5 { @include ms-respond(font-size,nth($headings,5)) ; }
+h6 { @include ms-respond(font-size,nth($headings,6)) ; }

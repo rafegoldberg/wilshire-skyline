@@ -2,11 +2,16 @@
 	"folders":
 	[
 		{
-			"file_exclude_patterns": [
-				"*.eot", "*.svg", "*.ttf", "*.woff",
+			"file_exclude_patterns":
+			[
+				"*.eot",
+				"*.svg",
+				"*.ttf",
+				"*.woff",
 				"fonts/*.html"
 			],
-			"folder_exclude_patterns": [
+			"folder_exclude_patterns":
+			[
 				"assets/css",
 				"assets/scss",
 				"assets/js"
@@ -14,56 +19,43 @@
 			"name": "◼︎ ASSETS",
 			"path": "assets"
 		},
-			{
-				"file_exclude_patterns": [
-					"app/lib.*/*"
-				],
-				"name": "│  scss",
-				"path": "assets/scss"
-			},
-				// {
-				// 	"file_exclude_patterns": [
-				// 		"**/build/pre/*",
-				// 		"**/build/post/*"
-				// 	],
-				// 	"name": "└★ css.build",
-				// 	"path": "assets/css"
-				// },
-			{
-				"folder_exclude_patterns": [
-					"build"
-				],
-				"name": "└  js",
-				// "name": "│  js",
-				"path": "assets/js"
-			},
-				// {
-				// 	"file_exclude_patterns": [
-				// 		"**/build/pre/*",
-				// 		"**/build/post/*"
-				// 	],
-				// 	"name": "└★ js.build",
-				// 	"path": "assets/js/build"
-				// },
+		{
+			"file_exclude_patterns":
+			[
+				// "app/lib.*/*"
+			],
+			"name": "│  scss",
+			"path": "assets/scss"
+		},
+		{
+			"folder_exclude_patterns":
+			[
+				"build"
+			],
+			"name": "└  js",
+			"path": "assets/js"
+		},
 		{
 			"name": "◼︎ BLUEPRINTS",
 			"path": "site/blueprints"
 		},
-			{
-				"name": "│  templates",
-				"path": "site/templates"
-			},
-			{
-				"name": "└  snippets",
-				"path": "site/snippets"
-			},
 		{
-			"file_exclude_patterns": [
+			"name": "│  templates",
+			"path": "site/templates"
+		},
+		{
+			"name": "└  snippets",
+			"path": "site/snippets"
+		},
+		{
+			"file_exclude_patterns":
+			[
 				"*.md",
 				"license*",
 				".*"
 			],
-			"folder_exclude_patterns": [
+			"folder_exclude_patterns":
+			[
 				"controllers",
 				"accounts",
 				"templates",
@@ -76,44 +68,46 @@
 			"name": "◼︎ SITE",
 			"path": "site"
 		},
-			{
-				"name": "│  controllers",
-				"path": "site/controllers"
-			},
-			{
-				"name": "│  plugins",
-				"path": "site/plugins"
-			},
-			{
-				"name": "└  tags",
-				"path": "site/tags"
-			},
+		{
+			"name": "│  controllers",
+			"path": "site/controllers"
+		},
+		{
+			"name": "│  plugins",
+			"path": "site/plugins"
+		},
+		{
+			"name": "└  tags",
+			"path": "site/tags"
+		},
 		{
 			"name": "◼︎ CONTENT",
 			"path": "content"
 		},
-			{
-				"file_exclude_patterns": [
-					"*sublime*",
-					"*.map",
-					"Icon",
-					"*.json", //@shoddy
-					"*.php", //@shoddy
-					"license*", //@shoddy
-				],
-				"folder_exclude_patterns": [
-					".*",
-					"kirby",
-					"content",
-					"panel",
-					"site",
-					"thumbs",
-					"assets",
-					"node_modules"
-				],
-				"name": "└< project >",
-				"path": "."
-			}
+		{
+			"file_exclude_patterns":
+			[
+				"*sublime*",
+				"*.map",
+				"Icon",
+				"*.json",
+				"*.php",
+				"license*"
+			],
+			"folder_exclude_patterns":
+			[
+				".*",
+				"kirby",
+				"content",
+				"panel",
+				"site",
+				"thumbs",
+				"assets",
+				"node_modules"
+			],
+			"name": "└< project >",
+			"path": "."
+		}
 	],
 	"settings":
 	{

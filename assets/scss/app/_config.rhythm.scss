@@ -15,8 +15,9 @@
 
 // Setup
 //
-$ms-base:  1em;
-$ms-ratio: $minor-second;
+$ms-base:  $fz-base;
+// $ms-ratio: $minor-second;
+$ms-ratio: $major-second;
 $ms-range:
   1.025 _breaks(m,min-width),
   1.050 _breaks(t,min-width),

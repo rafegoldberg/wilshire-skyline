@@ -9,11 +9,11 @@
 //////////////////////////////////////////////////////////////
 
 // Import Library
-//
+// 
 @import 'lib.gridle/gridle';
 
 // Setup
-//
+// 
 @include gridle_setup((
 	context : 12,
 	gutter-width : 1.5rem,
@@ -25,7 +25,7 @@
 /////////////////////////////////
 
 //-> Special Columns
-//
+// 
 // @include gridle_register_column("1on5", 1, 5);
 
 //-> Clear Classes
@@ -43,13 +43,15 @@
 // @include gridle_register_default_mobile_first_states();
 
 //—> Viewports
-//   @req[app.vars|for state,gutter,etc. options]
-@each $state,$opts in $breaks {
-	$opts: map-merge(( gutter-width:map-get($gutter,$state) ),$opts);
+//
+@each $state,$opts in $breaks { //@req[app.vars|for state,gutter,etc. options]
+	$opts: map-merge((
+		gutter-width: map-get($gutter,$state)
+	),$opts);
 	@include gridle_register_state($state,$opts);
 }
 
 //—> Orientations
-//
+// 
 @include gridle_register_state( portrait,(query:'(orientation: portrait)'));
 @include gridle_register_state(landscape,(query:'(orientation:landscape)'));

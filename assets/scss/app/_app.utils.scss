@@ -1,0 +1,30 @@
+/////////////////////////////////////////////////////
+//                                                 //
+//               SITE-WIDE UTILITIES               //
+//                                                 //
+//———————————————————————————————————————————————————
+//                    LAYOUT VARS                    
+// 
+// Map variables that consist of settings for every
+// state keyword as defined in the $breaks var. The
+// keywords currently in use are as follows:
+// - [d] desktop
+// - [t] tablet
+// - [m] mobile
+// 
+@function _breaks($name,$key) { @return map-get( map-get($breaks,$name), $key ); }
+
+@function _sz($z,$base:1em) { @return ms($z,$base); }
+@mixin scale($z,$p:font-size) { @include ms-respond($p,nth($scale,$z)); }
+// 
+//——————————————————————————————————————————————————
+//                  THEME & COLORS                  
+// 
+@function _grey($key){ @return map-get($greys,$key); } //@is[get any/all greyscale colors]@type[get]
+@function _theme($key){ @return map-get($theme,$key); } //@is[get any/all preset theme colors]@type[get]
+@function _c($key){ @return map-get($colors,$key); } //@is[get any/all preset UI colors]@type[getmerged]
+// 
+//———————————————————————————————————————————————————
+//                    TYPOGRAPHY                    
+// 
+@function _ff($fam){ @return #{map-get($ff,$fam)}; } //@is[get preset typeface declarations]@type[get]

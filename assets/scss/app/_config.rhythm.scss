@@ -1,0 +1,9 @@
+@import "lib.rhythm/modular-scale";
+// @import "modscale/modular-scale-tests";
+
+$ms-base: 1em;
+$ms-ratio: $minor-second;
+$ms-range:
+  1.025 _breaks(m,min-width),
+  1.050 _breaks(t,min-width),
+  1.075 _breaks(d,min-width);

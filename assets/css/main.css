@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import url("../fonts/din-alt/import.css");
-@import url("../fonts/din-pro/import.css");
 /**
  * Str replace
  *
@@ -162,6 +161,92 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "DIN", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: -.0075em;
   text-rendering: geometricPrecision;
+  margin: .375em auto;
+  line-height: 1.125;
+}
+
+h1 {
+  font-size: 1.48451em;
+}
+@media (min-width: 36.063em) {
+  h1 {
+    font-size: 2.18287em;
+  }
+}
+@media (min-width: 75em) {
+  h1 {
+    font-size: 3.18079em;
+  }
+}
+
+h2 {
+  font-size: 1.41297em;
+}
+@media (min-width: 36.063em) {
+  h2 {
+    font-size: 1.97993em;
+  }
+}
+@media (min-width: 75em) {
+  h2 {
+    font-size: 2.75244em;
+  }
+}
+
+h3 {
+  font-size: 1.34489em;
+}
+@media (min-width: 36.063em) {
+  h3 {
+    font-size: 1.79586em;
+  }
+}
+@media (min-width: 75em) {
+  h3 {
+    font-size: 2.38178em;
+  }
+}
+
+h4 {
+  font-size: 1.28008em;
+}
+@media (min-width: 36.063em) {
+  h4 {
+    font-size: 1.62889em;
+  }
+}
+@media (min-width: 75em) {
+  h4 {
+    font-size: 2.06103em;
+  }
+}
+
+h5 {
+  font-size: 1.18869em;
+}
+@media (min-width: 36.063em) {
+  h5 {
+    font-size: 1.4071em;
+  }
+}
+@media (min-width: 75em) {
+  h5 {
+    font-size: 1.65905em;
+  }
+}
+
+h6 {
+  font-size: 1.10381em;
+}
+@media (min-width: 36.063em) {
+  h6 {
+    font-size: 1.21551em;
+  }
+}
+@media (min-width: 75em) {
+  h6 {
+    font-size: 1.33547em;
+  }
 }
 
 p img {
@@ -260,7 +345,7 @@ html.m .overflowWrap-mobile_fade-in:after {
 html.m .overflowWrap-mobile_fade-out:before {
   display: none !important;
 }
-@media screen and (max-width: 36em) {
+@media screen and (min-width: 0) and (max-width: 36em) {
   .overflowWrap-mobile_fade {
     position: relative;
   }

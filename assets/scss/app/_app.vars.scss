@@ -23,9 +23,12 @@ $breaks: (
 		min-width: 36.063em,
 	),
 	m: (
+		min-width: 0,
 		max-width: 36em,
 	),
 ); //@is[base options for grd_reg_state()]@px[1200,(1199,481),480]@type[opt]
+@function _breaks($name,$key) { @return map-get( map-get($breaks,$name), $key ); }
+
 $gutter: (
 	d: 1.5rem,
 	t: 1rem,
@@ -73,7 +76,7 @@ $colors: map-merge($greys,$theme);
 //———————————————————————————————————————————————————
 // 
 
-$font-imports: din-alt din-pro;
+$font-imports: din-alt;
 $font-family: (
 	base: '"Helvetica Neue", Helvetica, Arial, sans-serif',
 	sans: '"DIN", "Helvetica Neue", Helvetica, Arial, sans-serif',

@@ -1,10 +1,16 @@
-h1, h2, h3, h4, h5, h6 {
+%title {
 	font-family: _ff(sans);
 	letter-spacing: -.0075em;
 	text-rendering: geometricPrecision;
 	margin: .375em auto;
 	line-height: 1.125;
 }
+
+h1         {font-weight: 900;  }
+h2, h3     {font-weight: 700;  }
+h4, h5, h6 {font-weight: 600;  }
+
+h5, h6 { letter-spacing: .005em; }
 
 h1 { @include ms-respond(font-size,16); }
 h2 { @include ms-respond(font-size,14); }

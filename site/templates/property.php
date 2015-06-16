@@ -10,6 +10,7 @@
 
 		<article>
 			<?= $page->text()->kirbytext() ?>
+			<a href=".">View All</a>
 		</article>
 
 		<details>

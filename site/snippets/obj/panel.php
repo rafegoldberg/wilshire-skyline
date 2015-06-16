@@ -1,5 +1,5 @@
 <section class="section		grid-12">
-	<div class="section--inner		grid-12 centered">
+	<div class="section--inner">
 		<hr>
 		<details class="gutter-top gutter-bottom">
 			<summary role="button">
@@ -9,7 +9,7 @@
 			</summary>
 			<div class="parent grid-12 gutter-top gutter-bottom">
 				<hr>
-				<table>
+				<table class="gutter-top">
 					<tbody>
 						<tr>
 							<tr>
@@ -28,16 +28,16 @@
 								<th>Hash:</th>
 								<td><code><?=$p->hash()?></code></td>
 							</tr>
-							<tr>
-								<th>Subpages:</th>
-								<td>
-									<? if ($p->hasVisibleChildren()) : ?>
+							<? if ($p->hasVisibleChildren()) : ?>
+								<tr>
+									<th>Subpages:</th>
+									<td>
 										<? foreach($p->children()->visible() as $prop): ?>
-											<? snippet('obj/panel',array('p'=>$prop)) ?>
+											<a href="<?=$prop->url()?>" style="color:#FAFAFA"><?=$prop->title()->html()?></a>,&nbsp;
 										<? endforeach ?>
-									<? endif; ?>
-								</td>
-							</tr>
+									</td>
+								</tr>
+							<? endif; ?>
 						</tr>
 					</tbody>
 				</table>

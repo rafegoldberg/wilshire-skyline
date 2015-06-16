@@ -1,4 +1,4 @@
-<footer id="footer" role="contentinfo">
+<footer id="footer" class="parent grid-12" role="contentinfo">
 	<hr>
-	© Wilshire Skyline Inc., 2015-<?= date('Y') ?>
+	<div class="gutter-top gutter-bottom">© Wilshire Skyline Inc., 2015-<?= date('Y') ?></div>
 </footer>

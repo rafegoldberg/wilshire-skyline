@@ -9,7 +9,6 @@ role: admin
 history:
   - testing
   - contact
-  - about
   - props
 firstname: Raphael
 lastname: J. Goldberg

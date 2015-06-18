@@ -2,8 +2,8 @@ Title: Intro
 
 ----
 
-Text: # Wilshire Skyline
+Text: Wilshire Skyline manages a portfolio of luxury multi-family residential properties located in prime sub-markets in Los Angeles.
 
 ----
 
-Media: flyout-icon.png
+Media: s-simplified.png

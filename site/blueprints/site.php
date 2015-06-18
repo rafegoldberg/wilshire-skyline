@@ -6,6 +6,7 @@ pages:
     - default
     - section
     - hero
+    - form
 fields:
 	title:
 		label: <style>[for$="field-title"],[for$="field-title"] *{display:none;}[for$="field-title"]~*>*{background-color:transparent !important;}[for$="field-title"]~*>.input{border-color:#B3B3B3;}[for$="field-title"]~.field-content{font-size:1.5em;margin-top:2.5rem;}[for$="field-title"]~.field-content .icon{margin-top:2px;transform:translateY(-50%);}</style>

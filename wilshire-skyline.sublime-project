@@ -28,12 +28,23 @@
 			"path": "."
 		},
 		{
-			"follow_symlinks": true,
-			"path": "/Applications/XAMPP/xamppfiles/htdocs/projects/wilshire-skyline/assets/scss"
+			"path": "assets/scss"
+		},
+		{
+			"path": "site/templates"
+		},
+		{
+			"path": "site/blueprints"
+		},
+		{
+			"path": "site/snippets"
 		}
 	],
 	"settings":
 	{
+		"FuzzyFileNav":
+		{
+		},
 		"FuzzyFilePath":
 		{
 		}

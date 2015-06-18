@@ -41,3 +41,14 @@ c::set('routes', array(
     }
   )
 ));
+
+# language support
+c::set('languages', array(
+    array(
+        'code'    => 'en',
+        'name'    => 'English',
+        'locale'  => 'en_US',
+        'default' => true,
+        'url'     => '/'
+    )
+));

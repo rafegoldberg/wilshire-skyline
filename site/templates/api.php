@@ -12,7 +12,7 @@
 			$data = $pages->visible()->paginate(10);
 			break;
 		default:
-			$data = $pages->children()->filterBy('template','property');
+			$data = $pages->filterBy('template','property');
 			break;
 	}
 

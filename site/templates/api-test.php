@@ -10,8 +10,17 @@
 			<form>
 				<button class="js-ajax" data-url="api" data-get="props"><code>$.AJAX</code><br><strong>Props</strong></button>
 				<br><br>
+
+				<hr>
+				<ul>
+					<? foreach($pages->siblings('template','properties')->pluck('title') as $title): ?>
+						<li><?= html($title) ?></li>
+					<? endforeach ?>
+				</ul>
+				<hr>
+
 				<button class="js-ajax" data-url="api" data-get="pages"><code>$.AJAX</code><br><strong>Posts</strong></button>
-				<? add_scripts('api/testcall') ?>
+				<? add_scripts('api') ?>
 				<style>
 				.api_test main {
 					text-align:center;

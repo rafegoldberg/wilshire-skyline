@@ -3,7 +3,7 @@
 // DEBUG FUNCTIONS             //
 /////////////////////////////////
 
-function jsl($arr=array('default'),$txt=false,$r=true){
+function jsl($arr=array(),$txt=false,$r=true){
 	$logtag = false;
 	if ($txt) {
 		$logtag = "<script class='php2js'>console.log('".$txt."',".json_encode($arr).")</script>";

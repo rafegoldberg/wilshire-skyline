@@ -1,0 +1,23 @@
+.heading {
+	font-family: _ff(sans);
+	letter-spacing: -.01em;
+	text-rendering: geometricPrecision;
+	margin: .375em auto;
+	line-height: 1.125;
+	@for $i from 1 through length($scale) {
+		&_#{$i} { 
+			@extend .heading, .size_#{$i};
+		}
+	}
+	// 
+	// ALTERNATES
+	// 
+	//-> Weights
+	&_1           { font-weight: 700; }
+	&_2, &_3      { font-weight: 600; }
+	&_4, &_5, &_6 { font-weight: 400; }
+	// 
+	//-> Kerning
+	&_5, &_6 { letter-spacing: .005em; }
+
+}

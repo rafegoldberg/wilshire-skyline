@@ -1,11 +1,12 @@
 <? snippet('meta/pre') ?>
 
-	<? snippet('obj/menu')   ?>
-
-	<main class="main" role="main">
-		<?= $page->text()->kirbytext() ?>
+	<? snippet('bloc/sidebar.php') ?>
+	
+	<main class="grid-9" role="main">
+		<h1><?= $page->title()->html() ?></h1>
+		<article>
+			<?= $page->text()->kirbytext() ?>
+		</article>
 	</main>
 	
-	<? snippet('obj/footer') ?>
-
 <? snippet('meta/post') ?>

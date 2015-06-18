@@ -1,8 +1,8 @@
 <? snippet('meta/pre') ?>
 
-	<? snippet('obj/menu')   ?>
-
-	<main class="main" role="main">
+	<? snippet('bloc/sidebar.php') ?>
+		
+	<main class="grid-9" role="main">
 
 		<header>
 			<h3><?= $page->title()->html() ?></h3>
@@ -10,7 +10,7 @@
 
 		<article>
 			<?= $page->text()->kirbytext() ?>
-			<a href=".">View All</a>
+			<a href=".`">View All</a>
 		</article>
 
 		<details>
@@ -27,6 +27,4 @@
 		
 	</main>
 	
-	<? snippet('obj/foot') ?>
-
 <? snippet('meta/post') ?>

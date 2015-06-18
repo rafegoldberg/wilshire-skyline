@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
 
 	<!--| Meta Definitions
@@ -24,4 +24,4 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
 
 </head>
-<body class='grid-10 grid-m-12 centered<?= isset($body)?$body:'' ?>'>
+<body class='parent grid-12 centered<?= isset($body)?$body:'' ?>'>

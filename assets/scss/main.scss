@@ -11,16 +11,12 @@
 // |
 	@import "util/*";
 // |
-// + UI Components
+// + Components
 // |
-	@import "tags/*";
-	@import "mods/*";
-	@import "objs/*";
-// |
-// + Page Templates
-// |
-	@import "page/*";
+	@import "bit/*";
+	@import "bloc/*";
+	@import "box/*";
 // |
 // + Contexts
 // |
-	@import "ctx/*";
+//	@import "ctx/*";

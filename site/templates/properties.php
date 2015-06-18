@@ -1,14 +1,12 @@
 <? snippet('meta/pre') ?>
 
-	<? snippet('obj/menu')   ?>
-
-	<main class="main" role="main">
+	<? snippet('bloc/sidebar.php') ?>
+	
+	<main class="grid-9" role="main">
 		<?= $page->text()->kirbytext() ?>
-		<? foreach($page->children()->visible() as $p): ?>
-			<? snippet('obj/panel',array('p'=>$p)) ?>
+		<? foreach($page->children()->visible() as $property): ?>
+			<? snippet('bloc/panel',array('panel'=>$property)) ?>
 		<? endforeach ?>
 	</main>
 	
-	<? snippet('obj/footer') ?>
-
 <? snippet('meta/post') ?>

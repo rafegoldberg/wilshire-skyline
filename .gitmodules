@@ -7,9 +7,6 @@
 [submodule "site/fields/markdown"]
 	path = site/fields/markdown
 	url = https://rafegoldberg@github.com/JonasDoebertin/kirby-visual-markdown.git
-[submodule "site/fields/selector"]
-	path = site/fields/selector
-	url = https://rafegoldberg@github.com/storypioneers/kirby-selector.git
 [submodule "site/fields/wysiwyg"]
 	path = site/fields/wysiwyg
 	url = https://rafegoldberg@github.com/storypioneers/kirby-wysiwyg.git
@@ -19,3 +16,6 @@
 [submodule "site/plugins/kirbycms-extension-gmaps"]
 	path = site/plugins/kirbycms-extension-gmaps
 	url = https://rafegoldberg@github.com/fanningert/kirbycms-extension-gmaps.git
+[submodule "site/fields/selector"]
+	path = site/fields/selector
+	url = https://rafegoldberg@github.com/storypioneers/kirby-selector.git

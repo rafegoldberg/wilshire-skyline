@@ -1,0 +1,9 @@
+.size {
+	// DEFAULTS
+	&_1 { @include scale(1); }
+	&_2 { @include scale(1); }
+	&_3 { @include scale(2); }
+	&_4 { @include scale(3); }
+	&_5 { @include scale(4) ; }
+	&_6 { @include scale(5) ; }
+}

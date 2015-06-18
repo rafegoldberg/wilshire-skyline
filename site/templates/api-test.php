@@ -1,8 +1,8 @@
 <? snippet('meta/pre',array('body'=>'api_test')) ?> 
 
-	<? snippet('obj/menu') ?> 
+	<? snippet('bloc/sidebar.php') ?>
 
-	<main>
+	<main class="dgrid-9" role="main">
 		<header>
 			<h1>API Test Page</h1>
 		</header>
@@ -31,7 +31,5 @@
 			</form>
 		</article>
 	</main>
-
-	<? snippet('obj/foot') ?>
 
 <? snippet('meta/post') ?> 

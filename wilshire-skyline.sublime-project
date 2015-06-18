@@ -26,6 +26,10 @@
 				"assets/js/build"
 			],
 			"path": "."
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Applications/XAMPP/xamppfiles/htdocs/projects/wilshire-skyline/assets/scss"
 		}
 	],
 	"settings":

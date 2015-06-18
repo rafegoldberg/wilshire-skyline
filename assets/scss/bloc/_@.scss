@@ -1,0 +1,14 @@
+@mixin bloc($opts:()) {
+	@include gridle_set((
+		grid: 12,
+		parent: true,
+	));
+	font-size: 1rem;
+	html.debug & {
+		outline: 1px solid magenta;
+		outline-offset: 1px;
+	}
+}
+
+//-> DEFAULT
+.bloc { @include bloc; }

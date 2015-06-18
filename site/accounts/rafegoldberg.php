@@ -7,11 +7,10 @@ password: >
 language: en
 role: admin
 history:
-  - props
-  - props/villa-rebecca
+  - testing
   - contact
   - about
-  - intro
+  - props
 firstname: Raphael
 lastname: J. Goldberg
 token: 378209b0a0a1c57529fbd992f753efd9c1644894

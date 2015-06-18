@@ -13,11 +13,11 @@
 
 //-> Config Sheets
 // 
-@import "config.gridle";
+@import "config.grid";
 @import "config.rhythm";
 
 //-> Base Sheets
 // 
-@import "base.gridle";
 @import "base.reset";
-@import "base.foundation";
+@import "base.frame";
+@import "base.grid";

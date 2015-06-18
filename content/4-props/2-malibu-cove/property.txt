@@ -1,9 +1,0 @@
-Title: Malibu Cove
-
-----
-
-Text: Across the street from “Billionaire’s Beach.” Prime Malibu. Potential condo conversion.
-
-----
-
-Location: {"address":"22147 Pacific Coast Highway, Malibu, CA 90265","lat":"34.039482","lng":"-118.65722299999999"}

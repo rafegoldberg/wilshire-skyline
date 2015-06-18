@@ -1,9 +1,0 @@
-Title: ZVI Coast
-
-----
-
-Text: Three blocks from 3rd Street Promenade and four blocks from the beach. North of Wilshire Boulevard.
-
-----
-
-Location: {"address":"938 Fourth Street, Santa Monica, CA 90403","lat":"34.0220948","lng":"-118.5022434"}

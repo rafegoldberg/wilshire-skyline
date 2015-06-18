@@ -256,10 +256,7 @@ html body {
   padding: 0;
   font-size: 100%;
   background: #006FAE;
-}
-
-img {
-  max-width: 100%;
+  color: #FCFCFC;
 }
 
 @media screen and (max-width: 400px) {
@@ -8487,6 +8484,10 @@ html.m .visible-m {
     background-color: #b2d8ee;
   }
 }
+img {
+  max-width: 100%;
+}
+
 html.debug .bit {
   outline: 1px dashed blue;
   outline-offset: -4px;

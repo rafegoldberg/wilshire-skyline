@@ -4,11 +4,11 @@
 //                     BITS                      //
 //                                               //
 //–––––––––––––––––––––––––––––––––––––––––––––––//
-// all bits import their own sub-sheets following
-// the `sheet.sub` naming convention. For
-// example, `_headings.defaults.scss` should be
-// imported by the `_headings.scss` rather than
-// in the main `bits/_*.scss`
+// all bits import their own sub-sheets          //
+// following the `sheet.sub` naming convention.  //
+// For example, `_headings.defaults.scss` should //
+// be imported by the `_headings.scss` rather    //
+// than in the main `bits/_*.scss`               //
 ///////////////////////////////////////////////////
 
 //-> Base Mixin

@@ -1,0 +1,17 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                                                                                   //
+//                                  STATELY CLASSES                                  //
+//                                                                                   //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+//
+//-> Displays
+//
+@include stately(display,block inline-block inline 'none','d',!important);
+@include stately(display,(
+	b : block       ,
+	ib: inline-block,
+	i : inline      ,
+	n : none        ,
+),'d',!important);

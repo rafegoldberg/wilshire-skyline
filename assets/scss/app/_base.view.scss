@@ -1,0 +1,11 @@
+html {
+	font: normal normal normal $fz-base/1 _ff(base);
+	body {
+		@include gridle_container;
+		margin: 0 auto;
+		padding: 0;
+		font-size: 100%;
+		background: _c(brand);
+		color: _c(ivory);
+	}
+}

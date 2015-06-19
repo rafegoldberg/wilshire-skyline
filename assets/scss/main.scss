@@ -3,13 +3,13 @@
 // |                         MAIN STYLESHEET |
 // |-----------------------------------------|
 // |
-// + Scaffolding
-// |
-	@import "app/*";
-// |
 // + Utilities
 // |
 	@import "util/*";
+// |
+// + Scaffolding
+// |
+	@import "app/*";
 // |
 // + Components
 // |
@@ -17,6 +17,6 @@
 	@import "bloc/*";
 	@import "box/*";
 // |
-// + Contexts
+// + Stately Classes
 // |
-//	@import "ctx/*";
+	@import "stately/*";

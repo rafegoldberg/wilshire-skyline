@@ -1,0 +1,9 @@
+.media {
+	@include box((
+		gridle: (vertical_align:middle)
+	));
+	@extend .ta-c;
+	&--attachment, &--content {
+		@include gridle_set((grid:6));
+	}
+}

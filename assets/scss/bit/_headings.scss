@@ -21,3 +21,8 @@
 	&_5, &_6 { letter-spacing: .005em; }
 
 }
+@for $i from 1 through 6 {
+	h#{$i} { 
+		@extend .heading, .heading_#{$i}, .size_#{$i} !optional;
+	}
+}

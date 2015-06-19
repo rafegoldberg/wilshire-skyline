@@ -1,7 +1,10 @@
 @mixin bloc($opts:()) {
 	@include gridle_set((
-		grid: 12,
-		parent: true,
+		grid:      12,
+		parent:    true,
+		container: true,
+		centered:  true,
+		no_gutter: top right bottom left,
 	));
 	font-size: 1rem;
 	html.debug & {

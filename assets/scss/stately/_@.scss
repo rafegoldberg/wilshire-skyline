@@ -1,0 +1,24 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                                                                                   //
+//                                  STATELY CLASSES                                  //
+//                                                                                   //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+
+@mixin stately($prop:'prop',$vals:'vals',$pre:'pre',$priority:true) {
+	$priority: if($priority,#{' !important'},null);
+    @each $val in $vals {
+		@if type-of($val)==list {
+			$c: nth($val,1); 
+			$v: nth($val,2)$priority;
+	        @include gridle_generate_custom_class(('#{$pre}-#{$c}','%-','%state'))   { #{$prop}: $v;
+		    	@content;
+		    }
+		} @else {
+	        @include gridle_generate_custom_class(('#{$pre}-#{$val}','%-','%state'))   { #{$prop}: $val;
+		    	@content;
+		    }
+		}
+    }
+}

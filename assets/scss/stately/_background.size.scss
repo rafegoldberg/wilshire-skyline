@@ -1,0 +1,25 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                                                                                   //
+//                                  STATELY CLASSES                                  //
+//                                                                                   //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+//
+//-> Background Size
+//
+@include stately(background-size,(
+	auto:    auto     ,
+	height:  auto 100%,
+	h:       auto 100%,
+	width:   100% auto,
+	w:       100% auto,
+	cover:   cover    ,
+	fill:    cover    ,
+	cv:      cover    ,
+	v:       cover    ,
+	contain: contain  ,
+	fit:     contain  ,
+	ct:      contain  ,
+	t:       contain  ,
+),'bgz',!important);

@@ -1,7 +1,10 @@
-/////////////////////////////////////////////////////
-//                                                 //
-//               SITE-WIDE UTILITIES               //
-//                                                 //
+///////////////////////////////////////////////////////////////////////////////////
+//                                                                               //
+//                            SITE-WIDE VAR UTILITIES                            //
+//                                                                               //
+///////////////////////////////////////////////////////////////////////////////////
+
+
 //———————————————————————————————————————————————————
 //                    LAYOUT VARS                    
 // 
@@ -14,8 +17,9 @@
 // 
 @function _breaks($name,$key) { @return map-get( map-get($breaks,$name), $key ); }
 
-@function _sz($z,$base:1em) { @return ms($z,$base); }
-@mixin scale($z,$p:font-size) { @include ms-respond($p,nth($scale,$z)); }
+@function _sz($z) { @return nth($scale,$z); }
+@function _ms($z,$base:$fz-base) { @return ms(_sz($z),$base); }
+@mixin scale($z,$property:font-size) { @include ms-respond($property,_sz($z)); }
 // 
 //——————————————————————————————————————————————————
 //                  THEME & COLORS                  

@@ -1,8 +1,7 @@
-.box {
-	@include gridle_set((
-		gutter: top right bottom left,
-	));
-	html.debug & {
-		outline: 1px solid cyan;
+@mixin box($opts:()) { 
+	&Box {
+		@include gridle_set((
+			gutter: top right bottom left
+		));
 	}
 }

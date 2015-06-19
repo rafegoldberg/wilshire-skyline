@@ -1,0 +1,17 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                                                                                   //
+//                                  STATELY CLASSES                                  //
+//                                                                                   //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+//
+//-> Text Align
+//
+@include stately(text-align,justify right left center,'ta',!important);
+@include stately(text-align,(
+	j: justify,
+	r: right,
+	l: left,
+	c: center,
+),'ta',!important);

@@ -12,7 +12,28 @@
 // 2. Import gridle plugin + config
 // 3. Generate and print grid classes
 // 
+// @OPTIONS
+// ---
+// 1. .grid
+// 2. .prefix
+// 3. .suffix
+// 4. .gutter
+// 5. .no-gutter
+// 6. .vertical-align
+// 7. .hide
+// 8. .show, .show-inline
+// 
 
-@import "app/app.vars";             //@STEP[1]
-@import "app/config.grid";        //@STEP[2]
-@import "app/base.grid";        //@STEP[2]
+@import "app/app.vars";    //@STEP[1]
+@import "app/config.grid"; //@STEP[2]
+@include gridle_generate_classes(default,(
+	grid,
+	parent,
+	no_gutter,
+	prefix,
+	suffix,
+	vertical_align,
+	hide,
+	show
+	gutter,
+));// @STEP[3]

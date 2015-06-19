@@ -1,0 +1,17 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                                                                                   //
+//                                  STATELY CLASSES                                  //
+//                                                                                   //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+//
+//-> Add Margins
+//
+//
+//-> Remove Margins
+//
+@include stately(margin-top,(top-none: 0, t-none: 0),'m',!important);
+@include stately(margin-right,(right-none: 0, r-none: 0),'m',!important);
+@include stately(margin-bottom,(bottom-none: 0, b-none: 0),'m',!important);
+@include stately(margin-left,(left-none: 0, l-none: 0),'m',!important);

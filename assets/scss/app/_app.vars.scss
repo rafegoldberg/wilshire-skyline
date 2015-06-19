@@ -2,6 +2,9 @@
 //                                                 //
 //               SITE-WIDE VARIABLES               //
 //                                                 //
+/////////////////////////////////////////////////////
+
+
 //———————————————————————————————————————————————————
 //                    LAYOUT VARS                    
 // 
@@ -12,6 +15,8 @@
 // - [t] tablet
 // - [m] mobile
 // 
+$scale: 16, 14, 12, 10, 4, 1;//@is[used by modscale to calc a set of consistent sizes]
+
 $breaks: (
 	d: (
 		min-width: 75em,
@@ -26,14 +31,13 @@ $breaks: (
 	),
 ); //@is[base options for grd_reg_state()]@px[1200,(1199,481),480]@type[opt]
 
-$scale: 16, 14, 12, 10, 4, 1;
 
 $gutter: (
-	d: ms(_sz(-2)),
-	t: ms(_sz(-1)),
-	m: ms(_sz(-1)),
-); //@is[gridle padding values]@px[24,16,16]@type[opt]
-// 
+	d: 1em,
+	t: 1em,
+	m: 1em,
+); //@is[gridle padding values]@px[24,16,16]@type[opt]@defaults
+
 //——————————————————————————————————————————————————
 //                  THEME & COLORS                  
 // 
@@ -64,7 +68,7 @@ $theme: map-merge((
 ),$theme); //@is[add aliases to $theme]@type[alias]
 
 $colors: map-merge($greys,$theme);
-// 
+
 //———————————————————————————————————————————————————
 //                    TYPOGRAPHY                    
 // 

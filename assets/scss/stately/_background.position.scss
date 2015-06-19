@@ -1,0 +1,51 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                                                                                   //
+//                                  STATELY CLASSES                                  //
+//                                                                                   //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+//
+//-> Background Position
+//
+@include stately(background-position,(
+	       center : center       ,
+	          top : center top   ,
+	       bottom : center bottom,
+	         left : left  center ,
+	        right : right center ,
+	    right-top : right top    ,
+	           rt : right top    ,
+	   center-top : center top   ,
+	           ct : center top   ,
+	     left-top : left top     ,
+	           lt : left top     ,
+	 right-center : right center ,
+	           rc : right center ,
+	center-center : center center,
+	           cc : center center,
+	  left-center : left center  ,
+	           lc : left center  ,
+	 right-bottom : right bottom ,
+	           rb : right bottom ,
+	center-bottom : center bottom,
+	           cb : center bottom,
+	  left-bottom : left bottom  ,
+	           lb : left bottom  ,
+),'bgp',!important);
+@include stately(background-position-x,(
+	right:  right ,
+	r:      right ,
+	center: center,
+	c:      center,
+	left:   left  ,
+	l:      left  ,
+),'bgpx',!important);
+@include stately(background-position-y,(
+	top:    top   ,
+	t:      top   ,
+	middle: middle,
+	m:      middle,
+	bottom: bottom,
+	b:      bottom,
+),'bgpy',!important);

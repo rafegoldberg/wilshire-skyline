@@ -15,9 +15,9 @@
 	|–––| post-lib $GLOBALS variable,
 	|–––| for use see `meta/post.php`
 	|–-->
-	<?= css('assets/css/grid.css') ?>
 	<?= css('assets/css/main.css') ?>
 	<? init_libs() //@depends[snippet/meta.post] ?>
+	<? add_sheets('grid') ?> 
 
 	<!--| Favicon
 	|–-->

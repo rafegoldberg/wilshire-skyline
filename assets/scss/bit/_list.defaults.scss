@@ -1,0 +1,4 @@
+.list__inline {
+	@extend %listBase;
+	& .list--item { @extend %list--item; }
+}

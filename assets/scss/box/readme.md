@@ -1,7 +1,7 @@
 Blocs, Boxes, & Bits
 ===
 
-## Blocs
+## Boxes
 
 ## Guidelines
 

@@ -21,19 +21,21 @@
 			<div class="mediaBox">
 				<img src="<?=$site->files()->find('s-simplified.png')->url()?>" alt="Mark">
 			</div>
-		</section>
-		<nav class="navBloc">
-			<li class="nav-item">Item 1</li>
-			<li class="nav-item">Item 2</li>
-			<li class="nav-item">Item 3</li>
-			<li class="nav-item">Item 4</li>
-			<li class="nav-item">Item 5</li>
-			<li class="nav-item">Item 6</li>
-		</nav>
-		<section class="textBloc">
 			<div class="contentBox">
 				<h1 class="heading_1">Wilshire Skyline</h1>
 			</div>
+		</section>
+		<nav class="navBloc">
+			<ul class="centered list__inline">
+				<li class="list--item">Item 1</li>
+				<li class="list--item">Item 2</li>
+				<li class="list--item">Item 3</li>
+				<li class="list--item">Item 4</li>
+				<li class="list--item">Item 5</li>
+				<li class="list--item">Item 6</li>
+			</ul>
+		</nav>
+		<section class="textBloc size_2">
 			<div class="contentBox centered">
 				<p>Wilshire Skyline manages a portfolio of luxury multi-family residential properties located in prime sub-markets in Los Angeles.</p>
 				<p>In addition to other real estate holdings, the principals of Wilshire Skyline own a controlling interest in all of the properties under management.</p>

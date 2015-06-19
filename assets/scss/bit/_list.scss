@@ -1,0 +1,14 @@
+%list {
+  &Base {
+		margin: _ms(-1);
+		padding: 0;
+		line-height: 1;
+	}
+	&--item { padding: _ms(-1); }
+}
+
+// SUB-SHEET IMPORTS
+// 
+// @import "list.defaults";
+@import "list.block";
+@import "list.inline";

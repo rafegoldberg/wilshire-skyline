@@ -1,0 +1,8 @@
+.list__inline {
+	@extend %listBase;
+	display: inline-block;
+	& .list--item {
+		@extend %list--item;
+		display: inline-block;
+	}
+}

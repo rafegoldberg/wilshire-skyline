@@ -1,7 +1,8 @@
-// 
+
 // HEADING DEFAULT APPLICATION
-// > apply .heading + .size styles to <h1-6> tags
-//   by default
+// + apply .heading + .size styles to <h1-6>
+//   tags by default
+// 
 @for $i from 1 through 6 {
 	h#{$i} { @extend .heading, .heading_#{$i}, .size_#{$i} !optional; }
 }

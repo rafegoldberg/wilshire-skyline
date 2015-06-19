@@ -1,16 +1,50 @@
+
+//—> VARIABLES
+//
+$_BOXES: ();
+$_BOX_OPTS: (
+	name: box,
+	gridle: (
+		gutter: top right bottom left,
+	),
+	extend: false,
+	convention: explicit,
+);
+//-> FUNCTIONS
+//->> Private Utilities
+@function _box_generate_classname($opts){
+	$class: if(map-get($opts,convention)==implicit,"box-#{map-get($opts,name)}","#{map-get($opts,name)}Box");
+	$selector: if(map-get($opts,convention)==implicit,"%#{$class}",".#{$class}");
+	@return extend($opts,(
+		base: $class,
+		selector: $selector,
+	));
+}
+@function _box_register($opts) {
+	$opts: _box_generate_classname(extend($_BOX_OPTS,$opts));
+	$_BOXES: map-set($_BOXES,map-get($opts,name),$opts) !global;
+	@return $opts;
+}
+//->> Public Utilities
+@function boxOptions($box){
+  @return map-get($_BOXES,$box);
+}
+@function boxOption($box,$key){
+  $option: map-get-deep($_BOXES,$box,$key);
+  @return $option;
+}
+//-> MIXINS
+//
 @mixin box($opts:()) { 
-	$opts: extend((
-		name:       'box',      // box basename
-		gridle:     (),         // see gridle docs
-		extend:     '.list',    // /stately classes
-		convention: 'explicit', // or 'implicit'
-	),$opts);
-	&Box {
+	$opts: _box_register($opts);
+	@at-root #{map-get($opts,selector)} {
 		@include gridle_set(map-get($opts,gridle));
 		@extend #{map-get($opts,extend)} !optional;
-		@at-root .debug & {
-			outline: 1px solid magenta;
-			outline-offset: -1px;
-		}
+		@content;
 	}
+}
+@mixin boxExtend($box){
+  @if (boxOption($box,convention)==implicit) {
+    @extend #{boxOption($box,selector)} !optional;
+  }
 }

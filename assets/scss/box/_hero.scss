@@ -1,6 +1,0 @@
-.hero {
-	@include box;
-	@include gridle_set((
-		parent: true
-	));
-}

@@ -1,53 +1,31 @@
 @import url("../fonts/din-alt/import.css");
-html body:after, .bloc:after, .panel:after {
+html body:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.bloc:before, .panel:before, .hero:before, .mediaBox:before, .bloc:after, .panel:after, .hero:after, .mediaBox:after {
+.mediaBloc:before, .mediaBloc:after {
   content: "";
   display: table;
 }
-.bloc:after, .panel:after, .hero:after, .mediaBox:after {
+.mediaBloc:after {
   clear: both;
 }
-.bloc, .panel, .hero, .mediaBox {
+.mediaBloc {
   zoom: 1;
 }
 
-html body, .bloc, .panel {
+html body {
   box-sizing: border-box;
 }
 
-.bloc, .panel, .hero, .mediaBox {
+.mediaBloc {
   box-sizing: border-box;
 }
 
-.gridle-debug html body, html body.gridle-debug, .gridle-debug .bloc, .bloc.gridle-debug, .gridle-debug .panel, .panel.gridle-debug {
+.gridle-debug html body, html body.gridle-debug {
   background-color: #f5f5f5;
-}
-
-.gridle-debug .bloc, .bloc.gridle-debug, .gridle-debug .panel, .panel.gridle-debug {
-  background-color: #daeff5;
-}
-.gridle-debug .bloc:before, .bloc.gridle-debug:before, .gridle-debug .panel:before, .panel.gridle-debug:before, .gridle-debug .bloc:after, .bloc.gridle-debug:after, .gridle-debug .panel:after, .panel.gridle-debug:after {
-  content: "";
-  display: block;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowRkEzNzVFNTg1NjgxMUUyOUI4RjhEMzg4QzM4QjZFOCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowRkEzNzVFNjg1NjgxMUUyOUI4RjhEMzg4QzM4QjZFOCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBGQTM3NUUzODU2ODExRTI5QjhGOEQzODhDMzhCNkU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBGQTM3NUU0ODU2ODExRTI5QjhGOEQzODhDMzhCNkU4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8++5+BhQAAAA9JREFUeNpiYGBgkAIIMAAAHwAbZIBtGgAAAABJRU5ErkJggg==);
-  margin: 10px 0;
-  padding: 5px 0;
-  text-align: center;
-  color: white;
-  font-size: 11px;
-  box-sizing: border-box;
-  display: block !important;
-}
-
-.bloc, .panel {
-  display: inline-block;
-  min-height: 1px;
-  box-sizing: border-box;
 }
 
 /**
@@ -267,16 +245,16 @@ img {
     font-size: 51px;
   }
 }
-.size_2, .heading_2, h2 {
+.size_2, .heading_2, h2, .mediaBloc {
   font-size: 24px;
 }
 @media (min-width: 36.063em) {
-  .size_2, .heading_2, h2 {
+  .size_2, .heading_2, h2, .mediaBloc {
     font-size: 35px;
   }
 }
 @media (min-width: 75em) {
-  .size_2, .heading_2, h2 {
+  .size_2, .heading_2, h2, .mediaBloc {
     font-size: 51px;
   }
 }
@@ -353,271 +331,54 @@ img {
   letter-spacing: .005em;
 }
 
-.bloc {
-  float: left;
-  direction: ltr;
-  padding-left: 0.75rem;
+.boxBox {
+  padding-top: 0.75rem;
   padding-right: 0.75rem;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block !important;
-  float: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  clear: both !important;
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  font-size: 1rem;
-}
-html.default .bloc {
-  float: left;
-  direction: ltr;
+  padding-bottom: 0.75rem;
   padding-left: 0.75rem;
+}
+html.default .boxBox {
+  padding-top: 0.75rem;
   padding-right: 0.75rem;
-}
-html.d .bloc {
-  padding-left: 26px;
-  padding-right: 26px;
-}
-@media screen and (min-width: 75em) {
-  .bloc {
-    padding-left: 26px;
-    padding-right: 26px;
-  }
-}
-html.t .bloc {
-  padding-left: 13px;
-  padding-right: 13px;
-}
-@media screen and (min-width: 36.063em) and (max-width: 74.938em) {
-  .bloc {
-    padding-left: 13px;
-    padding-right: 13px;
-  }
-}
-html.m .bloc {
-  padding-left: 9px;
-  padding-right: 9px;
-}
-@media screen and (min-width: 0) and (max-width: 36em) {
-  .bloc {
-    padding-left: 9px;
-    padding-right: 9px;
-  }
-}
-html.default .bloc {
-  width: 100%;
-}
-.gridle-debug html.default .bloc:before, html.default .bloc.gridle-debug:before {
-  content: "grid-default-12";
-}
-.gridle-debug html.default .bloc.parent:before, html.default .bloc.gridle-debug.parent:before {
-  content: "grid-parent-default-12";
-}
-.gridle-debug .bloc:before, .bloc.gridle-debug:before {
-  content: "grid-default-12";
-}
-.gridle-debug .bloc.parent:before, .bloc.gridle-debug.parent:before {
-  content: "grid-parent-default-12";
-}
-html.default .bloc {
-  padding-left: 0;
-  padding-right: 0;
-}
-html.default html.default .bloc {
-  padding-left: 0;
-  padding-right: 0;
-}
-html.default .bloc {
-  padding-left: 0;
-  padding-right: 0;
-}
-html.default .bloc {
-  display: block !important;
-  float: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  clear: both !important;
-}
-html.default .bloc {
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-}
-.debug .bloc {
-  outline: 1px solid cyan;
-  outline-offset: -2px;
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
 }
 
-.panel {
-  float: left;
-  direction: ltr;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block !important;
-  float: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  clear: both !important;
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  font-size: 1rem;
-}
-html.default .panel {
-  float: left;
-  direction: ltr;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-html.d .panel {
-  padding-left: 26px;
-  padding-right: 26px;
-}
-@media screen and (min-width: 75em) {
-  .panel {
-    padding-left: 26px;
-    padding-right: 26px;
-  }
-}
-html.t .panel {
-  padding-left: 13px;
-  padding-right: 13px;
-}
-@media screen and (min-width: 36.063em) and (max-width: 74.938em) {
-  .panel {
-    padding-left: 13px;
-    padding-right: 13px;
-  }
-}
-html.m .panel {
-  padding-left: 9px;
-  padding-right: 9px;
-}
-@media screen and (min-width: 0) and (max-width: 36em) {
-  .panel {
-    padding-left: 9px;
-    padding-right: 9px;
-  }
-}
-html.default .panel {
-  width: 100%;
-}
-.gridle-debug html.default .panel:before, html.default .panel.gridle-debug:before {
-  content: "grid-default-12";
-}
-.gridle-debug html.default .panel.parent:before, html.default .panel.gridle-debug.parent:before {
-  content: "grid-parent-default-12";
-}
-.gridle-debug .panel:before, .panel.gridle-debug:before {
-  content: "grid-default-12";
-}
-.gridle-debug .panel.parent:before, .panel.gridle-debug.parent:before {
-  content: "grid-parent-default-12";
-}
-html.default .panel {
-  padding-left: 0;
-  padding-right: 0;
-}
-html.default html.default .panel {
-  padding-left: 0;
-  padding-right: 0;
-}
-html.default .panel {
-  padding-left: 0;
-  padding-right: 0;
-}
-html.default .panel {
-  display: block !important;
-  float: none !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  clear: both !important;
-}
-html.default .panel {
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-}
-.debug .panel {
-  outline: 1px solid cyan;
-  outline-offset: -2px;
-}
-
-.hero {
-  padding-left: 0;
-  padding-right: 0;
-}
-.debug .heroBox {
-  outline: 1px solid magenta;
-  outline-offset: -1px;
-}
-html.default .hero {
-  padding-left: 0;
-  padding-right: 0;
-}
-html.default html.default .hero {
-  padding-left: 0;
-  padding-right: 0;
-}
-html.default .hero {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.mediaBox {
+.mediaBloc {
   font-size: 0;
   clear: both;
   padding-left: 0;
   padding-right: 0;
+  font-size: 1rem;
 }
-html.default .mediaBox {
+html.default .mediaBloc {
   font-size: 0;
   clear: both;
 }
-html.default .mediaBox > * {
+html.default .mediaBloc > * {
   display: inline-block;
   float: none !important;
   vertical-align: middle;
   font-size: 1rem;
 }
-.mediaBox > * {
+.mediaBloc > * {
   display: inline-block;
   float: none !important;
   vertical-align: middle;
   font-size: 1rem;
 }
-html.default .mediaBox {
+html.default .mediaBloc {
   padding-left: 0;
   padding-right: 0;
 }
-html.default html.default .mediaBox {
+html.default html.default .mediaBloc {
   padding-left: 0;
   padding-right: 0;
 }
-html.default .mediaBox {
+html.default .mediaBloc {
   padding-left: 0;
   padding-right: 0;
 }
-.debug .mediaBox {
-  outline: 1px solid magenta;
-  outline-offset: -1px;
-}
-
-.debug .textBox {
-  outline: 1px solid magenta;
-  outline-offset: -1px;
-}
-
 html.portrait .va-super-portrait {
   vertical-align: super  !important;
 }
@@ -2173,11 +1934,11 @@ html.landscape .ta-c-landscape {
     text-align: center  !important;
   }
 }
-html.default .ta-c, html.default .mediaBox {
+html.default .ta-c, html.default .mediaBloc {
   text-align: center  !important;
 }
 
-.ta-c, .mediaBox {
+.ta-c, .mediaBloc {
   text-align: center  !important;
 }
 

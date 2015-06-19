@@ -10,19 +10,20 @@
 		</section>
 	-->
 
-	<!-- Hero Box -->
+	<!-- Hero Box
 		<section class="heroBox">
 			<div class="box--content">
 				<h1 class="bit title box--title ta-c">Wilshire Skyline</h1>
 			</div>
 		</section>
+	-->
 
 	<!-- Media Box -->
-		<section class="mediaBox">
-			<div class="mediaBox--image grid-4">
-				<img src="http://localhost/projects/wilshire-skyline/content/1-testing/s-stylized-cutout.png">
+		<section class="mediaBloc">
+			<div class="imageBox">
+				<img src="<?=$site->files()->find('s-simplified.png')->url()?>" alt="Mark">
 			</div>
-			<div class="mediaBox--content grid-4 ta-l">
+			<div class="contentBox">
 				<h1 class="bit title">Wilshire Skyline</h1>
 			</div>
 		</section>

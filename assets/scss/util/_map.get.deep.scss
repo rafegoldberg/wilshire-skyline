@@ -1,0 +1,6 @@
+@function map-get-deep($map, $keychain.../*,$DEEP*/) {
+    @each $key in $keychain {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}

@@ -1,9 +1,0 @@
-.media {
-	@include box((
-		gridle: (
-			vertical_align: middle,
-			parent: true
-		),
-		extend: '.ta-c',
-	));
-}

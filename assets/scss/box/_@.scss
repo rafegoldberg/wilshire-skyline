@@ -1,7 +1,16 @@
 @mixin box($opts:()) { 
+	$opts: extend((
+		name:       'box',      // box basename
+		gridle:     (),         // see gridle docs
+		extend:     '.list',    // /stately classes
+		convention: 'explicit', // or 'implicit'
+	),$opts);
 	&Box {
-		@include gridle_set((
-			gutter: top right bottom left
-		));
+		@include gridle_set(map-get($opts,gridle));
+		@extend #{map-get($opts,extend)} !optional;
+		@at-root .debug & {
+			outline: 1px solid magenta;
+			outline-offset: -1px;
+		}
 	}
 }

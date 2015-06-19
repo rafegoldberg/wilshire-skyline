@@ -1,5 +1,5 @@
 .bit {
-	html.debug & {
+	@at-root .debug & {
 		outline: 1px dashed blue;
 		outline-offset: -4px;
 	}

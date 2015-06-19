@@ -5,14 +5,14 @@ html body:after, .bloc:after, .panel:after {
   clear: both;
 }
 
-.bloc:before, .panel:before, .bloc:after, .panel:after {
+.bloc:before, .panel:before, .hero:before, .mediaBox:before, .bloc:after, .panel:after, .hero:after, .mediaBox:after {
   content: "";
   display: table;
 }
-.bloc:after, .panel:after {
+.bloc:after, .panel:after, .hero:after, .mediaBox:after {
   clear: both;
 }
-.bloc, .panel {
+.bloc, .panel, .hero, .mediaBox {
   zoom: 1;
 }
 
@@ -20,7 +20,7 @@ html body, .bloc, .panel {
   box-sizing: border-box;
 }
 
-.bloc, .panel {
+.bloc, .panel, .hero, .mediaBox {
   box-sizing: border-box;
 }
 
@@ -28,10 +28,10 @@ html body, .bloc, .panel {
   background-color: #f5f5f5;
 }
 
-.gridle-debug .bloc, .bloc.gridle-debug, .gridle-debug .panel, .panel.gridle-debug, .gridle-debug .media--attachment, .media--attachment.gridle-debug, .gridle-debug .media--content, .media--content.gridle-debug {
+.gridle-debug .bloc, .bloc.gridle-debug, .gridle-debug .panel, .panel.gridle-debug {
   background-color: #daeff5;
 }
-.gridle-debug .bloc:before, .bloc.gridle-debug:before, .gridle-debug .panel:before, .panel.gridle-debug:before, .gridle-debug .media--attachment:before, .media--attachment.gridle-debug:before, .gridle-debug .media--content:before, .media--content.gridle-debug:before, .gridle-debug .bloc:after, .bloc.gridle-debug:after, .gridle-debug .panel:after, .panel.gridle-debug:after, .gridle-debug .media--attachment:after, .media--attachment.gridle-debug:after, .gridle-debug .media--content:after, .media--content.gridle-debug:after {
+.gridle-debug .bloc:before, .bloc.gridle-debug:before, .gridle-debug .panel:before, .panel.gridle-debug:before, .gridle-debug .bloc:after, .bloc.gridle-debug:after, .gridle-debug .panel:after, .panel.gridle-debug:after {
   content: "";
   display: block;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowRkEzNzVFNTg1NjgxMUUyOUI4RjhEMzg4QzM4QjZFOCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowRkEzNzVFNjg1NjgxMUUyOUI4RjhEMzg4QzM4QjZFOCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjBGQTM3NUUzODU2ODExRTI5QjhGOEQzODhDMzhCNkU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBGQTM3NUU0ODU2ODExRTI5QjhGOEQzODhDMzhCNkU4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8++5+BhQAAAA9JREFUeNpiYGBgkAIIMAAAHwAbZIBtGgAAAABJRU5ErkJggg==);
@@ -44,7 +44,7 @@ html body, .bloc, .panel {
   display: block !important;
 }
 
-.bloc, .panel, .media--attachment, .media--content {
+.bloc, .panel {
   display: inline-block;
   min-height: 1px;
   box-sizing: border-box;
@@ -240,12 +240,16 @@ html body {
   background: #006FAE;
   color: #FCFCFC;
 }
+html.debug, html body.debug {
+  background-color: #fff;
+  color: #000;
+}
 
 img {
   max-width: 100%;
 }
 
-html.debug .bit {
+.debug .bit {
   outline: 1px dashed blue;
   outline-offset: -4px;
 }
@@ -444,9 +448,9 @@ html.default .bloc {
   padding-bottom: 0;
   padding-left: 0;
 }
-html.debug .bloc {
-  outline: 1px solid magenta;
-  outline-offset: 1px;
+.debug .bloc {
+  outline: 1px solid cyan;
+  outline-offset: -2px;
 }
 
 .panel {
@@ -544,106 +548,74 @@ html.default .panel {
   padding-bottom: 0;
   padding-left: 0;
 }
-html.debug .panel {
-  outline: 1px solid magenta;
-  outline-offset: 1px;
+.debug .panel {
+  outline: 1px solid cyan;
+  outline-offset: -2px;
 }
 
-.heroBox {
-  padding-top: 0.75rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 0.75rem;
+.hero {
+  padding-left: 0;
+  padding-right: 0;
 }
-html.default .heroBox {
-  padding-top: 0.75rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 0.75rem;
+.debug .heroBox {
+  outline: 1px solid magenta;
+  outline-offset: -1px;
+}
+html.default .hero {
+  padding-left: 0;
+  padding-right: 0;
+}
+html.default html.default .hero {
+  padding-left: 0;
+  padding-right: 0;
+}
+html.default .hero {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .mediaBox {
-  padding-top: 0.75rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 0.75rem;
+  font-size: 0;
+  clear: both;
+  padding-left: 0;
+  padding-right: 0;
 }
 html.default .mediaBox {
-  padding-top: 0.75rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 0.75rem;
+  font-size: 0;
+  clear: both;
 }
-.media--attachment, .media--content {
-  float: left;
-  direction: ltr;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  width: 50%;
+html.default .mediaBox > * {
+  display: inline-block;
+  float: none !important;
+  vertical-align: middle;
+  font-size: 1rem;
 }
-html.default .media--attachment, html.default .media--content {
-  float: left;
-  direction: ltr;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+.mediaBox > * {
+  display: inline-block;
+  float: none !important;
+  vertical-align: middle;
+  font-size: 1rem;
 }
-html.d .media--attachment, html.d .media--content {
-  padding-left: 26px;
-  padding-right: 26px;
+html.default .mediaBox {
+  padding-left: 0;
+  padding-right: 0;
 }
-@media screen and (min-width: 75em) {
-  .media--attachment, .media--content {
-    padding-left: 26px;
-    padding-right: 26px;
-  }
+html.default html.default .mediaBox {
+  padding-left: 0;
+  padding-right: 0;
 }
-html.t .media--attachment, html.t .media--content {
-  padding-left: 13px;
-  padding-right: 13px;
+html.default .mediaBox {
+  padding-left: 0;
+  padding-right: 0;
 }
-@media screen and (min-width: 36.063em) and (max-width: 74.938em) {
-  .media--attachment, .media--content {
-    padding-left: 13px;
-    padding-right: 13px;
-  }
-}
-html.m .media--attachment, html.m .media--content {
-  padding-left: 9px;
-  padding-right: 9px;
-}
-@media screen and (min-width: 0) and (max-width: 36em) {
-  .media--attachment, .media--content {
-    padding-left: 9px;
-    padding-right: 9px;
-  }
-}
-html.default .media--attachment, html.default .media--content {
-  width: 50%;
-}
-.gridle-debug html.default .media--attachment:before, html.default .media--attachment.gridle-debug:before, .gridle-debug html.default .media--content:before, html.default .media--content.gridle-debug:before {
-  content: "grid-default-6";
-}
-.gridle-debug html.default .media--attachment.parent:before, html.default .media--attachment.gridle-debug.parent:before, .gridle-debug html.default .media--content.parent:before, html.default .media--content.gridle-debug.parent:before {
-  content: "grid-parent-default-6";
-}
-.gridle-debug .media--attachment:before, .media--attachment.gridle-debug:before, .gridle-debug .media--content:before, .media--content.gridle-debug:before {
-  content: "grid-default-6";
-}
-.gridle-debug .media--attachment.parent:before, .media--attachment.gridle-debug.parent:before, .gridle-debug .media--content.parent:before, .media--content.gridle-debug.parent:before {
-  content: "grid-parent-default-6";
+.debug .mediaBox {
+  outline: 1px solid magenta;
+  outline-offset: -1px;
 }
 
-.textBox {
-  padding-top: 0.75rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 0.75rem;
-}
-html.default .textBox {
-  padding-top: 0.75rem;
-  padding-right: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 0.75rem;
+.debug .textBox {
+  outline: 1px solid magenta;
+  outline-offset: -1px;
 }
 
 html.portrait .va-super-portrait {
@@ -2201,11 +2173,11 @@ html.landscape .ta-c-landscape {
     text-align: center  !important;
   }
 }
-html.default .ta-c, html.default .media {
+html.default .ta-c, html.default .mediaBox {
   text-align: center  !important;
 }
 
-.ta-c, .media {
+.ta-c, .mediaBox {
   text-align: center  !important;
 }
 

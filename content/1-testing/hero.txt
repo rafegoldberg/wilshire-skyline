@@ -6,4 +6,4 @@ Text: Wilshire Skyline manages a portfolio of luxury multi-family residential pr
 
 ----
 
-Media: s-simplified.png
+Media: l-simplified.png

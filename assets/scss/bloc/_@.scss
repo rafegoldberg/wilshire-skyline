@@ -7,9 +7,9 @@
 		no_gutter: top right bottom left,
 	));
 	font-size: 1rem;
-	html.debug & {
-		outline: 1px solid magenta;
-		outline-offset: 1px;
+	@at-root .debug & {
+		outline: 1px solid cyan;
+		outline-offset: -2px;
 	}
 }
 

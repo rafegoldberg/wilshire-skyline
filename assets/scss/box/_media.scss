@@ -1,9 +1,9 @@
 .media {
 	@include box((
-		gridle: (vertical_align:middle)
+		gridle: (
+			vertical_align: middle,
+			parent: true
+		),
+		extend: '.ta-c',
 	));
-	@extend .ta-c;
-	&--attachment, &--content {
-		@include gridle_set((grid:6));
-	}
 }

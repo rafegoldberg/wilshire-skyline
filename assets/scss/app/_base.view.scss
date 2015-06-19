@@ -8,4 +8,5 @@ html {
 		background: _c(brand);
 		color: _c(ivory);
 	}
+	&, body { &.debug { background-color: #fff; color: #000; }}
 }

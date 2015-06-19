@@ -24,4 +24,4 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
 
 </head>
-<body class='parent grid-12 centered<?= isset($body)?$body:'' ?>'>
+<body class="parent grid-12 centered <?= isset($body)?$body:'' ?>">

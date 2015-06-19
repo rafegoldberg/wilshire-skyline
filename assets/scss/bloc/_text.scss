@@ -1,0 +1,10 @@
+@include bloc((
+	name: text,
+	gridle: (
+		parent: true,
+		clearfix: true
+	),
+	convention: explicit,
+	generate_default: default,
+	extend: '.ta-c, .size_2',
+));

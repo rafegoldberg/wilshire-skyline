@@ -1,5 +1,5 @@
 html {
-	font: normal normal normal $fz-base/1 _ff(base);
+	font: normal normal normal 16px/1 _ff(base);
 	body {
 		@include gridle_container;
 		margin: 0 auto;

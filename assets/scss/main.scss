@@ -17,6 +17,26 @@
 	@import "box/*";
 	@import "bloc/*";
 // |
+// + Gridle Overrides
+// |
+	@include gridle_generate_classes(default,(
+		grid,
+		parent,
+		no_gutter,
+		prefix,
+		suffix,
+		float,
+		vertical_align,
+		hide,
+		show
+		gutter,
+	));
+// |
 // + Stately Classes
 // |
 	@import "stately/*";
+// |
+// + DEBUG DIS SHITE
+// |
+	@include _box_debug;
+	@include _bloc_debug;

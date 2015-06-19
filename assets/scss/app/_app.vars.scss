@@ -17,7 +17,9 @@
 // - [m] mobile
 // 
 
-$scale: 16, 14, 12, 10, 4, 1;
+ //@ORD[ 1   2   3   4  5  6  7  8  9]
+$scale: 16, 14, 12, 10, 8, 6, 3, 1, 0;
+ //@REV[-9  -8  -7  -6 -5 -4 -3 -2 -1]
  // @is[used by modscale to calc a set of consistent sizes]
 
 $breaks: (
@@ -33,7 +35,7 @@ $breaks: (
 		max-width: 36em,
 	),
 );	//
-	// @is[base options for grd_reg_state()]
+	// @is[base options for gridle_state(s)]
 	// @px[1200,(1199,481),480]
 	// @type[opt]
 
@@ -43,7 +45,7 @@ $gutter: (
 	t: 1em,
 	m: 1em,
 );	// 
-	// @is[set padding values with gridle states]
+	// @is[padding values for gridle_state(s)]
 	// @px[24,16,16]
 	// @type[opt]
 	// @defaults[reset using ms() in cnf.rhythm]
@@ -86,7 +88,7 @@ $colors: map-merge($greys,$theme);
 //———————————————————————————————————————————————————
 //                    TYPOGRAPHY                    
 // 
-$fz-base: 16px;
+$fz-base: 1em;
 $font-imports: din-alt;
 $ff: (
 	base: '"Helvetica Neue", Helvetica, Arial, sans-serif',

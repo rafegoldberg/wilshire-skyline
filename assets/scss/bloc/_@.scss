@@ -1,55 +1,76 @@
+//––––––––––––––––––––––––––––––
+// VARIABLES
+//
+	$_BLOCS: ();
+	$_BLOC_OPTS: (
+		name: bloc,
+		extend: false,
+		convention: explicit,
+		gridle: (
+			grid:      12,
+			parent:    true,
+			container: true,
+			centered:  true,
+			no_gutter: top right bottom left,
+		),
+	);
 
-//—> VARIABLES
-//
-$_BLOCS: ();
-$_BLOC_OPTS: (
-	name: bloc,
-	gridle: (
-		grid:      12,
-		parent:    true,
-		container: true,
-		centered:  true,
-		no_gutter: top right bottom left,
-	),
-	extend: false,
-	convention: explicit,
-);
-//-> FUNCTIONS
-//->> Private Utilities
-@function _bloc_generate_classname($opts){
-	$class: if(map-get($opts,convention)==implicit,"bloc-#{map-get($opts,name)}","#{map-get($opts,name)}Bloc");
-	$selector: if(map-get($opts,convention)==implicit,"%#{$class}",".#{$class}");
-	@return extend($opts,(
-		base: $class,
-		selector: $selector,
-	));
-}
-@function _bloc_register($opts) {
-	$opts: _bloc_generate_classname(extend($_BLOC_OPTS,$opts));
-	$_BLOCS: map-set($_BLOCS,map-get($opts,name),$opts) !global;
-	@return $opts;
-}
-//->> Public Utilities
-@function getBloc($bloc){
-  @return map-get($_BLOCS,$bloc);
-}
-@function getBlocOpt($bloc,$key){
-  $option: map-get-deep($_BLOCS,$bloc,$key);
-  @return $option;
-}
-//-> MIXINS
-//
-@mixin bloc($opts:()) { 
-	$opts: _bloc_register($opts);
-	@at-root #{map-get($opts,selector)} {
-		@include gridle_set(map-get($opts,gridle));
-		@extend #{map-get($opts,extend)} !optional;
-		@content;
-		font-size: 1rem;
+//––––––––––––––––––––––––––––––
+// FUNCTIONS
+// 
+// > Private Utilities
+	@function _bloc_generate_classname($opts){
+		$class: if(map-get($opts,convention)==implicit,"bloc-#{map-get($opts,name)}","#{map-get($opts,name)}Bloc");
+		$selector: if(map-get($opts,convention)==implicit,"%#{$class}",".#{$class}");
+		@return extend($opts,(
+			base: $class,
+			selector: $selector,
+		));
 	}
-}
-@mixin blocExtend($bloc){
-  @if (getBlocOpt($bloc,convention)==implicit) {
-    @extend #{getBlocOpt($bloc,selector)} !optional;
-  }
-}
+	@function _bloc_register($opts) {
+		$opts: _bloc_generate_classname(extend($_BLOC_OPTS,$opts));
+		$_BLOCS: map-set($_BLOCS,map-get($opts,name),$opts) !global;
+		@return $opts;
+	}
+// > Public Utilities
+	@function getBloc($bloc){
+	  @return map-get($_BLOCS,$bloc);
+	}
+	@function getBlocOpt($bloc,$key){
+	  $option: map-get-deep($_BLOCS,$bloc,$key);
+	  @return $option;
+	}
+
+//––––––––––––––––––––––––––––––
+// MIXINS
+//
+// > Debug
+	@mixin _bloc_debug($opt:false){
+		@debug "|————————————————————————————————|";
+		@debug "| BLOCS";
+		@debug "|————————————————————————————————|";
+		@debug "|";
+		@each $name, $bloc in $_BLOCS {
+			@if ($opt==false) {
+				@debug "+ #{$name}";
+			} @else {
+				 @debug "+ #{$name} #{boxOption($name,$opt)}";
+			}
+		}
+		@debug "|";
+	}
+// > Base
+	@mixin bloc($opts:()) { 
+		$opts: _bloc_register($opts);
+		@at-root #{map-get($opts,selector)} {
+			@include gridle_set(map-get($opts,gridle));
+			@extend #{map-get($opts,extend)} !optional;
+			font-size: 1rem;
+			@content;
+		}
+	}
+	@mixin blocExtend($bloc){
+	  @if (getBlocOpt($bloc,convention)==implicit) {
+	    @extend #{getBlocOpt($bloc,selector)} !optional;
+	  }
+	}

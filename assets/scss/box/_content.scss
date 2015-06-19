@@ -1,0 +1,7 @@
+@include box((
+	name: content,
+	convention: explicit,
+	extend: '.ta-l'
+)){
+	max-width: 44rem !important;
+};

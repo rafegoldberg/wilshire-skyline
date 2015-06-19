@@ -1,0 +1,10 @@
+%text-paragraph {
+	font-size: _ms(-1);
+	line-height: _ms(-3);
+	margin-bottom: _ms(-2);
+}
+
+//@default
+p {
+	@extend %text-paragraph;
+}

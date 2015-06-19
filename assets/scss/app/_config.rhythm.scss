@@ -15,16 +15,22 @@
 
 // Setup
 //
-$ms-base:  $fz-base;
+$ms-base: $fz-base;
+
 // $ms-ratio: $minor-second;
 $ms-ratio: $major-second;
+$ms-fluid: true;
 $ms-range:
-  1.025 _breaks(m,min-width),
-  1.050 _breaks(t,min-width),
-  1.075 _breaks(d,min-width);
+  1.050 _breaks(m,min-width),
+  1.075 _breaks(t,min-width),
+  1.100 _breaks(d,min-width);
 
 $gutter: (
 	d: _ms(-3),
 	t: _ms(-2),
 	m: _ms(-1),
-); //@is[gridle padding values]@px[24,16,16]@type[opt]@defaults
+);	//
+	// @is[gridle padding values]
+	// @px[24,16,16]
+	// @type[opt]
+	// @defaults

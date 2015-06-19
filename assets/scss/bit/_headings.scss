@@ -1,4 +1,6 @@
 .heading {
+	// 
+	// BASE STYLES
 	font-family: _ff(sans);
 	letter-spacing: -.01em;
 	text-rendering: geometricPrecision;
@@ -6,23 +8,17 @@
 	line-height: 1.125;
 	@for $i from 1 through length($scale) {
 		&_#{$i} { 
-			@extend .heading, .size_#{$i};
+			@extend .heading, .size_#{$i} !optional;
 		}
 	}
 	// 
-	// ALTERNATES
-	// 
-	//-> Weights
-	&_1           { font-weight: 700; }
-	&_2, &_3      { font-weight: 600; }
-	&_4, &_5, &_6 { font-weight: 400; }
-	// 
-	//-> Kerning
-	&_5, &_6 { letter-spacing: .005em; }
+	// ALTERNATE STYLES
+	// > adjust weights
+	&_1           { font-weight: 900; }
+	&_2, &_3      { font-weight: 700; }
+	&_4, &_5, &_6 { font-weight: 600; }
+	// > adjust kern
+	&_6 { letter-spacing: .005em; }
+}
 
-}
-@for $i from 1 through 6 {
-	h#{$i} { 
-		@extend .heading, .heading_#{$i}, .size_#{$i} !optional;
-	}
-}
+@import "headings.defaults";

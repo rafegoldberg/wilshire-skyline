@@ -11,11 +11,14 @@
 // Map variables that consist of settings for every
 // state keyword as defined in the $breaks var. The
 // keywords currently in use are as follows:
+// 
 // - [d] desktop
 // - [t] tablet
 // - [m] mobile
 // 
-$scale: 16, 14, 12, 10, 4, 1;//@is[used by modscale to calc a set of consistent sizes]
+
+$scale: 16, 14, 12, 10, 4, 1;
+ // @is[used by modscale to calc a set of consistent sizes]
 
 $breaks: (
 	d: (
@@ -29,14 +32,21 @@ $breaks: (
 		min-width: 0,
 		max-width: 36em,
 	),
-); //@is[base options for grd_reg_state()]@px[1200,(1199,481),480]@type[opt]
+);	//
+	// @is[base options for grd_reg_state()]
+	// @px[1200,(1199,481),480]
+	// @type[opt]
 
 
 $gutter: (
 	d: 1em,
 	t: 1em,
 	m: 1em,
-); //@is[gridle padding values]@px[24,16,16]@type[opt]@defaults
+);	// 
+	// @is[set padding values with gridle states]
+	// @px[24,16,16]
+	// @type[opt]
+	// @defaults[reset using ms() in cnf.rhythm]
 
 //——————————————————————————————————————————————————
 //                  THEME & COLORS                  
@@ -53,7 +63,9 @@ $greys: map-merge((
 	border: map-get($greys,stroke),
 	bdr:    map-get($greys,stroke),
 	light:  map-get($greys,ivory),
-),$greys); //@is[add aliases to $greys]@type[alias]
+),$greys); 	//
+			// @is[add aliases to $greys]
+			// @type[alias]
 
 $theme: (
 	navy:    #0E3759,
@@ -65,7 +77,9 @@ $theme: map-merge((
 	dusk: map-get($theme,navy),
 	eve:  map-get($theme,evening),
 	blue: map-get($theme,brand),
-),$theme); //@is[add aliases to $theme]@type[alias]
+),$theme);//
+		  // @is[add aliases to $theme]
+		  // @type[alias]
 
 $colors: map-merge($greys,$theme);
 

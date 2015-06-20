@@ -1,14 +1,14 @@
-%list {
-  &Base {
+.list {
+	@extend %bit;
+	& {
 		margin: _ms(-1);
 		padding: 0;
 		line-height: 1;
 	}
-	&--item { padding: _ms(-1); }
+	&--item { @extend %bit_item; }
 }
 
 // SUB-SHEET IMPORTS
 // 
-// @import "list.defaults";
-@import "list.block";
 @import "list.inline";
+@import "list.block";

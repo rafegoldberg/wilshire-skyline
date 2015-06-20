@@ -1,6 +1,5 @@
 %bit {
-	@at-root .debug & {
-		outline: 1px dashed blue;
-		outline-offset: -4px;
+	.debug-bit &, .rgdebug & {
+		outline: 1px solid dodgerblue;
 	}
 }

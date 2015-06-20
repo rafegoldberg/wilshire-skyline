@@ -12,6 +12,7 @@
 				"license*",
 				"node_modules/*",
 				"scss/app/lib.*/**/*",
+				"assets/css/*",
 				"*.map",
 				"*.eot",
 				"*.svg",
@@ -20,9 +21,14 @@
 			],
 			"folder_exclude_patterns":
 			[
-				"kirby/*",
-				"panel/*",
+				"kirby",
+				"panel",
 				".*cache*",
+				"node_modules",
+				"assets/avatars",
+				"assets/css",
+				"assets/images",
+				"content",
 				"assets/js/build"
 			],
 			"path": "."

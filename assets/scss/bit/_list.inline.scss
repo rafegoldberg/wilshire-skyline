@@ -1,8 +1,10 @@
 .list__inline {
-	@extend %listBase;
+	@extend .list;
 	display: inline-block;
 	& .list--item {
-		@extend %list--item;
 		display: inline-block;
+		@include gridle_state(m) { 
+			display: block;
+		}
 	}
 }

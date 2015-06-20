@@ -1,0 +1,4 @@
+.list__block {
+	@extend .list;
+	& .list--item { display: block; }
+}

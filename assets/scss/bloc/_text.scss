@@ -1,10 +1,9 @@
-@include bloc((
+@include newBloc((
 	name: text,
 	gridle: (
 		parent: true,
 		clearfix: true
 	),
 	convention: explicit,
-	generate_default: default,
-	extend: '.ta-c',
+	includes: '.ta-c',
 ));

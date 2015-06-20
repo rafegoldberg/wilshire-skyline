@@ -1,0 +1,9 @@
+%bit_item {
+	@extend %bit;
+	display: inline-block;
+	padding: _ms(-1);
+}
+
+// SUB-SHEET IMPORTS
+// 
+// @import "sheet.subsheet";

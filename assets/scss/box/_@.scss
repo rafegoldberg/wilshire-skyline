@@ -1,12 +1,9 @@
 // VARIABLES
 	$_BOXES: ();
+	$_BOX_DEBUG: true;
 	$_BOX_OPTS: (
 		name: box,
-		gridle: (
-			gutter: top right bottom left,
-			t: (grid: 12),
-			m: (grid: 12),
-		),
+		gridle: (),
 		extend: false,
 		convention: explicit,
 	);
@@ -52,6 +49,24 @@
 		}
 		@debug " |";
 	}
+	@mixin _box_debugClass($opts:()){
+		$class: box; //@todo[hardcoded for now; update arglist on refactor]
+		@if ($class) {
+			$opts: extend((
+				width: 1px,
+				style: solid,
+				color: magenta,
+			),$opts);
+			@at-root .rgdebug, .debug-#{$class} { %#{$class}debug {
+				outline-width: map-get($opts,width);
+				outline-style: map-get($opts,style);
+				outline-color: map-get($opts,color);
+			}}
+
+			& { @extend %#{$class}debug; }
+
+		} @else { @warn "_debug_style($class,$opts:()) requires $class"; }
+	}
 // > Base
 	@mixin box($opts:()) { 
 		$opts: _box_register($opts);
@@ -59,6 +74,7 @@
 			@include gridle_set(map-get($opts,gridle));
 			@extend #{map-get($opts,extend)} !optional;
 			@content;
+			@if ($_BOX_DEBUG) { @include _box_debugClass((style:solid)); }
 		}
 	}
 	@mixin boxExtend($box){

@@ -1,4 +1,5 @@
 .heading {
+	@extend %bit;
 	// 
 	// BASE STYLES
 	font-family: _ff(sans);

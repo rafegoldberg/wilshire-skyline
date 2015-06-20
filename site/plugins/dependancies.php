@@ -38,7 +38,8 @@ function init_libs() {
 }
 
 function init_sheets() { $GLOBALS['css'] = array(); }
-function init_scripts() { $GLOBALS['js'] = array(); }
+function init_scripts() { $GLOBALS['js'] = array();
+                          $GLOBALS['js_inline'] = array(); }
 
 function add_sheets($sheets) {
 #

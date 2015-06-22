@@ -4,35 +4,81 @@
 		{
 			"file_exclude_patterns":
 			[
-				"Icon",
-				"kirby/*",
-				"panel/*",
+				"Icon*",
+				"*.ico",
 				"*sublime*",
+				".*",
+				"index.php",
+				"package.json",
 				"*.md",
 				"license*",
-				"node_modules/*",
 				"scss/app/lib.*/**/*",
 				"assets/css/*",
-				"*.map",
-				"*.eot",
-				"*.svg",
-				"*.ttf",
-				"*.woff"
+				"*cache*",
 			],
 			"folder_exclude_patterns":
 			[
+				"Icon*",
+				"*cache*",
 				"kirby",
 				"panel",
-				".*cache*",
 				"node_modules",
-				"assets/avatars",
-				"assets/css",
-				"assets/images",
-				"content",
-				"assets/js/build"
+				"assets",
+				"site",
+				"content"
 			],
+			"name": "Root",
 			"path": "."
-		}
+		},
+		{
+			"file_exclude_patterns": [
+				"*.map", "*.eot", "*.svg", "*.ttf", "*.woff"
+			],
+			"folder_exclude_patterns": [
+				"css",
+				"js",
+				"scss",
+				"avatars",
+				"thumbs"
+			],
+			"name": "– Assets",
+			"path": "assets"
+		},
+		{
+			"name": "   • Sheets",
+			"path": "assets/scss"
+		},
+		{
+			"folder_exclude_patterns": [
+				"build"
+			],
+			"name": "   • Scripts",
+			"path": "assets/js"
+		},
+		{
+			"file_exclude_patterns": [
+				"plugins/**/*"
+			],
+			"folder_exclude_patterns": [
+				"accounts",
+				"cache",
+				"config"
+			],
+			"name": "– Site",
+			"path": "site"
+		},
+		{
+			"name": "   • Blueprints",
+			"path": "site/blueprints"
+		},
+		{
+			"name": "   • Templates",
+			"path": "site/templates"
+		},
+		{
+			"name": "   • Snippets",
+			"path": "site/snippets"
+		},
 	],
 	"settings":
 	{

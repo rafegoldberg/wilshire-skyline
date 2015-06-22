@@ -1,0 +1,12 @@
+@mixin pad($multiplier:1,$desc:'> *',$class:'pad',$property:padding) {
+	@for $i from 1 through length($scale) {
+		$val: _ms($i)*$multiplier;
+		&#{if($class==false,"","__#{$class}")}#{$i} {
+			&  #{$desc},
+			&Z #{$desc} { @each $dir in left,right { padding-#{$dir}: $val; } }
+			&V #{$desc} { @each $dir in top,bottom { padding-#{$dir}: $val; } }
+			&A #{$desc} { padding: $val; }
+			&  #{$desc} { @content; }
+		}
+	}
+}

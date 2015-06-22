@@ -35,19 +35,16 @@
 // MIXINS
 // > Debug
 	@mixin _box_debug($opt:false){
-		@debug "  ";
-		@debug " |————————————————————————————————|";
-		@debug " | BOXES";
-		@debug " |————————————————————————————————|";
-		@debug " |";
+		@include _debug("|>————————————————————————————————|");
+		@include _debug("|> BOXES");
 		@each $name, $box in $_BOXES {
 			@if ($opt==false) {
-				@debug " + #{$name}";
+				@include _debug("|> + #{$name}");
 			} @else {
-				 @debug " + #{$name} #{boxOption($name,$opt)}";
+				 @include _debug("|> + #{$name} #{boxOption($name,$opt)}");
 			}
 		}
-		@debug " |";
+		@include _debug("|>");
 	}
 	@mixin _box_debugClass($opts:()){
 		$class: box; //@todo[hardcoded for now; update arglist on refactor]

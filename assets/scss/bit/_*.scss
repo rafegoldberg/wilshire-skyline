@@ -14,11 +14,18 @@
 //-> Base Mixin
 @import "@";
 
+//-> UI Elements
+
+@import "links";
+
+@import "headings";
+
+@import "item";
+@import "list";
+
 //-> Themeing
+
 @import "sizes";
 @import "pad";
 
-//-> UI Elements
-@import "headings";
-@import "item";
-@import "list";
+@import "color-schemes";

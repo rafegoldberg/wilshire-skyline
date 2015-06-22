@@ -1,0 +1,9 @@
+//—————————————————————————————————————————————————
+//                      DEBUG                      
+// 
+@mixin _debug($message) {
+	@if $_DEBUG==true { @debug $message; }
+}
+@mixin _warn($text) {
+	@if $_WARNINGS==true OR $_DEBUG==true { @warn $text; }
+}

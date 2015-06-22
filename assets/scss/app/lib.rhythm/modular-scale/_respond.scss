@@ -3,7 +3,7 @@
     #{$property}: ms($value,$base,$ms-ratio);
   } @else {
     @for $i from 1 through length($range) {
-      @debug nth($range,$i);
+      //@debug nth($range,$i);
       @if $i == 1 {
         #{$property}: ms($value,$base,nth(nth($range,$i),1));
       } @else {

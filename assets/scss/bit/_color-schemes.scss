@@ -1,0 +1,25 @@
+.theme {
+	@extend %bit;
+	* { color: inherit;
+		border-color: inherit; }
+	&__light {
+		background-color: _c(ivory);
+		border-color: _c(stroke);
+		color: _c(slate);
+	}
+	&__slate {
+		background-color: _c(slate);
+		border-color: _c(eve);
+		color: _c(ivory);
+	}
+	&__dark {
+		background-color: _c(navy);
+		border-color: _c(eve);
+		color: _c(brand);
+	}
+	&__brand {
+		background-color: _c(brand);
+		border-color: _c(sky);
+		color: _c(ivory);
+	}
+}

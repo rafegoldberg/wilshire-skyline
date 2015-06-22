@@ -5,7 +5,7 @@
 	$_BLOC_DEBUG: true;
 	$_BLOC_OPTS: (
 		name: bloc,
-		extend: bloc,
+		extend: 'false',
 		includes: false,
 		convention: explicit,
 		gridle: (
@@ -25,7 +25,8 @@
 		@at-root #{map-get($opts,selector)} {
 			@include gridle_set(map-get($opts,gridle));
 			@extend #{map-get($opts,includes)} !optional;
-			font-size: 1rem;
+			@extend .d-b, .pad7A;
+			// font-size: 1rem;
 			@content;
 			@if ($_BLOC_DEBUG) { @include _bloc_debugClass((color:cyan,style:dashed)); }
 		}
@@ -71,18 +72,16 @@
 		} @else { @warn "_debug_style($class,$opts:()) requires $class"; }
 	}
 	@mixin _bloc_debug($opt:false){
-		@debug "|————————————————————————————————|";
-		@debug "| BLOCS";
-		@debug "|————————————————————————————————|";
-		@debug "|";
+		@include _debug("|>————————————————————————————————|");
+		@include _debug("|> BLOCS");
 		@each $name, $bloc in $_BLOCS {
 			@if ($opt==false) {
-				@debug "+ #{$name}";
+				@include _debug("|> + #{$name}");
 			} @else {
-				 @debug "+ #{$name} #{boxOption($name,$opt)}";
+				 @include _debug("|> + #{$name} #{boxOption($name,$opt)}");
 			}
 		}
-		@debug "|";
+		@include _debug("|>");
 	}
 
 //––––––––––––––––––––––––––––––

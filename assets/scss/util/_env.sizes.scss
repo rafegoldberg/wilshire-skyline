@@ -1,0 +1,10 @@
+@mixin size($desc:'',$class:false,$units:em,$property:font-size) {
+	@for $i from 1 through length($scale) {
+		&#{$i}#{if($class==false,"","__#{$class}")} {
+			& #{$desc} {
+				@include scale($i,$property,$units);
+				@content;
+			}
+		}
+	}
+}

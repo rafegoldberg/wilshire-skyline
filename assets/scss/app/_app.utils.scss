@@ -1,16 +1,8 @@
-///////////////////////////////////////////////////////////////////////////////////
-//                                                                               //
-//                            SITE-WIDE VAR UTILITIES                            //
-//                                                                               //
-///////////////////////////////////////////////////////////////////////////////////
-
-
-//—————————————————————————————————————————————————
-//                      DEBUG                      
-// 
-@function debug($warning) {
-	@if $_DEBUG==true { @warn $warning; }
-}
+/////////////////////////////////////////////////////
+//                                                 //
+//             SITE-WIDE VAR UTILITIES             //
+//                                                 //
+/////////////////////////////////////////////////////
 
 //——————————————————————————————————————————————————
 //                      LAYOUT                      
@@ -29,7 +21,10 @@
 	$base: if($base,$base,map-get($_TYPE,rhythm));
 	@return ms(_sz(num($z)),$base);
 }
-@mixin scale($z,$property:font-size) { @include ms-respond($property,_sz(num($z))); }
+@mixin scale($z,$property:font-size,$units:em) {
+	$units: if($units=='rem',1rem,if($units=='px',map-get($_TYPE,base),map-get($_TYPE,rhythm)));
+	@include ms-respond($property,_sz(num($z)),$ms-range,$units);
+}
 // 
 //——————————————————————————————————————————————————
 //                  THEME & COLORS                  

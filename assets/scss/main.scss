@@ -3,19 +3,31 @@
 // |                         MAIN STYLESHEET |
 // |-----------------------------------------|
 // |
+// + Environment
+// |
+	@import "env";
+// |
 // + Utilities
 // |
 	@import "util/*";
+		@include _debug("| ☑︎ Util Sheets Imported");
 // |
 // + Scaffolding
 // |
 	@import "app/*";
+		@include _debug("| ☑︎ App Sheets Imported");
 // |
 // + Components
 // |
-	@import "bit/*";
-	@import "box/*";
 	@import "bloc/*";
+		 @include _debug("| ☑︎ Bloc Sheets Imported");
+	@import "box/*";
+		 @include _debug("| ☑︎ Box Sheets Imported");
+	@import "bit/*";
+		@include _debug("| ☑︎ Bit Sheets Imported");
+	// Components Debug
+		@include _box_debug;
+		@include _bloc_debug;
 // |
 // + Gridle Overrides
 // |
@@ -31,12 +43,9 @@
 		show
 		gutter,
 	));
+		@include _debug("| ☑︎ Gridle override classes generated");
 // |
 // + Stately Classes
 // |
 	@import "stately/*";
-// |
-// + DEBUG DIS SHITE
-// |
-	@include _box_debug;
-	@include _bloc_debug;
+		@include _debug("| ☑︎ Stately Sheets Imported");

@@ -1,0 +1,9 @@
+%links {
+	&--default {
+		color: inherit;
+	}
+	&--soft {
+		@extend %bit;
+		text-decoration: none;
+	}
+}

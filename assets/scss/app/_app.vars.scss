@@ -4,11 +4,6 @@
 //                                                 //
 /////////////////////////////////////////////////////
 
-//—————————————————————————————————————————————————
-//                      DEBUG                      
-// 
-$_DEBUG: true;
-
 //———————————————————————————————————————————————————
 //                    LAYOUT VARS                    
 // 
@@ -22,7 +17,7 @@ $_DEBUG: true;
 // 
 
  //@ORD[ 1   2   3   4  5  6  7  8  9]
-$scale: 16, 14, 12, 10, 8, 6, 3, 1, 0;
+$scale: 17, 14, 12, 10, 8, 6, 3, 1, 0;
  //@REV[-9  -8  -7  -6 -5 -4 -3 -2 -1]
  // @is[used by modscale to calc a set of consistent sizes]
 
@@ -32,11 +27,11 @@ $breaks: (
 	),
 	t: (
 		max-width: 74.938em,
-		min-width: 32.063em
+		min-width: 0 // 32.063em@32EM 37.563em@37.5EM 0@[TABLET CASCADES TO MOBILE]
 	),
 	m: (
 		min-width: 0,
-		max-width: 32em,
+		max-width: 37.5em, // 32em^SEE
 	),
 );	//
 	// @is[base options for gridle_state(s)]

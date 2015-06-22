@@ -1,5 +1,13 @@
+// @for $i from 1 through length($scale) { &#{$i} {
+// 	&,
+// 	&__cascade > * {
+// 		@include scale($i);
+// 	}
+// }}
+
 .size {
-	@for $i from 1 through length($scale) {
-		&#{$i} { @include scale($i); }
-	}
+	         @include size('>*','cascade');
+	&Reset { @include size('>*','cascade',rem); }
+	         @include size;
+    &Reset { @include size('',false,rem); }
 }

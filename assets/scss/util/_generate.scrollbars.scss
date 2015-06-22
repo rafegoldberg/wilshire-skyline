@@ -1,0 +1,19 @@
+// ----
+/// CUSTOM SCROLLBARS
+// ----
+@mixin scrollbars($fore,$back:mix($fore,white,50%),$size:4px) {
+	scrollbar-face-color: $fore;
+	scrollbar-track-color: $back;
+	padding-right: $size;
+	&::-webkit-scrollbar {
+		width:  $size;
+		height: $size;
+		background: $back;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $fore;
+	}
+	&::-webkit-scrollbar-track {
+		background: $back;
+	}
+}

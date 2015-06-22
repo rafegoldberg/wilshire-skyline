@@ -1,10 +1,10 @@
 @include newBloc((
 	name: attachment,
 	gridle: (
+		parent: true,
 		vertical_align: middle,
-		parent: true
 	),
 	convention: explicit,
 	generate_default: default,
-	includes: '.ta-c, .size2',
+	includes: '.ta-c',
 ));

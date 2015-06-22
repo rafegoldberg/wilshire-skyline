@@ -4,6 +4,13 @@
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
 
+@import "env.debug";
+@import "env.pad";
+@import "env.sizes";
+
+@import "generate.gradients";
+@import "generate.scrollbars";
+
 @import "map.set";
 @import "map.extend";
 

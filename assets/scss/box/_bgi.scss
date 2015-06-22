@@ -3,6 +3,8 @@
 	convention: explicit,
 )){
 	position: relative;
+	z-index: 1;
+	@include scrollbars(_c(brand),_c(sky),4px);
 	&__before:before,
 	&__after:after {
 		position: absolute;
@@ -17,7 +19,21 @@
 		background-size: cover;
 		@extend %_BGIMG_;
 	}
-	&__bw%_BGIMG_ { @at-root & {
-	  filter: grayscale(1);
-	} }
+	&__bw%_BGIMG_ { @at-root & { // STYLE PSEUDO BG EL
+		filter: grayscale(1);
+	}}
+	&__overlay {
+		$_GRD_: darken(_c(navy),5%);
+		@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+
+		$_BDR_: _c(navy);
+		$_BDR_: rgba($_BDR_,.5) rgba($_BDR_,.2) rgba(_c(eve),.2);
+		border-width: 0 1px 0 0;
+		border-style: solid;
+		border-color: $_BDR_ transparent;
+
+		&%_BGIMG_ { @at-root & { // STYLE PSEUDO BG EL
+			filter: grayscale(1) contrast(1.5) brightness(1.175);
+		}}
+	}
 };

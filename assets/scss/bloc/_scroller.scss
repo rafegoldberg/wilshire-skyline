@@ -4,7 +4,7 @@
 		parent: true
 	),
 	convention: explicit,
-	includes: '.ta-c, .size2',
+	includes: '.ta-c',
 )){
 	& { //=DEFAULTS
 		display: block;
@@ -19,10 +19,12 @@
 
 		font-size: 0 !important;
 		> * {
-			font-size: 1rem;
+			@extend .d-ib !optional;
 			float: none !important;
+			font-size: 1rem;
 			position: relative;
-			@extend .d-ib, .va-m;
+			vertical-align: bottom;
+			white-space: initial;
 		}
 	}
 	&--item {

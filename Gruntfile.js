@@ -4,6 +4,18 @@ module.exports = function(grunt) {
 	// 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		notify: {
+			css: {
+				options: {
+					message: 'Stylesheets compiled and prefixed.',
+				}
+			},
+			js: {
+				options: {
+					message: 'Scripts uglified, concatenated, and minified.',
+				}
+			},
+		},
 		clean: {
 			css:  ['assets/css'],
 			js:   ['assets/js/build'],
@@ -68,26 +80,25 @@ module.exports = function(grunt) {
 		watch: {
 			js: {
 				files: ['assets/js/**/*.js','!assets/js/build/**/*.js'],
-				tasks: ['clean:js','newer:uglify','concat:dev'],
+				tasks: ['clean:js','newer:uglify','concat:dev','notify:js'],
 			},
 			css: {
 				files: ['assets/scss/**/*.scss'],
-				tasks: ['clean:css','newer:sass:dev','newer:autoprefixer'],
+				tasks: ['clean:css','newer:sass:dev','newer:autoprefixer','notify:css'],
+				options: {
+					interrupt: true,
+				}
 			},
-			dev: {
-				files: ['assets/js/**/*.js','!assets/js/build/**/*.js','assets/scss/**/*.scss'],
-				tasks: ['newer:clean','newer:sass:dev','newer:autoprefixer','newer:uglify','concat:dev'],
-			},
-			test: {
-				files: ['assets/scss/test.scss'],
-				tasks: ['newer:clean:test','newer:sass:test','newer:autoprefixer'],
-			}
+			// dev: {
+			// 	files: ['assets/js/**/*.js','!assets/js/build/**/*.js','assets/scss/**/*.scss'],
+			// 	tasks: ['newer:clean','newer:sass:dev','newer:autoprefixer','newer:uglify','concat:dev'],
+			// },
 		},
 		concurrent: {
 			dev: ['watch:css','watch:js'],
-            options: {
-                logConcurrentOutput: true,
-            }
+			options: {
+				logConcurrentOutput: true,
+			}
 		}
 	});
 
@@ -102,10 +113,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 
+	grunt.loadNpmTasks('grunt-contrib-connect'); //server@todo[not configured,working]
+	grunt.loadNpmTasks('grunt-notify');
+
 	// TASK SETUP
 	// 
 	grunt.registerTask('default', ['clean','uglify','concat','sass:dev','autoprefixer']);
-	grunt.registerTask('css', ['clean:css','sass:dev','autoprefixer']);
+	grunt.registerTask('css', ['clean:css','sass:dev','autoprefixer','notify:css']);
 	grunt.registerTask('dev', ['concurrent']);
 	// grunt.registerTask('test', ['watch:test']);
 	// grunt.registerTask('cnc', ['']);

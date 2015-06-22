@@ -1,0 +1,23 @@
+@include newBox((
+	name: bg,
+	convention: explicit,
+)){
+	position: relative;
+	&__before:before,
+	&__after:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		pointer-events: none;
+		background-position: center;
+		background-size: cover;
+		@extend %_BGIMG_;
+	}
+	&__bw%_BGIMG_ { @at-root & {
+	  filter: grayscale(1);
+	} }
+};

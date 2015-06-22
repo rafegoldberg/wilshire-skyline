@@ -1,10 +1,19 @@
 .list__inline {
 	@extend .list;
 	display: inline-block;
-	& .list--item {
+	@include gridle_parent;
+	// 
+	// DESCENDANTS
+	// 
+	& { > *, .list--item {
 		display: inline-block;
-		@include gridle_state(m) { 
-			display: block;
-		}
+	} }
+	// 
+	// LAYOUTS
+	// 
+	&__break {
+		& { > *, .list--item {
+			@include gridle_state(m) { display: block; }
+		} }
 	}
 }

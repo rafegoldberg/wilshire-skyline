@@ -4,5 +4,5 @@
 //   tags by default
 // 
 @for $i from 1 through 6 {
-	h#{$i} { @extend .heading, .heading_#{$i}, .size_#{$i} !optional; }
+	h#{$i} { @extend .heading, .heading_#{$i}, .size#{$i} !optional; }
 }

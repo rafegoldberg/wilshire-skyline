@@ -2,5 +2,5 @@
 	@if type-of($num) == 'number' and not unitless($num) {
 		@return $num / ($num * 0 + 1);
 	}
-	@return $num;
+	@return num($num);
 }

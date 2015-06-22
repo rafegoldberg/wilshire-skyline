@@ -4,10 +4,16 @@
 //                     BLOCS                     //
 //                                               //
 ///////////////////////////////////////////////////
-
+// 
 //-> Base Mixin
 @import "@";
-
-//-> Import Sheets
+// 
+//-> Base
+//   blocs registered using the implicit naming
+//   conventions
+// @import "base.pad";
+// 
+//-> Sheets
 @import "attachment";
-@import "text";
+@import "content";
+@import "scroller";//@classname[scrollBloc]

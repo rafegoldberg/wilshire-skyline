@@ -1,18 +1,18 @@
 <div id="debug" class="parent">
 	<fieldgroup class="clearfix">
 		<button class="debug_toggle <?=$load=='all'?'debug_toggle_active':''?>" data-toggle="all"><strong>Debug All</strong></button>
-		<button class="debug_toggle <?=$load=='box'?'debug_toggle_active':''?>" data-toggle="box">Box</button>
 		<button class="debug_toggle <?=$load=='bloc'?'debug_toggle_active':''?>" data-toggle="bloc">Bloc</button>
+		<button class="debug_toggle <?=$load=='box'?'debug_toggle_active':''?>" data-toggle="box">Box</button>
 		<button class="debug_toggle <?=$load=='bit'?'debug_toggle_active':''?>" data-toggle="bit">Bit</button>
 	</fieldgroup>
 
 	<style>
 		#debug {
 			position: fixed;
-			left: 1em;
-			bottom: 1em;
+			left: 0;
+			bottom: 0;
 			display: inline-block;
-			padding: 1.25em 1em;
+			padding: 1.125em;
 			background: rgba(255,255,255,0);
 			opacity: .5;
 			box-shadow: 0 2px 8px -4px rgba(0,0,0,.625);
@@ -39,7 +39,8 @@
 			font-size: smaller;
 			color: dodgerblue;
 
-			border: 1px solid dodgerblue; margin-right: -1px;
+			border: solid dodgerblue;
+			border-width: 1px 1px 2px; margin-right: -1px;
 			border-radius: 0;
 			
 			background: #FFF;
@@ -57,16 +58,16 @@
 			outline: none;
 			cursor: pointer;
 		}
-		.debug_toggle:last-child { border-width: 1px; }
+		.debug_toggle:last-child { margin-right: 0; }
 		.debug_toggle:hover,.debug_toggle:active {
 			opacity: 1;
 			z-index: 2;
 		}
 		.debug_toggle:focus {
 			z-index: 9 !important;
-			outline-style: solid;
+			outline-style: dotted;
 			outline-width: 1px;
-			outline-offset: -5px;
+			outline-offset: -4px;
 			outline-color: transparent;
 			opacity: 1 !important;
 		}
@@ -75,7 +76,11 @@
 		}.debug_toggle_active:focus:not(:hover){outline-color: white;}
 		.debug_toggle_active {
 			color: #FFF;
+			border-color: #0A6AC7;
 			background: dodgerblue;
+			z-index: 99 !important;
+		}
+		.debug_toggle_active:hover {
 		}
 		.debug_toggle_active:first-child ~ .debug_toggle ,
 		.debug_toggle_active:first-child ~ .debug_toggle.debug_toggle_active {
@@ -90,12 +95,12 @@
 		.debug_toggle_active:first-child ~ .debug_toggle.debug_toggle_active {
 			color: #939393 !important;
 		}
-		.debug_toggle_active:not(:last-child) {
+		/*.debug_toggle_active:not(:last-child) {
 			border-right-color: white !important;
 		}
 		.debug_toggle + .debug_toggle_active {
 			border-left-color: white !important;
-		}
+		}*/
 		#debug:not(:hover) fieldgroup {
 			pointer-events: none !important;
 		}

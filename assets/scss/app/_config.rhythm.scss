@@ -15,15 +15,15 @@
 
 // Setup
 //
-$ms-base: $fz-base;
+$ms-base: map-get($_TYPE,rhythm);
 
 // $ms-ratio: $minor-second;
 $ms-ratio: $major-second;
 $ms-fluid: true;
 $ms-range:
-  1.050 _breaks(m,min-width),
-  1.075 _breaks(t,min-width),
-  1.100 _breaks(d,min-width);
+  1.0375 _breaks(m,min-width),
+  1.0500 _breaks(t,min-width),
+  1.0750 _breaks(d,min-width);
 
 $gutter: (
 	d: _ms(-3),

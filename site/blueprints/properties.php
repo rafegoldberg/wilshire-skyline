@@ -19,7 +19,7 @@ fields:
 		entry: >
 
 			<div>
-				<img src="http://localhost/projects/wilshire-skyline/content/3-props/{{media}}" style="display: inline-block;vertical-align: middle;max-height:3rem;width: 29%;">
+				<img src="http://localhost/projects/wilshire-skyline/content/2-props/{{media}}" style="display: inline-block;vertical-align: middle;max-height:3rem;width: 29%;">
 				<div style="display: inline-block;width: 69%;padding-left: 1em;-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;vertical-align: middle;font-size:.85rem;">
 					<h1>{{title}}</h1>
 					{{text}}

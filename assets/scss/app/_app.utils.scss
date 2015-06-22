@@ -5,8 +5,15 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 
-//———————————————————————————————————————————————————
-//                    LAYOUT VARS                    
+//—————————————————————————————————————————————————
+//                      DEBUG                      
+// 
+@function debug($warning) {
+	@if $_DEBUG==true { @warn $warning; }
+}
+
+//——————————————————————————————————————————————————
+//                      LAYOUT                      
 // 
 // Map variables that consist of settings for every
 // state keyword as defined in the $breaks var. The
@@ -17,9 +24,12 @@
 // 
 @function _breaks($name,$key) { @return map-get( map-get($breaks,$name), $key ); }
 
-@function _sz($z) { @return nth($scale,$z); }
-@function _ms($z,$base:$fz-base) { @return ms(_sz($z),$base); }
-@mixin scale($z,$property:font-size) { @include ms-respond($property,_sz($z)); }
+@function _sz($z) { @return nth($scale,num($z)); }
+@function _ms($z,$base:false) {
+	$base: if($base,$base,map-get($_TYPE,rhythm));
+	@return ms(_sz(num($z)),$base);
+}
+@mixin scale($z,$property:font-size) { @include ms-respond($property,_sz(num($z))); }
 // 
 //——————————————————————————————————————————————————
 //                  THEME & COLORS                  

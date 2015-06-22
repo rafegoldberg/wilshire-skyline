@@ -5,9 +5,9 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		clean: {
-			css: ['assets/css'],
-			js : ['assets/js/build'],
-			dev: ['assets/css','assets/js/build'],
+			css:  ['assets/css'],
+			js:   ['assets/js/build'],
+			dev:  ['assets/css','assets/js/build'],
 		},
 		uglify: {
 			options: {
@@ -77,10 +77,14 @@ module.exports = function(grunt) {
 			dev: {
 				files: ['assets/js/**/*.js','!assets/js/build/**/*.js','assets/scss/**/*.scss'],
 				tasks: ['newer:clean','newer:sass:dev','newer:autoprefixer','newer:uglify','concat:dev'],
+			},
+			test: {
+				files: ['assets/scss/test.scss'],
+				tasks: ['newer:clean:test','newer:sass:test','newer:autoprefixer'],
 			}
 		},
 		concurrent: {
-			dev: ['watch:css','watch:js'] ,
+			dev: ['watch:css','watch:js'],
             options: {
                 logConcurrentOutput: true,
             }
@@ -103,6 +107,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['clean','uglify','concat','sass:dev','autoprefixer']);
 	grunt.registerTask('css', ['clean:css','sass:dev','autoprefixer']);
 	grunt.registerTask('dev', ['concurrent']);
+	// grunt.registerTask('test', ['watch:test']);
 	// grunt.registerTask('cnc', ['']);
 	// grunt.registerTask('push', ['ftpush']);
 

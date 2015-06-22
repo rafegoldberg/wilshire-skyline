@@ -1,0 +1,43 @@
+@include newBloc((
+	name: scroll,
+	gridle: (
+		parent: true
+	),
+	convention: explicit,
+	includes: '.ta-c, .size2',
+)){
+	& { //=DEFAULTS
+		display: block;
+		max-width: 100%;
+
+		white-space: nowrap;//force overflow
+
+		overflow: hidden;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+
+		font-size: 0 !important;
+		> * {
+			font-size: 1rem;
+			float: none !important;
+			position: relative;
+			@extend .d-ib, .va-m;
+		}
+	}
+	&--item {
+		@include gridle_set((
+			grid: 5,
+			parent: true,
+			t: ( grid: 8  ),
+			m: ( grid: 11 )
+		));
+	}
+	@include pad(1,'.scrollBloc--item') {
+		min-width: 25%;
+		min-width: 25vw;
+		box-sizing: content-box;
+		border-right: 1px solid;
+		&:last-child { border-right: none; }
+	};
+};

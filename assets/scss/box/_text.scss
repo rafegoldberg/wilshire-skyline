@@ -1,0 +1,12 @@
+@include newBox((
+	name: text,
+	gridle: ( gutter: left right ),
+	convention: explicit,
+	extend: '.ta-l'
+)){
+	display: block;
+	max-width: 44rem !important;
+	&:last-child { margin-bottom: 0; }
+	&:only-child { margin-top:    0;
+	               margin-bottom: 0; }
+};

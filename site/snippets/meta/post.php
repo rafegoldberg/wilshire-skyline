@@ -1,9 +1,11 @@
 	<?
 	snippet('meta/post.sheets' );
 	snippet('meta/post.scripts');
-	snippet('meta/debug.toggles',array(
-		'load'=>'all'
-	));
 	?>
+	<? if ($GLOBALS['ENV']['debug']!==false) : ?>
+		<? snippet('meta/debug.toggles',array(
+			'load'=> $GLOBALS['ENV']['debug']
+		)); ?>
+	<? endif; ?>
 </body>
 </html>

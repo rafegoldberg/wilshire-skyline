@@ -1,7 +1,5 @@
 .size {
 	@for $i from 1 through length($scale) {
-		&_#{$i} { 
-			@include scale($i);
-		}
+		&#{$i} { @include scale($i); }
 	}
 }

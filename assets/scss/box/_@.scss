@@ -3,7 +3,7 @@
 	$_BOX_DEBUG: true;
 	$_BOX_OPTS: (
 		name: box,
-		gridle: (),
+		gridle: ( gutter: right left ),
 		extend: false,
 		convention: explicit,
 	);
@@ -61,6 +61,7 @@
 				outline-width: map-get($opts,width);
 				outline-style: map-get($opts,style);
 				outline-color: map-get($opts,color);
+				outline-offset: -1px;
 			}}
 
 			& { @extend %#{$class}debug; }
@@ -68,7 +69,7 @@
 		} @else { @warn "_debug_style($class,$opts:()) requires $class"; }
 	}
 // > Base
-	@mixin box($opts:()) { 
+	@mixin newBox($opts:()) { 
 		$opts: _box_register($opts);
 		@at-root #{map-get($opts,selector)} {
 			@include gridle_set(map-get($opts,gridle));

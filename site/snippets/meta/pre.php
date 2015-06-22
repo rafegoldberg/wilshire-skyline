@@ -8,6 +8,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<? snippet('meta/pre.data') ?>
+	<? snippet('meta/env') ?>
 
 	<!--| Scripts + Stylesheets
 	|–––| Link main site stylesheets;
@@ -17,11 +18,11 @@
 	|–-->
 	<?= css('assets/css/main.css') ?>
 	<? init_libs() //@depends[snippet/meta.post] ?>
-	<? add_sheets('grid') ?> 
+	<? add_sheets('grid') ?>
 
 	<!--| Favicon
 	|–-->
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
 
 </head>
-<body class="parent grid-12 centered <?= isset($body)?$body:'' ?>">
+<body class="container centered <?= isset($body)?$body:'' ?>">

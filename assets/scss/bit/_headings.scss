@@ -9,7 +9,7 @@
 	line-height: 1.125;
 	@for $i from 1 through length($scale) {
 		&_#{$i} { 
-			@extend .heading, .size_#{$i} !optional;
+			@extend .heading, .size#{$i} !optional;
 		}
 	}
 	// 

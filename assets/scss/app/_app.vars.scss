@@ -4,6 +4,10 @@
 //                                                 //
 /////////////////////////////////////////////////////
 
+//—————————————————————————————————————————————————
+//                      DEBUG                      
+// 
+$_DEBUG: true;
 
 //———————————————————————————————————————————————————
 //                    LAYOUT VARS                    
@@ -88,9 +92,17 @@ $colors: map-merge($greys,$theme);
 //———————————————————————————————————————————————————
 //                    TYPOGRAPHY                    
 // 
-$fz-base: 1rem;
-$font-imports: din-alt;
+$_TYPE: (
+	base: 16px,
+	rhythm: 1em,
+	lines: 1.5,
+	imports: din-alt,
+	styles: ()
+);	//
+	// @todo[build out $_TYPE app.utils]
+$font-imports: din-alt; // @todo[remove; rely on _TYPE]
 $ff: (
 	base: '"Helvetica Neue", Helvetica, Arial, sans-serif',
 	sans: '"DIN", "Helvetica Neue", Helvetica, Arial, sans-serif',
-);
+);	//
+	// @todo[remove; rely on $_TYPE]

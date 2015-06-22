@@ -58,10 +58,10 @@ $gutter: (
 //                  THEME & COLORS                  
 // 
 $greys: (
-	slate:   #292929,
+	slate:   #1C1D1E,
 	grey:    #444444,
 	stroke:  #CCCCCC,
-	ivory:   #FCFCFC,
+	ivory:   #FCFCFB,
 );
 $greys: map-merge((
 	dark:   map-get($greys,slate),
@@ -74,9 +74,9 @@ $greys: map-merge((
 			// @type[alias]
 
 $theme: (
-	navy:    #0E3759,
-	evening: #1C5286,
-	brand:   #006FAE,
+	navy:    #083056,
+	evening: #0B477F,
+	brand:   #00589B,
 	sky:     #E2E9F2,
 );
 $theme: map-merge((

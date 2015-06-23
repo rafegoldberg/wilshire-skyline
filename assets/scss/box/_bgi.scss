@@ -4,7 +4,6 @@
 )){
 	position: relative;
 	z-index: 1;
-	@include scrollbars(_c(brand),_c(sky),4px);
 	&__before:before,
 	&__after:after {
 		position: absolute;
@@ -17,6 +16,7 @@
 		pointer-events: none;
 		background-position: center;
 		background-size: cover;
+		transition: all .25s ease-in-out;
 		@extend %_BGIMG_;
 	}
 	&__bw%_BGIMG_ { @at-root & { // STYLE PSEUDO BG EL
@@ -32,8 +32,22 @@
 		border-style: solid;
 		border-color: $_BDR_ transparent;
 
+		transition: all .2s;
+		transition-delay: .2s;
+
 		&%_BGIMG_ { @at-root & { // STYLE PSEUDO BG EL
 			filter: grayscale(1) contrast(1.5) brightness(1.175);
+			opacity: .5;
 		}}
+		
+		&:hover {
+			$_GRD_: darken(_c(slate),3%);
+			@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+			&%_BGIMG_ { @at-root & { // STYLE PSEUDO BG EL
+				filter: grayscale(1) contrast(1.25) brightness(1.0375);
+				opacity: 1;
+			}}
+		}
+
 	}
 };

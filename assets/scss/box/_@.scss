@@ -34,7 +34,7 @@
 //
 // MIXINS
 // > Debug
-	@mixin _box_debug($opt:false){
+	@mixin _box_debugLog($opt:false){
 		@include _debug("|>————————————————————————————————|");
 		@include _debug("|> BOXES");
 		@each $name, $box in $_BOXES {

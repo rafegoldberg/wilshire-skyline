@@ -3,7 +3,7 @@
 //
 	$_BLOCS: ();
 	$_BLOC_DEBUG: true;
-	$_BLOC_OPTS: (
+	$_BLOC_: (
 		name: bloc,
 		extend: 'false',
 		includes: false,
@@ -18,52 +18,68 @@
 	);
 
 //––––––––––––––––––––––––––––––
-// INIT
+// INITIALIZE
+//
+
+//––––––––––––––––––––––––––––––
+// INSTANTIATE
 //
 	@mixin newBloc($opts:()) {
-		$opts: _bloc_register($opts);
-		@at-root #{map-get($opts,selector)} {
-			@include gridle_set(map-get($opts,gridle));
-			@extend #{map-get($opts,includes)} !optional;
+	// |
+	// | REGISTER BLOC OPTS
+	// | 
+		$bloc: _bloc_register($opts) !global;
+	// | 
+	// | GENERATE BLOC STYLES
+	// | 
+		@at-root #{map-get($bloc,selector)} {
+		// | 
+		// | DEFAULTS
+		// | 
+			@include gridle_set(map-get($bloc,gridle));
+			@extend #{map-get($bloc,includes)} !optional;
 			@extend .d-b, .pad7A;
-			// font-size: 1rem;
+		// | 
+		// | USER CONTENT
+		// | has access to $bloc variable
+		// | 
 			@content;
+		// |
+		// | RESET
+		// |
+			@include _reset_bloc_args;
+		// |
+		// | DEBUG
+		// |
 			@if ($_BLOC_DEBUG) { @include _bloc_debugClass((color:cyan,style:dashed)); }
 		}
 	}
 
 //––––––––––––––––––––––––––––––
-// PRIVATE
+// METHODS
 // 
-//  INITIALIZE
+//  REGISTER
 	@function _bloc_register($opts) {
-		$opts: _bloc_generate_classname(extend($_BLOC_OPTS,$opts));
+		$bloc: getBlocClass(extend($_BLOC_,$opts));
 		$_BLOCS: map-set($_BLOCS,map-get($opts,name),$opts) !global;
-		@return $opts;
+		@return $bloc;
 	}
-//  UTILITIES
-	// Filters
-	@function _bloc_generate_classname($opts){
-		$class: if(map-get($opts,convention)==implicit,"bloc-#{map-get($opts,name)}","#{map-get($opts,name)}Bloc");
-		$selector: if(map-get($opts,convention)==implicit,"%#{$class}",".#{$class}");
-		@return extend($opts,(
-			base: $class,
-			selector: $selector,
-		));
+	@mixin _reset_bloc_args(){
+		$bloc: () !global;
 	}
-	// Debug
-	@mixin _bloc_debugClass($opts:()){
+//  DEBUG
+	@mixin _bloc_debugClass($debug_opts:()){
 		$class: bloc; //@todo[hardcoded for now; update arglist on refactor]
 		@if ($class) {
-			$opts: extend((
+			$debug_opts: extend((
 				width: 1px,
 				style: solid,
 				color: magenta,
-			),$opts);
+			),$debug_opts);
 			@at-root .rgdebug, .debug-#{$class} { %#{$class}debug {
-				outline-width: map-get($opts,width);
-				outline-style: map-get($opts,style);
-				outline-color: map-get($opts,color);
+				outline-width: map-get($debug_opts,width);
+				outline-style: map-get($debug_opts,style);
+				outline-color: map-get($debug_opts,color);
 				outline-offset: -1px;
 			}}
 
@@ -71,7 +87,7 @@
 
 		} @else { @warn "_debug_style($class,$opts:()) requires $class"; }
 	}
-	@mixin _bloc_debug($opt:false){
+	@mixin _bloc_debugLog($opt:false){
 		@include _debug("|>————————————————————————————————|");
 		@include _debug("|> BLOCS");
 		@each $name, $bloc in $_BLOCS {
@@ -88,11 +104,31 @@
 // PUBLIC
 // 
 	// GET UTILS
+	@function getBlocClass($opts,$asString:false){
+		$class: if(map-get($opts,convention)==implicit,"bloc-#{map-get($opts,name)}","#{map-get($opts,name)}Bloc");
+		$selector: if(map-get($opts,convention)==implicit,"%#{$class}",".#{$class}");
+		@if $asString {
+			@return $class;
+		} @else {
+			@return extend($opts,(
+				base: $class,
+				selector: $selector,
+			));
+		}
+	}
 	@function getBloc($name){
 		@return map-get($_BLOCS,$name);
 	}
-	@function getBlocOpt($name,$key){
-		@return map-get-deep($_BLOCS,$name,$key);
+	@function getBlocOpt($bloc,$key){
+		// $bloc_name: if(type-of($bloc)==map,map-get($bloc,name),if(type-of($bloc)==string,$bloc,false));
+		// @warn "#{$bloc_name}";
+		// @warn "#{type-of($bloc_name)}";
+		// @if $bloc_name!=false {
+			@return map-get-deep($_BLOCS,$bloc,$key);
+		// } @else {
+		// 	@warn 'getBlocOpt($bloc,$key) no matches for [#{inspect($bloc_name)}] to any registered blocs';
+		// 	@return false;
+		// }
 	}
 	// SET UTILS
 	// USE UTILS

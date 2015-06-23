@@ -1,19 +1,47 @@
 // ----
 /// CUSTOM SCROLLBARS
 // ----
-@mixin scrollbars($fore,$back:mix($fore,white,50%),$size:4px) {
-	scrollbar-face-color: $fore;
-	scrollbar-track-color: $back;
-	padding-right: $size;
-	&::-webkit-scrollbar {
-		width:  $size;
-		height: $size;
-		background: $back;
+@mixin scrollbars($opts:(),$theme:#CCC) {
+	$opts: extend((
+		color_thumb:        $theme,
+		color_stroke:       mix($theme,#000,50%),
+		color_track:        mix($theme,#FFF,50%),
+		scrollbar_size:     8px,
+		add_padding:        false,
+		overflow_direction: y
+	),$opts);
+	@if map-get($opts,add_padding) {
+		@if map-get($opts,overflow_direction)==y {
+			padding-right: map-get($opts,scrollbar_size);
+		} @elseif map-get($opts,overflow_direction)==x {
+			padding-right: map-get($opts,scrollbar_size);
+		}
 	}
-	&::-webkit-scrollbar-thumb {
-		background: $fore;
+	& { //IMPLEMENT IE
+		scrollbar-face-color: map-get($opts,color_thumb);
+		scrollbar-track-color: map-get($opts,color_track);
 	}
-	&::-webkit-scrollbar-track {
-		background: $back;
+	& { //IMPLEMENT WEBKIT
+		&::-webkit-scrollbar {
+			width:  map-get($opts,scrollbar_size);
+			height: map-get($opts,scrollbar_size);
+			background: map-get($opts,color_track);
+			@if map-get($opts,color_stroke) {
+				border: 1px solid map-get($opts,color_stroke);
+			}
+		}
+		&::-webkit-scrollbar-track {
+			background: map-get($opts,color_track);
+			@if map-get($opts,color_stroke) {
+				border: 1px solid map-get($opts,color_stroke);
+			}
+		}
+		&::-webkit-scrollbar-thumb {
+			background: map-get($opts,color_thumb);
+			@if map-get($opts,color_stroke) {
+				border: 1px solid map-get($opts,color_track);
+				// border-width: if(map-get($opts,overflow_direction)==x,1px 0,0 1px);
+			}
+		}
 	}
 }

@@ -3,8 +3,11 @@
 	convention: explicit,
 	extend: '.ta-l'
 )){
-	max-width: 44rem !important;
-	display: inline-block;
+	& { //DEFAULT
+		max-width: 44rem !important;
+		display: inline-block;
+	    @include scale(9,font-size,rem);
+	}
 	&:last-child { margin-bottom: 0; }
 	&:only-child { margin-top:    0;
 	               margin-bottom: 0; }

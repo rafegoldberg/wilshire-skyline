@@ -3,7 +3,7 @@
 )) ?>
 	<aside class="grid-d-4 grid-t-12 grid-m-12 no-gutter">
 		<!-- Media Bloc -->
-			<section class="attachmentBloc grid-t-6 grid-m-12">
+			<section class="attachmentBloc grid-d-12 grid-t-6 grid-m-12">
 				<div class="mediaBox grid-t-12 pad8Z pad6V">
 					<img src="<?=$site->files()->find('s-stylized-cutout.png')->url()?>" alt="Mark">
 				</div>
@@ -20,7 +20,7 @@
 				</div>
 			</section>
 	</aside>
-	<main id="main" role="main" class="grid-d-8 grid-t-12 grid-m-12 no-gutter">
+	<main id="main" role="main" class="grid-12 parent" data-gridle="grid-d-8 grid-t-12 grid-m-12 no-gutter">
 	<!-- Nav Bloc
 		<div class="contentBloc">
 			<ul class="textBox centered list__inline">
@@ -33,23 +33,40 @@
 		</div>
 	-->
 	<!-- Scroll Bloc -->
-		<section class="scrollBloc scrollBloc__pad1V grid-12 sizeReset7__cascade">
-			<? $props = $pages->find('props'); ?>
+		<section class="sidescrollBloc sidescrollBloc__pad1V grid-12 sizeReset6__cascade">
+
+		<!-- VARS     -->
+			<? $props = $pages->find('props');
+			?>
+		<!-- INTRO    -->
+			<div id="<?=$props->hash()?> " class="sidescrollBloc--item">
+				<div class="textBox">
+					<h1 class="heading_6 centered"><?=$props->title()->html()?></h1>
+				</div>
+			</div>
+		<!-- PROPERTY -->
 			<? foreach ($props->properties()->toStructure() as $prop) : ?>
 				<?
 				$hash = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $prop->title()), '-'));
 				$prop_img = $props->files()->find($prop->media());
 				?>
-				<div id="<?=$hash?>" class="scrollBloc--item bgBox__overlay bgBox__after">
-					<div class="textBox sizeReset9">
+				<div id="<?=$hash?>" class="sidescrollBloc--item bgBox__overlay bgBox__after js__ajax">
+					<div class="textBox">
 						<h1 class="heading_6 centered"><?=$prop->title()->html()?></h1>
-						<a href='#view?property=<?=$hash?>'><strong>Details</strong></a>
+						<small>Details</small>
 					</div>
 					<style> #<?=$hash?>.bgBox__after:after {
 						background-image:url(<?=$prop_img->url()?>);
 					} </style>
 				</div>
 			<? endforeach; ?>
+		<!-- OUTRO    -->
+			<div id="<?=$props->hash()?> " class="sidescrollBloc--item grid-1 grid-d-8">
+				<div class="textBox">
+					<h1 class="heading_3 centered"><</h1>
+				</div>
+			</div>
+
  		</section>
 	</main>
 <? snippet('meta/post') ?>

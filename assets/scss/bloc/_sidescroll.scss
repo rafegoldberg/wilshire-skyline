@@ -1,12 +1,26 @@
+// @requires	util/generate.scrollbars
+//           	app/app.util::_c
+//              	app.util::$c[eve,slate]
+// @notes		%_force-hardware-acceleration
+// 				is optional but important for
+//				achieving a smooth sliding
+//				effect for mobile browsers.
+
 @include newBloc((
-	name: scroll,
+	name: sidescroll,
 	gridle: (
 		parent: true
 	),
 	convention: explicit,
-	includes: '.ta-c',
+	includes: '.ta-c, %_force-hardware-acceleration',
 )){
 	& { //=DEFAULTS
+		@include scrollbars((
+			color_thumb:  _c(eve),
+			color_track:  _c(dusk),
+			color_stroke: _c(slate),
+			overflow_direction: x
+		));
 		display: block;
 		max-width: 100%;
 
@@ -32,10 +46,10 @@
 			grid: 5,
 			parent: true,
 			t: ( grid: 8  ),
-			m: ( grid: 11 )
+			m: ( grid: 10 )
 		));
 	}
-	@include pad(1,'.scrollBloc--item') {
+	@include pad(1,'.#{getBlocClass($bloc,true)}--item') {
 		min-width: 25%;
 		min-width: 25vw;
 		box-sizing: content-box;

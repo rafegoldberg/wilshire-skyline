@@ -4,7 +4,7 @@ $(document).ready(function() {
 			e.preventDefault();
 			$.ajax({
 				type: 'GET',
-				url:  $(this).data('url')?$(this).data('url'):'api',
+				url:  $(this).data('url') ? $(this).data('url') : 'api',
 				data: {
 					"get": $(this).data('get')?$(this).data('get'):'properties'
 				},

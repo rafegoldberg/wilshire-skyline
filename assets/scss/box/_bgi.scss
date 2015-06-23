@@ -1,10 +1,10 @@
 @include newBox((
 	name: bg,
 	convention: explicit,
+	extend: '.va-t'
 )){
 	position: relative;
 	z-index: 1;
-	@include scrollbars(_c(brand),_c(sky),4px);
 	&__before:before,
 	&__after:after {
 		position: absolute;
@@ -17,6 +17,7 @@
 		pointer-events: none;
 		background-position: center;
 		background-size: cover;
+		transition: all .35s ease-in-out;
 		@extend %_BGIMG_;
 	}
 	&__bw%_BGIMG_ { @at-root & { // STYLE PSEUDO BG EL
@@ -32,8 +33,36 @@
 		border-style: solid;
 		border-color: $_BDR_ transparent;
 
-		&%_BGIMG_ { @at-root & { // STYLE PSEUDO BG EL
+		transition: all .2s;
+		transition-delay: .2s;
+
+		&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
 			filter: grayscale(1) contrast(1.5) brightness(1.175);
+			opacity: .5;
 		}}
+
+		.textBox {
+			transition: font-size .3s ease-in-out;
+			transition-delay: .15s;
+		}
+
+		&.current {
+
+			$_GRD_: darken(_c(slate),6%);
+			@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 70%, rgba($_GRD_,0.5) 85%);
+
+			&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
+				filter: grayscale(.75) contrast(2) brightness(1.015);
+				opacity: 1;
+			}}
+
+			.textBox {
+				@include scale(7,font-size,rem);
+				transition: font-size .15s ease-in-out;
+				transition-delay: 0;
+			}
+
+		}
+
 	}
 };

@@ -26,8 +26,8 @@
 	@import "bit/*";
 		@include _debug("| ☑︎ Bit Sheets Imported");
 	// Components Debug
-		@include _box_debug;
-		@include _bloc_debug;
+		@include  _box_debugLog;
+		@include _bloc_debugLog;
 // |
 // + Gridle Overrides
 // |

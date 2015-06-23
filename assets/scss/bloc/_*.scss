@@ -16,4 +16,4 @@
 //-> Sheets
 @import "attachment";
 @import "content";
-@import "scroller";//@classname[scrollBloc]
+@import "sidescroll"; //@use[.sidescrollBox,&--item]

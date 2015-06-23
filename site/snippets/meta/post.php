@@ -2,8 +2,11 @@
 	snippet('meta/post.sheets' );
 	snippet('meta/post.scripts');
 	?>
-	<? if ($GLOBALS['ENV']['debug']!==false) : ?>
-		<?//= js('assets/js/build/livereload.js') ?>
+	<? if ($GLOBALS['ENV']['debug']===true) : ?>
+		<? snippet('meta/debug.toggles',array(
+			'load'=> '',
+		)); ?>
+	<? elseif ($GLOBALS['ENV']['debug']!==false) : ?>
 		<? snippet('meta/debug.toggles',array(
 			'load'=> $GLOBALS['ENV']['debug']
 		)); ?>

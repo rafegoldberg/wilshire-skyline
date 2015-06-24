@@ -78,8 +78,8 @@
 			),$debug_opts);
 			@at-root .rgdebug, .debug-#{$class} { %#{$class}debug {
 				outline-width: map-get($debug_opts,width);
-				outline-style: map-get($debug_opts,style);
-				outline-color: map-get($debug_opts,color);
+				outline-style: map-get($debug_opts,style) !important;
+				outline-color: map-get($debug_opts,color) !important;
 				outline-offset: -1px;
 			}}
 

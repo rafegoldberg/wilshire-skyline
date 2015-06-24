@@ -8538,8 +8538,8 @@ html.default .attachmentBloc > * {
 }
 .rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc {
   outline-width: 1px;
-  outline-style: dashed;
-  outline-color: cyan;
+  outline-style: dashed !important;
+  outline-color: cyan !important;
   outline-offset: -1px;
 }
 .contentBloc {
@@ -8560,8 +8560,8 @@ html.default .contentBloc {
 }
 .rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc {
   outline-width: 1px;
-  outline-style: dashed;
-  outline-color: cyan;
+  outline-style: dashed !important;
+  outline-color: cyan !important;
   outline-offset: -1px;
 }
 .scrollerBloc {
@@ -8791,43 +8791,43 @@ html.default .scrollerBloc--item {
   padding-right: 0;
 }
 html.t .scrollerBloc--item {
-  width: 66.66667%;
+  width: 75%;
 }
 .gridle-debug html.t .scrollerBloc--item:before, html.t .scrollerBloc--item.gridle-debug:before {
-  content: "grid-t-8" !important;
+  content: "grid-t-9" !important;
 }
 .gridle-debug html.t .scrollerBloc--item.parent:before, html.t .scrollerBloc--item.gridle-debug.parent:before {
-  content: "grid-parent-t-8" !important;
+  content: "grid-parent-t-9" !important;
 }
 @media screen and (min-width: 0) and (max-width: 74.938em) {
   .scrollerBloc--item {
-    width: 66.66667%;
+    width: 75%;
   }
   .gridle-debug .scrollerBloc--item:before, .scrollerBloc--item.gridle-debug:before {
-    content: "grid-t-8" !important;
+    content: "grid-t-9" !important;
   }
   .gridle-debug .scrollerBloc--item.parent:before, .scrollerBloc--item.gridle-debug.parent:before {
-    content: "grid-parent-t-8" !important;
+    content: "grid-parent-t-9" !important;
   }
 }
 html.m .scrollerBloc--item {
-  width: 91.66667%;
+  width: 83.33333%;
 }
 .gridle-debug html.m .scrollerBloc--item:before, html.m .scrollerBloc--item.gridle-debug:before {
-  content: "grid-m-11" !important;
+  content: "grid-m-10" !important;
 }
 .gridle-debug html.m .scrollerBloc--item.parent:before, html.m .scrollerBloc--item.gridle-debug.parent:before {
-  content: "grid-parent-m-11" !important;
+  content: "grid-parent-m-10" !important;
 }
 @media screen and (min-width: 0) and (max-width: 37.5em) {
   .scrollerBloc--item {
-    width: 91.66667%;
+    width: 83.33333%;
   }
   .gridle-debug .scrollerBloc--item:before, .scrollerBloc--item.gridle-debug:before {
-    content: "grid-m-11" !important;
+    content: "grid-m-10" !important;
   }
   .gridle-debug .scrollerBloc--item.parent:before, .scrollerBloc--item.gridle-debug.parent:before {
-    content: "grid-parent-m-11" !important;
+    content: "grid-parent-m-10" !important;
   }
 }
 html.m .scrollerBloc--item {
@@ -8842,8 +8842,8 @@ html.m .scrollerBloc--item {
 }
 .rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc {
   outline-width: 1px;
-  outline-style: dashed;
-  outline-color: cyan;
+  outline-style: dashed !important;
+  outline-color: cyan !important;
   outline-offset: -1px;
 }
 .bgBox {
@@ -8919,8 +8919,8 @@ html.default .bgBox {
   opacity: 1;
 }
 .bgBox--scaleUp {
-  -webkit-transition: font-size 0.4s ease-in-out;
-          transition: font-size 0.4s ease-in-out;
+  -webkit-transition: font-size 0.385s ease-in-out;
+          transition: font-size 0.385s ease-in-out;
   -webkit-transition-delay: 0.525s;
           transition-delay: 0.525s;
 }
@@ -8936,7 +8936,7 @@ html.default .bgBox {
           transition-delay: 0;
 }
 .bgBox__overlay.current .bgBox--scaleUp {
-  font-size: 1.24718rem;
+  font-size: 1.11677rem;
   -webkit-transition: font-size 0.2s ease-in-out;
           transition: font-size 0.2s ease-in-out;
   -webkit-transition-delay: 0.325s;
@@ -8944,12 +8944,12 @@ html.default .bgBox {
 }
 @media (min-width: 0) {
   .bgBox__overlay.current .bgBox--scaleUp {
-    font-size: 1.3401rem;
+    font-size: 1.15763rem;
   }
 }
 @media (min-width: 75em) {
   .bgBox__overlay.current .bgBox--scaleUp {
-    font-size: 1.5433rem;
+    font-size: 1.2423rem;
   }
 }
 .bgBox__overlay.current .bgBox--scaleUp__action {
@@ -8965,7 +8965,7 @@ html.default .bgBox {
 .rgdebug .bgBox, .rgdebug .textBox, .rgdebug .mediaBox, .rgdebug .actionBox, .debug-box .bgBox, .debug-box .textBox, .debug-box .mediaBox, .debug-box .actionBox {
   outline-width: 1px;
   outline-style: solid;
-  outline-color: magenta;
+  outline-color: magenta !important;
   outline-offset: -1px;
 }
 .textBox {
@@ -9001,7 +9001,7 @@ html.default .textBox {
 .rgdebug .bgBox, .rgdebug .textBox, .rgdebug .mediaBox, .rgdebug .actionBox, .debug-box .bgBox, .debug-box .textBox, .debug-box .mediaBox, .debug-box .actionBox {
   outline-width: 1px;
   outline-style: solid;
-  outline-color: magenta;
+  outline-color: magenta !important;
   outline-offset: -1px;
 }
 .mediaBox {
@@ -9015,7 +9015,7 @@ html.default .mediaBox {
 .rgdebug .bgBox, .rgdebug .textBox, .rgdebug .mediaBox, .rgdebug .actionBox, .debug-box .bgBox, .debug-box .textBox, .debug-box .mediaBox, .debug-box .actionBox {
   outline-width: 1px;
   outline-style: solid;
-  outline-color: magenta;
+  outline-color: magenta !important;
   outline-offset: -1px;
 }
 .actionBox {
@@ -9033,12 +9033,12 @@ html.default .actionBox {
 .rgdebug .bgBox, .rgdebug .textBox, .rgdebug .mediaBox, .rgdebug .actionBox, .debug-box .bgBox, .debug-box .textBox, .debug-box .mediaBox, .debug-box .actionBox {
   outline-width: 1px;
   outline-style: solid;
-  outline-color: magenta;
+  outline-color: magenta !important;
   outline-offset: -1px;
 }
 .debug-bit .actionBox__soft a, .actionBox__soft .debug-bit a, .debug-bit .actionBox__soft .action, .actionBox__soft .debug-bit .action, .debug-bit .actionBox__soft [class*="__action"], .actionBox__soft .debug-bit [class*="__action"], .debug-bit .heading, .debug-bit .heading_1, .debug-bit h1, .debug-bit .heading_2, .debug-bit h2, .debug-bit .heading_3, .debug-bit h3, .debug-bit .heading_4, .debug-bit h4, .debug-bit .heading_5, .debug-bit h5, .debug-bit .heading_6, .debug-bit h6, .debug-bit .heading_7, .debug-bit .heading_8, .debug-bit .heading_9, .debug-bit .list--item, .debug-bit .list, .debug-bit .list__inline, .debug-bit .list__block, .debug-bit .theme, .rgdebug .actionBox__soft a, .actionBox__soft .rgdebug a, .rgdebug .actionBox__soft .action, .actionBox__soft .rgdebug .action, .rgdebug .actionBox__soft [class*="__action"], .actionBox__soft .rgdebug [class*="__action"], .rgdebug .heading, .rgdebug .heading_1, .rgdebug h1, .rgdebug .heading_2, .rgdebug h2, .rgdebug .heading_3, .rgdebug h3, .rgdebug .heading_4, .rgdebug h4, .rgdebug .heading_5, .rgdebug h5, .rgdebug .heading_6, .rgdebug h6, .rgdebug .heading_7, .rgdebug .heading_8, .rgdebug .heading_9, .rgdebug .list--item, .rgdebug .list, .rgdebug .list__inline, .rgdebug .list__block, .rgdebug .theme {
-  outline: 1px solid dodgerblue;
-  outline-offset: -1px;
+  outline: 1px dotted yellow;
+  outline-offset: -2px;
 }
 
 .actionBox__soft a, .actionBox__soft .action, .actionBox__soft [class*="__action"] {

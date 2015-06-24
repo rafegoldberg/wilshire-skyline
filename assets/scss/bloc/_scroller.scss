@@ -47,24 +47,32 @@
 			font-size: 1rem;
 			position: relative;
 			white-space: initial; // reset parent
+
+			border-right: 1px solid;
+			&:last-child { border-right: none; }
+
 		}
+
+		// VERTICAL-ALIGNMENT CLASSES
 		&__va-t > * { @extend .va-t !optional; }
 		&__va-m > * { @extend .va-m !optional; }
 		&__va-b > * { @extend .va-b !optional; }
+
+		// PADDING CLASSES
+		@include pad('.#{getBlocClass($bloc,true)}--item');
+
 	}
 	&--item {
 		@include gridle_set((
 			grid: 7,
 			parent: true,
 			t: ( grid: 8  ),
-			m: ( grid: 10 )
+			m: ( grid: 11 )
 		));
+		@include gridle_state( m ) {
+			// force smaller vertical padding on mobile
+			padding-top: 12vh !important;
+			padding-bottom: 12vh !important;
+		};
 	}
-	@include pad('.#{getBlocClass($bloc,true)}--item') {
-		min-width: 25%;
-		min-width: 25vw;
-		box-sizing: content-box;
-		border-right: 1px solid;
-		&:last-child { border-right: none; }
-	};
 };

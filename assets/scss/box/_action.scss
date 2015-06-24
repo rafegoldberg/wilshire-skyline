@@ -1,0 +1,10 @@
+@include newBox((
+	name: action,
+	gridle: (
+		gutter: null,
+		no_gutter: left right
+	),
+	convention: explicit,
+)){
+	&__soft { @extend %links--soft; }
+};

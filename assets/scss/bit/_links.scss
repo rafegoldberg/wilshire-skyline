@@ -1,9 +1,23 @@
 %links {
-	&--default {
-		color: inherit;
+	&--default{
+		@extend %bit;
 	}
 	&--soft {
-		@extend %bit;
-		text-decoration: none;
+	  %link {
+  		@extend %links--default;
+  		color: inherit;
+  		text-decoration: none;
+	  }
+	  %link__action {
+		  &:hover { text-decoration: underline; }
+	  }
 	}
+}
+
+a {
+	@extend %link;
+}
+
+.action, [class*="__action"] {
+  @extend %link, %link__action;
 }

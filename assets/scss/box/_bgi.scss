@@ -8,7 +8,7 @@
 	$item_active_class: '.current';
 	$item_animation_subclass: 'scaleUp';
 	$item_animation_duration: .4;
-	$item_animation_delay: .4;
+	$item_animation_delay: .325;
 
 	// Parse Config Vars
 	// 
@@ -76,22 +76,44 @@
 				$_GRD_: darken(_c(slate),6%);
 				@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 70%, rgba($_GRD_,0.5) 85%);
 				&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
-					filter: grayscale(.75) contrast(2) brightness(1.015);
+					filter: grayscale(.9) contrast(2) brightness(1.015);
 					opacity: 1;
 				} }
 			}
 		}
 
 		& { // SCALEUP (ANIMATION)
+			
+			// Quick Config
+			// 
+			$item_animation_subclass_action: action;
+
+			// Animation Styles
+			// 
 			@at-root #{$item_animation_subclass} {
 				@extend %_force-hardware-acceleration !optional;
 				transition: font-size with-unit($item_animation_duration,s) ease-in-out;
 				transition-delay: with-unit(($item_animation_duration/2)+$item_animation_delay,s);
+				&__#{$item_animation_subclass_action} {
+					position: absolute;
+					transform: translateY(100%);
+					opacity: 0;
+					transition: opacity   with-unit($item_animation_duration+$item_animation_delay,s) ease-out   ,
+								transform with-unit(($item_animation_duration+$item_animation_delay)/1.5,s) ease-in-out;
+					transition-delay: 0;
+				}
 			}
 			&#{$item_active_class} #{$item_animation_subclass} {
 				@include scale(6,font-size,rem);
 				transition: font-size with-unit($item_animation_duration/2,s) ease-in-out;
 				transition-delay: with-unit($item_animation_delay,s);
+				&__#{$item_animation_subclass_action} {
+					transform: translateY(0);
+					opacity: 1;
+					transition: opacity   with-unit($item_animation_duration,s) ease-in   ,
+								transform with-unit(($item_animation_duration)/1.5,s) ease-in-out;
+					transition-delay: with-unit(($item_animation_duration/2)+$item_animation_delay,s);
+				}
 			}
 		}
 	}

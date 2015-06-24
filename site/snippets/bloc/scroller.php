@@ -8,11 +8,11 @@
 			$hash = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $prop->title()), '-'));
 			$prop_img = $props->files()->find($prop->media());
 			?>
-			<div id="<?=$hash?>" class="scrollerBloc--item bgBox__overlay bgBox__after js__ajax">
-				<div class="textBox bgBox--scaleUp">
+			<div id="<?=$hash?>" class="scrollerBloc--item bgBox__overlay bgBox__after js__ajax actionBox__soft">
+				<a href="#view?property=<?=$hash?>" class="textBox bgBox--scaleUp">
 					<h1 class="heading_6 centered"><?=$prop->title()->html()?></h1>
-					<small class="sizeReset9">Details</small>
-				</div>
+					<small class="bgBox--scaleUp__action sizeReset9">View Details</small>
+				</a>
 				<style> #<?=$hash?>.bgBox__after:after {
 					background-image:url(<?=$prop_img->url()?>);
 				} </style>

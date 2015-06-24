@@ -14,7 +14,7 @@ var scrolling = false,
 // 
 // FUNCTIONS
 // 
-function scroller_goto_item($self) {
+var scroller_goto_item = function($self) {
     // DEFAULT ARGS
     $self = typeof $self !== 'undefined' ? $self : scroller_item_at('center');
 
@@ -35,8 +35,10 @@ function scroller_goto_item($self) {
             scrollTo = total - (remains / 2); //update top-level var
             return scrollTo;
         }()),
-    },400, function() {
-        scrolling = false;    });
+    }, 400, 'easeInOut', function() {
+        scrolling = false;
+        return false;
+    });
     return scrollTo;
 }
 var scroller_item_at = function(from/*[left|right|center]*/){
@@ -81,14 +83,23 @@ var scroller_make_item_siblings_inactive = function($item) {
 $items
     .on("click", function(event) { 
 
-        scroller_goto_item($(this));
-        $(this).siblings().removeClass('current');
-        $(this).toggleClass('current');
+        // IF OPEN:
+        if ($(this).hasClass('current') && event.target!==$(this)[0]) {
+            // ^ ALLOW CLICKS ORIGINATING ON INNER ELEMS
+            console.log($(this).find('[class*="__action"]'));
+            return true;
+        }
 
+        // OTHERWISE:
+        scroller_goto_item($(this));                 // < scroll to clicked
+        $(this).siblings().removeClass('current');   // < remove others' .current
+        $(this).toggleClass('current');              // < toggle .current on clicked
         return false;
+
     })
 $scroller
     .on("scrollstart", function(event) {
+        if (scrolling===true) return false;
         if (scrolling!=='auto') scrolling = true;
     })
     .on("scrollstop", function(event) {

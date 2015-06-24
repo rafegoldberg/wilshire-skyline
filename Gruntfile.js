@@ -23,9 +23,9 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			options: {
-				mangle: false,
-				compress: false,
-				beautify: false,
+				// mangle: false,
+				// compress: false,
+				beautify: true,
 				// sourceMap: true,
 				// sourceMapIncludeSources: true
 			},

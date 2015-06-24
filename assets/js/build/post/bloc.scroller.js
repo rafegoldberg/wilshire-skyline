@@ -1,1 +1,44 @@
-var scrolling=false,$scroller=$(".scrollerBloc"),$items=$scroller.children(".scrollerBloc--item");active_class="is_open";var scroller_goto_item=function($self){$self=typeof $self!=="undefined"?$self:scroller_item_at("center");if(scrolling)$self.siblings().add($self).removeClass(active_class+" current");var scrollTo=0;scrolling="auto";$scroller.animate({scrollLeft:function(){widths=$self.prevAll().map(function(){return $self.outerWidth()}).toArray();total=widths.length<1?0:eval(widths.join("+"));view=$scroller.outerWidth();width=$self.outerWidth();remains=view-width;scrollTo=total-remains/2;return scrollTo}()},400,"easeInOut",function(){scrolling=false;return false});return scrollTo};var scroller_item_at=function(from){from=typeof from!=="undefined"?from:"center";from=function(pos){if(typeof pos==="number"){return pos}else if(pos=="right"){return $scroller.outerWidth()}else if(pos=="left"){return 0}else{return $scroller.outerWidth()/2}}(from);var elems_by_offsets={},offsets=$items.map(function(e){offset=$(this).offset().left+$(this).width()/2;elems_by_offsets[offset]=$(this);return offset});$next_item=elems_by_offsets[closest(from,offsets)];return $next_item};var scroller_make_items_inactive=function(){return $scroller.children().removeClass(active_class)};var scroller_make_item_active=function($item){$item=typeof $item!=="undefined"?$item:scroller_item_at();$item.addClass(active_class);return $item};var scroller_make_item_siblings_inactive=function($item){$item=typeof $item!=="undefined"?$item:scroller_item_at();$item.siblings().removeClass(active_class);return $item};$items.on("click",function(event){if($(this).hasClass("current")&&event.target!==$(this)[0]){console.log($(this).find('[class*="__action"]'));return true}scroller_goto_item($(this));$(this).siblings().removeClass("current");$(this).toggleClass("current");return false});$scroller.on("scrollstart",function(event){if(scrolling===true)return false;if(scrolling!=="auto")scrolling=true}).on("scrollstop",function(event){if(scrolling!=="auto")scroller_goto_item();scrolling=false});
+var scrolling = !1, $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item");
+
+active_class = "is_open";
+
+var scroller_goto_item = function($self) {
+    $self = "undefined" != typeof $self ? $self : scroller_item_at("center"), scrolling && $self.siblings().add($self).removeClass(active_class + " current");
+    var scrollTo = 0;
+    return scrolling = "auto", $scroller.animate({
+        scrollLeft: function() {
+            return widths = $self.prevAll().map(function() {
+                return $self.outerWidth();
+            }).toArray(), total = widths.length < 1 ? 0 : eval(widths.join("+")), view = $scroller.outerWidth(), 
+            width = $self.outerWidth(), remains = view - width, scrollTo = total - remains / 2;
+        }()
+    }, 400, "easeInOut", function() {
+        return scrolling = !1, !1;
+    }), scrollTo;
+}, scroller_item_at = function(a) {
+    a = "undefined" != typeof a ? a : "center", a = function(a) {
+        return "number" == typeof a ? a : "right" == a ? $scroller.outerWidth() : "left" == a ? 0 : $scroller.outerWidth() / 2;
+    }(a);
+    var b = {}, c = $items.map(function(a) {
+        return offset = $(this).offset().left + $(this).width() / 2, b[offset] = $(this), 
+        offset;
+    });
+    return $next_item = b[closest(a, c)], $next_item;
+}, scroller_make_items_inactive = function() {
+    return $scroller.children().removeClass(active_class);
+}, scroller_make_item_active = function(a) {
+    return a = "undefined" != typeof a ? a : scroller_item_at(), a.addClass(active_class), 
+    a;
+}, scroller_make_item_siblings_inactive = function(a) {
+    return a = "undefined" != typeof a ? a : scroller_item_at(), a.siblings().removeClass(active_class), 
+    a;
+};
+
+$items.on("click", function(a) {
+    return $(this).hasClass("current") && a.target !== $(this)[0] ? !0 : (scroller_goto_item($(this)), 
+    $(this).siblings().removeClass("current"), $(this).toggleClass("current"), !1);
+}), $scroller.on("scrollstart", function(a) {
+    return scrolling === !0 ? !1 : void ("auto" !== scrolling && (scrolling = !0));
+}).on("scrollstop", function(a) {
+    "auto" !== scrolling && scroller_goto_item(), scrolling = !1;
+});

@@ -8877,10 +8877,7 @@ html.default .bgBox {
           filter: grayscale(1);
 }
 .bgBox__overlay {
-  background: #082d51;
-  background: -webkit-linear-gradient(-90deg, #082d51 5%, rgba(8, 45, 81, 0.75) 60%, rgba(8, 45, 81, 0.375) 80%, rgba(8, 45, 81, 0.25) 90%, rgba(8, 45, 81, 0) 95%);
-  background: -webkit-linear-gradient(270deg, #082d51 5%, rgba(8, 45, 81, 0.75) 60%, rgba(8, 45, 81, 0.375) 80%, rgba(8, 45, 81, 0.25) 90%, rgba(8, 45, 81, 0) 95%);
-  background: linear-gradient(180deg, #082d51 5%, rgba(8, 45, 81, 0.75) 60%, rgba(8, 45, 81, 0.375) 80%, rgba(8, 45, 81, 0.25) 90%, rgba(8, 45, 81, 0) 95%);
+  background: rgba(8, 45, 81, 0.8375);
   border-right: 1px solid rgba(8, 48, 86, 0.45);
   -webkit-transition: all .2s;
           transition: all .2s;
@@ -8893,25 +8890,16 @@ html.default .bgBox {
   opacity: .5;
 }
 .bgBox__overlay:hover:not(.current) {
-  background: #062643;
-  background: -webkit-linear-gradient(-90deg, #062643 5%, rgba(6, 38, 67, 0.75) 60%, rgba(6, 38, 67, 0.375) 80%, rgba(6, 38, 67, 0.25) 90%, rgba(6, 38, 67, 0) 95%);
-  background: -webkit-linear-gradient(270deg, #062643 5%, rgba(6, 38, 67, 0.75) 60%, rgba(6, 38, 67, 0.375) 80%, rgba(6, 38, 67, 0.25) 90%, rgba(6, 38, 67, 0) 95%);
-  background: linear-gradient(180deg, #062643 5%, rgba(6, 38, 67, 0.75) 60%, rgba(6, 38, 67, 0.375) 80%, rgba(6, 38, 67, 0.25) 90%, rgba(6, 38, 67, 0) 95%);
+  background: rgba(6, 38, 67, 0.8375);
 }
 .bgBox__overlay.bgBox__before:hover:not(.current):before, .bgBox__overlay.bgBox__after:hover:not(.current):after {
   opacity: .5;
 }
 .bgBox__overlay:active:not(.current) {
-  background: #051b31;
-  background: -webkit-linear-gradient(-90deg, #051b31 5%, rgba(5, 27, 49, 0.75) 60%, rgba(5, 27, 49, 0.375) 80%, rgba(5, 27, 49, 0.25) 90%, rgba(5, 27, 49, 0) 95%);
-  background: -webkit-linear-gradient(270deg, #051b31 5%, rgba(5, 27, 49, 0.75) 60%, rgba(5, 27, 49, 0.375) 80%, rgba(5, 27, 49, 0.25) 90%, rgba(5, 27, 49, 0) 95%);
-  background: linear-gradient(180deg, #051b31 5%, rgba(5, 27, 49, 0.75) 60%, rgba(5, 27, 49, 0.375) 80%, rgba(5, 27, 49, 0.25) 90%, rgba(5, 27, 49, 0) 95%);
+  background: rgba(5, 27, 49, 0.8375);
 }
 .bgBox__overlay.current {
-  background: #121415;
-  background: -webkit-linear-gradient(-90deg, #121415 5%, rgba(18, 20, 21, 0.75) 70%, rgba(18, 20, 21, 0.5) 85%);
-  background: -webkit-linear-gradient(270deg, #121415 5%, rgba(18, 20, 21, 0.75) 70%, rgba(18, 20, 21, 0.5) 85%);
-  background: linear-gradient(180deg, #121415 5%, rgba(18, 20, 21, 0.75) 70%, rgba(18, 20, 21, 0.5) 85%);
+  background: rgba(18, 20, 21, 0.8375);
 }
 .bgBox__overlay.current.bgBox__before:before, .bgBox__overlay.current.bgBox__after:after {
   -webkit-filter: grayscale(0.9) contrast(2) brightness(1.015);
@@ -8921,8 +8909,8 @@ html.default .bgBox {
 .bgBox--scaleUp {
   -webkit-transition: font-size 0.385s ease-in-out;
           transition: font-size 0.385s ease-in-out;
-  -webkit-transition-delay: 0.525s;
-          transition-delay: 0.525s;
+  -webkit-transition-delay: 0.575s;
+          transition-delay: 0.575s;
 }
 .bgBox--scaleUp__action {
   position: absolute;
@@ -8930,26 +8918,26 @@ html.default .bgBox {
       -ms-transform: translateY(100%);
           transform: translateY(100%);
   opacity: 0;
-  -webkit-transition: opacity 0.725s ease-out, -webkit-transform 0.48333s ease-in-out;
-          transition: opacity 0.725s ease-out, transform 0.48333s ease-in-out;
+  -webkit-transition: opacity 0.775s ease-out, -webkit-transform 0.51667s ease-in-out;
+          transition: opacity 0.775s ease-out, transform 0.51667s ease-in-out;
   -webkit-transition-delay: 0;
           transition-delay: 0;
 }
 .bgBox__overlay.current .bgBox--scaleUp {
-  font-size: 1.11677rem;
+  font-size: 1.44504rem;
   -webkit-transition: font-size 0.2s ease-in-out;
           transition: font-size 0.2s ease-in-out;
-  -webkit-transition-delay: 0.325s;
-          transition-delay: 0.325s;
+  -webkit-transition-delay: 0.375s;
+          transition-delay: 0.375s;
 }
 @media (min-width: 0) {
   .bgBox__overlay.current .bgBox--scaleUp {
-    font-size: 1.15763rem;
+    font-size: 1.62889rem;
   }
 }
 @media (min-width: 75em) {
   .bgBox__overlay.current .bgBox--scaleUp {
-    font-size: 1.2423rem;
+    font-size: 2.06103rem;
   }
 }
 .bgBox__overlay.current .bgBox--scaleUp__action {
@@ -8959,8 +8947,8 @@ html.default .bgBox {
   opacity: 1;
   -webkit-transition: opacity 0.4s ease-in, -webkit-transform 0.26667s ease-in-out;
           transition: opacity 0.4s ease-in, transform 0.26667s ease-in-out;
-  -webkit-transition-delay: 0.525s;
-          transition-delay: 0.525s;
+  -webkit-transition-delay: 0.575s;
+          transition-delay: 0.575s;
 }
 .rgdebug .bgBox, .rgdebug .textBox, .rgdebug .mediaBox, .rgdebug .actionBox, .debug-box .bgBox, .debug-box .textBox, .debug-box .mediaBox, .debug-box .actionBox {
   outline-width: 1px;

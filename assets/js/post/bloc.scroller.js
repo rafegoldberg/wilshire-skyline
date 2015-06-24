@@ -86,7 +86,7 @@ $items
         // IF OPEN:
         if ($(this).hasClass('current') && event.target!==$(this)[0]) {
             // ^ ALLOW CLICKS ORIGINATING ON INNER ELEMS
-            console.log($(this).find('[class*="__action"]'));
+            // console.log($(this).find('[class*="__action"]'));
             return true;
         }
 

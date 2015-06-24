@@ -8,7 +8,7 @@
 	$item_active_class: '.current';
 	$item_animation_subclass: 'scaleUp';
 	$item_animation_duration: .4;
-	$item_animation_delay: .325;
+	$item_animation_delay: .375;
 
 	// Parse Config Vars
 	// 
@@ -42,7 +42,8 @@
 	}}
 	&__overlay {
 		$_GRD_: darken(_c(navy),1%);
-		@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+		// @include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+		background: rgba($_GRD_,.8375);
 
 		border-right: 1px solid rgba(_c(dusk),.45);
 
@@ -57,7 +58,8 @@
 		& { // HOVER
 			&:hover:not(#{$item_active_class}) {
 				$_GRD_: darken(_c(navy),4%);
-				@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+				// @include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+				background: rgba($_GRD_,.8375);
 				&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
 					opacity: .5;
 				} }
@@ -67,14 +69,16 @@
 		& { // ACTIVE
 			&:active:not(#{$item_active_class}) {
 				$_GRD_: darken(_c(navy),8%);
-				@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+				// @include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+				background: rgba($_GRD_,.8375);
 			}
 		}
 
 		& { // ACTIVE
 			&#{$item_active_class} {
 				$_GRD_: darken(_c(slate),6%);
-				@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 70%, rgba($_GRD_,0.5) 85%);
+				// @include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 70%, rgba($_GRD_,0.5) 85%);
+				background: rgba($_GRD_,.8375);
 				&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
 					filter: grayscale(.9) contrast(2) brightness(1.015);
 					opacity: 1;
@@ -104,7 +108,7 @@
 				}
 			}
 			&#{$item_active_class} #{$item_animation_subclass} {
-				@include scale(7,font-size,rem);
+				@include scale(4,font-size,rem);
 				transition: font-size with-unit($item_animation_duration/2,s) ease-in-out;
 				transition-delay: with-unit($item_animation_delay,s);
 				&__#{$item_animation_subclass_action} {

@@ -1,1 +1,7 @@
-function closest(num,arr){var curr=arr[0];var diff=Math.abs(num-curr);for(var val=0;val<arr.length;val++){var newdiff=Math.abs(num-arr[val]);if(newdiff<diff){diff=newdiff;curr=arr[val]}}return curr}
+function closest(a, b) {
+    for (var c = b[0], d = Math.abs(a - c), e = 0; e < b.length; e++) {
+        var f = Math.abs(a - b[e]);
+        d > f && (d = f, c = b[e]);
+    }
+    return c;
+}

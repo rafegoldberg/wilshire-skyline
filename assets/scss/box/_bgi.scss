@@ -19,6 +19,7 @@
 	& {
 		position: relative;
 		z-index: 1;
+		@extend %_force-hardware-acceleration !optional;
 	}
 	&__before:before,
 	&__after:after {
@@ -51,7 +52,6 @@
 
 		transition: all .2s;
 		transition-delay: .2s;
-		@extend %_force-hardware-acceleration !optional;
 
 		&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
 			filter: grayscale(1) contrast(1.5) brightness(1.175);
@@ -88,6 +88,7 @@
 
 		& { // SCALEUP (ANIMATION)
 			@at-root #{$item_animation_subclass} {
+				@extend %_force-hardware-acceleration !optional;
 				transition: font-size with-unit($item_animation_duration,s) ease-in-out;
 				transition-delay: with-unit(($item_animation_duration/2)+$item_animation_delay,s);
 			}

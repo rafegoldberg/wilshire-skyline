@@ -4,7 +4,8 @@
 // 
 var scrolling = false,
     $scroll = $('.sidescrollBloc'),
-	$items = $scroll.children('.sidescrollBloc--item');
+	$items = $scroll.children('.sidescrollBloc--item')
+    active_class = 'current';
 // 
 // DEBUG
 // 
@@ -39,7 +40,6 @@ function sidescroll_goto_item($self) {
     },250, function() {
         scrolling = false;
     });
-	$self.addClass('current');
     return scrollTo;
 }
 var sidescroll_get_next_item = function(from/*[left|right|center]*/){
@@ -72,16 +72,16 @@ var sidescroll_get_next_item = function(from/*[left|right|center]*/){
     return $next_item;
 }
 var sidescroll_make_items_inactive = function() {
-    return $('.sidescrollBloc').children().removeClass('active current');
+    return $('.sidescrollBloc').children().removeClass(active_class);
 }
 var sidescroll_make_item_active = function($this) {
     $this = typeof $this !== 'undefined' ? $this : sidescroll_get_next_item();
-    $this.addClass('active');
+    $this.addClass(active_class);
     return $this;
 }
 var sidescroll_make_item_siblings_inactive = function($this) {
     $this = typeof $this !== 'undefined' ? $this : sidescroll_get_next_item();
-	$this.siblings().removeClass('active');
+	$this.siblings().removeClass(active_class);
     return $this;
 }
 // 
@@ -89,22 +89,15 @@ var sidescroll_make_item_siblings_inactive = function($this) {
 // 
 $items
     .on("click", function(e) {
-        // if scrolling
-        sidescroll_make_items_inactive();
         sidescroll_goto_item($(this));
+        sidescroll_make_item_siblings_inactive($(this));
         sidescroll_make_item_active($(this));
     })
-$scroll.on("mouseleave", function(e) {
-//     sidescroll_make_items_inactive();
-}).on("scrollstart", function(e) {
-    if (scrolling !== 'auto') {
-    }
-    scrolling = true;
-}).on("scrollstop", function(e) {
-    scrolling = false;
-    $nextUp = sidescroll_get_next_item('center');
-    sidescroll_goto_item();
-    sidescroll_make_item_active();
-    sidescroll_make_item_siblings_inactive();
-
-});
+$scroll
+    .on("scrollstart", function(e) {
+        scrolling = true;
+    }).on("scrollstop", function(e) {
+        scrolling = false;
+        $nextUp = sidescroll_get_next_item('center');
+        sidescroll_goto_item();
+    });

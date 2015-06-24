@@ -1,8 +1,7 @@
 @import url("../fonts/din-alt/import.css");
-.sidescrollBloc, .bgBox__before:before, .bgBox__after:after, .bgBox__overlay {
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
+.sidescrollBloc, .bgBox, .bgBox__before:before, .bgBox__after:after, .bgBox--scaleUp {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 
 html body:after, .container:after, #main:after {
@@ -8582,7 +8581,6 @@ html.default .sidescrollBloc {
   padding-right: 0;
 }
 .sidescrollBloc {
-  background: #083056;
   display: block;
   max-width: 100%;
   white-space: nowrap;
@@ -8710,23 +8708,23 @@ html.t .sidescrollBloc--item {
   }
 }
 html.m .sidescrollBloc--item {
-  width: 91.66667%;
+  width: 83.33333%;
 }
 .gridle-debug html.m .sidescrollBloc--item:before, html.m .sidescrollBloc--item.gridle-debug:before {
-  content: "grid-m-11" !important;
+  content: "grid-m-10" !important;
 }
 .gridle-debug html.m .sidescrollBloc--item.parent:before, html.m .sidescrollBloc--item.gridle-debug.parent:before {
-  content: "grid-parent-m-11" !important;
+  content: "grid-parent-m-10" !important;
 }
 @media screen and (min-width: 0) and (max-width: 37.5em) {
   .sidescrollBloc--item {
-    width: 91.66667%;
+    width: 83.33333%;
   }
   .gridle-debug .sidescrollBloc--item:before, .sidescrollBloc--item.gridle-debug:before {
-    content: "grid-m-11" !important;
+    content: "grid-m-10" !important;
   }
   .gridle-debug .sidescrollBloc--item.parent:before, .sidescrollBloc--item.gridle-debug.parent:before {
-    content: "grid-parent-m-11" !important;
+    content: "grid-parent-m-10" !important;
   }
 }
 .sidescrollBloc__pad1 .sidescrollBloc--item, .sidescrollBloc__pad1Z .sidescrollBloc--item {

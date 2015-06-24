@@ -24,7 +24,7 @@
 			overflow_direction: x
 		));
 
-		background: _c(dusk);
+		// background: _c(dusk);
 
 		display: block;
 		max-width: 100%;
@@ -57,7 +57,7 @@
 			grid: 7,
 			parent: true,
 			t: ( grid: 8  ),
-			m: ( grid: 11 )
+			m: ( grid: 10 )
 		));
 	}
 	@include pad(1,'.#{getBlocClass($bloc,true)}--item') {

@@ -1,5 +1,8 @@
 %_force-hardware-acceleration {
-	-webkit-transform: translate3d(0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
+	transform: translateZ(0);
+}
+%_force-hardware-acceleration-more {
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000;
 }

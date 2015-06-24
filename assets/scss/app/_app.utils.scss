@@ -17,9 +17,9 @@
 @function _breaks($name,$key) { @return map-get( map-get($breaks,$name), $key ); }
 
 @function _sz($z) { @return nth($scale,num($z)); }
-@function _ms($z,$base:false) {
-	$base: if($base,$base,map-get($_TYPE,rhythm));
-	@return ms(_sz(num($z)),$base);
+@function _ms($z,$units:em) {
+	$units: if($units=='rem',1rem,if($units=='px',map-get($_TYPE,base),map-get($_TYPE,rhythm)));
+	@return ms(_sz(num($z)),$units);
 }
 @mixin scale($z,$property:font-size,$units:em) {
 	$units: if($units=='rem',1rem,if($units=='px',map-get($_TYPE,base),map-get($_TYPE,rhythm)));

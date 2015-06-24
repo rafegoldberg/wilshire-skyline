@@ -26,7 +26,7 @@
 
 @import "app/app.vars";    //@STEP[1]
 @import "app/config.grid"; //@STEP[2]
-@include gridle_generate_classes(default,(
+@include gridle_generate_classes(NULL,(
 	grid,
 	parent,
 	no_gutter,

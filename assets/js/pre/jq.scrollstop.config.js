@@ -1,2 +1,2 @@
 
-$.event.special.scrollstop.latency = 250;
+$.event.special.scrollstop.latency = 400;

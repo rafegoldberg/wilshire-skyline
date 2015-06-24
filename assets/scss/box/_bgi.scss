@@ -8,7 +8,7 @@
 	$item_active_class: '.current';
 	$item_animation_subclass: 'scaleUp';
 	$item_animation_duration: .4;
-	$item_animation_delay: .3;
+	$item_animation_delay: .4;
 
 	// Parse Config Vars
 	// 
@@ -44,11 +44,7 @@
 		$_GRD_: darken(_c(navy),1%);
 		@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
 
-		$_BDR_: _c(navy);
-		$_BDR_: rgba($_BDR_,.5) rgba($_BDR_,.2) rgba(_c(eve),.2);
-		border-width: 0 1px 0 0;
-		border-style: solid;
-		border-color: $_BDR_ transparent;
+		border-right: 1px solid rgba(_c(dusk),.45);
 
 		transition: all .2s;
 		transition-delay: .2s;

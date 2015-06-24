@@ -7,7 +7,7 @@
 //				effect for mobile browsers.
 
 @include newBloc((
-	name: sidescroll,
+	name: scroller,
 	gridle: (
 		parent: true
 	),
@@ -49,8 +49,8 @@
 			white-space: initial; // reset parent
 		}
 		&__va-t > * { @extend .va-t !optional; }
-		&__va-b > * { @extend .va-b !optional; }
 		&__va-m > * { @extend .va-m !optional; }
+		&__va-b > * { @extend .va-b !optional; }
 	}
 	&--item {
 		@include gridle_set((
@@ -60,7 +60,7 @@
 			m: ( grid: 10 )
 		));
 	}
-	@include pad(1,'.#{getBlocClass($bloc,true)}--item') {
+	@include pad('.#{getBlocClass($bloc,true)}--item') {
 		min-width: 25%;
 		min-width: 25vw;
 		box-sizing: content-box;

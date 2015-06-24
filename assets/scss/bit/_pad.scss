@@ -1,2 +1,2 @@
-.pad  { @include pad(1,'',false);        }
-.push { @include pad(1,'',false,margin); }
+.pad  { @include pad('',false);        }
+.push { @include pad('',false,margin,'rem'); }

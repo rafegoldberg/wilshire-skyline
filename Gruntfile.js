@@ -26,6 +26,8 @@ module.exports = function(grunt) {
 				mangle: false,
 				compress: false,
 				beautify: false,
+				// sourceMap: true,
+				// sourceMapIncludeSources: true
 			},
 			default: {
 				files: [{

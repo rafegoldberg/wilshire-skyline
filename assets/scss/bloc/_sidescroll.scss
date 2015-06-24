@@ -15,13 +15,17 @@
 	includes: '.ta-c, %_force-hardware-acceleration',
 )){
 	& { //=DEFAULTS
+
 		@include scrollbars((
 			color_thumb:  _c(sky),
 			color_track:  transparent,
-			color_stroke: false,
-			scrollbar_size: 3px,
+			color_stroke: _c(brand),
+			scrollbar_size: 6px,
 			overflow_direction: x
 		));
+
+		background: _c(dusk);
+
 		display: block;
 		max-width: 100%;
 
@@ -34,20 +38,26 @@
 
 		font-size: 0 !important;
 		> * {
+
+			// DEFAULTS
+			vertical-align: middle;
+
 			@extend .d-ib !optional;
 			float: none !important;
 			font-size: 1rem;
 			position: relative;
-			vertical-align: bottom;
-			white-space: initial;
+			white-space: initial; // reset parent
 		}
+		&__va-t > * { @extend .va-t !optional; }
+		&__va-b > * { @extend .va-b !optional; }
+		&__va-m > * { @extend .va-m !optional; }
 	}
 	&--item {
 		@include gridle_set((
 			grid: 7,
 			parent: true,
 			t: ( grid: 8  ),
-			m: ( grid: 10 )
+			m: ( grid: 11 )
 		));
 	}
 	@include pad(1,'.#{getBlocClass($bloc,true)}--item') {

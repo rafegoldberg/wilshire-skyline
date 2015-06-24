@@ -8582,6 +8582,7 @@ html.default .sidescrollBloc {
   padding-right: 0;
 }
 .sidescrollBloc {
+  background: #083056;
   display: block;
   max-width: 100%;
   white-space: nowrap;
@@ -8596,21 +8597,24 @@ html.default .sidescrollBloc {
   scrollbar-track-color: transparent;
 }
 .sidescrollBloc::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
+  width: 6px;
+  height: 6px;
   background: transparent;
+  border: 1px solid #00589B;
 }
 .sidescrollBloc::-webkit-scrollbar-track {
   background: transparent;
+  border: 1px solid #00589B;
 }
 .sidescrollBloc::-webkit-scrollbar-thumb {
   background: #E2E9F2;
+  border: 1px solid transparent;
 }
 .sidescrollBloc > * {
+  vertical-align: middle;
   float: none !important;
   font-size: 1rem;
   position: relative;
-  vertical-align: bottom;
   white-space: initial;
 }
 .sidescrollBloc--item {
@@ -8706,23 +8710,23 @@ html.t .sidescrollBloc--item {
   }
 }
 html.m .sidescrollBloc--item {
-  width: 83.33333%;
+  width: 91.66667%;
 }
 .gridle-debug html.m .sidescrollBloc--item:before, html.m .sidescrollBloc--item.gridle-debug:before {
-  content: "grid-m-10" !important;
+  content: "grid-m-11" !important;
 }
 .gridle-debug html.m .sidescrollBloc--item.parent:before, html.m .sidescrollBloc--item.gridle-debug.parent:before {
-  content: "grid-parent-m-10" !important;
+  content: "grid-parent-m-11" !important;
 }
 @media screen and (min-width: 0) and (max-width: 37.5em) {
   .sidescrollBloc--item {
-    width: 83.33333%;
+    width: 91.66667%;
   }
   .gridle-debug .sidescrollBloc--item:before, .sidescrollBloc--item.gridle-debug:before {
-    content: "grid-m-10" !important;
+    content: "grid-m-11" !important;
   }
   .gridle-debug .sidescrollBloc--item.parent:before, .sidescrollBloc--item.gridle-debug.parent:before {
-    content: "grid-parent-m-10" !important;
+    content: "grid-parent-m-11" !important;
   }
 }
 .sidescrollBloc__pad1 .sidescrollBloc--item, .sidescrollBloc__pad1Z .sidescrollBloc--item {
@@ -8914,12 +8918,14 @@ html.m .sidescrollBloc--item {
 .bgBox {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  position: relative;
-  z-index: 1;
 }
 html.default .bgBox {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
+}
+.bgBox {
+  position: relative;
+  z-index: 1;
 }
 .bgBox__before:before, .bgBox__after:after {
   position: absolute;
@@ -8940,10 +8946,10 @@ html.default .bgBox {
           filter: grayscale(1);
 }
 .bgBox__overlay {
-  background: #06233f;
-  background: -webkit-linear-gradient(-90deg, #06233f 5%, rgba(6, 35, 63, 0.75) 60%, rgba(6, 35, 63, 0.375) 80%, rgba(6, 35, 63, 0.25) 90%, rgba(6, 35, 63, 0) 95%);
-  background: -webkit-linear-gradient(270deg, #06233f 5%, rgba(6, 35, 63, 0.75) 60%, rgba(6, 35, 63, 0.375) 80%, rgba(6, 35, 63, 0.25) 90%, rgba(6, 35, 63, 0) 95%);
-  background: linear-gradient(180deg, #06233f 5%, rgba(6, 35, 63, 0.75) 60%, rgba(6, 35, 63, 0.375) 80%, rgba(6, 35, 63, 0.25) 90%, rgba(6, 35, 63, 0) 95%);
+  background: #082d51;
+  background: -webkit-linear-gradient(-90deg, #082d51 5%, rgba(8, 45, 81, 0.75) 60%, rgba(8, 45, 81, 0.375) 80%, rgba(8, 45, 81, 0.25) 90%, rgba(8, 45, 81, 0) 95%);
+  background: -webkit-linear-gradient(270deg, #082d51 5%, rgba(8, 45, 81, 0.75) 60%, rgba(8, 45, 81, 0.375) 80%, rgba(8, 45, 81, 0.25) 90%, rgba(8, 45, 81, 0) 95%);
+  background: linear-gradient(180deg, #082d51 5%, rgba(8, 45, 81, 0.75) 60%, rgba(8, 45, 81, 0.375) 80%, rgba(8, 45, 81, 0.25) 90%, rgba(8, 45, 81, 0) 95%);
   border-width: 0 1px 0 0;
   border-style: solid;
   border-color: rgba(8, 48, 86, 0.5) rgba(8, 48, 86, 0.2) rgba(11, 71, 127, 0.2) transparent;
@@ -8957,11 +8963,20 @@ html.default .bgBox {
           filter: grayscale(1) contrast(1.5) brightness(1.175);
   opacity: .5;
 }
-.bgBox__overlay .textBox {
-  -webkit-transition: font-size .3s ease-in-out;
-          transition: font-size .3s ease-in-out;
-  -webkit-transition-delay: .15s;
-          transition-delay: .15s;
+.bgBox__overlay:hover:not(.current) {
+  background: #062643;
+  background: -webkit-linear-gradient(-90deg, #062643 5%, rgba(6, 38, 67, 0.75) 60%, rgba(6, 38, 67, 0.375) 80%, rgba(6, 38, 67, 0.25) 90%, rgba(6, 38, 67, 0) 95%);
+  background: -webkit-linear-gradient(270deg, #062643 5%, rgba(6, 38, 67, 0.75) 60%, rgba(6, 38, 67, 0.375) 80%, rgba(6, 38, 67, 0.25) 90%, rgba(6, 38, 67, 0) 95%);
+  background: linear-gradient(180deg, #062643 5%, rgba(6, 38, 67, 0.75) 60%, rgba(6, 38, 67, 0.375) 80%, rgba(6, 38, 67, 0.25) 90%, rgba(6, 38, 67, 0) 95%);
+}
+.bgBox__overlay.bgBox__before:hover:not(.current):before, .bgBox__overlay.bgBox__after:hover:not(.current):after {
+  opacity: .5;
+}
+.bgBox__overlay:active:not(.current) {
+  background: #051b31;
+  background: -webkit-linear-gradient(-90deg, #051b31 5%, rgba(5, 27, 49, 0.75) 60%, rgba(5, 27, 49, 0.375) 80%, rgba(5, 27, 49, 0.25) 90%, rgba(5, 27, 49, 0) 95%);
+  background: -webkit-linear-gradient(270deg, #051b31 5%, rgba(5, 27, 49, 0.75) 60%, rgba(5, 27, 49, 0.375) 80%, rgba(5, 27, 49, 0.25) 90%, rgba(5, 27, 49, 0) 95%);
+  background: linear-gradient(180deg, #051b31 5%, rgba(5, 27, 49, 0.75) 60%, rgba(5, 27, 49, 0.375) 80%, rgba(5, 27, 49, 0.25) 90%, rgba(5, 27, 49, 0) 95%);
 }
 .bgBox__overlay.current {
   background: #121415;
@@ -8974,21 +8989,27 @@ html.default .bgBox {
           filter: grayscale(0.75) contrast(2) brightness(1.015);
   opacity: 1;
 }
-.bgBox__overlay.current .textBox {
-  font-size: 1.11677rem;
-  -webkit-transition: font-size .15s ease-in-out;
-          transition: font-size .15s ease-in-out;
-  -webkit-transition-delay: 0;
-          transition-delay: 0;
+.bgBox--scaleUp {
+  -webkit-transition: font-size 0.4s ease-in-out;
+          transition: font-size 0.4s ease-in-out;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.bgBox__overlay.current .bgBox--scaleUp {
+  font-size: 1.24718rem;
+  -webkit-transition: font-size 0.2s ease-in-out;
+          transition: font-size 0.2s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 @media (min-width: 0) {
-  .bgBox__overlay.current .textBox {
-    font-size: 1.15763rem;
+  .bgBox__overlay.current .bgBox--scaleUp {
+    font-size: 1.3401rem;
   }
 }
 @media (min-width: 75em) {
-  .bgBox__overlay.current .textBox {
-    font-size: 1.2423rem;
+  .bgBox__overlay.current .bgBox--scaleUp {
+    font-size: 1.5433rem;
   }
 }
 .rgdebug .bgBox, .rgdebug .textBox, .rgdebug .mediaBox, .debug-box .bgBox, .debug-box .textBox, .debug-box .mediaBox {
@@ -11348,11 +11369,11 @@ html.landscape .va-m-landscape {
     vertical-align: middle  !important;
   }
 }
-html.default .va-m {
+html.default .va-m, html.default .sidescrollBloc__va-m > * {
   vertical-align: middle  !important;
 }
 
-.va-m {
+.va-m, .sidescrollBloc__va-m > * {
   vertical-align: middle  !important;
 }
 
@@ -11454,11 +11475,11 @@ html.landscape .va-t-landscape {
     vertical-align: top  !important;
   }
 }
-html.default .va-t, html.default .bgBox {
+html.default .va-t, html.default .sidescrollBloc__va-t > *, html.default .bgBox {
   vertical-align: top  !important;
 }
 
-.va-t, .bgBox {
+.va-t, .sidescrollBloc__va-t > *, .bgBox {
   vertical-align: top  !important;
 }
 

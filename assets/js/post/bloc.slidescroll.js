@@ -1,16 +1,10 @@
-// 
-// SCROLLSTOP/START
-// 
-!function(factory){"function"==typeof define&&define.amd?define(["jquery"],factory):"object"==typeof exports?module.exports=factory(require("jquery")):factory(jQuery)}(function($){var dispatch=$.event.dispatch||$.event.handle,special=$.event.special,uid1="D"+ +new Date,uid2="D"+(+new Date+1);special.scrollstart={setup:function(data){var timer,_data=$.extend({latency:special.scrollstop.latency},data),handler=function(evt){var _self=this,_args=arguments;timer?clearTimeout(timer):(evt.type="scrollstart",dispatch.apply(_self,_args)),timer=setTimeout(function(){timer=null},_data.latency)};$(this).bind("scroll",handler).data(uid1,handler)},teardown:function(){$(this).unbind("scroll",$(this).data(uid1))}},special.scrollstop={latency:250,setup:function(data){var timer,_data=$.extend({latency:special.scrollstop.latency},data),handler=function(evt){var _self=this,_args=arguments;timer&&clearTimeout(timer),timer=setTimeout(function(){timer=null,evt.type="scrollstop",dispatch.apply(_self,_args)},_data.latency)};$(this).bind("scroll",handler).data(uid2,handler)},teardown:function(){$(this).unbind("scroll",$(this).data(uid2))}}});
-// 
-//-> Config
-$.event.special.scrollstop.latency = 650;
+// @requires:    pre/_jq.scrollstop
 // 
 // VARIABLES
 // 
 var scrolling = false,
-    $scroll = $('.sidescrollBloc').off(),
-	$items = $scroll.children('.sidescrollBloc--item').off();
+    $scroll = $('.sidescrollBloc'),
+	$items = $scroll.children('.sidescrollBloc--item');
 // 
 // DEBUG
 // 
@@ -20,7 +14,8 @@ var scrolling = false,
 // FUNCTIONS
 // 
 function sidescroll_goto_item($self) {
-    
+    $self = typeof $self !== 'undefined' ? $self : sidescroll_get_next_item('center');
+
     console.log(scrolling); if (scrolling === true) return false;
 	
 	$self.siblings().add($self).removeClass('current');
@@ -29,7 +24,7 @@ function sidescroll_goto_item($self) {
         $scroll = $self.parent('.sidescrollBloc');
 
     scrolling = 'auto';
-    $scroll.delay(650).animate({
+    $scroll.animate({
         scrollLeft: (function() {
             widths = $self.prevAll().map(function() {
                 return $self.outerWidth();
@@ -41,41 +36,75 @@ function sidescroll_goto_item($self) {
             scrollTo = total - (remains / 2); //update top-level var
             return scrollTo;
         }()),
-    },600, function() {
+    },250, function() {
         scrolling = false;
     });
 	$self.addClass('current');
     return scrollTo;
 }
+var sidescroll_get_next_item = function(from/*[left|right|center]*/){
+    from = typeof from !== 'undefined' ? from : 'center';
+    from = function(pos){
+        // PARSE VARS
+        if (typeof pos === 'number'){
+            return pos;
+        } else if (pos=='right'){
+            return $scroll.outerWidth();
+        } else if (pos=='left'){
+            return 0;
+        } else { // left
+            return $scroll.outerWidth()/2;
+        }
+    }(from);
+    var elems_by_offsets = {},
+        offsets = $items.map(function(e){
+            offset = $(this).offset().left+($(this).width()/2);
+            elems_by_offsets[offset] = $(this);
+            return offset;
+        });
+    $next_item = elems_by_offsets[ closest(from,offsets) ];
+    //@debug
+    // console.log([$next_item,{
+    //     'from':             0,
+    //     'elems_by_offsets': elems_by_offsets,
+    //     'offsets':          offsets,
+    // }]);
+    return $next_item;
+}
 var sidescroll_make_items_inactive = function() {
     return $('.sidescrollBloc').children().removeClass('active current');
 }
 var sidescroll_make_item_active = function($this) {
+    $this = typeof $this !== 'undefined' ? $this : sidescroll_get_next_item();
     $this.addClass('active');
     return $this;
 }
 var sidescroll_make_item_siblings_inactive = function($this) {
+    $this = typeof $this !== 'undefined' ? $this : sidescroll_get_next_item();
 	$this.siblings().removeClass('active');
-    return $this;
-}
-var sidescroll_make_item_current = function($this) {
-    $this.addClass('current');
     return $this;
 }
 // 
 // EVENTS
 // 
-$items.on("mouseenter", function(e) {
-    sidescroll_goto_item($(this));
-});
+$items
+    .on("click", function(e) {
+        // if scrolling
+        sidescroll_make_items_inactive();
+        sidescroll_goto_item($(this));
+        sidescroll_make_item_active($(this));
+    })
 $scroll.on("mouseleave", function(e) {
 //     sidescroll_make_items_inactive();
 }).on("scrollstart", function(e) {
     if (scrolling !== 'auto') {
-        $(this).children().removeClass('active');
     }
     scrolling = true;
 }).on("scrollstop", function(e) {
     scrolling = false;
-    sidescroll_goto_item($(this))
+    $nextUp = sidescroll_get_next_item('center');
+    sidescroll_goto_item();
+    sidescroll_make_item_active();
+    sidescroll_make_item_siblings_inactive();
+
 });

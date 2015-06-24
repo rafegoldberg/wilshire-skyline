@@ -4,9 +4,9 @@
 @mixin scrollbars($opts:(),$theme:#CCC) {
 	$opts: extend((
 		color_thumb:        $theme,
-		color_stroke:       mix($theme,#000,50%),
+		color_stroke:       0,
 		color_track:        mix($theme,#FFF,50%),
-		scrollbar_size:     8px,
+		scrollbar_size:     8,
 		add_padding:        false,
 		overflow_direction: y
 	),$opts);
@@ -14,7 +14,7 @@
 		@if map-get($opts,overflow_direction)==y {
 			padding-right: map-get($opts,scrollbar_size);
 		} @elseif map-get($opts,overflow_direction)==x {
-			padding-right: map-get($opts,scrollbar_size);
+			padding-right: map-get($opts,scrollbar_size)+(map-get($opts,color_stroke),2,);
 		}
 	}
 	& { //IMPLEMENT IE

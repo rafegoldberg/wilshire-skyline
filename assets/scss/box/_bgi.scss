@@ -3,8 +3,23 @@
 	convention: explicit,
 	extend: '.va-t'
 )){
-	position: relative;
-	z-index: 1;
+	// Quick Config
+	// 
+	$item_active_class: '.current';
+	$item_animation_subclass: 'scaleUp';
+	$item_animation_duration: .4;
+	$item_animation_delay: .3;
+
+	// Parse Config Vars
+	// 
+	$item_animation_subclass: "#{map-get($box,selector)}--#{$item_animation_subclass}";
+
+	// Defaults
+	// 
+	& {
+		position: relative;
+		z-index: 1;
+	}
 	&__before:before,
 	&__after:after {
 		position: absolute;
@@ -24,7 +39,7 @@
 		filter: grayscale(1);
 	}}
 	&__overlay {
-		$_GRD_: darken(_c(navy),5%);
+		$_GRD_: darken(_c(navy),1%);
 		@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
 
 		$_BDR_: _c(navy);
@@ -41,28 +56,44 @@
 			opacity: .5;
 		}}
 
-		.textBox {
-			transition: font-size .3s ease-in-out;
-			transition-delay: .15s;
-		}
-
-		&.current {
-
-			$_GRD_: darken(_c(slate),6%);
-			@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 70%, rgba($_GRD_,0.5) 85%);
-
-			&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
-				filter: grayscale(.75) contrast(2) brightness(1.015);
-				opacity: 1;
-			}}
-
-			.textBox {
-				@include scale(7,font-size,rem);
-				transition: font-size .15s ease-in-out;
-				transition-delay: 0;
+		& { // HOVER
+			&:hover:not(#{$item_active_class}) {
+				$_GRD_: darken(_c(navy),4%);
+				@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+				&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
+					opacity: .5;
+				} }
 			}
-
 		}
 
+		& { // ACTIVE
+			&:active:not(#{$item_active_class}) {
+				$_GRD_: darken(_c(navy),8%);
+				@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 60%, rgba($_GRD_,0.375) 80%, rgba($_GRD_,0.250) 90%, rgba($_GRD_,0.000) 95%);
+			}
+		}
+
+		& { // ACTIVE
+			&#{$item_active_class} {
+				$_GRD_: darken(_c(slate),6%);
+				@include linear-gradient(180deg, rgba($_GRD_,1.000) 05%, rgba($_GRD_,0.750) 70%, rgba($_GRD_,0.5) 85%);
+				&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
+					filter: grayscale(.75) contrast(2) brightness(1.015);
+					opacity: 1;
+				} }
+			}
+		}
+
+		& { // SCALEUP (ANIMATION)
+			@at-root #{$item_animation_subclass} {
+				transition: font-size with-unit($item_animation_duration,s) ease-in-out;
+				transition-delay: with-unit(($item_animation_duration/2)+$item_animation_delay,s);
+			}
+			&#{$item_active_class} #{$item_animation_subclass} {
+				@include scale(6,font-size,rem);
+				transition: font-size with-unit($item_animation_duration/2,s) ease-in-out;
+				transition-delay: with-unit($item_animation_delay,s);
+			}
+		}
 	}
 };

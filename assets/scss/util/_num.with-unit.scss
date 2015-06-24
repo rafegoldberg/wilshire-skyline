@@ -1,0 +1,6 @@
+@function with-unit($num,$unit) {
+	@if type-of($unit)==string and type-of($num)==number and unitless($num) {
+		@return #{$num}#{$unit};
+	}
+	@return num($num);
+}

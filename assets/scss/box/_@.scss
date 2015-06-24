@@ -10,6 +10,9 @@
 //
 // FUNCTIONS
 // > Private Utilities
+	@mixin _reset_box_args(){
+		$box: () !global;
+	}
 	@function _box_generate_classname($opts){
 		$class: if(map-get($opts,convention)==implicit,"box-#{map-get($opts,name)}","#{map-get($opts,name)}Box");
 		$selector: if(map-get($opts,convention)==implicit,"%#{$class}",".#{$class}");
@@ -67,11 +70,12 @@
 	}
 // > Base
 	@mixin newBox($opts:()) { 
-		$opts: _box_register($opts);
-		@at-root #{map-get($opts,selector)} {
-			@include gridle_set(map-get($opts,gridle));
-			@extend #{map-get($opts,extend)} !optional;
+		$box: _box_register($opts) !global;
+		@at-root #{map-get($box,selector)} {
+			@include gridle_set(map-get($box,gridle));
+			@extend #{map-get($box,extend)} !optional;
 			@content;
+			@include _reset_box_args;
 			@if ($_BOX_DEBUG) { @include _box_debugClass((style:solid)); }
 		}
 	}

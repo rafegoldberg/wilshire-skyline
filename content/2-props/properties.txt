@@ -12,16 +12,16 @@ Properties:
   size:
   media: villa-rebecca.jpg
 - 
-  title: The Commodore
+  title: Ocean Front Lodge
   text: >
-    Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit. Aperiam vel, ex
-    pariatur consequatur optio saepe ut amet
-    veritatis odit odio!
-  location: '{"address":"1830 N. Cherokee Ave., Los Angeles, CA 90028","lat":"34.104147","lng":"-118.33435600000001"}'
+    Fugit officiis suscipit sequi ratione
+    doloribus culpa, asperiores excepturi
+    harum qui corporis dicta tempore commodi
+    veniam, vel similique, sint quas.
+  location: '{"address":"1659 Ocean Front Walk, Santa Monica, CA 90401","lat":"34.0093822","lng":"-118.49439359999997"}'
   width:
   size:
-  media: the-commodore.jpg
+  media: ocean-front-lodge.jpg
 - 
   title: The Nirvana
   text: >
@@ -34,13 +34,13 @@ Properties:
   size:
   media: the-nirvana.jpg
 - 
-  title: Ocean Front Lodge
+  title: The Commodore
   text: >
-    Fugit officiis suscipit sequi ratione
-    doloribus culpa, asperiores excepturi
-    harum qui corporis dicta tempore commodi
-    veniam, vel similique, sint quas.
-  location: '{"address":"1659 Ocean Front Walk, Santa Monica, CA 90401","lat":"34.0093822","lng":"-118.49439359999997"}'
+    Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit. Aperiam vel, ex
+    pariatur consequatur optio saepe ut amet
+    veritatis odit odio!
+  location: '{"address":"1830 N. Cherokee Ave., Los Angeles, CA 90028","lat":"34.104147","lng":"-118.33435600000001"}'
   width:
   size:
-  media: ocean-front-lodge.jpg
+  media: the-commodore.jpg

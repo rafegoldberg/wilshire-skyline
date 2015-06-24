@@ -1,17 +1,6 @@
 <? snippet('meta/pre',array(
 	'body' => 'vertical-align-middle'
 )) ?>
-	<aside class="parent grid-12 centered">
-		<!-- Media Bloc -->
-			<section class="attachmentBloc   grid-12">
-				<div class="mediaBox   grid-t-12 pad8Z pad6V">
-					<img src="<?=$site->files()->find('s-stylized-cutout.png')->url()?>" alt="Mark">
-				</div>
-				<div class="contentBox   grid-t-12">
-					<h1 class="heading_2 gutter">Wilshire Skyline</h1>
-				</div>
-			</section>
-	</aside>
 	<main id="main" role="main" class="grid-12 parent">
 	<!-- Nav Bloc
 		<div class="contentBloc">
@@ -24,10 +13,16 @@
 			</ul>
 		</div>
 	-->
-
-		<? snippet('bloc/scroller') ?>
-			
- 		</section>
+	<!-- Media Bloc -->
+		<section class="attachmentBloc   grid-12">
+			<div class="mediaBox   grid-t-12 pad8Z pad6V">
+				<img src="<?=$site->files()->find('s-stylized-cutout.png')->url()?>" alt="Mark">
+			</div>
+			<div class="contentBox   grid-t-12">
+				<h1 class="heading_2 gutter">Wilshire Skyline</h1>
+			</div>
+		</section>
+		
 	<!-- Content Bloc -->
 		<section class="contentBloc grid-5 grid-t-8 grid-m-12 centered">
 			<div class="textBox centered">
@@ -36,5 +31,9 @@
 				<p>Currently, Wilshire Skyline manages 18 multi-family residential properties (499 units/ 384,689 square feet) located in Malibu, Santa Monica, Beverly Hills, West Hollywood and Hollywood.</p>
 			</div>
 		</section>
+
+	<!-- Scroller Bloc -->
+		<? snippet('bloc/scroller') ?>
+			
 	</main>
 <? snippet('meta/post') ?>

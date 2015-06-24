@@ -33,6 +33,7 @@
 		background-position: center;
 		background-size: cover;
 		transition: all .35s ease-in-out;
+		@extend %_force-hardware-acceleration !optional;
 		@extend %_BGIMG_;
 	}
 	&__bw%_BGIMG_ { @at-root & { // STYLE PSEUDO BG EL
@@ -50,6 +51,7 @@
 
 		transition: all .2s;
 		transition-delay: .2s;
+		@extend %_force-hardware-acceleration !optional;
 
 		&%_BGIMG_ { @at-root & { // STYLE :(b|a) PSEUDO EL
 			filter: grayscale(1) contrast(1.5) brightness(1.175);

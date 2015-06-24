@@ -1,5 +1,5 @@
 @import url("../fonts/din-alt/import.css");
-.sidescrollBloc {
+.sidescrollBloc, .bgBox__before:before, .bgBox__after:after, .bgBox__overlay {
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;

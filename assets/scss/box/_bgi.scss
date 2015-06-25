@@ -100,7 +100,7 @@
 				transition-delay: with-unit(($item_animation_duration/2)+$item_animation_delay,s);
 				&__#{$item_animation_subclass_action} {
 					position: absolute;
-					transform: translateY(100%);
+					transform: translateY(100%) translateX(-1.5em);
 					opacity: 0;
 					transition: opacity   with-unit($item_animation_duration+$item_animation_delay,s) ease-out   ,
 								transform with-unit(($item_animation_duration+$item_animation_delay)/1.5,s) ease-in-out;
@@ -112,7 +112,7 @@
 				transition: font-size with-unit($item_animation_duration/2,s) ease-in-out;
 				transition-delay: with-unit($item_animation_delay,s);
 				&__#{$item_animation_subclass_action} {
-					transform: translateY(0);
+					transform: translateY(0) translateX(0);
 					opacity: 1;
 					transition: opacity   with-unit($item_animation_duration,s) ease-in   ,
 								transform with-unit(($item_animation_duration)/1.5,s) ease-in-out;

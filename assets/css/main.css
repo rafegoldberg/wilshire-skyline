@@ -8914,9 +8914,9 @@ html.default .bgBox {
 }
 .bgBox--scaleUp__action {
   position: absolute;
-  -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
-          transform: translateY(100%);
+  -webkit-transform: translateY(100%) translateX(-1.5em);
+      -ms-transform: translateY(100%) translateX(-1.5em);
+          transform: translateY(100%) translateX(-1.5em);
   opacity: 0;
   -webkit-transition: opacity 0.575s ease-out, -webkit-transform 0.38333s ease-in-out;
           transition: opacity 0.575s ease-out, transform 0.38333s ease-in-out;
@@ -8941,9 +8941,9 @@ html.default .bgBox {
   }
 }
 .bgBox__overlay.current .bgBox--scaleUp__action {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateY(0) translateX(0);
+      -ms-transform: translateY(0) translateX(0);
+          transform: translateY(0) translateX(0);
   opacity: 1;
   -webkit-transition: opacity 0.4s ease-in, -webkit-transform 0.26667s ease-in-out;
           transition: opacity 0.4s ease-in, transform 0.26667s ease-in-out;

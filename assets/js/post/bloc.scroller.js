@@ -18,7 +18,7 @@ var scroller_goto_item = function($self) {
     // DEFAULT ARGS
     $self = typeof $self !== 'undefined' ? $self : scroller_item_at('center');
 
-	if (scrolling) $self.siblings().add($self).removeClass(active_class+' current');
+	// if (scrolling) $self.siblings().add($self).removeClass(active_class+' current');
 
     var scrollTo = 0;
 
@@ -64,7 +64,7 @@ var scroller_item_at = function(from/*[left|right|center]*/){
     $next_item = elems_by_offsets[ closest(from,offsets) ];
     return $next_item;
 }
-var scroller_make_items_inactive = function() {
+/*var scroller_make_items_inactive = function() {
     return $scroller.children().removeClass(active_class);
 }
 var scroller_make_item_active = function($item) {
@@ -76,10 +76,13 @@ var scroller_make_item_siblings_inactive = function($item) {
     $item = typeof $item !== 'undefined' ? $item : scroller_item_at();
 	$item.siblings().removeClass(active_class);
     return $item;
-}
+}*/
 // 
 // EVENTS
 // 
+$(window).hashchange( function(){
+    console.log(location.hash);
+})
 $items
     .on("click", function(event) { 
 
@@ -103,8 +106,13 @@ $scroller
         if (scrolling!=='auto') scrolling = true;
     })
     .on("scrollstop", function(event) {
-        scroller_item_at('center').siblings().removeClass('current');   // < remove others' .current
-        scroller_item_at('center').addClass('current');              // < toggle .current on clicked
+
+        $center = scroller_item_at('center');
+        $center.siblings().removeClass('current'); // < remove others' .current
+        $center.addClass('current');               // < add current
+
         if (scrolling!=='auto') scroller_goto_item();
+
         scrolling = false;
+
     });

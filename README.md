@@ -1,7 +1,7 @@
 Wilshire Skyline
 ===
 
-A simple framework structure that lays the foundation for building simple websites quickly.
+Kirby-based, Grunt-powered infosite for Wilshire Skyline.
 
 ## Site Structure & Usage
 

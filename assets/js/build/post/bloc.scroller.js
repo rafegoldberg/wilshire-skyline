@@ -1,18 +1,18 @@
-var scrolling = !1, $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item");
+var $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item"), scroll_speed = 175, scroll_stick = 138, scrolling = !1, scroll_last = 0, scroll_dir = 1;
 
-active_class = "is_open";
+scroll_init = !1;
 
-var scroller_goto_item = function($self) {
-    $self = "undefined" != typeof $self ? $self : scroller_item_at("center");
-    var scrollTo = 0;
-    return scrolling = "auto", $scroller.animate({
+var scroller_goto_item = function($item) {
+    scrolling = "auto";
+    var $item = "undefined" != typeof $item ? $item : scroller_item_at("center"), scrollTo = 0;
+    return $scroller.animate({
         scrollLeft: function() {
-            return widths = $self.prevAll().map(function() {
-                return $self.outerWidth();
+            return widths = $item.prevAll().map(function() {
+                return $item.outerWidth();
             }).toArray(), total = widths.length < 1 ? 0 : eval(widths.join("+")), view = $scroller.outerWidth(), 
-            width = $self.outerWidth(), remains = view - width, scrollTo = total - remains / 2;
+            width = $item.outerWidth(), remains = view - width, scrollTo = total - remains / 2;
         }()
-    }, 175, "easeInOut", function() {
+    }, scroll_speed, "easeInOut", function() {
         return scrolling = !1, !1;
     }), scrollTo;
 }, scroller_item_at = function(a) {
@@ -24,16 +24,26 @@ var scroller_goto_item = function($self) {
         offset;
     });
     return $next_item = b[closest(a, c)], $next_item;
+}, scroller_get_next_item = function(a) {
+    if (!scrolling) return scroller_item_at();
+    if (scroll_diff = Math.abs(scroll_last - $scroller.scrollLeft()), !scroll_diff >= scroll_stick) return scroller_item_at();
+    var a = "undefined" != typeof a ? a : scroll_dir;
+    return $cur = 1 == $items.filter(".current").length ? $items.filter(".current") : $items.first(), 
+    $nxt = !1, $cur[0] !== scroller_item_at()[0] ? scroller_item_at() : (a >= 1 ? $nxt = 1 == $cur.next().length ? $cur.next() : !1 : $nxt = 1 == $cur.prev().length ? $cur.prev() : !1, 
+    $nxt);
 };
 
-$(window).hashchange(function() {
-    console.log(location.hash);
-}), $items.on("click", function(a) {
-    return $(this).hasClass("current") && a.target !== $(this)[0] ? !0 : (scroller_goto_item($(this)), 
+$(window).one("hashchange", function(a) {
+    scroll_init = window.setTimeout(function() {
+        scroller_goto_item($("#" + location.hash.split("property=")[1]));
+    }, 2 * scroll_speed);
+}), $items.click(function(a) {
+    return window.clearTimeout(scroll_init), $(this).hasClass("current") && a.target !== $(this)[0] ? !0 : (scroller_goto_item($(this)), 
     $(this).siblings().removeClass("current"), $(this).toggleClass("current"), !1);
 }), $scroller.on("scrollstart", function(a) {
-    return scrolling === !0 ? !1 : void ("auto" !== scrolling && (scrolling = !0));
+    return window.clearTimeout(scroll_init), scrolling === !0 ? !1 : void ("auto" !== scrolling && (scroll_dir = scroll_last < $scroller.scrollLeft() ? 1 : -1, 
+    scrolling = !0));
 }).on("scrollstop", function(a) {
-    $center = scroller_item_at("center"), $center.siblings().removeClass("current"), 
-    $center.addClass("current"), "auto" !== scrolling && scroller_goto_item(), scrolling = !1;
+    $next = scroller_get_next_item(), $next.siblings().removeClass("current"), $next.addClass("current"), 
+    "auto" !== scrolling && scroller_goto_item($next), scroll_last = $scroller.scrollLeft();
 });

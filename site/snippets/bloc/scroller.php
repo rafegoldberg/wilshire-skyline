@@ -8,7 +8,7 @@
 			$hash = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $prop->title()), '-'));
 			$prop_img = $props->files()->find($prop->media());
 			?>
-			<div id="<?=$hash?>" class="scrollerBloc--item bgBox__overlay bgBox__after js__ajax actionBox__soft   sizeReset5__cascade">
+			<div id="<?=$hash?>" class="scrollerBloc--item bgBox__overlay bgBox__after js__ajax actionBox__soft   sizeReset6__cascade">
 				<a href="#view?property=<?=$hash?>" class="textBox bgBox--scaleUp">
 					<h1 class="heading_6 centered"><?=$prop->title()->html()?></h1>
 					<small class="bgBox--scaleUp__action size_9 sizeReset9">View Details</small>

@@ -256,12 +256,6 @@ img {
   max-width: 100%;
 }
 
-p {
-  font-size: 1em;
-  line-height: 1.42383;
-  margin-bottom: 1.125em;
-}
-
 html {
   font: normal normal 300 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -8914,9 +8908,9 @@ html.default .bgBox {
 }
 .bgBox--scaleUp__action {
   position: absolute;
-  -webkit-transform: translateY(100%) translateX(-1.5em);
-      -ms-transform: translateY(100%) translateX(-1.5em);
-          transform: translateY(100%) translateX(-1.5em);
+  -webkit-transform: scale(0.375) translateX(0.625em) translateY(100%);
+      -ms-transform: scale(0.375) translateX(0.625em) translateY(100%);
+          transform: scale(0.375) translateX(0.625em) translateY(100%);
   opacity: 0;
   -webkit-transition: opacity 0.575s ease-out, -webkit-transform 0.38333s ease-in-out;
           transition: opacity 0.575s ease-out, transform 0.38333s ease-in-out;
@@ -8941,9 +8935,9 @@ html.default .bgBox {
   }
 }
 .bgBox__overlay.current .bgBox--scaleUp__action {
-  -webkit-transform: translateY(0) translateX(0);
-      -ms-transform: translateY(0) translateX(0);
-          transform: translateY(0) translateX(0);
+  -webkit-transform: scale(1) translateX(0) translateY(0);
+      -ms-transform: scale(1) translateX(0) translateY(0);
+          transform: scale(1) translateX(0) translateY(0);
   opacity: 1;
   -webkit-transition: opacity 0.4s ease-in, -webkit-transform 0.26667s ease-in-out;
           transition: opacity 0.4s ease-in, transform 0.26667s ease-in-out;
@@ -8979,10 +8973,10 @@ html.default .textBox {
     font-size: 1rem;
   }
 }
-.textBox:last-child {
+.textBox > p:last-child, .textBox > ul:last-child, .textBox > ol:last-child, .textBox > blockquote:last-child {
   margin-bottom: 0;
 }
-.textBox:only-child {
+.textBox > p:only-child, .textBox > ul:only-child, .textBox > ol:only-child, .textBox > blockquote:only-child {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -9024,9 +9018,15 @@ html.default .actionBox {
   outline-color: magenta !important;
   outline-offset: -1px;
 }
-.debug-bit .actionBox__soft a, .actionBox__soft .debug-bit a, .debug-bit .actionBox__soft .action, .actionBox__soft .debug-bit .action, .debug-bit .actionBox__soft [class*="__action"], .actionBox__soft .debug-bit [class*="__action"], .debug-bit .heading, .debug-bit .heading_1, .debug-bit h1, .debug-bit .heading_2, .debug-bit h2, .debug-bit .heading_3, .debug-bit h3, .debug-bit .heading_4, .debug-bit h4, .debug-bit .heading_5, .debug-bit h5, .debug-bit .heading_6, .debug-bit h6, .debug-bit .heading_7, .debug-bit .heading_8, .debug-bit .heading_9, .debug-bit .list--item, .debug-bit .list, .debug-bit .list__inline, .debug-bit .list__block, .debug-bit .theme, .rgdebug .actionBox__soft a, .actionBox__soft .rgdebug a, .rgdebug .actionBox__soft .action, .actionBox__soft .rgdebug .action, .rgdebug .actionBox__soft [class*="__action"], .actionBox__soft .rgdebug [class*="__action"], .rgdebug .heading, .rgdebug .heading_1, .rgdebug h1, .rgdebug .heading_2, .rgdebug h2, .rgdebug .heading_3, .rgdebug h3, .rgdebug .heading_4, .rgdebug h4, .rgdebug .heading_5, .rgdebug h5, .rgdebug .heading_6, .rgdebug h6, .rgdebug .heading_7, .rgdebug .heading_8, .rgdebug .heading_9, .rgdebug .list--item, .rgdebug .list, .rgdebug .list__inline, .rgdebug .list__block, .rgdebug .theme {
+.debug-bit p, .debug-bit ul, .debug-bit ol, .debug-bit blockquote, .debug-bit .actionBox__soft a, .actionBox__soft .debug-bit a, .debug-bit .actionBox__soft .action, .actionBox__soft .debug-bit .action, .debug-bit .actionBox__soft [class*="__action"], .actionBox__soft .debug-bit [class*="__action"], .debug-bit .heading, .debug-bit .heading_1, .debug-bit h1, .debug-bit .heading_2, .debug-bit h2, .debug-bit .heading_3, .debug-bit h3, .debug-bit .heading_4, .debug-bit h4, .debug-bit .heading_5, .debug-bit h5, .debug-bit .heading_6, .debug-bit h6, .debug-bit .heading_7, .debug-bit .heading_8, .debug-bit .heading_9, .debug-bit .list--item, .debug-bit .list, .debug-bit .list__inline, .debug-bit .list__block, .debug-bit .theme, .rgdebug p, .rgdebug ul, .rgdebug ol, .rgdebug blockquote, .rgdebug .actionBox__soft a, .actionBox__soft .rgdebug a, .rgdebug .actionBox__soft .action, .actionBox__soft .rgdebug .action, .rgdebug .actionBox__soft [class*="__action"], .actionBox__soft .rgdebug [class*="__action"], .rgdebug .heading, .rgdebug .heading_1, .rgdebug h1, .rgdebug .heading_2, .rgdebug h2, .rgdebug .heading_3, .rgdebug h3, .rgdebug .heading_4, .rgdebug h4, .rgdebug .heading_5, .rgdebug h5, .rgdebug .heading_6, .rgdebug h6, .rgdebug .heading_7, .rgdebug .heading_8, .rgdebug .heading_9, .rgdebug .list--item, .rgdebug .list, .rgdebug .list__inline, .rgdebug .list__block, .rgdebug .theme {
   outline: 1px dotted yellow;
   outline-offset: -2px;
+}
+
+p, ul, ol, blockquote {
+  font-size: 1em;
+  line-height: 1.42383;
+  margin-bottom: 1.125em;
 }
 
 .actionBox__soft a, .actionBox__soft .action, .actionBox__soft [class*="__action"] {
@@ -9099,6 +9099,19 @@ html.m .list__inline__break > *, html.m .list__inline__break .list--item {
 
 .list__block .list--item {
   display: block;
+}
+
+button, input {
+  display: inline-block;
+  margin: initial;
+  padding: initial;
+  font: inherit;
+  line-height: 1;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-color: inherit;
 }
 
 .size1__cascade > * {

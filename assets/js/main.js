@@ -1,1 +1,3 @@
-// ver6
+$(document).ready(function() {
+	$(window).hashchange();
+});

@@ -1,6 +1,6 @@
 <?
 $GLOBALS['ENV'] = array(
 	'name'  => 'local',
-	'debug' => 'all'
+	'debug' => false
 );
 ?>

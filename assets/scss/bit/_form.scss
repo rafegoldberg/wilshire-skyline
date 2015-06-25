@@ -1,0 +1,15 @@
+
+%control {
+  &--defaults {
+    display: inline-block;
+  	margin: initial; 
+  	padding: initial; 
+  	font: inherit;
+  	line-height: 1;
+  	appearance: none;
+  	border: none;
+  	background-color: inherit;
+  }
+}
+@import "form.control";
+@import "form.labels";

@@ -7,8 +7,8 @@ password: >
 language: en
 role: admin
 history:
-  - props
   - testing
+  - props
   - contact
 firstname: Raphael
 lastname: J. Goldberg

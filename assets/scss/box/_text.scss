@@ -8,7 +8,7 @@
 		display: inline-block;
 	    @include scale(9,font-size,rem);
 	}
-	&:last-child { margin-bottom: 0; }
-	&:only-child { margin-top:    0;
-	               margin-bottom: 0; }
+	> %flow:last-child { margin-bottom: 0; }
+	> %flow:only-child { margin-top:    0;
+	            	     margin-bottom: 0; }
 };

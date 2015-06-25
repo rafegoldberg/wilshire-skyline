@@ -1,118 +1,139 @@
-// @requires:    pre/_jq.scrollstop
-// 
-// VARIABLES
-// 
-var scrolling = false,
-    $scroller = $('.scrollerBloc'),
-	$items = $scroller.children('.scrollerBloc--item')
-    active_class = 'is_open';
-// 
-// DEBUG
-// 
-// console.clear();
-// $scroller.add($items).off().unbind();
-// 
-// FUNCTIONS
-// 
-var scroller_goto_item = function($self) {
-    // DEFAULT ARGS
-    $self = typeof $self !== 'undefined' ? $self : scroller_item_at('center');
+/*= ABOUT
+|*| @requires:    pre/_jq.scrollstop
+|*/
 
-	// if (scrolling) $self.siblings().add($self).removeClass(active_class+' current');
+/* VARIABLES
+*/ 
+	var $scroller    = $('.scrollerBloc'),
+		$items       = $scroller.children('.scrollerBloc--item'),
+		scroll_speed = 175,
+		scroll_stick = 138,
+	//@VARS::OPTIONS ^
+		scrolling    = false, //
+		scroll_last  = 0,     //
+		scroll_dir   = 1      //[1:RIGHT|-1:LEFT]
+		scroll_init  = false 
+	//@VARS::CHECKS  ^
+		;
 
-    var scrollTo = 0;
+/*=FUNCTIONS
+*/ 
+	var scroller_goto_item = function($item) {
+		// PARSE VARS
+		// 
+		scrolling = 'auto';
+		var $item     = typeof $item !== 'undefined' ? $item : scroller_item_at('center'),
+			scrollTo  = 0;
+		$scroller.animate({
+			scrollLeft: (function() {
+				widths = $item.prevAll().map(function() {
+					return $item.outerWidth();
+				}).toArray();
+				total = widths.length < 1 ? 0 : eval(widths.join('+'));
+				view = $scroller.outerWidth();
+				width = $item.outerWidth();
+				remains = view - width;
+				scrollTo = total - (remains / 2); //update top-level var
+				return scrollTo;
+			}()),
+		}, scroll_speed, 'easeInOut', function() {
+			scrolling = false;
+			return false;
+		});
+		return scrollTo;
+	}
+	var scroller_item_at = function(from/*[left|right|center]*/){
+		from = typeof from !== 'undefined' ? from : 'center';
+		from = function(pos){
+			// PARSE VARS
+			if (typeof pos === 'number'){
+				return pos;
+			} else if (pos=='right'){
+				return $scroller.outerWidth();
+			} else if (pos=='left'){
+				return 0;
+			} else { // left
+				return $scroller.outerWidth()/2;
+			}
+		}(from);
+		var elems_by_offsets = {},
+			offsets = $items.map(function(e){
+				offset = $(this).offset().left+($(this).width()/2);
+				elems_by_offsets[offset] = $(this);
+				return offset;
+			});
+		$next_item = elems_by_offsets[ closest(from,offsets) ];
+		return $next_item;
+	}
+	var scroller_get_next_item = function(dir/*[1:RIGHT|-1:LEFT]*/){
+		// CHECKS
+		// 
+		if (!scrolling) return scroller_item_at();
 
-    scrolling = 'auto';
-    $scroller.animate({
-        scrollLeft: (function() {
-            widths = $self.prevAll().map(function() {
-                return $self.outerWidth();
-            }).toArray();
-            total = widths.length < 1 ? 0 : eval(widths.join('+'));
-            view = $scroller.outerWidth();
-            width = $self.outerWidth();
-            remains = view - width;
-            scrollTo = total - (remains / 2); //update top-level var
-            return scrollTo;
-        }()),
-    }, 175, 'easeInOut', function() {
-        scrolling = false;
-        return false;
-    });
-    return scrollTo;
-}
-var scroller_item_at = function(from/*[left|right|center]*/){
-    from = typeof from !== 'undefined' ? from : 'center';
-    from = function(pos){
-        // PARSE VARS
-        if (typeof pos === 'number'){
-            return pos;
-        } else if (pos=='right'){
-            return $scroller.outerWidth();
-        } else if (pos=='left'){
-            return 0;
-        } else { // left
-            return $scroller.outerWidth()/2;
-        }
-    }(from);
-    var elems_by_offsets = {},
-        offsets = $items.map(function(e){
-            offset = $(this).offset().left+($(this).width()/2);
-            elems_by_offsets[offset] = $(this);
-            return offset;
-        });
-    $next_item = elems_by_offsets[ closest(from,offsets) ];
-    return $next_item;
-}
-/*var scroller_make_items_inactive = function() {
-    return $scroller.children().removeClass(active_class);
-}
-var scroller_make_item_active = function($item) {
-    $item = typeof $item !== 'undefined' ? $item : scroller_item_at();
-    $item.addClass(active_class);
-    return $item;
-}
-var scroller_make_item_siblings_inactive = function($item) {
-    $item = typeof $item !== 'undefined' ? $item : scroller_item_at();
-	$item.siblings().removeClass(active_class);
-    return $item;
-}*/
-// 
-// EVENTS
-// 
-$(window).hashchange( function(){
-    console.log(location.hash);
-})
-$items
-    .on("click", function(event) { 
+		scroll_diff = Math.abs( scroll_last - $scroller.scrollLeft() );
+		if ( !scroll_diff>=scroll_stick) return scroller_item_at();
 
-        // IF OPEN:
-        if ($(this).hasClass('current') && event.target!==$(this)[0]) {
-            // ^ ALLOW CLICKS ORIGINATING ON INNER ELEMS
-            // console.log($(this).find('[class*="__action"]'));
-            return true;
-        }
+		// PARSEVARS
+		var dir  = typeof dir !== 'undefined' ? dir : scroll_dir;
+			$cur = $items.filter('.current').length==1 ? $items.filter('.current') : $items.first(),
+			$nxt = false;
 
-        // OTHERWISE:
-        scroller_goto_item($(this));                 // < scroll to clicked
-        $(this).siblings().removeClass('current');   // < remove others' .current
-        $(this).toggleClass('current');              // < toggle .current on clicked
-        return false;
+		// CHECK
+		// 
+		if ( $cur[0]!==scroller_item_at()[0]) return scroller_item_at();
 
-    })
-$scroller
-    .on("scrollstart", function(event) {
-        if (scrolling===true) return false;
-        if (scrolling!=='auto') scrolling = true;
-    })
-    .on("scrollstop", function(event) {
+		// CALC
+		// 
+		if (dir >=1 ) $nxt = $cur.next().length==1 ? $cur.next() : false;
+		else $nxt = $cur.prev().length==1 ? $cur.prev() : false;
 
-        $center = scroller_item_at('center');
-        $center.siblings().removeClass('current'); // < remove others' .current
-        $center.addClass('current');               // < add current
+		return $nxt;
+	}
 
-        if (scrolling!=='auto') scroller_goto_item();
+/*=EVENTS
+*/ 
+	$(window)
+		.one('hashchange',function(event){
+			scroll_init = window.setTimeout(function(){
+				scroller_goto_item($('#'+location.hash.split('property=')[1]));
+			},(scroll_speed*2));
+		});
+	$items
+		.click(function(event){
 
-        scrolling = false;
+			window.clearTimeout(scroll_init);
 
-    });
+			// OPEN ?
+			if ($(this).hasClass('current') && event.target!==$(this)[0]) {
+				// ^ ALLOW CLICKS ORIGINATING ON INNER ELEMS
+				// console.log($(this).find('[class*="__action"]'));
+				return true;
+			}
+			// ELSE :
+			scroller_goto_item($(this));                 // < scroll to clicked
+			$(this).siblings().removeClass('current');   // < remove others' .current
+			$(this).toggleClass('current');              // < toggle .current on clicked
+			return false;
+		})
+	$scroller
+		.on('scrollstart',function(event){
+
+			window.clearTimeout(scroll_init);
+
+			if (scrolling===true) return false;
+			if (scrolling!=='auto') {
+				scroll_dir = scroll_last<$scroller.scrollLeft()?1:-1;
+				scrolling = true;
+			}
+		})
+		.on('scrollstop',function(event){
+			$next = scroller_get_next_item();
+
+			$next.siblings().removeClass('current');
+			$next.addClass('current');
+
+			if (scrolling!=='auto') scroller_goto_item($next);
+
+			scroll_last = $scroller.scrollLeft();
+
+		});

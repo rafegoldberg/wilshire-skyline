@@ -3216,7 +3216,104 @@
     easeInOutBounce: function(a, b, c, d, e) {
         return e / 2 > b ? .5 * jQuery.easing.easeInBounce(a, 2 * b, 0, d, e) + c : .5 * jQuery.easing.easeOutBounce(a, 2 * b - e, 0, d, e) + .5 * d + c;
     }
-});!function(a, b, c) {
+});!function(a, b) {
+    "$:nomunge";
+    function c(a) {
+        return "string" == typeof a;
+    }
+    function d(a) {
+        var b = w.call(arguments, 1);
+        return function() {
+            return a.apply(this, b.concat(w.call(arguments)));
+        };
+    }
+    function e(a) {
+        return a.replace(s, "$2");
+    }
+    function f(a) {
+        return a.replace(/(?:^[^?#]*\?([^#]*).*$)?.*/, "$1");
+    }
+    function g(b, d, e, f, g) {
+        var h, i, l, n, o;
+        return f !== j ? (l = e.match(b ? s : /^([^#?]*)\??([^#]*)(#?.*)/), o = l[3] || "", 
+        2 === g && c(f) ? i = f.replace(b ? r : H, "") : (n = m(l[2]), f = c(f) ? m[b ? D : C](f) : f, 
+        i = 2 === g ? f : 1 === g ? a.extend({}, f, n) : a.extend({}, n, f), i = k(i), b && (i = i.replace(t, x))), 
+        h = l[1] + (b ? v : i || !l[1] ? "?" : "") + i + o) : h = d(e !== j ? e : location.href), 
+        h;
+    }
+    function h(a, b, d) {
+        return b === j || "boolean" == typeof b ? (d = b, b = y[a ? D : C]()) : b = c(b) ? b.replace(a ? r : H, "") : b, 
+        m(b, d);
+    }
+    function i(b, d, e, f) {
+        return c(e) || "object" == typeof e || (f = e, e = d, d = j), this.each(function() {
+            var c = a(this), g = d || q()[(this.nodeName || "").toLowerCase()] || "", h = g && c.attr(g) || "";
+            c.attr(g, y[b](h, e, f));
+        });
+    }
+    var j, k, l, m, n, o, p, q, r, s, t, u, v, w = Array.prototype.slice, x = decodeURIComponent, y = a.param, z = a.bbq = a.bbq || {}, A = a.event.special, B = "hashchange", C = "querystring", D = "fragment", E = "elemUrlAttr", F = "href", G = "src", H = /^.*\?|#.*$/g, I = {};
+    y[C] = d(g, 0, f), y[D] = l = d(g, 1, e), y.sorted = k = function(b, c) {
+        var d = [], e = {};
+        return a.each(y(b, c).split("&"), function(a, b) {
+            var c = b.replace(/(?:%5B|=).*$/, ""), f = e[c];
+            f || (f = e[c] = [], d.push(c)), f.push(b);
+        }), a.map(d.sort(), function(a) {
+            return e[a];
+        }).join("&");
+    }, l.noEscape = function(b) {
+        b = b || "";
+        var c = a.map(b.split(""), encodeURIComponent);
+        t = new RegExp(c.join("|"), "g");
+    }, l.noEscape(",/"), l.ajaxCrawlable = function(a) {
+        return a !== j && (a ? (r = /^.*(?:#!|#)/, s = /^([^#]*)(?:#!|#)?(.*)$/, v = "#!") : (r = /^.*#/, 
+        s = /^([^#]*)#?(.*)$/, v = "#"), u = !!a), u;
+    }, l.ajaxCrawlable(0), a.deparam = m = function(b, c) {
+        var d = {}, e = {
+            "true": !0,
+            "false": !1,
+            "null": null
+        };
+        return a.each(b.replace(/\+/g, " ").split("&"), function(b, f) {
+            var g, h = f.split("="), i = x(h[0]), k = d, l = 0, m = i.split("]["), n = m.length - 1;
+            if (/\[/.test(m[0]) && /\]$/.test(m[n]) ? (m[n] = m[n].replace(/\]$/, ""), m = m.shift().split("[").concat(m), 
+            n = m.length - 1) : n = 0, 2 === h.length) if (g = x(h[1]), c && (g = g && !isNaN(g) ? +g : "undefined" === g ? j : e[g] !== j ? e[g] : g), 
+            n) for (;n >= l; l++) i = "" === m[l] ? k.length : m[l], k = k[i] = n > l ? k[i] || (m[l + 1] && isNaN(m[l + 1]) ? {} : []) : g; else a.isArray(d[i]) ? d[i].push(g) : d[i] !== j ? d[i] = [ d[i], g ] : d[i] = g; else i && (d[i] = c ? j : "");
+        }), d;
+    }, m[C] = d(h, 0), m[D] = n = d(h, 1), a[E] || (a[E] = function(b) {
+        return a.extend(I, b);
+    })({
+        a: F,
+        base: F,
+        iframe: G,
+        img: G,
+        input: G,
+        form: "action",
+        link: F,
+        script: G
+    }), q = a[E], a.fn[C] = d(i, C), a.fn[D] = d(i, D), z.pushState = o = function(a, b) {
+        c(a) && /^#/.test(a) && b === j && (b = 2);
+        var d = a !== j, e = l(location.href, d ? a : {}, d ? b : 2);
+        location.href = e;
+    }, z.getState = p = function(a, b) {
+        return a === j || "boolean" == typeof a ? n(a) : n(b)[a];
+    }, z.removeState = function(b) {
+        var c = {};
+        b !== j && (c = p(), a.each(a.isArray(b) ? b : arguments, function(a, b) {
+            delete c[b];
+        })), o(c, 2);
+    }, A[B] = a.extend(A[B], {
+        add: function(b) {
+            function c(a) {
+                var b = a[D] = l();
+                a.getState = function(a, c) {
+                    return a === j || "boolean" == typeof a ? m(b, a) : m(b, c)[a];
+                }, d.apply(this, arguments);
+            }
+            var d;
+            return a.isFunction(b) ? (d = b, c) : (d = b.handler, void (b.handler = c));
+        }
+    });
+}(jQuery, this), function(a, b, c) {
     "$:nomunge";
     function d(a) {
         return a = a || location.href, "#" + a.replace(/^[^#]*#?(.*)$/, "$1");
@@ -3240,11 +3337,15 @@
         var h, i = {}, k = d(), l = function(a) {
             return a;
         }, m = l, n = l;
-        return i.start = function() {
+        i.start = function() {
             h || e();
         }, i.stop = function() {
             h && clearTimeout(h), h = c;
-        }, navigator.userAgent.match(/msie [6]/i) && !j && function() {
+        };
+        var o = navigator.userAgent.toLowerCase(), p = {
+            msie: /msie/.test(o) && !/opera/.test(o)
+        };
+        return p.msie && !j && function() {
             var b, c;
             i.start = function() {
                 b || (c = a.fn[f].src, c = c && c + d(), b = a('<iframe tabindex="-1" title="empty"/>').hide().one("load", function() {
@@ -3351,23 +3452,21 @@
     backinout: function(a, b, c, d, e) {
         return jQuery.easing.easeInOutBack(a, b, c, d, e);
     }
-});$.event.special.scrollstop.latency = 300;$(window).hashchange(function() {
-    console.log(location.hash);
-}), $(window).hashchange();var scrolling = !1, $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item");
+});$.event.special.scrollstop.latency = 300;var $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item"), scroll_speed = 175, scroll_stick = 138, scrolling = !1, scroll_last = 0, scroll_dir = 1;
 
-active_class = "is_open";
+scroll_init = !1;
 
-var scroller_goto_item = function($self) {
-    $self = "undefined" != typeof $self ? $self : scroller_item_at("center");
-    var scrollTo = 0;
-    return scrolling = "auto", $scroller.animate({
+var scroller_goto_item = function($item) {
+    scrolling = "auto";
+    var $item = "undefined" != typeof $item ? $item : scroller_item_at("center"), scrollTo = 0;
+    return $scroller.animate({
         scrollLeft: function() {
-            return widths = $self.prevAll().map(function() {
-                return $self.outerWidth();
+            return widths = $item.prevAll().map(function() {
+                return $item.outerWidth();
             }).toArray(), total = widths.length < 1 ? 0 : eval(widths.join("+")), view = $scroller.outerWidth(), 
-            width = $self.outerWidth(), remains = view - width, scrollTo = total - remains / 2;
+            width = $item.outerWidth(), remains = view - width, scrollTo = total - remains / 2;
         }()
-    }, 175, "easeInOut", function() {
+    }, scroll_speed, "easeInOut", function() {
         return scrolling = !1, !1;
     }), scrollTo;
 }, scroller_item_at = function(a) {
@@ -3379,16 +3478,28 @@ var scroller_goto_item = function($self) {
         offset;
     });
     return $next_item = b[closest(a, c)], $next_item;
+}, scroller_get_next_item = function(a) {
+    if (!scrolling) return scroller_item_at();
+    if (scroll_diff = Math.abs(scroll_last - $scroller.scrollLeft()), !scroll_diff >= scroll_stick) return scroller_item_at();
+    var a = "undefined" != typeof a ? a : scroll_dir;
+    return $cur = 1 == $items.filter(".current").length ? $items.filter(".current") : $items.first(), 
+    $nxt = !1, $cur[0] !== scroller_item_at()[0] ? scroller_item_at() : (a >= 1 ? $nxt = 1 == $cur.next().length ? $cur.next() : !1 : $nxt = 1 == $cur.prev().length ? $cur.prev() : !1, 
+    $nxt);
 };
 
-$(window).hashchange(function() {
-    console.log(location.hash);
-}), $items.on("click", function(a) {
-    return $(this).hasClass("current") && a.target !== $(this)[0] ? !0 : (scroller_goto_item($(this)), 
+$(window).one("hashchange", function(a) {
+    scroll_init = window.setTimeout(function() {
+        scroller_goto_item($("#" + location.hash.split("property=")[1]));
+    }, 2 * scroll_speed);
+}), $items.click(function(a) {
+    return window.clearTimeout(scroll_init), $(this).hasClass("current") && a.target !== $(this)[0] ? !0 : (scroller_goto_item($(this)), 
     $(this).siblings().removeClass("current"), $(this).toggleClass("current"), !1);
 }), $scroller.on("scrollstart", function(a) {
-    return scrolling === !0 ? !1 : void ("auto" !== scrolling && (scrolling = !0));
+    return window.clearTimeout(scroll_init), scrolling === !0 ? !1 : void ("auto" !== scrolling && (scroll_dir = scroll_last < $scroller.scrollLeft() ? 1 : -1, 
+    scrolling = !0));
 }).on("scrollstop", function(a) {
-    $center = scroller_item_at("center"), $center.siblings().removeClass("current"), 
-    $center.addClass("current"), "auto" !== scrolling && scroller_goto_item(), scrolling = !1;
+    $next = scroller_get_next_item(), $next.siblings().removeClass("current"), $next.addClass("current"), 
+    "auto" !== scrolling && scroller_goto_item($next), scroll_last = $scroller.scrollLeft();
+});$(document).ready(function() {
+    $(window).hashchange();
 });

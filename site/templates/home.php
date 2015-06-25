@@ -34,6 +34,7 @@
 
 	<!-- Scroller Bloc -->
 		<? snippet('bloc/scroller') ?>
+		<? snippet('bloc/contact') ?>
 			
 	</main>
 <? snippet('meta/post') ?>

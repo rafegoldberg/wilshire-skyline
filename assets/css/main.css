@@ -8811,23 +8811,23 @@ html.t .scrollerBloc--item {
   }
 }
 html.m .scrollerBloc--item {
-  width: 83.33333%;
+  width: 91.66667%;
 }
 .gridle-debug html.m .scrollerBloc--item:before, html.m .scrollerBloc--item.gridle-debug:before {
-  content: "grid-m-10" !important;
+  content: "grid-m-11" !important;
 }
 .gridle-debug html.m .scrollerBloc--item.parent:before, html.m .scrollerBloc--item.gridle-debug.parent:before {
-  content: "grid-parent-m-10" !important;
+  content: "grid-parent-m-11" !important;
 }
 @media screen and (min-width: 0) and (max-width: 37.5em) {
   .scrollerBloc--item {
-    width: 83.33333%;
+    width: 91.66667%;
   }
   .gridle-debug .scrollerBloc--item:before, .scrollerBloc--item.gridle-debug:before {
-    content: "grid-m-10" !important;
+    content: "grid-m-11" !important;
   }
   .gridle-debug .scrollerBloc--item.parent:before, .scrollerBloc--item.gridle-debug.parent:before {
-    content: "grid-parent-m-10" !important;
+    content: "grid-parent-m-11" !important;
   }
 }
 html.m .scrollerBloc--item {
@@ -8909,8 +8909,8 @@ html.default .bgBox {
 .bgBox--scaleUp {
   -webkit-transition: font-size 0.385s ease-in-out;
           transition: font-size 0.385s ease-in-out;
-  -webkit-transition-delay: 0.575s;
-          transition-delay: 0.575s;
+  -webkit-transition-delay: 0.375s;
+          transition-delay: 0.375s;
 }
 .bgBox--scaleUp__action {
   position: absolute;
@@ -8918,8 +8918,8 @@ html.default .bgBox {
       -ms-transform: translateY(100%);
           transform: translateY(100%);
   opacity: 0;
-  -webkit-transition: opacity 0.775s ease-out, -webkit-transform 0.51667s ease-in-out;
-          transition: opacity 0.775s ease-out, transform 0.51667s ease-in-out;
+  -webkit-transition: opacity 0.575s ease-out, -webkit-transform 0.38333s ease-in-out;
+          transition: opacity 0.575s ease-out, transform 0.38333s ease-in-out;
   -webkit-transition-delay: 0;
           transition-delay: 0;
 }
@@ -8927,8 +8927,8 @@ html.default .bgBox {
   font-size: 1.44504rem;
   -webkit-transition: font-size 0.2s ease-in-out;
           transition: font-size 0.2s ease-in-out;
-  -webkit-transition-delay: 0.375s;
-          transition-delay: 0.375s;
+  -webkit-transition-delay: 0.175s;
+          transition-delay: 0.175s;
 }
 @media (min-width: 0) {
   .bgBox__overlay.current .bgBox--scaleUp {
@@ -8947,8 +8947,8 @@ html.default .bgBox {
   opacity: 1;
   -webkit-transition: opacity 0.4s ease-in, -webkit-transform 0.26667s ease-in-out;
           transition: opacity 0.4s ease-in, transform 0.26667s ease-in-out;
-  -webkit-transition-delay: 0.575s;
-          transition-delay: 0.575s;
+  -webkit-transition-delay: 0.375s;
+          transition-delay: 0.375s;
 }
 .rgdebug .bgBox, .rgdebug .textBox, .rgdebug .mediaBox, .rgdebug .actionBox, .debug-box .bgBox, .debug-box .textBox, .debug-box .mediaBox, .debug-box .actionBox {
   outline-width: 1px;

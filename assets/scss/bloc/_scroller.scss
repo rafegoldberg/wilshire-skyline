@@ -67,7 +67,7 @@
 			grid: 7,
 			parent: true,
 			t: ( grid: 9  ),
-			m: ( grid: 10 )
+			m: ( grid: 11 )
 		));
 		@include gridle_state( m ) {
 			// force smaller vertical padding on mobile

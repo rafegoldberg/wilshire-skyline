@@ -35,7 +35,7 @@ var scroller_goto_item = function($self) {
             scrollTo = total - (remains / 2); //update top-level var
             return scrollTo;
         }()),
-    }, 400, 'easeInOut', function() {
+    }, 175, 'easeInOut', function() {
         scrolling = false;
         return false;
     });
@@ -103,6 +103,8 @@ $scroller
         if (scrolling!=='auto') scrolling = true;
     })
     .on("scrollstop", function(event) {
+        scroller_item_at('center').siblings().removeClass('current');   // < remove others' .current
+        scroller_item_at('center').addClass('current');              // < toggle .current on clicked
         if (scrolling!=='auto') scroller_goto_item();
         scrolling = false;
     });

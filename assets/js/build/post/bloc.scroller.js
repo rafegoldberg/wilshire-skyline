@@ -12,7 +12,7 @@ var scroller_goto_item = function($self) {
             }).toArray(), total = widths.length < 1 ? 0 : eval(widths.join("+")), view = $scroller.outerWidth(), 
             width = $self.outerWidth(), remains = view - width, scrollTo = total - remains / 2;
         }()
-    }, 400, "easeInOut", function() {
+    }, 175, "easeInOut", function() {
         return scrolling = !1, !1;
     }), scrollTo;
 }, scroller_item_at = function(a) {
@@ -40,5 +40,6 @@ $items.on("click", function(a) {
 }), $scroller.on("scrollstart", function(a) {
     return scrolling === !0 ? !1 : void ("auto" !== scrolling && (scrolling = !0));
 }).on("scrollstop", function(a) {
+    scroller_item_at("center").siblings().removeClass("current"), scroller_item_at("center").addClass("current"), 
     "auto" !== scrolling && scroller_goto_item(), scrolling = !1;
 });

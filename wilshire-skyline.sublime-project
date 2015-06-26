@@ -57,6 +57,7 @@
 		},
 		{
 			"file_exclude_patterns": [
+				"fields/*",
 				"plugins/**/*"
 			],
 			"folder_exclude_patterns": [

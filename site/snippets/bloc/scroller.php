@@ -9,8 +9,8 @@
 					<h1 class="heading_6 centered"><?=$prop->title()->html()?></h1>
 					<div class="bgBox--scaleUp__action size_9 sizeReset9">
 						<ul class="list__inline list__inline__sep-slash">
-							<li class="list--item"><a class="action" href="#property=<?=$prop->slug()?>&pluck=map">Map</a></li>
-							<li class="list--item"><a class="action" href="#property=<?=$prop->slug()?>&pluck=photos">Photographs</a></li>
+							<li class="list--item"><a class="action" href="#property=<?=$prop->slug()?>&pluck=location">Details</a></li>
+							<li class="list--item"><a class="action" href="#property=<?=$prop->slug()?>&pluck=files">Photographs</a></li>
 						</ul>
 					</div>
 				</section>

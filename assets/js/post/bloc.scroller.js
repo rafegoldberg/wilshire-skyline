@@ -109,12 +109,11 @@
 			window.clearTimeout(scroll_init);
 
 			// OPEN ?
-			if ($(this).hasClass('current') && event.target!==$(this)[0]) {
 				// ^ ALLOW CLICKS ORIGINATING ON INNER ELEMS
-				// console.log($(this).find('[class*="__action"]'));
-				return true;
-			}
-			$.bbq.pushState({property:'',pluck:''});
+			if ($(this).hasClass('current')){
+				if (event.target!==$(this)[0]) return true;
+				$.bbq.pushState('home',2);
+			} else $.bbq.pushState({property:$(this).attr('id')},2);
 			// ELSE :
 			scroller_goto_item($(this));                 // < scroll to clicked
 			$(this).siblings().removeClass('current');   // < remove others' .current
@@ -139,8 +138,7 @@
 			$next.addClass('current');
 			$.bbq.pushState({
 				property: $next.attr('id'),
-				pluck: ''
-			});
+			},2);
 
 			if (scrolling!=='auto') scroller_goto_item($next);
 

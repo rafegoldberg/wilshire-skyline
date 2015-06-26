@@ -3452,7 +3452,21 @@
     backinout: function(a, b, c, d, e) {
         return jQuery.easing.easeInOutBack(a, b, c, d, e);
     }
-});$.event.special.scrollstop.latency = 300;var $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item"), scroll_speed = 250, scroll_stick = 138, scrolling = !1, scroll_last = 0, scroll_dir = 1;
+});$.event.special.scrollstop.latency = 300;var render_data_template = function(a) {
+    $("#" + $.bbq.getState("property")).append($(a));
+}, central_ajax_handler = function(a) {
+    a.getState().property && a.getState().pluck && $.ajax({
+        url: "api",
+        type: "GET",
+        data: a.getState()
+    }).done(function(a) {
+        console.log("done", a), a.template && render_data_template(a.template);
+    }).fail(function(a) {
+        console.log("fail", a.error());
+    }).always(function(a) {});
+};
+
+$(window).bind("hashchange", central_ajax_handler);var $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item"), scroll_speed = 250, scroll_stick = 138, scrolling = !1, scroll_last = 0, scroll_dir = 1;
 
 scroll_init = !1;
 
@@ -3494,20 +3508,22 @@ $(window).one("hashchange", function(a) {
         scroller_goto_item($active);
     }, 2.5 * scroll_speed));
 }), $items.click(function(a) {
-    return window.clearTimeout(scroll_init), $(this).hasClass("current") && a.target !== $(this)[0] ? !0 : ($.bbq.pushState({
-        property: "",
-        pluck: ""
-    }), scroller_goto_item($(this)), $(this).siblings().removeClass("current"), $(this).toggleClass("current"), 
-    !1);
+    if (window.clearTimeout(scroll_init), $(this).hasClass("current")) {
+        if (a.target !== $(this)[0]) return !0;
+        $.bbq.pushState("home", 2);
+    } else $.bbq.pushState({
+        property: $(this).attr("id")
+    }, 2);
+    return scroller_goto_item($(this)), $(this).siblings().removeClass("current"), $(this).toggleClass("current"), 
+    !1;
 }), $scroller.bind("scrollstart", function(a) {
     return window.clearTimeout(scroll_init), scrolling === !0 ? !1 : void ("auto" !== scrolling && (scroll_dir = scroll_last < $scroller.scrollLeft() ? 1 : -1, 
     scrolling = !0));
 }).bind("scrollstop", function(a) {
     $next = scroller_get_next_item(), $next.siblings().removeClass("current"), $next.addClass("current"), 
     $.bbq.pushState({
-        property: $next.attr("id"),
-        pluck: ""
-    }), "auto" !== scrolling && scroller_goto_item($next), scroll_last = $scroller.scrollLeft();
+        property: $next.attr("id")
+    }, 2), "auto" !== scrolling && scroller_goto_item($next), scroll_last = $scroller.scrollLeft();
 });$(document).ready(function() {
     $(window).hashchange();
 });

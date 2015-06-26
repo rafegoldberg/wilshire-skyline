@@ -5,26 +5,31 @@
 #STEP[2: set type to json app]
 	header('Content-type: application/json; charset=utf-8');
 
-#STEP[3: get and store some data]
-	$data = false;
-	switch ($_GET['get']) {
-		case 'pages':
-			$data = $pages->visible()->paginate(10);
+#STEP[3: API config]
+
+	$return = array(); // scoped var
+
+	$props = $pages->find('properties');
+	$prop = $props->children()->find($_GET['property']);
+
+#STEP[4: get AJAX-variable data]
+	switch ($_GET['pluck']) { // testparse
+		case 'files':
+			$return['data'] = $prop->files()->toArray();
 			break;
 		default:
-			$data = $pages->children()->filterBy('template','property');
+			// $return['data'] = $prop->content()->toArray()[$_GET['pluck']];
+			$data = $prop->content()->toArray();
+			$data['location'] = (array)json_decode($data['location']);
+			$return['data'] = $data;
 			break;
 	}
 
-#STEP[4: loop thru $data and store in $json]
-	$json = array();
-	foreach($data as $article) {
-	  $json[] = array(
-	    'title' => (string)$article->title(),
-	    'date'  => (string)$article->date(),
-	  );
-	}
+	// check, render, save template
+	// 
+	$return['template'] = snippet('box/'.$_GET['pluck'],$return['data'],true);
+	
+#STEP[5: echo parsed data as json]
+	echo json_encode($return,JSON_NUMERIC_CHECK); //@DEBUG
 
-#STEP[5: echo/return data as JSON str]
-	echo json_encode($json);
 ?>

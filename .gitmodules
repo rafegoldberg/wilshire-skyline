@@ -19,3 +19,6 @@
 [submodule "site/fields/selector"]
 	path = site/fields/selector
 	url = https://rafegoldberg@github.com/storypioneers/kirby-selector.git
+[submodule "site/fields/place"]
+	path = site/fields/place
+	url = https://github.com/AugustMiller/kirby-place-field.git

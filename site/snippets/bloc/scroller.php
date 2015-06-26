@@ -9,14 +9,16 @@
 					<h1 class="heading_6 centered"><?=$prop->title()->html()?></h1>
 					<div class="bgBox--scaleUp__action size_9 sizeReset9">
 						<ul class="list__inline list__inline__sep-slash">
-							<li class="list--item"><a class="action" href="#property=<?=$prop->slug()?>&pluck=location">Details</a></li>
-							<li class="list--item"><a class="action" href="#property=<?=$prop->slug()?>&pluck=files">Photographs</a></li>
+							<li class="list--item">
+								<a class="action" href="#property=<?=$prop->slug()?>&pluck=details">Details</a>
+							</li>
+							<li class="list--item">
+								<a class="action" href="#property=<?=$prop->slug()?>&pluck=files">Photographs</a>
+							</li>
 						</ul>
 					</div>
 				</section>
-				<style> #<?=$prop->slug()?>.bgBox__after:after {
-					background-image:url(<?=$prop->files()->first()->url()?>);
-				} </style>
+				<?= $prop->img()->bgiBox_set_style() ?>
 			</div>
 		<? endforeach; ?>
 	</section>

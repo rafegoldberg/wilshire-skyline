@@ -3100,6 +3100,8 @@
     };
 }(this, document), Modernizr.load = function() {
     yepnope.apply(window, [].slice.call(arguments, 0));
+};var strip_tags = function(a) {
+    return a.replace(/(<([^>]+)>)/gi, "");
 };jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
     def: "easeOutQuad",
     swing: function(a, b, c, d, e) {
@@ -3452,21 +3454,49 @@
     backinout: function(a, b, c, d, e) {
         return jQuery.easing.easeInOutBack(a, b, c, d, e);
     }
-});$.event.special.scrollstop.latency = 300;var render_data_template = function(a) {
-    $("#" + $.bbq.getState("property")).append($(a));
-}, central_ajax_handler = function(a) {
-    a.getState().property && a.getState().pluck && $.ajax({
+});$.event.special.scrollstop.latency = 300;var api_url = "api", template_class = ".overlayPanelBloc__", render_data_template = function(a) {
+    var b = $("#" + $.bbq.getState("property")), c = $(a);
+    return b.append(c), $(".overlayPanelBloc--close").click(function(a) {
+        $(this).parent(".overlayPanelBloc").removeClass("open"), $(this).parent(".scrollerBloc--item").removeClass("scrollerBloc--item__open");
+    }), b;
+}, ajax_connect = function(a) {
+    $.ajax({
         url: "api",
         type: "GET",
-        data: a.getState()
+        data: a
     }).done(function(a) {
-        console.log("done", a), a.template && render_data_template(a.template);
+        console.log("response".response), $render_in = render_data_template(a.template), 
+        console.log($render_in);
     }).fail(function(a) {
-        console.log("fail", a.error());
-    }).always(function(a) {});
+        console.warn(strip_tags(a.responseText.trim()), a.error());
+    });
+}, _api = function() {
+    return state = $.bbq.getState(), render_if = $(template_class + state.pluck), console.log({
+        "state.property": state.property,
+        "state.pluck": state.pluck,
+        render_if: render_if
+    }), state.property && state.pluck && render_if.length <= 0 ? void ajax_connect(state) : (console.warn("data already loaded"), 
+    !1);
 };
 
-$(window).bind("hashchange", central_ajax_handler);var $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item"), scroll_speed = 250, scroll_stick = 138, scrolling = !1, scroll_last = 0, scroll_dir = 1;
+$(window).bind("hashchange", _api);var panel_base_class = "overlayPanelBloc", panel_wrap_class = "scrollerBloc--item", $panel_toggles = $("." + panel_wrap_class + ' .action[href*="pluck="]'), overlayPanel_close = function(a) {
+    a.parent("." + panel_wrap_class).removeClass(panel_wrap_class + "__open"), a.removeClass("open");
+};
+
+overlayPanel_render = function(a) {
+    plucked = $.deparam(a.attr("href").split("#")[1]).pluck, $parent = a.closest("." + panel_wrap_class), 
+    $panel = $parent.find("." + panel_base_class + "__" + plucked), $parent.addClass(panel_wrap_class + "__open"), 
+    $panel.addClass("open"), console.log("js:overlayPanels", {
+        addclass: "." + panel_base_class + "__open",
+        plucked: plucked,
+        parent: $parent,
+        panel: $panel
+    });
+}, $panel_toggles.bind("click", function(a) {
+    $self = $(this), $(window).one("haschange", overlayPanel_render($self));
+}), $(window).on("haschange", function(a) {
+    console.log("click:", event);
+});var $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item"), scroll_speed = 250, scroll_stick = 138, scrolling = !1, scroll_last = 0, scroll_dir = 1;
 
 scroll_init = !1;
 
@@ -3501,9 +3531,7 @@ var scroller_goto_item = function($item) {
     $nxt);
 };
 
-$(window).one("hashchange", function(a) {
-    $.bbq.removeState("pluck");
-}).bind("hashchange", function(a) {
+$(window).bind("hashchange", function(a) {
     $active = $("#" + $.bbq.getState("property")), $active.length >= 1 && (scroll_init = window.setTimeout(function() {
         scroller_goto_item($active);
     }, 2.5 * scroll_speed));

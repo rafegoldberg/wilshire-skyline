@@ -1,5 +1,5 @@
 @include newBloc((
-	name: overlay,
+	name: overlayPanel,
 	gridle: (
 		parent: true,
 		container: true,
@@ -7,15 +7,17 @@
 		vertical_align: middle,
 	),
 	convention: explicit,
+	includes: '.pad8A',
 )){
 	//–> QUICK CONFIG
 	// 
-	$open_class: 'open';
+	$parent-class: '.scrollerBloc--item';
+	$is_open-suffix: '__open';
 
 	//–> DEFAULT STYLES
 	// 
 	& {
-		z-index: 9;
+		z-index: -1;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -25,10 +27,21 @@
 		opacity: 0;
 		transition: opacity .5s ease-in-out;
 		transition-delay: .75s;
-		@at-root .overlay__#{$open_class} & {
-			pointer-events: none;
+		pointer-events: none;
+		@at-root #{$parent-class}#{$is_open-suffix} & {
+			@extend %simple-overflow-scroll--y !optional;
+			z-index: 9;
 			opacity: 1;
 			transition-delay: .5s;
+			pointer-events: auto;
+		}
+		&--close {
+			position: fixed;
+			z-index: 99;
+			font-size: 1rem;
+			margin: -1.5rem 0 0 -1.5rem;
+			opacity: .375;
+			padding: 3px 4px;
 		}
 	}
 }

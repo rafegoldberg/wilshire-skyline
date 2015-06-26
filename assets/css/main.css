@@ -4,20 +4,20 @@
           transform: translateZ(0);
 }
 
-html body:after, .container:after, #main:after, .overlayBloc:after {
+html body:after, .container:after, #main:after, .overlayPanelBloc:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.parent:before, .parent-portrait:before, .parent-landscape:before, .parent-d:before, .parent-t:before, .parent-m:before, .attachmentBloc:before, .contentBloc:before, .scrollerBloc:before, .scrollerBloc--item:before, .overlayBloc:before, .list__inline:before, .parent:after, .parent-portrait:after, .parent-landscape:after, .parent-d:after, .parent-t:after, .parent-m:after, .attachmentBloc:after, .contentBloc:after, .scrollerBloc:after, .scrollerBloc--item:after, .overlayBloc:after, .list__inline:after {
+.parent:before, .parent-portrait:before, .parent-landscape:before, .parent-d:before, .parent-t:before, .parent-m:before, .attachmentBloc:before, .contentBloc:before, .scrollerBloc:before, .scrollerBloc--item:before, .overlayPanelBloc:before, .list__inline:before, .parent:after, .parent-portrait:after, .parent-landscape:after, .parent-d:after, .parent-t:after, .parent-m:after, .attachmentBloc:after, .contentBloc:after, .scrollerBloc:after, .scrollerBloc--item:after, .overlayPanelBloc:after, .list__inline:after {
   content: "";
   display: table;
 }
-.parent:after, .parent-portrait:after, .parent-landscape:after, .parent-d:after, .parent-t:after, .parent-m:after, .attachmentBloc:after, .contentBloc:after, .scrollerBloc:after, .scrollerBloc--item:after, .overlayBloc:after, .list__inline:after {
+.parent:after, .parent-portrait:after, .parent-landscape:after, .parent-d:after, .parent-t:after, .parent-m:after, .attachmentBloc:after, .contentBloc:after, .scrollerBloc:after, .scrollerBloc--item:after, .overlayPanelBloc:after, .list__inline:after {
   clear: both;
 }
-.parent, .parent-portrait, .parent-landscape, .parent-d, .parent-t, .parent-m, .attachmentBloc, .contentBloc, .scrollerBloc, .scrollerBloc--item, .overlayBloc, .list__inline {
+.parent, .parent-portrait, .parent-landscape, .parent-d, .parent-t, .parent-m, .attachmentBloc, .contentBloc, .scrollerBloc, .scrollerBloc--item, .overlayPanelBloc, .list__inline {
   zoom: 1;
 }
 
@@ -31,15 +31,15 @@ html body:after, .container:after, #main:after, .overlayBloc:after {
   position: relative;
 }
 
-html body, .container, #main, .overlayBloc {
+html body, .container, #main, .overlayPanelBloc {
   box-sizing: border-box;
 }
 
-.parent, .parent-portrait, .parent-landscape, .parent-d, .parent-t, .parent-m, .attachmentBloc, .contentBloc, .scrollerBloc, .scrollerBloc--item, .overlayBloc, .list__inline {
+.parent, .parent-portrait, .parent-landscape, .parent-d, .parent-t, .parent-m, .attachmentBloc, .contentBloc, .scrollerBloc, .scrollerBloc--item, .overlayPanelBloc, .list__inline {
   box-sizing: border-box;
 }
 
-.gridle-debug html body, html body.gridle-debug, .gridle-debug .container, .container.gridle-debug, .gridle-debug #main, #main.gridle-debug, .gridle-debug .overlayBloc, .overlayBloc.gridle-debug {
+.gridle-debug html body, html body.gridle-debug, .gridle-debug .container, .container.gridle-debug, .gridle-debug #main, #main.gridle-debug, .gridle-debug .overlayPanelBloc, .overlayPanelBloc.gridle-debug {
   background-color: #f5f5f5;
 }
 
@@ -8530,7 +8530,7 @@ html.default .attachmentBloc > * {
   vertical-align: middle;
   font-size: 1rem;
 }
-.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayBloc {
+.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayPanelBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayPanelBloc {
   outline-width: 1px;
   outline-style: dashed !important;
   outline-color: cyan !important;
@@ -8552,7 +8552,7 @@ html.default .contentBloc {
   padding-left: 0;
   padding-right: 0;
 }
-.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayBloc {
+.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayPanelBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayPanelBloc {
   outline-width: 1px;
   outline-style: dashed !important;
   outline-color: cyan !important;
@@ -8836,48 +8836,48 @@ html.m .scrollerBloc--item {
 .scrollerBloc--item scrollerBloc__bordered:last-child {
   border-right: none;
 }
-.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayBloc {
+.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayPanelBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayPanelBloc {
   outline-width: 1px;
   outline-style: dashed !important;
   outline-color: cyan !important;
   outline-offset: -1px;
 }
-.overlayBloc {
+.overlayPanelBloc {
   padding-left: 0;
   padding-right: 0;
   font-size: 0;
   clear: both;
 }
-html.default .overlayBloc {
+html.default .overlayPanelBloc {
   padding-left: 0;
   padding-right: 0;
 }
-html.default html.default .overlayBloc {
+html.default html.default .overlayPanelBloc {
   padding-left: 0;
   padding-right: 0;
 }
-html.default .overlayBloc {
+html.default .overlayPanelBloc {
   padding-left: 0;
   padding-right: 0;
 }
-html.default .overlayBloc {
+html.default .overlayPanelBloc {
   font-size: 0;
   clear: both;
 }
-html.default .overlayBloc > * {
+html.default .overlayPanelBloc > * {
   display: inline-block;
   float: none !important;
   vertical-align: middle;
   font-size: 1rem;
 }
-.overlayBloc > * {
+.overlayPanelBloc > * {
   display: inline-block;
   float: none !important;
   vertical-align: middle;
   font-size: 1rem;
 }
-.overlayBloc {
-  z-index: 9;
+.overlayPanelBloc {
+  z-index: -1;
   position: absolute;
   top: 0;
   left: 0;
@@ -8889,14 +8889,24 @@ html.default .overlayBloc > * {
           transition: opacity .5s ease-in-out;
   -webkit-transition-delay: .75s;
           transition-delay: .75s;
-}
-.overlay__open .overlayBloc {
   pointer-events: none;
+}
+.scrollerBloc--item__open .overlayPanelBloc {
+  z-index: 9;
   opacity: 1;
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
+  pointer-events: auto;
 }
-.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayBloc {
+.overlayPanelBloc--close {
+  position: fixed;
+  z-index: 99;
+  font-size: 1rem;
+  margin: -1.5rem 0 0 -1.5rem;
+  opacity: .375;
+  padding: 3px 4px;
+}
+.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayPanelBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayPanelBloc {
   outline-width: 1px;
   outline-style: dashed !important;
   outline-color: cyan !important;
@@ -9063,11 +9073,17 @@ html.default .actionBox {
   outline-color: magenta !important;
   outline-offset: -1px;
 }
-.debug-bit p, .debug-bit ul, .debug-bit ol, .debug-bit blockquote, .debug-bit .actionBox__soft a, .actionBox__soft .debug-bit a, .debug-bit .actionBox__soft .action, .actionBox__soft .debug-bit .action, .debug-bit .actionBox__soft [class*="__action"], .actionBox__soft .debug-bit [class*="__action"], .debug-bit .heading, .debug-bit .heading_1, .debug-bit h1, .debug-bit .heading_2, .debug-bit h2, .debug-bit .heading_3, .debug-bit h3, .debug-bit .heading_4, .debug-bit h4, .debug-bit .heading_5, .debug-bit h5, .debug-bit .heading_6, .debug-bit h6, .debug-bit .heading_7, .debug-bit .heading_8, .debug-bit .heading_9, .debug-bit .list--item, .debug-bit .list, .debug-bit .list__inline, .debug-bit .list__block, .debug-bit .theme, .rgdebug p, .rgdebug ul, .rgdebug ol, .rgdebug blockquote, .rgdebug .actionBox__soft a, .actionBox__soft .rgdebug a, .rgdebug .actionBox__soft .action, .actionBox__soft .rgdebug .action, .rgdebug .actionBox__soft [class*="__action"], .actionBox__soft .rgdebug [class*="__action"], .rgdebug .heading, .rgdebug .heading_1, .rgdebug h1, .rgdebug .heading_2, .rgdebug h2, .rgdebug .heading_3, .rgdebug h3, .rgdebug .heading_4, .rgdebug h4, .rgdebug .heading_5, .rgdebug h5, .rgdebug .heading_6, .rgdebug h6, .rgdebug .heading_7, .rgdebug .heading_8, .rgdebug .heading_9, .rgdebug .list--item, .rgdebug .list, .rgdebug .list__inline, .rgdebug .list__block, .rgdebug .theme {
+.debug-bit .scrollerBloc--item__open .overlayPanelBloc, .scrollerBloc--item__open .debug-bit .overlayPanelBloc, .debug-bit p, .debug-bit ul, .debug-bit ol, .debug-bit blockquote, .debug-bit .actionBox__soft a, .actionBox__soft .debug-bit a, .debug-bit .actionBox__soft .action, .actionBox__soft .debug-bit .action, .debug-bit .actionBox__soft [class*="__action"], .actionBox__soft .debug-bit [class*="__action"], .debug-bit .heading, .debug-bit .heading_1, .debug-bit h1, .debug-bit .heading_2, .debug-bit h2, .debug-bit .heading_3, .debug-bit h3, .debug-bit .heading_4, .debug-bit h4, .debug-bit .heading_5, .debug-bit h5, .debug-bit .heading_6, .debug-bit h6, .debug-bit .heading_7, .debug-bit .heading_8, .debug-bit .heading_9, .debug-bit .list--item, .debug-bit .list, .debug-bit .list__inline, .debug-bit .list__block, .debug-bit .theme, .rgdebug .scrollerBloc--item__open .overlayPanelBloc, .scrollerBloc--item__open .rgdebug .overlayPanelBloc, .rgdebug p, .rgdebug ul, .rgdebug ol, .rgdebug blockquote, .rgdebug .actionBox__soft a, .actionBox__soft .rgdebug a, .rgdebug .actionBox__soft .action, .actionBox__soft .rgdebug .action, .rgdebug .actionBox__soft [class*="__action"], .actionBox__soft .rgdebug [class*="__action"], .rgdebug .heading, .rgdebug .heading_1, .rgdebug h1, .rgdebug .heading_2, .rgdebug h2, .rgdebug .heading_3, .rgdebug h3, .rgdebug .heading_4, .rgdebug h4, .rgdebug .heading_5, .rgdebug h5, .rgdebug .heading_6, .rgdebug h6, .rgdebug .heading_7, .rgdebug .heading_8, .rgdebug .heading_9, .rgdebug .list--item, .rgdebug .list, .rgdebug .list__inline, .rgdebug .list__block, .rgdebug .theme {
   outline: 1px dotted yellow;
   outline-offset: -2px;
 }
 
+.scrollerBloc--item__open .overlayPanelBloc {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
+  overflow-y: scroll;
+}
 p, ul, ol, blockquote {
   font-size: 1em;
   line-height: 1.42383;
@@ -9753,7 +9769,7 @@ button, input {
   padding-top: 1.42383em;
   padding-bottom: 1.42383em;
 }
-.pad7A, .attachmentBloc, .contentBloc, .scrollerBloc, .overlayBloc {
+.pad7A {
   padding: 1.42383em;
 }
 .pad8, .pad8Z {
@@ -9764,7 +9780,7 @@ button, input {
   padding-top: 1.125em;
   padding-bottom: 1.125em;
 }
-.pad8A {
+.pad8A, .overlayPanelBloc {
   padding: 1.125em;
 }
 .pad9, .pad9Z {
@@ -12926,11 +12942,11 @@ html.landscape .d-b-landscape {
     display: block  !important;
   }
 }
-html.default .d-b, html.default .attachmentBloc, html.default .contentBloc, html.default .scrollerBloc, html.default .overlayBloc {
+html.default .d-b, html.default .attachmentBloc, html.default .contentBloc, html.default .scrollerBloc, html.default .overlayPanelBloc {
   display: block  !important;
 }
 
-.d-b, .attachmentBloc, .contentBloc, .scrollerBloc, .overlayBloc {
+.d-b, .attachmentBloc, .contentBloc, .scrollerBloc, .overlayPanelBloc {
   display: block  !important;
 }
 

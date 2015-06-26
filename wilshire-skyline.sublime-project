@@ -14,7 +14,7 @@
 				"license*",
 				"scss/app/lib.*/**/*",
 				"assets/css/*",
-				"*cache*",
+				"*cache*"
 			],
 			"folder_exclude_patterns":
 			[
@@ -31,10 +31,16 @@
 			"path": "."
 		},
 		{
-			"file_exclude_patterns": [
-				"*.map", "*.eot", "*.svg", "*.ttf", "*.woff"
+			"file_exclude_patterns":
+			[
+				"*.map",
+				"*.eot",
+				"*.svg",
+				"*.ttf",
+				"*.woff"
 			],
-			"folder_exclude_patterns": [
+			"folder_exclude_patterns":
+			[
 				"css",
 				"js",
 				"scss",
@@ -45,22 +51,25 @@
 			"path": "assets"
 		},
 		{
-			"name": "   • Sheets",
+			"name": "  •  Sheets",
 			"path": "assets/scss"
 		},
 		{
-			"folder_exclude_patterns": [
+			"folder_exclude_patterns":
+			[
 				"build"
 			],
-			"name": "   • Scripts",
+			"name": "  •  Scripts",
 			"path": "assets/js"
 		},
 		{
-			"file_exclude_patterns": [
+			"file_exclude_patterns":
+			[
 				"fields/*",
 				"plugins/**/*"
 			],
-			"folder_exclude_patterns": [
+			"folder_exclude_patterns":
+			[
 				"accounts",
 				"cache",
 				"config"
@@ -69,17 +78,17 @@
 			"path": "site"
 		},
 		{
-			"name": "   • Blueprints",
-			"path": "site/blueprints"
-		},
-		{
-			"name": "   • Templates",
+			"name": "  •  Templates",
 			"path": "site/templates"
 		},
 		{
-			"name": "   • Snippets",
+			"name": "  •  Snippets",
 			"path": "site/snippets"
 		},
+		{
+			"name": "  •  Blueprints",
+			"path": "site/blueprints"
+		}
 	],
 	"settings":
 	{

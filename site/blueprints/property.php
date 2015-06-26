@@ -18,3 +18,9 @@ fields:
 			zoom: 15
 		help: >
 			Look up an address or location.
+	img:
+		label: Featured Image
+		type:  selector
+		mode:  single
+		types:
+			- image

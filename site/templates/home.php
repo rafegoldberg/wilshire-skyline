@@ -24,7 +24,7 @@
 		</section>
 		
 	<!-- Content Bloc -->
-		<section class="contentBloc grid-5 grid-t-8 grid-m-12 centered">
+		<section class="contentBloc grid-d-5 grid-t-8 grid-m-10 no-gutter-mobile centered">
 			<div class="textBox centered">
 				<?=$pages->find('intro')->text()->kt()?>
 			</div>

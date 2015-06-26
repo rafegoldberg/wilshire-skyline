@@ -33,9 +33,7 @@ var scroller_goto_item = function($item) {
     $nxt);
 };
 
-$(window).one("hashchange", function(a) {
-    $.bbq.removeState("pluck");
-}).bind("hashchange", function(a) {
+$(window).bind("hashchange", function(a) {
     $active = $("#" + $.bbq.getState("property")), $active.length >= 1 && (scroll_init = window.setTimeout(function() {
         scroller_goto_item($active);
     }, 2.5 * scroll_speed));

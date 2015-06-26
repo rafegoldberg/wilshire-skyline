@@ -6,7 +6,7 @@
 	$_BLOC_: (
 		name: bloc,
 		extend: 'false',
-		includes: false,
+		includes: '.pad7A',
 		convention: explicit,
 		gridle: (
 			parent:    true,
@@ -37,8 +37,11 @@
 		// | DEFAULTS
 		// | 
 			@include gridle_set(map-get($bloc,gridle));
-			@extend #{map-get($bloc,includes)} !optional;
-			@extend .d-b, .pad7A;
+
+			$extend: map-get($bloc,includes);
+			$extend: if( type-of($extend)==list, "#{map-get($_BLOC_,includes)}, #{nth($extend,1)}", $extend );
+			@extend #{".d-b, #{$extend}"} !optional;
+
 		// | 
 		// | USER CONTENT
 		// | has access to $bloc variable
@@ -104,6 +107,19 @@
 // PUBLIC
 // 
 	// GET UTILS
+	@function getBloc($name){
+		@return map-get($_BLOCS,$name);
+	}
+	@function getBlocOpt($bloc,$key){
+		$bloc_name: if( type-of($bloc)==map, getBlocName($bloc), $bloc );
+		$bloc_name: if( type-of($bloc)==string, $bloc, false);
+		@if $bloc_name {
+			@return map-get-deep($_BLOCS,$bloc,$key);
+		} @else {
+			@warn "getBlocOpt() ——— no registered bloc “#{$bloc_name}”";
+			@return false;
+		}
+	}
 	@function getBlocClass($opts,$asString:false){
 		$class: if(map-get($opts,convention)==implicit,"bloc-#{map-get($opts,name)}","#{map-get($opts,name)}Bloc");
 		$selector: if(map-get($opts,convention)==implicit,"%#{$class}",".#{$class}");
@@ -116,19 +132,8 @@
 			));
 		}
 	}
-	@function getBloc($name){
-		@return map-get($_BLOCS,$name);
-	}
-	@function getBlocOpt($bloc,$key){
-		// $bloc_name: if(type-of($bloc)==map,map-get($bloc,name),if(type-of($bloc)==string,$bloc,false));
-		// @warn "#{$bloc_name}";
-		// @warn "#{type-of($bloc_name)}";
-		// @if $bloc_name!=false {
-			@return map-get-deep($_BLOCS,$bloc,$key);
-		// } @else {
-		// 	@warn 'getBlocOpt($bloc,$key) no matches for [#{inspect($bloc_name)}] to any registered blocs';
-		// 	@return false;
-		// }
+	@function getBlocName($bloc){
+		@return map-get($bloc,name);
 	}
 	// SET UTILS
 	// USE UTILS

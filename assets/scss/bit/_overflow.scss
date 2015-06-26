@@ -1,0 +1,17 @@
+%simple-overflow-scroll {
+	@mixin _defaults {
+		@extend %bit;
+		overflow: hidden;
+		-webkit-overflow-scrolling: touch;
+	}
+	&--y {
+		@include _defaults();
+		max-height: 100%;
+		overflow-y: scroll;
+	}
+	&--x {
+		@include _defaults();
+		max-width: 100%;
+		overflow-x: scroll;
+  }
+}

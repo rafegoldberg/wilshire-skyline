@@ -93,9 +93,9 @@
 /*=EVENTS
 */ 
 	$(window)
-		.one('hashchange',function(event){
-			$.bbq.removeState('pluck');
-		})
+		// .one('hashchange',function(event){
+		// 	$.bbq.removeState('pluck');
+		// })
 		.bind('hashchange',function(event){
 			$active = $('#'+$.bbq.getState('property'));
 			if ($active.length>=1)

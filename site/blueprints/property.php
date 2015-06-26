@@ -15,6 +15,6 @@ fields:
 		center:
 			lat: 45.5230622
 			lng: -122.67648159999999
-			zoom: 13
+			zoom: 15
 		help: >
 			Look up an address or location.

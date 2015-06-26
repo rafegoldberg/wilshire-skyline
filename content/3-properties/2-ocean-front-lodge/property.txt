@@ -1,0 +1,9 @@
+Title: Ocean Front Lodge
+
+----
+
+Text: Fugit officiis suscipit sequi ratione doloribus culpa, asperiores excepturi harum qui corporis dicta tempore commodi veniam, vel similique, sint quas.
+
+----
+
+Location: {"address":"1659 Ocean Front Walk, Santa Monica, CA 90401","lat":"34.0104235","lng":"-118.4959508"}

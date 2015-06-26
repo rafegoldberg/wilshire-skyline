@@ -1,0 +1,9 @@
+Title: Villa Rebecca
+
+----
+
+Text: Directly on Beverly Hills' Golden Triangle, this property was converted to condos in 2009 with major renovations completed in 2010.
+
+----
+
+Location: {"address":"310 N. Crescent Drive, Beverly Hills, CA 90210","lat":"34.070391","lng":"-118.398481"}

@@ -1,54 +1,28 @@
 <?php if(!defined('KIRBY')) exit ?>
 
 title: Properties
-pages: false
+pages: 
+  template:
+    - property
 files: images
 fields:
 	title:
-		label: Page Title
+		label: <style>[for$="field-title"],[for$="field-title"] *{display:none;}[for$="field-title"]~*>*{background-color:transparent !important;}[for$="field-title"]~*>.input{border:none;pointer-events:none !important;padding:0 !important;}[for$="field-title"]~.field-content{font-size:1.5em;margin-top:2.5rem;}[for$="field-title"]~.field-content .icon{display:none !important;}</style>
 		type:  text
+		placeholder: Properties
+		icon: text-width
+	about:
+		text: >
+			<ul>
+				<li>
+					<p>Want to <strong>change the order</strong> properties are displayed in the slider? Just tap to <em><key>Edit</key></em> the Pages list (at left) and you'll be able to drag and drop 'em just the way you like!</p>
+				</li>
+				<li>
+					<p>To <strong>edit a property</strong>, ummm, it's pretty self explanatory. Find it in the list at left. Click it.</p>
+				</li>
+			</ul>
+		type: info
 	spacer:
 		label: &nbsp;
 		type:info
 		width: 1/4
-	properties:
-		label: Properties
-		type: structure
-		max: 4
-		width: 1/2
-		entry: >
-
-			<div>
-				<img src="http://localhost/projects/wilshire-skyline/content/2-props/{{media}}" style="display: inline-block;vertical-align: middle;max-height:3rem;width: 29%;">
-				<div style="display: inline-block;width: 69%;padding-left: 1em;-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;vertical-align: middle;font-size:.85rem;">
-					<h1>{{title}}</h1>
-					{{text}}
-				</div>
-			</div>
-
-		fields:
-			title:
-				label: <strong style="font-size:1.15rem;line-height:3;">Property Details</strong>
-				type: text
-				icon: building-o
-			text:
-				placeholder: about this property, brielfy
-				type: markdown
-			spacer0:
-				type: info
-			media:
-				label: Image &amp; Map
-				type:  selector
-				mode:  single
-				types:
-					- all
-			spacer1:
-				type: info
-			location:
-				type: place
-				center:
-					lat: 45.5230622
-					lng: -122.67648159999999
-					zoom: 13
-				help: >
-					Look up an address or location.

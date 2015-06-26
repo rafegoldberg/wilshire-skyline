@@ -1,16 +1,35 @@
 .list__inline {
+	//–> CONFIG
+	// 
 	@extend .list;
-	display: inline-block;
 	@include gridle_parent;
+
+	//–> DESCENDANTS
 	// 
-	// DESCENDANTS
-	// 
-	& { > *, .list--item {
+	& {
 		display: inline-block;
-	} }
+		.list--item {
+			display: inline-block;
+			+ .list--item { margin-left: _ms(-1); }
+		}
+	}
+
+	//–> LAYOUTS
 	// 
-	// LAYOUTS
-	// 
+	&__sep-slash {
+		@include gridle_state( d t ) {
+			.list--item {
+				padding: 0 !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				+ .list--item:before {
+					content: ' / ';
+					margin: 0 .25em;
+					font-weight: 100;
+				}
+			}
+		}
+	}
 	&__break {
 		& { > *, .list--item {
 			@include gridle_state(m) { display: block; }

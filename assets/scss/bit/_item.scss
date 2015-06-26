@@ -1,7 +1,7 @@
 %bit_item {
 	@extend %bit;
 	display: inline-block;
-	padding: _ms(-1);
+	&__padded { padding: _ms(-1); }
 }
 
 // SUB-SHEET IMPORTS

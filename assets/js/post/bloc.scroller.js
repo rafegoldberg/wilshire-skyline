@@ -6,7 +6,7 @@
 */ 
 	var $scroller    = $('.scrollerBloc'),
 		$items       = $scroller.children('.scrollerBloc--item'),
-		scroll_speed = 175,
+		scroll_speed = 250,
 		scroll_stick = 138,
 	//@VARS::OPTIONS ^
 		scrolling    = false, //
@@ -94,9 +94,14 @@
 */ 
 	$(window)
 		.one('hashchange',function(event){
+			$.bbq.removeState('pluck');
+		})
+		.bind('hashchange',function(event){
+			$active = $('#'+$.bbq.getState('property'));
+			if ($active.length>=1)
 			scroll_init = window.setTimeout(function(){
-				scroller_goto_item($('#'+location.hash.split('property=')[1]));
-			},(scroll_speed*2));
+				scroller_goto_item($active);
+			},(scroll_speed*2.5));
 		});
 	$items
 		.click(function(event){
@@ -109,6 +114,7 @@
 				// console.log($(this).find('[class*="__action"]'));
 				return true;
 			}
+			$.bbq.pushState({property:'',pluck:''});
 			// ELSE :
 			scroller_goto_item($(this));                 // < scroll to clicked
 			$(this).siblings().removeClass('current');   // < remove others' .current
@@ -116,7 +122,7 @@
 			return false;
 		})
 	$scroller
-		.on('scrollstart',function(event){
+		.bind('scrollstart',function(event){
 
 			window.clearTimeout(scroll_init);
 
@@ -126,11 +132,15 @@
 				scrolling = true;
 			}
 		})
-		.on('scrollstop',function(event){
+		.bind('scrollstop',function(event){
 			$next = scroller_get_next_item();
 
 			$next.siblings().removeClass('current');
 			$next.addClass('current');
+			$.bbq.pushState({
+				property: $next.attr('id'),
+				pluck: ''
+			});
 
 			if (scrolling!=='auto') scroller_goto_item($next);
 

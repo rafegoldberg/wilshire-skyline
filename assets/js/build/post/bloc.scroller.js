@@ -1,4 +1,4 @@
-var $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item"), scroll_speed = 175, scroll_stick = 138, scrolling = !1, scroll_last = 0, scroll_dir = 1;
+var $scroller = $(".scrollerBloc"), $items = $scroller.children(".scrollerBloc--item"), scroll_speed = 250, scroll_stick = 138, scrolling = !1, scroll_last = 0, scroll_dir = 1;
 
 scroll_init = !1;
 
@@ -34,16 +34,24 @@ var scroller_goto_item = function($item) {
 };
 
 $(window).one("hashchange", function(a) {
-    scroll_init = window.setTimeout(function() {
-        scroller_goto_item($("#" + location.hash.split("property=")[1]));
-    }, 2 * scroll_speed);
+    $.bbq.removeState("pluck");
+}).bind("hashchange", function(a) {
+    $active = $("#" + $.bbq.getState("property")), $active.length >= 1 && (scroll_init = window.setTimeout(function() {
+        scroller_goto_item($active);
+    }, 2.5 * scroll_speed));
 }), $items.click(function(a) {
-    return window.clearTimeout(scroll_init), $(this).hasClass("current") && a.target !== $(this)[0] ? !0 : (scroller_goto_item($(this)), 
-    $(this).siblings().removeClass("current"), $(this).toggleClass("current"), !1);
-}), $scroller.on("scrollstart", function(a) {
+    return window.clearTimeout(scroll_init), $(this).hasClass("current") && a.target !== $(this)[0] ? !0 : ($.bbq.pushState({
+        property: "",
+        pluck: ""
+    }), scroller_goto_item($(this)), $(this).siblings().removeClass("current"), $(this).toggleClass("current"), 
+    !1);
+}), $scroller.bind("scrollstart", function(a) {
     return window.clearTimeout(scroll_init), scrolling === !0 ? !1 : void ("auto" !== scrolling && (scroll_dir = scroll_last < $scroller.scrollLeft() ? 1 : -1, 
     scrolling = !0));
-}).on("scrollstop", function(a) {
+}).bind("scrollstop", function(a) {
     $next = scroller_get_next_item(), $next.siblings().removeClass("current"), $next.addClass("current"), 
-    "auto" !== scrolling && scroller_goto_item($next), scroll_last = $scroller.scrollLeft();
+    $.bbq.pushState({
+        property: $next.attr("id"),
+        pluck: ""
+    }), "auto" !== scrolling && scroller_goto_item($next), scroll_last = $scroller.scrollLeft();
 });

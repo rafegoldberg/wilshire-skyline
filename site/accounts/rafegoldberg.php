@@ -7,6 +7,7 @@ password: >
 language: en
 role: admin
 history:
+  - intro
   - properties/villa-rebecca
   - properties
 firstname: Raphael

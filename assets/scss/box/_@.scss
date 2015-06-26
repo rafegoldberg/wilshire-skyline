@@ -3,7 +3,7 @@
 	$_BOX_DEBUG: true;
 	$_BOX_OPTS: (
 		name: box,
-		gridle: ( gutter: right left ),
+		gridle: false,
 		extend: false,
 		convention: explicit,
 	);
@@ -72,7 +72,7 @@
 	@mixin newBox($opts:()) { 
 		$box: _box_register($opts) !global;
 		@at-root #{map-get($box,selector)} {
-			@include gridle_set(map-get($box,gridle));
+			@if (map-get($box,gridle)) { @include gridle_set(map-get($box,gridle)); }
 			@extend #{map-get($box,extend)} !optional;
 			@content;
 			@include _reset_box_args;

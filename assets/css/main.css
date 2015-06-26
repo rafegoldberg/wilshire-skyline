@@ -4,20 +4,20 @@
           transform: translateZ(0);
 }
 
-html body:after, .container:after, #main:after {
+html body:after, .container:after, #main:after, .overlayBloc:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.parent:before, .parent-portrait:before, .parent-landscape:before, .parent-d:before, .parent-t:before, .parent-m:before, .attachmentBloc:before, .contentBloc:before, .scrollerBloc:before, .scrollerBloc--item:before, .list__inline:before, .parent:after, .parent-portrait:after, .parent-landscape:after, .parent-d:after, .parent-t:after, .parent-m:after, .attachmentBloc:after, .contentBloc:after, .scrollerBloc:after, .scrollerBloc--item:after, .list__inline:after {
+.parent:before, .parent-portrait:before, .parent-landscape:before, .parent-d:before, .parent-t:before, .parent-m:before, .attachmentBloc:before, .contentBloc:before, .scrollerBloc:before, .scrollerBloc--item:before, .overlayBloc:before, .list__inline:before, .parent:after, .parent-portrait:after, .parent-landscape:after, .parent-d:after, .parent-t:after, .parent-m:after, .attachmentBloc:after, .contentBloc:after, .scrollerBloc:after, .scrollerBloc--item:after, .overlayBloc:after, .list__inline:after {
   content: "";
   display: table;
 }
-.parent:after, .parent-portrait:after, .parent-landscape:after, .parent-d:after, .parent-t:after, .parent-m:after, .attachmentBloc:after, .contentBloc:after, .scrollerBloc:after, .scrollerBloc--item:after, .list__inline:after {
+.parent:after, .parent-portrait:after, .parent-landscape:after, .parent-d:after, .parent-t:after, .parent-m:after, .attachmentBloc:after, .contentBloc:after, .scrollerBloc:after, .scrollerBloc--item:after, .overlayBloc:after, .list__inline:after {
   clear: both;
 }
-.parent, .parent-portrait, .parent-landscape, .parent-d, .parent-t, .parent-m, .attachmentBloc, .contentBloc, .scrollerBloc, .scrollerBloc--item, .list__inline {
+.parent, .parent-portrait, .parent-landscape, .parent-d, .parent-t, .parent-m, .attachmentBloc, .contentBloc, .scrollerBloc, .scrollerBloc--item, .overlayBloc, .list__inline {
   zoom: 1;
 }
 
@@ -31,15 +31,15 @@ html body:after, .container:after, #main:after {
   position: relative;
 }
 
-html body, .container, #main {
+html body, .container, #main, .overlayBloc {
   box-sizing: border-box;
 }
 
-.parent, .parent-portrait, .parent-landscape, .parent-d, .parent-t, .parent-m, .attachmentBloc, .contentBloc, .scrollerBloc, .scrollerBloc--item, .list__inline {
+.parent, .parent-portrait, .parent-landscape, .parent-d, .parent-t, .parent-m, .attachmentBloc, .contentBloc, .scrollerBloc, .scrollerBloc--item, .overlayBloc, .list__inline {
   box-sizing: border-box;
 }
 
-.gridle-debug html body, html body.gridle-debug, .gridle-debug .container, .container.gridle-debug, .gridle-debug #main, #main.gridle-debug {
+.gridle-debug html body, html body.gridle-debug, .gridle-debug .container, .container.gridle-debug, .gridle-debug #main, #main.gridle-debug, .gridle-debug .overlayBloc, .overlayBloc.gridle-debug {
   background-color: #f5f5f5;
 }
 
@@ -8530,7 +8530,7 @@ html.default .attachmentBloc > * {
   vertical-align: middle;
   font-size: 1rem;
 }
-.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc {
+.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayBloc {
   outline-width: 1px;
   outline-style: dashed !important;
   outline-color: cyan !important;
@@ -8552,7 +8552,7 @@ html.default .contentBloc {
   padding-left: 0;
   padding-right: 0;
 }
-.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc {
+.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayBloc {
   outline-width: 1px;
   outline-style: dashed !important;
   outline-color: cyan !important;
@@ -8608,10 +8608,6 @@ html.default .scrollerBloc {
   font-size: 1rem;
   position: relative;
   white-space: initial;
-  border-right: 1px solid;
-}
-.scrollerBloc > *:last-child {
-  border-right: none;
 }
 .scrollerBloc__pad1 .scrollerBloc--item, .scrollerBloc__pad1Z .scrollerBloc--item {
   padding-left: 7.40616em;
@@ -8785,23 +8781,23 @@ html.default .scrollerBloc--item {
   padding-right: 0;
 }
 html.t .scrollerBloc--item {
-  width: 75%;
+  width: 83.33333%;
 }
 .gridle-debug html.t .scrollerBloc--item:before, html.t .scrollerBloc--item.gridle-debug:before {
-  content: "grid-t-9" !important;
+  content: "grid-t-10" !important;
 }
 .gridle-debug html.t .scrollerBloc--item.parent:before, html.t .scrollerBloc--item.gridle-debug.parent:before {
-  content: "grid-parent-t-9" !important;
+  content: "grid-parent-t-10" !important;
 }
 @media screen and (min-width: 0) and (max-width: 74.938em) {
   .scrollerBloc--item {
-    width: 75%;
+    width: 83.33333%;
   }
   .gridle-debug .scrollerBloc--item:before, .scrollerBloc--item.gridle-debug:before {
-    content: "grid-t-9" !important;
+    content: "grid-t-10" !important;
   }
   .gridle-debug .scrollerBloc--item.parent:before, .scrollerBloc--item.gridle-debug.parent:before {
-    content: "grid-parent-t-9" !important;
+    content: "grid-parent-t-10" !important;
   }
 }
 html.m .scrollerBloc--item {
@@ -8834,19 +8830,77 @@ html.m .scrollerBloc--item {
     padding-bottom: 12vh !important;
   }
 }
-.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc {
+.scrollerBloc--item scrollerBloc__bordered {
+  border-right: 1px solid #00589B;
+}
+.scrollerBloc--item scrollerBloc__bordered:last-child {
+  border-right: none;
+}
+.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayBloc {
   outline-width: 1px;
   outline-style: dashed !important;
   outline-color: cyan !important;
   outline-offset: -1px;
 }
-.bgBox {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+.overlayBloc {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 0;
+  clear: both;
 }
-html.default .bgBox {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+html.default .overlayBloc {
+  padding-left: 0;
+  padding-right: 0;
+}
+html.default html.default .overlayBloc {
+  padding-left: 0;
+  padding-right: 0;
+}
+html.default .overlayBloc {
+  padding-left: 0;
+  padding-right: 0;
+}
+html.default .overlayBloc {
+  font-size: 0;
+  clear: both;
+}
+html.default .overlayBloc > * {
+  display: inline-block;
+  float: none !important;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+.overlayBloc > * {
+  display: inline-block;
+  float: none !important;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+.overlayBloc {
+  z-index: 9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #202326;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease-in-out;
+          transition: opacity .5s ease-in-out;
+  -webkit-transition-delay: .75s;
+          transition-delay: .75s;
+}
+.overlay__open .overlayBloc {
+  pointer-events: none;
+  opacity: 1;
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
+}
+.rgdebug .attachmentBloc, .rgdebug .contentBloc, .rgdebug .scrollerBloc, .rgdebug .overlayBloc, .debug-bloc .attachmentBloc, .debug-bloc .contentBloc, .debug-bloc .scrollerBloc, .debug-bloc .overlayBloc {
+  outline-width: 1px;
+  outline-style: dashed !important;
+  outline-color: cyan !important;
+  outline-offset: -1px;
 }
 .bgBox {
   position: relative;
@@ -8872,7 +8926,6 @@ html.default .bgBox {
 }
 .bgBox__overlay {
   background: rgba(8, 45, 81, 0.8375);
-  border-right: 1px solid rgba(8, 48, 86, 0.45);
   -webkit-transition: all .2s;
           transition: all .2s;
   -webkit-transition-delay: .2s;
@@ -8903,8 +8956,8 @@ html.default .bgBox {
 .bgBox--scaleUp {
   -webkit-transition: font-size 0.385s ease-in-out;
           transition: font-size 0.385s ease-in-out;
-  -webkit-transition-delay: 0.375s;
-          transition-delay: 0.375s;
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
 }
 .bgBox--scaleUp__action {
   position: absolute;
@@ -8912,8 +8965,8 @@ html.default .bgBox {
       -ms-transform: scale(0.375) translateX(0.625em) translateY(100%);
           transform: scale(0.375) translateX(0.625em) translateY(100%);
   opacity: 0;
-  -webkit-transition: opacity 0.575s ease-out, -webkit-transform 0.38333s ease-in-out;
-          transition: opacity 0.575s ease-out, transform 0.38333s ease-in-out;
+  -webkit-transition: opacity 0.65s ease-out, -webkit-transform 0.43333s ease-in-out;
+          transition: opacity 0.65s ease-out, transform 0.43333s ease-in-out;
   -webkit-transition-delay: 0;
           transition-delay: 0;
 }
@@ -8921,8 +8974,8 @@ html.default .bgBox {
   font-size: 1.44504rem;
   -webkit-transition: font-size 0.2s ease-in-out;
           transition: font-size 0.2s ease-in-out;
-  -webkit-transition-delay: 0.175s;
-          transition-delay: 0.175s;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
 }
 @media (min-width: 0) {
   .bgBox__overlay.current .bgBox--scaleUp {
@@ -8941,22 +8994,14 @@ html.default .bgBox {
   opacity: 1;
   -webkit-transition: opacity 0.4s ease-in, -webkit-transform 0.26667s ease-in-out;
           transition: opacity 0.4s ease-in, transform 0.26667s ease-in-out;
-  -webkit-transition-delay: 0.375s;
-          transition-delay: 0.375s;
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
 }
 .rgdebug .bgBox, .rgdebug .textBox, .rgdebug .mediaBox, .rgdebug .actionBox, .debug-box .bgBox, .debug-box .textBox, .debug-box .mediaBox, .debug-box .actionBox {
   outline-width: 1px;
   outline-style: solid;
   outline-color: magenta !important;
   outline-offset: -1px;
-}
-.textBox {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-}
-html.default .textBox {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
 }
 .textBox {
   max-width: 44rem !important;
@@ -9059,17 +9104,18 @@ p, ul, ol, blockquote {
 
 .list--item {
   display: inline-block;
+}
+.list__pad-items .list--item {
   padding: 1em;
 }
 
 .list, .list__inline, .list__block {
-  margin: 1em auto;
+  margin: 0;
   padding: 0;
   line-height: 1;
 }
 
 .list__inline {
-  display: inline-block;
   padding-left: 0;
   padding-right: 0;
 }
@@ -9085,8 +9131,58 @@ html.default .list__inline {
   padding-left: 0;
   padding-right: 0;
 }
-.list__inline > *, .list__inline .list--item {
+.list__inline {
   display: inline-block;
+}
+.list__inline .list--item {
+  display: inline-block;
+}
+.list__inline .list--item + .list--item {
+  margin-left: 1em;
+}
+html.d .list__inline__sep-slash .list--item {
+  padding: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+html.d .list__inline__sep-slash .list--item + .list--item:before {
+  content: ' / ';
+  margin: 0 .25em;
+  font-weight: 100;
+}
+@media screen and (min-width: 75em) {
+  .list__inline__sep-slash .list--item {
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .list__inline__sep-slash .list--item + .list--item:before {
+    content: ' / ';
+    margin: 0 .25em;
+    font-weight: 100;
+  }
+}
+html.t .list__inline__sep-slash .list--item {
+  padding: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+html.t .list__inline__sep-slash .list--item + .list--item:before {
+  content: ' / ';
+  margin: 0 .25em;
+  font-weight: 100;
+}
+@media screen and (min-width: 0) and (max-width: 74.938em) {
+  .list__inline__sep-slash .list--item {
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .list__inline__sep-slash .list--item + .list--item:before {
+    content: ' / ';
+    margin: 0 .25em;
+    font-weight: 100;
+  }
 }
 html.m .list__inline__break > *, html.m .list__inline__break .list--item {
   display: block;
@@ -9657,7 +9753,7 @@ button, input {
   padding-top: 1.42383em;
   padding-bottom: 1.42383em;
 }
-.pad7A, .attachmentBloc, .contentBloc, .scrollerBloc {
+.pad7A, .attachmentBloc, .contentBloc, .scrollerBloc, .overlayBloc {
   padding: 1.42383em;
 }
 .pad8, .pad8Z {
@@ -12830,11 +12926,11 @@ html.landscape .d-b-landscape {
     display: block  !important;
   }
 }
-html.default .d-b, html.default .attachmentBloc, html.default .contentBloc, html.default .scrollerBloc {
+html.default .d-b, html.default .attachmentBloc, html.default .contentBloc, html.default .scrollerBloc, html.default .overlayBloc {
   display: block  !important;
 }
 
-.d-b, .attachmentBloc, .contentBloc, .scrollerBloc {
+.d-b, .attachmentBloc, .contentBloc, .scrollerBloc, .overlayBloc {
   display: block  !important;
 }
 

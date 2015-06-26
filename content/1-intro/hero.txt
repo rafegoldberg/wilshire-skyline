@@ -4,7 +4,7 @@ Title: Intro
 
 Text: 
 
-Wilshire Skyline manages a portfolio of luxury multi-family residential properties located in prime sub-markets in Los Angeles.
+Wilshire Skyline manages (link: #property=villa-rebecca text: a portfolio of luxury multi-family residential) properties located in prime sub-markets in Los Angeles.
 
 In addition to other real estate holdings, the principals of Wilshire Skyline own a controlling interest in all of the properties under management.
 

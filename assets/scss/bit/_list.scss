@@ -1,11 +1,22 @@
 .list {
+	// VARS
+	$class: '.list';
+
+	// CONFIG
 	@extend %bit;
+
+	// DEFAULTS
 	& {
-		margin: _ms(-1) auto;
+		margin: 0;
 		padding: 0;
 		line-height: 1;
+		&--item {
+			@extend %bit_item;
+			@at-root #{$class}__pad-items & {
+		      @extend %bit_item__padded;
+		    }
+		}
 	}
-	&--item { @extend %bit_item; }
 }
 
 // SUB-SHEET IMPORTS

@@ -48,9 +48,6 @@
 			position: relative;
 			white-space: initial; // reset parent
 
-			border-right: 1px solid;
-			&:last-child { border-right: none; }
-
 		}
 
 		// VERTICAL-ALIGNMENT CLASSES
@@ -66,7 +63,7 @@
 		@include gridle_set((
 			grid: 7,
 			parent: true,
-			t: ( grid: 9  ),
+			t: ( grid: 10  ),
 			m: ( grid: 11 )
 		));
 		@include gridle_state( m ) {
@@ -74,5 +71,11 @@
 			padding-top: 12vh !important;
 			padding-bottom: 12vh !important;
 		};
+	}
+	&--item {
+		#{getBlocClass($bloc,true)}__bordered {
+			border-right: 1px solid _c(brand); //@todo[use themes]
+			&:last-child { border-right: none; }
+		}
 	}
 };

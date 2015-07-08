@@ -1,9 +1,0 @@
-Bgz: cover
-
-----
-
-Bgp-x: center
-
-----
-
-Bgp-y: center

@@ -26,3 +26,4 @@
 
 </head>
 <body class="container centered <?= isset($body)?$body:'' ?>">
+	<? snippet('meta/pre.header') ?>

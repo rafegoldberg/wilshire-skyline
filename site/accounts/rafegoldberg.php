@@ -7,10 +7,10 @@ password: >
 language: en
 role: admin
 history:
+  - intro
   - properties/villa-rebecca
   - properties/ocean-front-lodge
   - properties/the-nirvana
-  - intro
   - properties
 firstname: Raphael
 lastname: J. Goldberg

@@ -1,4 +1,5 @@
 	<?
+	snippet('meta/post.footer' );
 	snippet('meta/post.sheets' );
 	snippet('meta/post.scripts');
 	?>

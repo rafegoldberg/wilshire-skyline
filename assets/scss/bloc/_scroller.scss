@@ -16,13 +16,13 @@
 )){
 	& { //=DEFAULTS
 
-		@include scrollbars((
-			color_thumb:  _c(sky),
-			color_track:  transparent,
-			color_stroke: _c(brand),
-			scrollbar_size: 6px,
-			overflow_direction: x
-		));
+		// @include scrollbars((
+		// 	color_thumb:  _c(sky),
+		// 	color_track:  transparent,
+		// 	color_stroke: _c(brand),
+		// 	scrollbar_size: 6px,
+		// 	overflow_direction: x
+		// ));
 
 		// background: _c(dusk);
 

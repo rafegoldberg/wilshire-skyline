@@ -1,0 +1,18 @@
+
+@mixin tooltip-theme($class:ws-tooltips) {
+	.#{$class} {
+		border-radius: 0; 
+		border: 0 solid transparent;
+		background: _c(ivory);
+		color: _c(blue);
+		.tooltipster-content {
+			padding: .5em;
+			line-height: 1;
+			background: _c(ivory);
+			color: _c(blue);
+			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+		}
+	}
+}
+
+@include tooltip-theme;

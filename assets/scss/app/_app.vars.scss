@@ -95,7 +95,7 @@ $_TYPE: (
 	styles: ()
 );	//
 	// @todo[build out $_TYPE app.utils]
-$font-imports: din-alt; // @todo[remove; rely on _TYPE]
+$font-imports: din-alt icons; // @todo[remove; rely on _TYPE]
 $ff: (
 	base: '"Helvetica Neue", Helvetica, Arial, sans-serif',
 	sans: '"DIN", "Helvetica Neue", Helvetica, Arial, sans-serif',

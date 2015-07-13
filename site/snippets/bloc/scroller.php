@@ -6,7 +6,7 @@
 		<? foreach ($props as $prop) : ?>
 			<div id="<?=$prop->slug()?>" class="scrollerBloc--item bgBox__overlay bgBox__after js__ajax actionBox__soft   sizeReset6__cascade">
 				<section class="textBox bgBox--scaleUp">
-					<h1 class="heading_6 centered"><?=$prop->title()->html()?></h1>
+					<h1 class="heading_6 size_8 centered"><?=$prop->title()->html()?></h1>
 					<div class="bgBox--scaleUp__action size_9 sizeReset9">
 						<ul class="list__inline list__inline__sep-slash">
 							<li class="list--item">

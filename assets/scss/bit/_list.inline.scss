@@ -31,8 +31,12 @@
 		}
 	}
 	&__break {
+		display: block;
 		& { > *, .list--item {
-			@include gridle_state(m) { display: block; }
+			@include gridle_state(m) {
+				display: block;
+				margin: 0 !important;
+			}
 		} }
 	}
 }

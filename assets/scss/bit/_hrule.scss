@@ -1,0 +1,17 @@
+.hrule {
+	@extend %bit;
+	width: 62.5%;
+	margin: .75em auto;
+	border-color: inherit;
+	border-style: solid;
+	border-width: 1px 0 0;
+	&.expand { width: 100%; }
+}
+
+hr {
+	@extend .hrule;
+}
+
+// SUB-SHEET IMPORTS
+// 
+// @import "sheet.subsheet";

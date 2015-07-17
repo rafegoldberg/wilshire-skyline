@@ -7,9 +7,9 @@ password: >
 language: en
 role: admin
 history:
+  - properties/ocean-front-lodge
   - intro
   - properties/villa-rebecca
-  - properties/ocean-front-lodge
   - properties/the-nirvana
   - properties
 firstname: Raphael

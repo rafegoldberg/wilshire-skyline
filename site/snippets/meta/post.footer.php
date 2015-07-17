@@ -1,6 +1,6 @@
-<footer class="grid-12  theme__slate  pad5A">
+<footer class="grid-12  theme__slate  pad7V">
 	<section>
-		&copy; Wilshire Skyline
+		<small class="size__9">&copy; Wilshire Skyline</small>
 	</section>
 	<style>
 	</style>

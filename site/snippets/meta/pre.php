@@ -26,4 +26,5 @@
 
 </head>
 <body class="container centered <?= isset($body)?$body:'' ?>">
-	<? snippet('meta/pre.header') ?>
+	<main id="main" role="main" class="grid-12 parent   pushV8">
+		<? snippet('meta/pre.header') ?>

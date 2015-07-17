@@ -1,3 +1,4 @@
+	</main>
 	<?
 	snippet('meta/post.footer' );
 	snippet('meta/post.sheets' );

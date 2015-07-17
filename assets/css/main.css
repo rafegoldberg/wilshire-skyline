@@ -9056,7 +9056,7 @@ html.default .actionBox {
   outline-color: magenta !important;
   outline-offset: -1px;
 }
-.debug-bit .scrollerBloc--item__open .overlayPanelBloc, .scrollerBloc--item__open .debug-bit .overlayPanelBloc, .debug-bit p, .debug-bit ul, .debug-bit ol, .debug-bit blockquote, .debug-bit .actionBox__soft a, .actionBox__soft .debug-bit a, .debug-bit .actionBox__soft .action, .actionBox__soft .debug-bit .action, .debug-bit .actionBox__soft [class*="__action"], .actionBox__soft .debug-bit [class*="__action"], .debug-bit .heading, .debug-bit .heading_1, .debug-bit h1, .debug-bit .heading_2, .debug-bit h2, .debug-bit .heading_3, .debug-bit h3, .debug-bit .heading_4, .debug-bit h4, .debug-bit .heading_5, .debug-bit h5, .debug-bit .heading_6, .debug-bit h6, .debug-bit .heading_7, .debug-bit .heading_8, .debug-bit .heading_9, .debug-bit .list--item, .debug-bit .list, .debug-bit .list__inline, .debug-bit .list__block, .debug-bit .theme, .rgdebug .scrollerBloc--item__open .overlayPanelBloc, .scrollerBloc--item__open .rgdebug .overlayPanelBloc, .rgdebug p, .rgdebug ul, .rgdebug ol, .rgdebug blockquote, .rgdebug .actionBox__soft a, .actionBox__soft .rgdebug a, .rgdebug .actionBox__soft .action, .actionBox__soft .rgdebug .action, .rgdebug .actionBox__soft [class*="__action"], .actionBox__soft .rgdebug [class*="__action"], .rgdebug .heading, .rgdebug .heading_1, .rgdebug h1, .rgdebug .heading_2, .rgdebug h2, .rgdebug .heading_3, .rgdebug h3, .rgdebug .heading_4, .rgdebug h4, .rgdebug .heading_5, .rgdebug h5, .rgdebug .heading_6, .rgdebug h6, .rgdebug .heading_7, .rgdebug .heading_8, .rgdebug .heading_9, .rgdebug .list--item, .rgdebug .list, .rgdebug .list__inline, .rgdebug .list__block, .rgdebug .theme {
+.debug-bit .scrollerBloc--item__open .overlayPanelBloc, .scrollerBloc--item__open .debug-bit .overlayPanelBloc, .debug-bit p, .debug-bit ul, .debug-bit ol, .debug-bit blockquote, .debug-bit .hrule, .debug-bit hr, .debug-bit .actionBox__soft a, .actionBox__soft .debug-bit a, .debug-bit a, .debug-bit .heading, .debug-bit .heading_1, .debug-bit h1, .debug-bit .heading_2, .debug-bit h2, .debug-bit .heading_3, .debug-bit h3, .debug-bit .heading_4, .debug-bit h4, .debug-bit .heading_5, .debug-bit h5, .debug-bit .heading_6, .debug-bit h6, .debug-bit .heading_7, .debug-bit .heading_8, .debug-bit .heading_9, .debug-bit .list--item, .debug-bit .list, .debug-bit .list__inline, .debug-bit .list__block, .debug-bit .theme, .rgdebug .scrollerBloc--item__open .overlayPanelBloc, .scrollerBloc--item__open .rgdebug .overlayPanelBloc, .rgdebug p, .rgdebug ul, .rgdebug ol, .rgdebug blockquote, .rgdebug .hrule, .rgdebug hr, .rgdebug .actionBox__soft a, .actionBox__soft .rgdebug a, .rgdebug a, .rgdebug .heading, .rgdebug .heading_1, .rgdebug h1, .rgdebug .heading_2, .rgdebug h2, .rgdebug .heading_3, .rgdebug h3, .rgdebug .heading_4, .rgdebug h4, .rgdebug .heading_5, .rgdebug h5, .rgdebug .heading_6, .rgdebug h6, .rgdebug .heading_7, .rgdebug .heading_8, .rgdebug .heading_9, .rgdebug .list--item, .rgdebug .list, .rgdebug .list__inline, .rgdebug .list__block, .rgdebug .theme {
   outline: 1px dotted yellow;
   outline-offset: -2px;
 }
@@ -9073,12 +9073,23 @@ p, ul, ol, blockquote {
   margin-bottom: 1.125em;
 }
 
-.actionBox__soft a, .actionBox__soft .action, .actionBox__soft [class*="__action"] {
+.hrule, hr {
+  width: 62.5%;
+  margin: .75em auto;
+  border-color: inherit;
+  border-style: solid;
+  border-width: 1px 0 0;
+}
+.hrule.expand, hr.expand {
+  width: 100%;
+}
+
+.actionBox__soft a, a, a:visited {
+  color: inherit;
+}
+.actionBox__soft a {
   color: inherit;
   text-decoration: none;
-}
-.actionBox__soft .action:hover, .actionBox__soft [class*="__action"]:hover {
-  text-decoration: underline;
 }
 
 .heading, .heading_1, h1, .heading_2, h2, .heading_3, h3, .heading_4, h4, .heading_5, h5, .heading_6, h6, .heading_7, .heading_8, .heading_9 {
@@ -9183,12 +9194,17 @@ html.t .list__inline__sep-slash .list--item + .list--item:before {
     font-weight: 100;
   }
 }
+.list__inline__break {
+  display: block;
+}
 html.m .list__inline__break > *, html.m .list__inline__break .list--item {
   display: block;
+  margin: 0 !important;
 }
 @media screen and (min-width: 0) and (max-width: 37.5em) {
   .list__inline__break > *, .list__inline__break .list--item {
     display: block;
+    margin: 0 !important;
   }
 }
 
@@ -9449,6 +9465,7 @@ button, input {
   background: #FCFCFB;
   color: #00589B;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  box-shadow: 0 0 8px -2px black;
 }
 
 .size1__cascade > * {
@@ -12778,59 +12795,6 @@ html.m .ta-j-m {
     text-align: justify  !important;
   }
 }
-html.portrait .ta-r-portrait {
-  text-align: right  !important;
-}
-
-@media (orientation: portrait) {
-  .ta-r-portrait {
-    text-align: right  !important;
-  }
-}
-html.landscape .ta-r-landscape {
-  text-align: right  !important;
-}
-
-@media (orientation: landscape) {
-  .ta-r-landscape {
-    text-align: right  !important;
-  }
-}
-html.default .ta-r {
-  text-align: right  !important;
-}
-
-.ta-r {
-  text-align: right  !important;
-}
-
-html.d .ta-r-d {
-  text-align: right  !important;
-}
-
-@media screen and (min-width: 75em) {
-  .ta-r-d {
-    text-align: right  !important;
-  }
-}
-html.t .ta-r-t {
-  text-align: right  !important;
-}
-
-@media screen and (min-width: 0) and (max-width: 74.938em) {
-  .ta-r-t {
-    text-align: right  !important;
-  }
-}
-html.m .ta-r-m {
-  text-align: right  !important;
-}
-
-@media screen and (min-width: 0) and (max-width: 37.5em) {
-  .ta-r-m {
-    text-align: right  !important;
-  }
-}
 html.portrait .ta-c-portrait {
   text-align: center  !important;
 }
@@ -12882,6 +12846,59 @@ html.m .ta-c-m {
 @media screen and (min-width: 0) and (max-width: 37.5em) {
   .ta-c-m {
     text-align: center  !important;
+  }
+}
+html.portrait .ta-r-portrait {
+  text-align: right  !important;
+}
+
+@media (orientation: portrait) {
+  .ta-r-portrait {
+    text-align: right  !important;
+  }
+}
+html.landscape .ta-r-landscape {
+  text-align: right  !important;
+}
+
+@media (orientation: landscape) {
+  .ta-r-landscape {
+    text-align: right  !important;
+  }
+}
+html.default .ta-r {
+  text-align: right  !important;
+}
+
+.ta-r {
+  text-align: right  !important;
+}
+
+html.d .ta-r-d {
+  text-align: right  !important;
+}
+
+@media screen and (min-width: 75em) {
+  .ta-r-d {
+    text-align: right  !important;
+  }
+}
+html.t .ta-r-t {
+  text-align: right  !important;
+}
+
+@media screen and (min-width: 0) and (max-width: 74.938em) {
+  .ta-r-t {
+    text-align: right  !important;
+  }
+}
+html.m .ta-r-m {
+  text-align: right  !important;
+}
+
+@media screen and (min-width: 0) and (max-width: 37.5em) {
+  .ta-r-m {
+    text-align: right  !important;
   }
 }
 html.portrait .ta-l-portrait {

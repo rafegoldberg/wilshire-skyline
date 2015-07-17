@@ -11,7 +11,7 @@
 @include stately(text-align,justify right left center,'ta',!important);
 @include stately(text-align,(
 	j: justify,
-	r: right,
 	c: center,
+	r: right,
 	l: left,
 ),'ta',!important);

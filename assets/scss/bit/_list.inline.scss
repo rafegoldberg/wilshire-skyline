@@ -39,4 +39,9 @@
 			}
 		} }
 	}
+	 @include gridle_state( mobile ) { &__collapse {
+		> *, .list--item {
+			margin-left: 0 !important;
+		}
+	} }
 }

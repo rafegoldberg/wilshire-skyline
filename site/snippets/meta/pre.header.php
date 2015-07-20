@@ -1,4 +1,4 @@
-<header class="attachmentBloc  centered  push3V">
+<header class="attachmentBloc  centered  push4V">
 	<div class="mediaBox   grid-m-12 pad8Z pad8V">
 		<img src="<?=$site->files()->find('mark.png')->url()?>" alt="Mark">
 	</div>

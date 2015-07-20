@@ -9207,6 +9207,12 @@ html.m .list__inline__break > *, html.m .list__inline__break .list--item {
     margin: 0 !important;
   }
 }
+html.default .list__inline__collapse > *, html.default .list__inline__collapse .list--item {
+  margin-left: 0 !important;
+}
+.list__inline__collapse > *, .list__inline__collapse .list--item {
+  margin-left: 0 !important;
+}
 
 .list__block .list--item {
   display: block;

@@ -1,8 +1,8 @@
-<section id="map-wrap" class="d-ib theme__light ta-c actionBox__soft" style="width: 100%; box-sizing: border-box;">
+<section id="map-wrap" class="d-ib ta-c actionBox__soft" style="width: 100%; box-sizing: border-box;">
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 	<script id="map-init">
 		var map,
-			/*=LIGHT*/
+			/*=LIGHT
 			mapstyle = [
     {
         "featureType": "all",
@@ -284,7 +284,8 @@
         ]
     }
 ],
-			/*=BLUE
+			*/
+			/*=BLUE*/
 			mapstyle = [
 			    {
 			        "featureType": "all",
@@ -632,15 +633,14 @@
 			        ]
 			    }
 			],
-			*/
-			brooklyn = new google.maps.LatLng(40.6743890, -73.9455),
+			point = new google.maps.LatLng(34.0635023,-118.3686175),
 			MY_MAPTYPE_ID = 'custom_style'
 		;
 		function initialize() {
 			var featureOpts = mapstyle;
 			var mapOptions = {
-				zoom: 12,
-				center: brooklyn,
+				zoom: 15,
+				center: point,
 				mapTypeControlOptions: {
 					mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
 				},
@@ -659,23 +659,23 @@
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
-	<div class="pad4Z pad3V size3 ta-l ta-c-m">
-		<h3 class="header size9">Get in touch</h3>
+	<div class="pad5Z pad3V size3 ta-l ta-c-m">
+		<h3 class="header // size9 // ta-c-m">Get in touch</h3>
 		<hr class="expand">
-		<ul class="list__inline list__inline__break ta-l">
-			<li class="list--item ta-c ta-l-m  tooltip" title="6404 Wilshire Blvd. LA CA">
-				<a href="http://maps.google.com" class="icon-location">
-					<small class="d-b d-ib-m  gutter-top  sizeReset9" style="vertical-align:.25em;">Visit</small>
+		<ul class="list__inline list__inline__collapse // d-b-m // ta-c">
+			<li class="list--item // ta-c ta-l-m //">
+				<a href="https://www.google.com/maps/preview?q=6404+Wilshire+Blvd.+LA+CA" class="icon-location // tooltip" title="6404 Wilshire Blvd. LA CA">
+					<small class="d-b d-n-m // gutter-top // sizeReset9" style="vertical-align:.25em;">Visit</small>
 				</a>
 			</li>
-			<li class="list--item ta-c  tooltip" title="(323) 206 2137">
-				<a href="tel:3232062137" class="icon-phone-left">
-					<small class="d-b d-ib-m  gutter-top  sizeReset9" style="vertical-align:.25em;">Call</small>
+			<li class="list--item // ta-c ta-l-m //">
+				<a href="tel:3236511000" class="icon-phone-left // tooltip" title="(323) 651-1000">
+					<small class="d-b d-n-m // gutter-top // sizeReset9" style="vertical-align:.25em;">Call</small>
 				</a>
 			</li>
-			<li class="list--item ta-c ta-r-m  tooltip" title="management@wilshireskyline.com">
-				<a href="mailto:management@wilshireskyline.com" class="icon-mail-simple">
-					<small class="d-b d-ib-m  gutter-top  sizeReset9" style="vertical-align:.25em;">Write</small>
+			<li class="list--item // ta-c ta-l-m //">
+				<a href="mailto:management@wilshireskyline.com" class="icon-mail-simple // tooltip" title="management@wilshireskyline.com">
+					<small class="d-b d-n-m // gutter-top // sizeReset9" style="vertical-align:.25em;">Write</small>
 				</a>
 			</li>
 		</ul>
@@ -689,8 +689,9 @@
 			margin: 0px;
 			padding: 0px;
 			overflow: hidden;
-			background-color: rgba(4, 34, 62, 0.75); /*MAPSTYLE:BLUE*/
 			background-color: rgba(255, 255, 255, .15); /*MAPSTYLE:LIGHT*/
+			background-color: rgba(4, 34, 62, 0.75); /*MAPSTYLE:BLUE*/
+			color: white; /*MAPSTYLE:BLUE*/
 			-webkit-box-shadow: inset 0 10px 20px -15px #000;
 			-moz-box-shadow: inset 0 10px 20px -15px #000;
 			-ms-box-shadow: inset 0 10px 20px -15px #000;

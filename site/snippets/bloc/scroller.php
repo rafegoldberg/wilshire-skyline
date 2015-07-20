@@ -1,5 +1,5 @@
 <!-- SCROLL BLOC -->
-	<section class="grid-12  scrollerBloc scrollerBloc__pad3V scrollerBloc__va-b  sizeReset6__cascade">
+	<section class="grid-12 // scrollerBloc scrollerBloc__pad3V scrollerBloc__va-m // sizeReset6__cascade">
 		<?#PARSEVARS
 		$props = $pages->find('properties')->children();
 		?>

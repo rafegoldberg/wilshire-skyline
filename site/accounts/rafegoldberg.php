@@ -7,8 +7,8 @@ password: >
 language: en
 role: admin
 history:
-  - properties/ocean-front-lodge
   - intro
+  - properties/ocean-front-lodge
   - properties/villa-rebecca
   - properties/the-nirvana
   - properties

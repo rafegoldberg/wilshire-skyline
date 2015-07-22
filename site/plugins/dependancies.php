@@ -68,7 +68,7 @@ function add_scripts($scripts) {
 
 function link_sheets($debug=false) {
 #
-# link_sheets($sheets=[str]);
+# link_sheets($debug=[bool]);
 #
 # @param	$debug	[bool]	pass true to log all registered
 #                           CSS/JS
@@ -89,7 +89,7 @@ function link_sheets($debug=false) {
 <?}
 function link_scripts($debug=false) {
 #
-# link_sheets($sheets=[str]);
+# link_sheets($debug=[bool]);
 #
 # @param	$debug	[bool]	pass true to log all registered
 #                           CSS/JS

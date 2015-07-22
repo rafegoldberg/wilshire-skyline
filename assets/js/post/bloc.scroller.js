@@ -27,6 +27,7 @@
 		$scroller.animate({
 			scrollLeft: (function() {
 				widths = $item.prevAll().map(function() {
+					console.log($item);
 					return $item.outerWidth();
 				}).toArray();
 				total = widths.length < 1 ? 0 : eval(widths.join('+'));

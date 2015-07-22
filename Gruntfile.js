@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 			},
 			dev: {
 				src: [
-					'assets/js/build/lib/*.js',
+					// 'assets/js/build/lib/*.js',
 					'assets/js/build/pre/*.js',
 					'assets/js/build/post/*.js',
 					'assets/js/build/main.js',

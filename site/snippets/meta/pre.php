@@ -11,12 +11,17 @@
 	<? snippet('meta/env') ?>
 
 	<!--| Scripts + Stylesheets
-	|–––| Link main site stylesheets;
+	|–––| Link main site styles + js;
 	|–––| initialize scripts + sheets
-	|–––| post-lib $GLOBALS variable,
-	|–––| for use see `meta/post.php`
+	|–––| post-lib $GLOBALS variable.
+	|–––| For use see `meta/post.php`
 	|–-->
 	<?= css('assets/css/main.css') ?>
+	<? $js_libs = array_filter(glob('assets/js/lib/*'),'is_file'); ?>
+	<? foreach($js_libs as $lib): ?>
+		<?= js($lib) ?>
+	<? endforeach; ?>
+
 	<? init_libs() //@depends[snippet/meta.post] ?>
 	<? add_sheets('grid') ?>
 

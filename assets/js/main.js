@@ -1,3 +1,8 @@
 $(document).ready(function() {
-	$(window).hashchange();
+	$(window)
+	.resize(function(e){
+	   console.log('resized');
+	   $('.scrollerBloc').trigger('scroll');
+	})
+	.hashchange();
 });

@@ -8,7 +8,7 @@ var scroller_goto_item = function($item) {
     return $scroller.animate({
         scrollLeft: function() {
             return widths = $item.prevAll().map(function() {
-                return $item.outerWidth();
+                return console.log($item), $item.outerWidth();
             }).toArray(), total = widths.length < 1 ? 0 : eval(widths.join("+")), view = $scroller.outerWidth(), 
             width = $item.outerWidth(), remains = view - width, scrollTo = total - remains / 2;
         }()

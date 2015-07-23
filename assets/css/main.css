@@ -8964,7 +8964,7 @@ html.default .overlayPanelBloc > * {
           transition-delay: 0;
 }
 .bgBox__overlay.current .bgBox--scaleUp {
-  font-size: 1.44504rem;
+  font-size: 1.6743rem;
   -webkit-transition: font-size 0.2s ease-in-out;
           transition: font-size 0.2s ease-in-out;
   -webkit-transition-delay: 0.25s;
@@ -8972,12 +8972,12 @@ html.default .overlayPanelBloc > * {
 }
 @media (min-width: 0) {
   .bgBox__overlay.current .bgBox--scaleUp {
-    font-size: 1.62889rem;
+    font-size: 1.97993rem;
   }
 }
 @media (min-width: 75em) {
   .bgBox__overlay.current .bgBox--scaleUp {
-    font-size: 2.06103rem;
+    font-size: 2.75244rem;
   }
 }
 .bgBox__overlay.current .bgBox--scaleUp__action {
@@ -10160,6 +10160,11 @@ button, input {
 .theme__dark {
   background-color: #083056;
   border-color: #0B477F;
+  color: #FCFCFB;
+}
+.theme__dusk {
+  background-color: #0B477F;
+  border-color: #00589B;
   color: #FCFCFB;
 }
 .theme__brand {

@@ -1,8 +1,8 @@
 <!-- SCROLL BLOC -->
-	<section class="grid-12 // scrollerBloc scrollerBloc__pad3V scrollerBloc__va-m // sizeReset6__cascade">
+	<section class="grid-12 // scrollerBloc scrollerBloc__pad2V scrollerBloc__va-m // sizeReset6__cascade">
 		<!-- Intro Box -->
-		<div id="scroller-intro" class="scrollerBloc--item // bgBox__overlay bgBox__after // js__ajax actionBox__soft // sizeReset6__cascade // theme__dusk">
-			<section class="textBox bgBox--scaleUp">
+		<div id="scroller-intro" class="scrollerBloc--item // bgBox__overlay bgBox__after // js__ajax actionBox__soft // sizeReset4__cascade // theme__dusk">
+			<section class="textBox bgBox--scaleUp // pad7V">
 				<h1 class="heading_3 size6 centered">Our Locations</h1>
 				<div class="bgBox--scaleUp__action sizeReset9">
 					<a href="#property=villa-rebecca" class="action sizeReset9">► <span style="text-decoration:underline;">View more</span>, or scroll</a>
@@ -27,7 +27,7 @@
 		?>
 		<? foreach ($props as $prop) : ?>
 			<div id="<?=$prop->slug()?>" class="scrollerBloc--item bgBox__overlay bgBox__after js__ajax actionBox__soft   sizeReset6__cascade">
-				<section class="textBox bgBox--scaleUp">
+				<section class="textBox bgBox--scaleUp // pad7V">
 					<h1 class="heading_6 size_8 centered"><?=$prop->title()->html()?></h1>
 					<div class="bgBox--scaleUp__action sizeReset9">
 						<a class="action sizeReset9">

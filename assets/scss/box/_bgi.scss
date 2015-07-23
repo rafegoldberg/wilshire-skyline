@@ -106,7 +106,7 @@
 				}
 			}
 			&#{$item_active_class} #{$item_animation_subclass} {
-				@include scale(4,font-size,rem);
+				@include scale(2,font-size,rem);
 				transition: font-size with-unit($item_animation_duration/2,s) ease-in-out;
 				transition-delay: with-unit($item_animation_delay,s);
 				&__#{$item_animation_subclass_action} {

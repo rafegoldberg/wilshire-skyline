@@ -1,24 +1,35 @@
 <!-- SCROLL BLOC -->
-	<section class="grid-12 // scrollerBloc scrollerBloc__pad2V scrollerBloc__va-m // sizeReset6__cascade">
+	<section class="grid-12 // scrollerBloc scrollerBloc__pad6V scrollerBloc__va-m // sizeReset6__cascade">
 		<!-- Intro Box -->
-		<div id="scroller-intro" class="scrollerBloc--item // bgBox__overlay bgBox__after // js__ajax actionBox__soft // sizeReset4__cascade // theme__dusk">
-			<section class="textBox bgBox--scaleUp // pad7V">
-				<h1 class="heading_3 size6 centered">Our Locations</h1>
+		<div id="scroller-intro" class="scrollerBloc--item // bgBox__overlay bgBox__after // js__ajax // actionBox__soft // sizeReset5__cascade">
+			<section class="textBox bgBox--scaleUp // pad6V">
+				<h1 class="heading_6 size_5 centered">L.A. Luxury</h1>
 				<div class="bgBox--scaleUp__action sizeReset9">
-					<a href="#property=villa-rebecca" class="action sizeReset9">► <span style="text-decoration:underline;">View more</span>, or scroll</a>
+					<a href="#property=villa-rebecca" class="action sizeReset9">
+						► Scroll to <span style="text-decoration:underline;">view our locations</span>
+					</a>
 				</div>
 			</section>
 			<style>
-			#scroller-intro.current {
-				background-color: #083056 !important;
+			#scroller-intro {
+				background-color: #00589B;
+				background-color: rgba(18, 20, 21, 0.8375);
+				transition: background-color .25s !important;
 			}
-			/*#scroller-intro {
-				background-color: #FAFAFE !important;
-			}*/
+			#scroller-intro.current {
+				background-color: rgba(18, 20, 21, 0.8375);
+			}
+			#scroller-intro.bgBox__after:after {
+				background-image:url(<?= $site->file('intro.jpg')->url() ?>);
+			}
 			</style>
 			<script>
 			$(document).ready(function() {
-				$('#scroller-intro').addClass('current');
+				if ( $.isEmptyObject($.bbq.getState()) || $.bbq.getState('property') == 'scroller-intro') {
+					window.setTimeout(function(){
+						$('#scroller-intro').addClass('current');
+					},1500);
+				}
 			});
 			</script>
 		</div>
@@ -26,9 +37,9 @@
 		$props = $pages->find('properties')->children();
 		?>
 		<? foreach ($props as $prop) : ?>
-			<div id="<?=$prop->slug()?>" class="scrollerBloc--item bgBox__overlay bgBox__after js__ajax actionBox__soft   sizeReset6__cascade">
-				<section class="textBox bgBox--scaleUp // pad7V">
-					<h1 class="heading_6 size_8 centered"><?=$prop->title()->html()?></h1>
+			<div id="<?=$prop->slug()?>" class="scrollerBloc--item // bgBox__overlay bgBox__after // js__ajax // actionBox__soft // sizeReset5__cascade">
+				<section class="textBox bgBox--scaleUp // pad6V">
+					<h1 class="heading_6 size_5 centered"><?=$prop->title()->html()?></h1>
 					<div class="bgBox--scaleUp__action sizeReset9">
 						<a class="action sizeReset9">
 							<?=explode(', CA',json_decode($prop->content()->location())->address)[0]?>

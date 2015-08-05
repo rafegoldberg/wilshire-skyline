@@ -43,7 +43,7 @@
 		});
 		return scrollTo;
 	}
-	var scroller_item_at = function(from/*[left|right|center]*/){
+	var scroller_item_at = function(from/*[left|right|center]*/) {
 		from = typeof from !== 'undefined' ? from : 'center';
 		from = function(pos){
 			// PARSE VARS
@@ -66,7 +66,7 @@
 		$next_item = elems_by_offsets[ closest(from,offsets) ];
 		return $next_item;
 	}
-	var scroller_get_next_item = function(dir/*[1:RIGHT|-1:LEFT]*/){
+	var scroller_get_next_item = function(dir/*[1:RIGHT|-1:LEFT]*/) {
 		// CHECKS
 		// 
 		if (!scrolling) return scroller_item_at();
@@ -89,6 +89,18 @@
 		else $nxt = $cur.prev().length==1 ? $cur.prev() : false;
 
 		return $nxt;
+	}
+	var scroller_move_into_view = function() {
+		var offset = $scroller.offset()['top'],
+			delay  = 1500,
+			extra  = 35;
+		if ( $(window).scrollTop() > (offset+extra) && $.bbq.getState('property') ) {
+			window.setTimeout(function(){
+				$("html, body").stop().animate({
+					scrollTop: offset-extra
+				},'250','swing');
+			},delay);
+		}
 	}
 
 /*=EVENTS
@@ -113,7 +125,7 @@
 				// ^ ALLOW CLICKS ORIGINATING ON INNER ELEMS
 			if ($(this).hasClass('current')){
 				if (event.target!==$(this)[0]) return true;
-				$.bbq.pushState('home',2);
+				$.bbq.removeState();
 			} else $.bbq.pushState({property:$(this).attr('id')},2);
 			// ELSE :
 			scroller_goto_item($(this));                 // < scroll to clicked
@@ -145,4 +157,5 @@
 
 			scroll_last = $scroller.scrollLeft();
 
+			// scroller_move_into_view();
 		});

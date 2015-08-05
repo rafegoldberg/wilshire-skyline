@@ -7,8 +7,8 @@
 	// 
 	$item_active_class: '.current';
 	$item_animation_subclass: 'scaleUp';
-	$item_animation_duration: .4;
-	$item_animation_delay: .250;
+	$item_animation_duration: .3;
+	$item_animation_delay: .225;
 
 	// Parse Config Vars
 	// 
@@ -94,27 +94,32 @@
 			// 
 			@at-root #{$item_animation_subclass} {
 				@extend %_force-hardware-acceleration !optional;
-				transition: font-size with-unit(($item_animation_duration)-.015,s) ease-in-out;
-				transition-delay: with-unit(($item_animation_duration/2)+$item_animation_delay,s);
+				// transition: font-size with-unit(($item_animation_duration)-.015,s) ease-in-out;
+				// transition-delay: with-unit(($item_animation_duration/2)+$item_animation_delay,s);
+				transition: font-size with-unit($item_animation_duration,s) ease-in-out;
+				transition-delay: with-unit($item_animation_delay,s);
 				&__#{$item_animation_subclass_action} {
 					position: absolute;
 					transform: scale(.375) translateX(.625em) translateY(100%);
 					opacity: 0;
-					transition: opacity   with-unit($item_animation_duration+$item_animation_delay,s) ease-out   ,
-								transform with-unit(($item_animation_duration+$item_animation_delay)/1.5,s) ease-in-out;
+					transition: opacity   with-unit($item_animation_duration+$item_animation_delay,s),
+								transform with-unit($item_animation_duration+$item_animation_delay,s);
 					transition-delay: 0;
 				}
 			}
 			&#{$item_active_class} #{$item_animation_subclass} {
-				@include scale(2,font-size,rem);
-				transition: font-size with-unit($item_animation_duration/2,s) ease-in-out;
+				$slowdown: 1;
+				@include scale(3,font-size,rem);
+				// transition: font-size with-unit($item_animation_duration/2,s) ease-in-out;
+				// transition-delay: with-unit($item_animation_delay,s);
+				transition: font-size with-unit($item_animation_duration,s) ease-in-out;
 				transition-delay: with-unit($item_animation_delay,s);
 				&__#{$item_animation_subclass_action} {
 					transform: scale(1) translateX(0) translateY(0);
 					opacity: 1;
-					transition: opacity   with-unit($item_animation_duration,s) ease-in   ,
-								transform with-unit(($item_animation_duration)/1.5,s) ease-in-out;
-					transition-delay: with-unit(($item_animation_duration/2)+$item_animation_delay,s);
+					transition: opacity   with-unit($item_animation_duration/$slowdown,s),
+								transform with-unit($item_animation_duration/$slowdown,s);
+					transition-delay: with-unit(($item_animation_duration/$slowdown)+$item_animation_delay,s);
 				}
 			}
 		}

@@ -847,6 +847,13 @@ var scroller_goto_item = function($item) {
     return $cur = 1 == $items.filter(".current").length ? $items.filter(".current") : $items.first(), 
     $nxt = !1, $cur[0] !== scroller_item_at()[0] ? scroller_item_at() : (a >= 1 ? $nxt = 1 == $cur.next().length ? $cur.next() : !1 : $nxt = 1 == $cur.prev().length ? $cur.prev() : !1, 
     $nxt);
+}, scroller_move_into_view = function() {
+    var a = $scroller.offset().top, b = 1500, c = 35;
+    $(window).scrollTop() > a + c && $.bbq.getState("property") && window.setTimeout(function() {
+        $("html, body").stop().animate({
+            scrollTop: a - c
+        }, "250", "swing");
+    }, b);
 };
 
 $(window).bind("hashchange", function(a) {
@@ -856,7 +863,7 @@ $(window).bind("hashchange", function(a) {
 }), $items.click(function(a) {
     if (window.clearTimeout(scroll_init), $(this).hasClass("current")) {
         if (a.target !== $(this)[0]) return !0;
-        $.bbq.pushState("home", 2);
+        $.bbq.removeState();
     } else $.bbq.pushState({
         property: $(this).attr("id")
     }, 2);
@@ -871,7 +878,5 @@ $(window).bind("hashchange", function(a) {
         property: $next.attr("id")
     }, 2), "auto" !== scrolling && scroller_goto_item($next), scroll_last = $scroller.scrollLeft();
 });$(document).ready(function() {
-    $(window).resize(function(a) {
-        console.log("resized"), $(".scrollerBloc").trigger("scroll");
-    }).hashchange();
+    $(window).hashchange();
 });

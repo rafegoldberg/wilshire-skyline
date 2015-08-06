@@ -41,8 +41,12 @@
 				<section class="textBox bgBox--scaleUp // pad6V">
 					<h1 class="heading_6 size_5 centered"><?=$prop->title()->html()?></h1>
 					<div class="bgBox--scaleUp__action sizeReset9">
-						<a class="action sizeReset9">
-							<?=explode(', CA',json_decode($prop->content()->location())->address)[0]?>
+						<?#PARSEVARS
+						$address = json_decode($prop->content()->location())->address;
+						$address = explode(', CA',$address)[0];
+						?>
+						<a target="_blank" href="https://www.google.com/maps/preview?q=<?=urlencode($address)?>" class="action sizeReset9">
+							<?=$address?>
 						</a>
 						<!--
 						<ul class="list__inline list__inline__sep-slash">

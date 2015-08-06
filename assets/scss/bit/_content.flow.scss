@@ -1,7 +1,8 @@
 %flow {
 	@extend %bit;
 	font-size: _ms(-1);
-	line-height: strip_unit( _ms(-3) );
+	// line-height: strip_unit( _ms(-3) );
+	line-height: strip_unit( 1.7em );
 	margin-bottom: _ms(-2);
 }
 
